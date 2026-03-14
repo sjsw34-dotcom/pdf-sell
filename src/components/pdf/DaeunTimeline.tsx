@@ -36,7 +36,7 @@ export function DaeunTimeline({ theme, daeun }: DaeunTimelineProps) {
             {/* 타임라인 도트 + 라인 */}
             <View style={s.timeline}>
               <View style={[s.dot, { backgroundColor: colors.primary }]} />
-              {idx < sorted.length - 1 ? <View style={s.line} /> : null}
+              {idx < sorted.length - 1 && <View style={s.line} />}
             </View>
 
             {/* 카드 */}

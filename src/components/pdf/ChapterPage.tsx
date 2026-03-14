@@ -12,25 +12,26 @@ interface ChapterPageProps {
 
 export function ChapterPage({ theme, title, content, chapterNumber }: ChapterPageProps) {
   const t = getThemeStyles(theme);
-
-  const paragraphs = content.split(/\n\n+/).filter((p) => p.trim() !== '');
+  const safeContent = content || '';
+  const paragraphs = safeContent.split(/\n\n+/).filter((p) => p.trim() !== '');
 
   return (
     <Page size="A4" style={t.page} wrap>
       <View style={s.header}>
-        {chapterNumber !== undefined ? (
+        {chapterNumber !== undefined && (
           <Text style={t.label}>CHAPTER {chapterNumber}</Text>
-        ) : null}
-        <Text style={t.title}>{title}</Text>
+        )}
+        <Text style={t.title}>{title || ''}</Text>
         <View style={t.divider} />
       </View>
 
       <View style={s.body} wrap>
-        {paragraphs.map((paragraph, idx) => (
-          <Text key={idx} style={t.body}>
-            {paragraph.trim()}
-          </Text>
-        ))}
+        {paragraphs.length > 0
+          ? paragraphs.map((paragraph, idx) => (
+              <Text key={idx} style={t.body}>{paragraph.trim()}</Text>
+            ))
+          : <Text style={t.body}> </Text>
+        }
       </View>
 
       <Text
@@ -43,10 +44,6 @@ export function ChapterPage({ theme, title, content, chapterNumber }: ChapterPag
 }
 
 const s = StyleSheet.create({
-  header: {
-    marginBottom: 16,
-  },
-  body: {
-    flex: 1,
-  },
+  header: { marginBottom: 16 },
+  body: { flex: 1 },
 });

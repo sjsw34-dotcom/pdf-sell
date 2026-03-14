@@ -62,16 +62,16 @@ export function YinyangChart({ theme, yinyang }: YinyangChartProps) {
       <View style={s.section}>
         <Text style={s.sectionLabel}>YIN & YANG BALANCE</Text>
         <View style={s.yinyangBar}>
-          {yinPct > 0 ? (
+          {yinPct > 0 && (
             <View style={[s.yinSegment, { width: `${yinPct}%` }]}>
               <Text style={s.yinyangText}>陰 Yin {yinyang.yin}</Text>
             </View>
-          ) : null}
-          {yangPct > 0 ? (
+          )}
+          {yangPct > 0 && (
             <View style={[s.yangSegment, { width: `${yangPct}%` }]}>
               <Text style={s.yinyangText}>陽 Yang {yinyang.yang}</Text>
             </View>
-          ) : null}
+          )}
         </View>
       </View>
 

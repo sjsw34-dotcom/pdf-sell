@@ -21,7 +21,7 @@ export function PartHeader({ theme, partNumber, title, subtitle }: PartHeaderPro
         <View style={s.line} />
         <Text style={s.partLabel}>PART {partNumber}</Text>
         <Text style={s.title}>{title}</Text>
-        {subtitle ? <Text style={s.subtitle}>{subtitle}</Text> : null}
+        {subtitle && <Text style={s.subtitle}>{subtitle}</Text>}
         <View style={s.line} />
       </View>
     </Page>

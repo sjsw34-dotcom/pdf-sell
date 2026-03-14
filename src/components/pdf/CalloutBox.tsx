@@ -31,10 +31,10 @@ export function CalloutBox({ theme, text, label, variant = 'default' }: CalloutB
       ]}
       wrap={false}
     >
-      {label ? (
+      {label && (
         <Text style={[s.label, { color: v.labelColor }]}>{label}</Text>
-      ) : null}
-      <Text style={s.text}>{text}</Text>
+      )}
+      <Text style={s.text}>{text || ' '}</Text>
     </View>
   );
 }

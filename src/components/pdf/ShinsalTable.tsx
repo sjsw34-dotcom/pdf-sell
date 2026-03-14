@@ -100,7 +100,7 @@ export function ShinsalTable({ theme, shinsal }: ShinsalTableProps) {
               <Text style={[s.cellText, { color: sentimentColor[sentiment] }]}>
                 {(SHINSAL_EN[val] ?? val) || '—'}
               </Text>
-              {val ? <Text style={s.cellSub}>{val}</Text> : null}
+              {val && <Text style={s.cellSub}>{val}</Text>}
             </View>
           );
         })}
@@ -119,7 +119,7 @@ export function ShinsalTable({ theme, shinsal }: ShinsalTableProps) {
               <Text style={[s.cellText, { color: sentimentColor[sentiment] }]}>
                 {(SHINSAL_EN[val] ?? val) || '—'}
               </Text>
-              {val ? <Text style={s.cellSub}>{val}</Text> : null}
+              {val && <Text style={s.cellSub}>{val}</Text>}
             </View>
           );
         })}
@@ -129,9 +129,8 @@ export function ShinsalTable({ theme, shinsal }: ShinsalTableProps) {
       <View style={s.detailSection}>
         <Text style={s.detailTitle}>DETAILED STARS BY PILLAR</Text>
         <View style={s.detailGrid}>
-          {POSITIONS.map((pos) => {
+          {POSITIONS.filter((pos) => shinsal.pillars[pos].detailedShinsals.length > 0).map((pos) => {
             const shinsals = shinsal.pillars[pos].detailedShinsals;
-            if (shinsals.length === 0) return null;
             return (
               <View key={pos} style={s.detailCol}>
                 <Text style={s.detailColHeader}>{PILLAR_LABELS[pos].en}</Text>

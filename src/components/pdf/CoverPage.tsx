@@ -15,7 +15,9 @@ export function CoverPage({ theme, name, birthDate, coverImageBase64 }: CoverPag
   const colors = THEMES[theme].colors;
   const s = styles(colors);
 
-  if (coverImageBase64) {
+  const hasValidImage = coverImageBase64 && coverImageBase64.startsWith('data:');
+
+  if (hasValidImage) {
     return (
       <Page size="A4" style={s.page}>
         <Image src={coverImageBase64} style={s.coverImage} />
