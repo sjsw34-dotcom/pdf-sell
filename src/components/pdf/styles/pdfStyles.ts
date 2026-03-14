@@ -1,61 +1,58 @@
 import { Font, StyleSheet } from '@react-pdf/renderer';
-import fs from 'fs';
-import path from 'path';
 
-// ─── 조건부 폰트 등록 (파일 존재 시에만) ───
+// ─── 폰트 등록 ───
+// Vercel serverless에서는 로컬 폰트 파일이 없으므로 Helvetica fallback.
+// 로컬 개발 시 src/fonts/에 ttf 파일이 있으면 등록 시도.
 
-const FONTS_DIR = path.join(process.cwd(), 'src', 'fonts');
+let hasInter = false;
+let hasPlayfair = false;
+let hasNotoSansKR = false;
 
-function fontPath(fileName: string): string {
-  return path.join(FONTS_DIR, fileName);
-}
+try {
+  // Dynamic require로 서버 환경에서만 fs/path 사용
+  const fs = require('fs');
+  const path = require('path');
+  const FONTS_DIR = path.join(process.cwd(), 'src', 'fonts');
 
-function fontExists(fileName: string): boolean {
-  try {
-    return fs.existsSync(fontPath(fileName));
-  } catch {
-    return false;
-  }
-}
+  function fontPath(f: string) { return path.join(FONTS_DIR, f); }
+  function exists(f: string) { try { return fs.existsSync(fontPath(f)); } catch { return false; } }
 
-// 등록 상태 추적
-const hasInter = fontExists('Inter-Regular.ttf');
-const hasPlayfair = fontExists('PlayfairDisplay-Regular.ttf');
-const hasNotoSansKR = fontExists('NotoSansKR-Regular.ttf');
-
-if (hasInter) {
-  Font.register({
-    family: 'Inter',
-    fonts: [
+  if (exists('Inter-Regular.ttf')) {
+    const fonts: { src: string; fontWeight: 'normal' | 'bold' }[] = [
       { src: fontPath('Inter-Regular.ttf'), fontWeight: 'normal' },
-      ...(fontExists('Inter-Bold.ttf')
-        ? [{ src: fontPath('Inter-Bold.ttf'), fontWeight: 'bold' as const }]
-        : []),
-    ],
-  });
-}
+    ];
+    if (exists('Inter-Bold.ttf')) {
+      fonts.push({ src: fontPath('Inter-Bold.ttf'), fontWeight: 'bold' });
+    }
+    Font.register({ family: 'Inter', fonts });
+    hasInter = true;
+  }
 
-if (hasPlayfair) {
-  Font.register({
-    family: 'Playfair Display',
-    fonts: [
+  if (exists('PlayfairDisplay-Regular.ttf')) {
+    const fonts: { src: string; fontWeight: 'normal' | 'bold' }[] = [
       { src: fontPath('PlayfairDisplay-Regular.ttf'), fontWeight: 'normal' },
-      ...(fontExists('PlayfairDisplay-Bold.ttf')
-        ? [{ src: fontPath('PlayfairDisplay-Bold.ttf'), fontWeight: 'bold' as const }]
-        : []),
-    ],
-  });
-}
+    ];
+    if (exists('PlayfairDisplay-Bold.ttf')) {
+      fonts.push({ src: fontPath('PlayfairDisplay-Bold.ttf'), fontWeight: 'bold' });
+    }
+    Font.register({ family: 'Playfair Display', fonts });
+    hasPlayfair = true;
+  }
 
-if (hasNotoSansKR) {
-  Font.register({
-    family: 'Noto Sans KR',
-    src: fontPath('NotoSansKR-Regular.ttf'),
-  });
+  if (exists('NotoSansKR-Regular.ttf')) {
+    Font.register({ family: 'Noto Sans KR', src: fontPath('NotoSansKR-Regular.ttf') });
+    hasNotoSansKR = true;
+  }
+} catch {
+  // Vercel / edge 환경: fs 사용 불가 → Helvetica fallback
 }
 
 // 하이픈 비활성화
-Font.registerHyphenationCallback((word) => [word]);
+try {
+  Font.registerHyphenationCallback((word) => [word]);
+} catch {
+  // ignore
+}
 
 // ─── 실제 사용할 폰트명 (없으면 Helvetica fallback) ───
 
