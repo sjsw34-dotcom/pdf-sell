@@ -8,7 +8,7 @@ import { CoverPage } from './CoverPage';
 import { IntroPage } from './IntroPage';
 import { SajuChart } from './SajuChart';
 import { YongsinChart } from './YongsinChart';
-import { YinyangChart } from './YinyangChart';
+import { YinyangChart, TenGodsChart } from './YinyangChart';
 import { ChapterPage } from './ChapterPage';
 import { PartHeader } from './PartHeader';
 import { ShinsalTable } from './ShinsalTable';
@@ -412,8 +412,14 @@ export function PdfDocument({
 
       <Page size="A4" style={t.page}>
         <YongsinChart theme={theme} yongsin={sajuData.yongsin} />
-        <View style={t.divider} />
+      </Page>
+
+      <Page size="A4" style={t.page} wrap>
         <YinyangChart theme={theme} yinyang={sajuData.yinyang} />
+      </Page>
+
+      <Page size="A4" style={t.page} wrap>
+        <TenGodsChart theme={theme} yinyang={sajuData.yinyang} />
       </Page>
 
       {tierContent}
