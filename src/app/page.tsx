@@ -146,16 +146,24 @@ export default function HomePage() {
     setPdfBlobUrl(null);
 
     try {
+      const requestBody = {
+        tier: selectedTier,
+        sajuData,
+        texts: {},
+        coverImage,
+        theme: selectedTheme,
+      };
+      // 디버그: request body 크기와 sajuData 키 확인
+      const bodyStr = JSON.stringify(requestBody);
+      console.log('[QuickTest] Body size:', (bodyStr.length / 1024).toFixed(1), 'KB');
+      console.log('[QuickTest] sajuData keys:', Object.keys(sajuData));
+      console.log('[QuickTest] pillar keys:', sajuData.pillar ? Object.keys(sajuData.pillar) : 'MISSING');
+      console.log('[QuickTest] has coverImage:', !!coverImage, coverImage ? (coverImage.length / 1024).toFixed(0) + 'KB' : '');
+
       const pdfRes = await fetch('/api/generate-pdf', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          tier: selectedTier,
-          sajuData,
-          texts: {},
-          coverImage,
-          theme: selectedTheme,
-        }),
+        body: bodyStr,
       });
 
       if (!pdfRes.ok) {
