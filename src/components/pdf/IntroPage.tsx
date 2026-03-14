@@ -3,50 +3,57 @@ import { Page, View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { ThemeCode } from '@/lib/types/theme';
 import type { TierCode } from '@/lib/types/tier';
 import { THEMES } from '@/lib/constants/themes';
-import { FONT_BODY, FONT_TITLE } from './styles/pdfStyles';
+import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
 
 // ─── 티어별 목차 ───
 
+const TIER_LABELS: Record<TierCode, string> = {
+  basic: 'Basic Saju Analysis Report',
+  love: 'Love Edition Analysis Report',
+  full: 'Full Saju Analysis Report',
+  premium: 'Premium Saju Analysis Report',
+};
+
 const TOC: Record<TierCode, { part: string; title: string }[]> = {
   basic: [
-    { part: '1', title: 'Your Destiny Chart — The Four Pillars' },
-    { part: '2', title: 'Your Elemental Balance (Yongsin)' },
-    { part: '3', title: 'Your Destiny Overview' },
-    { part: '4', title: 'Personality & Core Strengths' },
-    { part: '5', title: 'Fortune & Life Direction' },
+    { part: '01', title: 'Your Destiny Chart — The Four Pillars' },
+    { part: '02', title: 'Your Elemental Balance (Yongsin)' },
+    { part: '03', title: 'Your Destiny Overview' },
+    { part: '04', title: 'Personality & Core Strengths' },
+    { part: '05', title: 'Fortune & Life Direction' },
   ],
   love: [
-    { part: 'Ch.1', title: 'Your Four Pillars Structure' },
-    { part: 'Ch.2', title: 'Day Master Personality' },
-    { part: 'Ch.3', title: 'Elements & Love Language' },
-    { part: '1', title: 'Your Romance DNA' },
-    { part: '2', title: 'First Impressions & Strengths' },
-    { part: '3', title: 'Your Destined Match' },
-    { part: '4', title: 'Best Timing for Love' },
-    { part: '5', title: 'Deep Connection (Adult)' },
-    { part: '6', title: 'Lucky Items & Strategy' },
+    { part: 'Ch.1', title: 'Your Four Pillars & Love' },
+    { part: 'Ch.2', title: 'Day Master Romance Personality' },
+    { part: 'Ch.3', title: 'Elements & Your Love Language' },
+    { part: '01', title: 'Your Romance DNA' },
+    { part: '02', title: 'Love Strengths & Dating Style' },
+    { part: '03', title: 'Your Destined Match' },
+    { part: '04', title: 'Best Timing for Love' },
+    { part: '05', title: 'Deep Connection' },
+    { part: '06', title: 'Lucky Charms & Strategy' },
   ],
   full: [
-    { part: '01', title: 'My Four Pillars Detailed Analysis' },
-    { part: '02', title: "My Life's Golden Period" },
-    { part: '03', title: 'Romance Fortune and Spouse Fortune' },
-    { part: '04', title: 'My Wealth Fortune Analysis' },
-    { part: '05', title: 'Career and Success Destiny' },
-    { part: '06', title: 'Health and Constitution from Four Pillars' },
-    { part: '07', title: 'Destined Benefactors Who Will Help You' },
-    { part: '08', title: 'Methods to Change Destiny' },
+    { part: '01', title: 'Detailed Analysis of My Four Pillars' },
+    { part: '02', title: "The Golden Peaks of My Life" },
+    { part: '03', title: 'Romance Fortune and Partner Destiny' },
+    { part: '04', title: 'My Financial Fortune Analysis' },
+    { part: '05', title: 'Career and the Destiny of Success' },
+    { part: '06', title: 'Health and Constitution Through Saju' },
+    { part: '07', title: 'The Destined Benefactors Who Will Help You' },
+    { part: '08', title: 'How to Shape Your Destiny' },
   ],
   premium: [
-    { part: '01', title: 'My Four Pillars Detailed Analysis' },
-    { part: '02', title: "My Life's Golden Period" },
-    { part: '03', title: 'Romance Fortune and Spouse Fortune' },
-    { part: '04', title: 'My Wealth Fortune Analysis' },
-    { part: '05', title: 'Career and Success Destiny' },
-    { part: '06', title: 'Health and Constitution from Four Pillars' },
-    { part: '07', title: 'Destined Benefactors Who Will Help You' },
-    { part: '08', title: 'Methods to Change Destiny' },
+    { part: '01', title: 'Detailed Analysis of My Four Pillars' },
+    { part: '02', title: "The Golden Peaks of My Life" },
+    { part: '03', title: 'Romance Fortune and Partner Destiny' },
+    { part: '04', title: 'My Financial Fortune Analysis' },
+    { part: '05', title: 'Career and the Destiny of Success' },
+    { part: '06', title: 'Health and Constitution Through Saju' },
+    { part: '07', title: 'The Destined Benefactors Who Will Help You' },
+    { part: '08', title: 'How to Shape Your Destiny' },
     { part: '09', title: 'Monthly Detailed Fortune' },
-    { part: '10', title: 'Next 10 Years Destiny Analysis' },
+    { part: '10', title: 'Destiny Analysis for the Next 10 Years' },
   ],
 };
 
@@ -58,121 +65,229 @@ interface IntroPageProps {
 
 export function IntroPage({ theme, tier, name }: IntroPageProps) {
   const colors = THEMES[theme].colors;
-  const s = styles(colors);
   const items = TOC[tier];
 
   return (
-    <Page size="A4" style={s.page}>
-      {/* 인사말 */}
-      <View style={s.greeting}>
-        <Text style={s.greetLabel}>A PERSONAL MESSAGE</Text>
-        <View style={s.divider} />
-        <Text style={s.greetTitle}>Dear {name},</Text>
-        <Text style={s.greetBody}>
-          Welcome to your personal Saju reading — a centuries-old Korean
-          system that maps the cosmic energies present at the exact moment
-          of your birth. The Four Pillars of your destiny reveal patterns
-          in your personality, relationships, career, and life timing.
-        </Text>
-        <Text style={s.greetBody}>
-          This report translates those ancient insights into clear,
-          actionable guidance for your modern life. Let the stars
-          illuminate your path.
-        </Text>
-      </View>
+    <>
+      {/* ══════ 페이지 1: Overview (인사말) ══════ */}
+      <Page size="A4" style={[s.page, { backgroundColor: colors.background }]}>
+        <View style={s.content}>
+          {/* 상단 라벨 */}
+          <Text style={[s.overviewLabel, { color: colors.textSecondary }]}>Overview</Text>
+          <Text style={[s.tierLabel, { color: colors.primary }]}>{TIER_LABELS[tier]}</Text>
 
-      {/* 목차 */}
-      <View style={s.toc}>
-        <Text style={s.tocLabel}>TABLE OF CONTENTS</Text>
-        <View style={s.divider} />
-        {items.map((item, idx) => (
-          <View key={idx} style={s.tocRow}>
-            <View style={s.tocPartBox}>
-              <Text style={s.tocPart}>{item.part}</Text>
+          <View style={s.spacer16} />
+
+          {/* 이름 + 브랜드 */}
+          <Text style={[s.clientName, { color: colors.primary }]}>{name || 'Valued Guest'}</Text>
+          <Text style={[s.brandLine, { color: colors.textSecondary }]}>SajuMuse — In-Depth Destiny Analysis</Text>
+
+          <View style={[s.dividerFull, { backgroundColor: colors.border }]} />
+
+          {/* 인사말 본문 */}
+          <Text style={[s.sectionTag, { color: colors.secondary }]}>{TIER_LABELS[tier]}</Text>
+
+          <View style={s.spacer12} />
+
+          <Text style={[s.greeting, { color: colors.primary }]}>Dear {name || 'Valued Guest'},</Text>
+
+          <Text style={[s.body, { color: colors.text }]}>
+            This report is a personalized destiny analysis prepared exclusively based on your 사주팔자 · Four Pillars of Destiny.
+          </Text>
+
+          <Text style={[s.body, { color: colors.text }]}>
+            Saju (사주명리학) is a wisdom tradition with thousands of years of history rooted in Eastern philosophy. By interpreting the cosmic energies present at the moment of your birth, it offers deep insight into your innate nature and the natural flow of your life.
+          </Text>
+
+          <Text style={[s.body, { color: colors.text }]}>
+            Drawing on years of experience reading the lives of countless individuals, this analysis has been crafted with great care — just for you. May this report serve as a guiding light as you navigate your path forward.
+          </Text>
+
+          <View style={s.spacer24} />
+
+          <Text style={[s.signoff, { color: colors.text }]}>With warmth,</Text>
+          <Text style={[s.signoffBrand, { color: colors.primary }]}>SajuMuse</Text>
+        </View>
+
+        <View style={[s.footer, { borderTopColor: colors.border }]}>
+          <Text style={[s.footerText, { color: colors.textSecondary }]}>SajuMuse</Text>
+        </View>
+      </Page>
+
+      {/* ══════ 페이지 2: Table of Contents ══════ */}
+      <Page size="A4" style={[s.page, { backgroundColor: colors.background }]}>
+        <View style={s.content}>
+          <Text style={[s.tocTitle, { color: colors.primary }]}>Table of Contents</Text>
+
+          <View style={[s.dividerFull, { backgroundColor: colors.border }]} />
+
+          {/* 목차 테이블 */}
+          <View style={s.tocTable}>
+            {/* 헤더 */}
+            <View style={[s.tocHeaderRow, { borderBottomColor: colors.primary }]}>
+              <Text style={[s.tocHeaderNum, { color: colors.textSecondary }]}>#</Text>
+              <Text style={[s.tocHeaderSection, { color: colors.textSecondary }]}>Section</Text>
             </View>
-            <Text style={s.tocTitle}>{item.title}</Text>
-            <View style={s.tocDots} />
-          </View>
-        ))}
-      </View>
 
-      {/* 브랜드 푸터 */}
-      <View style={s.footer}>
-        <Text style={s.footerBrand}>SajuMuse</Text>
-        <Text style={s.footerTag}>sajumuse.com</Text>
-      </View>
-    </Page>
+            {/* 항목들 */}
+            {items.map((item, idx) => (
+              <View key={idx} style={[s.tocRow, { borderBottomColor: colors.border }]}>
+                <Text style={[s.tocNum, { color: colors.primary }]}>{item.part}</Text>
+                <Text style={[s.tocSection, { color: colors.text }]}>{item.title}</Text>
+              </View>
+            ))}
+          </View>
+
+          <View style={s.spacer24} />
+
+          <View style={[s.tocDividerBottom, { backgroundColor: colors.primary }]} />
+        </View>
+
+        <View style={[s.footer, { borderTopColor: colors.border }]}>
+          <Text style={[s.footerText, { color: colors.textSecondary }]}>SajuMuse</Text>
+        </View>
+      </Page>
+    </>
   );
 }
 
-function styles(colors: { primary: string; secondary: string; background: string; surface: string; text: string; textSecondary: string; border: string }) {
-  return StyleSheet.create({
-    page: {
-      fontFamily: FONT_BODY,
-      backgroundColor: colors.background,
-      paddingTop: 50,
-      paddingBottom: 40,
-      paddingLeft: 50,
-      paddingRight: 50,
-    },
+const s = StyleSheet.create({
+  page: {
+    paddingTop: 50,
+    paddingBottom: 40,
+    paddingLeft: 50,
+    paddingRight: 50,
+  },
+  content: {
+    flex: 1,
+  },
 
-    // 인사말
-    greeting: { marginBottom: 30 },
-    greetLabel: {
-      fontFamily: FONT_BODY, fontSize: 8, fontWeight: 'bold',
-      color: colors.secondary, letterSpacing: 3, marginBottom: 10,
-    },
-    divider: {
-      width: 40, height: 1, backgroundColor: colors.border, marginBottom: 14,
-    },
-    greetTitle: {
-      fontFamily: FONT_TITLE, fontSize: 20, fontWeight: 'bold',
-      color: colors.primary, marginBottom: 12,
-    },
-    greetBody: {
-      fontFamily: FONT_BODY, fontSize: 10, color: colors.text,
-      lineHeight: 1.7, marginBottom: 8,
-    },
+  // Overview 페이지
+  overviewLabel: {
+    fontFamily: FONT_BODY,
+    fontSize: 10,
+    letterSpacing: 1,
+    marginBottom: 4,
+  },
+  tierLabel: {
+    fontFamily: FONT_TITLE,
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  clientName: {
+    fontFamily: FONT_TITLE,
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 4,
+  },
+  brandLine: {
+    fontFamily: FONT_BODY,
+    fontSize: 9,
+    letterSpacing: 1,
+    marginBottom: 8,
+  },
+  dividerFull: {
+    width: '100%',
+    height: 1,
+    marginBottom: 20,
+  },
+  sectionTag: {
+    fontFamily: FONT_BODY,
+    fontSize: 9,
+    fontWeight: 'bold',
+    letterSpacing: 2,
+    textTransform: 'uppercase',
+  },
+  greeting: {
+    fontFamily: FONT_TITLE,
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 14,
+  },
+  body: {
+    fontFamily: FONT_BODY,
+    fontSize: 10.5,
+    lineHeight: 1.7,
+    marginBottom: 10,
+  },
+  signoff: {
+    fontFamily: FONT_BODY,
+    fontSize: 10,
+    marginBottom: 4,
+  },
+  signoffBrand: {
+    fontFamily: FONT_TITLE,
+    fontSize: 12,
+    fontWeight: 'bold',
+  },
 
-    // 목차
-    toc: { flex: 1 },
-    tocLabel: {
-      fontFamily: FONT_BODY, fontSize: 8, fontWeight: 'bold',
-      color: colors.secondary, letterSpacing: 3, marginBottom: 10,
-    },
-    tocRow: {
-      flexDirection: 'row', alignItems: 'center',
-      marginBottom: 10,
-    },
-    tocPartBox: {
-      width: 36, height: 22, borderRadius: 4,
-      backgroundColor: colors.primary,
-      justifyContent: 'center', alignItems: 'center',
-      marginRight: 12,
-    },
-    tocPart: {
-      fontFamily: FONT_BODY, fontSize: 8, fontWeight: 'bold', color: '#FFFFFF',
-    },
-    tocTitle: {
-      fontFamily: FONT_BODY, fontSize: 10, color: colors.text, flex: 1,
-    },
-    tocDots: {
-      width: 30, height: 1,
-      borderBottomWidth: 1, borderBottomColor: colors.border,
-      borderBottomStyle: 'dotted',
-    },
+  // Table of Contents 페이지
+  tocTitle: {
+    fontFamily: FONT_TITLE,
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 16,
+  },
+  tocTable: {
+    width: '100%',
+  },
+  tocHeaderRow: {
+    flexDirection: 'row',
+    paddingBottom: 8,
+    borderBottomWidth: 2,
+    borderBottomStyle: 'solid',
+    marginBottom: 4,
+  },
+  tocHeaderNum: {
+    fontFamily: FONT_BODY,
+    fontSize: 9,
+    fontWeight: 'bold',
+    width: 40,
+  },
+  tocHeaderSection: {
+    fontFamily: FONT_BODY,
+    fontSize: 9,
+    fontWeight: 'bold',
+    flex: 1,
+  },
+  tocRow: {
+    flexDirection: 'row',
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderBottomWidth: 0.5,
+    borderBottomStyle: 'solid',
+  },
+  tocNum: {
+    fontFamily: FONT_TITLE,
+    fontSize: 11,
+    fontWeight: 'bold',
+    width: 40,
+  },
+  tocSection: {
+    fontFamily: FONT_BODY,
+    fontSize: 11,
+    flex: 1,
+    lineHeight: 1.4,
+  },
+  tocDividerBottom: {
+    width: '100%',
+    height: 2,
+  },
 
-    // 푸터
-    footer: {
-      alignItems: 'center', paddingTop: 14,
-      borderTopWidth: 1, borderTopColor: colors.border, borderTopStyle: 'solid',
-    },
-    footerBrand: {
-      fontFamily: FONT_TITLE, fontSize: 12, fontWeight: 'bold',
-      color: colors.primary, marginBottom: 2,
-    },
-    footerTag: {
-      fontFamily: FONT_BODY, fontSize: 8, color: colors.textSecondary,
-    },
-  });
-}
+  // 공통
+  footer: {
+    alignItems: 'center',
+    paddingTop: 10,
+    borderTopWidth: 0.5,
+    borderTopStyle: 'solid',
+  },
+  footerText: {
+    fontFamily: FONT_BODY,
+    fontSize: 8,
+    letterSpacing: 1,
+  },
+  spacer12: { height: 12 },
+  spacer16: { height: 16 },
+  spacer24: { height: 24 },
+});
