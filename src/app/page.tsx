@@ -39,7 +39,7 @@ export default function HomePage() {
     // 1. 상태 초기화
     setStatus('generating');
     setPdfBlobUrl(null);
-    setProgress({ current: 0, total: partKeys.length, label: 'Starting...', failedParts: [] });
+    setProgress({ current: 0, total: partKeys.length, label: '시작 중...', failedParts: [] });
 
     // 2. 파트별 순차 호출
     let consecutiveFailures = 0;
@@ -47,7 +47,7 @@ export default function HomePage() {
 
     for (let i = 0; i < partKeys.length; i++) {
       const partKey = partKeys[i];
-      setProgress({ current: i + 1, label: `Generating: ${partKey} (${i + 1}/${partKeys.length})` });
+      setProgress({ current: i + 1, label: `분석 생성 중: ${partKey} (${i + 1}/${partKeys.length})` });
 
       try {
         const res = await fetch('/api/translate', {
@@ -80,19 +80,19 @@ export default function HomePage() {
         console.error(`[generate] Part "${partKey}" failed: ${msg}`);
 
         addFailedPart(partKey);
-        showToast(`Part "${partKey}" failed — using fallback text`);
+        showToast(`"${partKey}" 파트 실패 — 대체 텍스트를 사용합니다`);
         consecutiveFailures++;
 
         // 연속 실패 3회 시 전체 중단
         if (consecutiveFailures >= MAX_CONSECUTIVE_FAILURES) {
-          setError(`Generation stopped: ${MAX_CONSECUTIVE_FAILURES} consecutive API failures. Last error: ${msg}`);
+          setError(`생성 중단: API 연속 ${MAX_CONSECUTIVE_FAILURES}회 실패. 마지막 오류: ${msg}`);
           return;
         }
       }
     }
 
     // 3. 모든 파트 완료 → PDF 렌더링
-    setProgress({ current: partKeys.length, label: 'All parts complete' });
+    setProgress({ current: partKeys.length, label: '모든 파트 완료' });
     setStatus('rendering');
 
     try {
@@ -193,10 +193,10 @@ export default function HomePage() {
         {/* 헤더 */}
         <header className="text-center mb-10">
           <h1 className="text-3xl font-bold text-white mb-2">
-            SajuMuse PDF Generator
+            SajuMuse PDF 생성기
           </h1>
           <p className="text-sm text-gray-400">
-            Transform Korean Four Pillars data into a premium English PDF report
+            사주명리 분석 데이터를 프리미엄 영문 PDF 리포트로 변환합니다
           </p>
         </header>
 
@@ -219,10 +219,10 @@ export default function HomePage() {
             className="w-full max-w-md py-3.5 rounded-xl font-bold text-white bg-purple-600 hover:bg-purple-500 disabled:opacity-30 disabled:cursor-not-allowed transition text-base cursor-pointer"
           >
             {status === 'generating'
-              ? 'Generating...'
+              ? 'AI 분석 생성 중...'
               : status === 'rendering'
-              ? 'Rendering PDF...'
-              : 'Generate PDF with AI'}
+              ? 'PDF 렌더링 중...'
+              : 'AI로 PDF 생성하기'}
           </button>
 
           {canGenerate && (
@@ -230,7 +230,7 @@ export default function HomePage() {
               onClick={handleQuickTest}
               className="text-xs text-gray-500 hover:text-gray-300 transition underline cursor-pointer"
             >
-              Quick test with dummy text (no AI)
+              더미 텍스트로 빠른 테스트 (AI 미사용)
             </button>
           )}
         </section>
@@ -243,23 +243,21 @@ export default function HomePage() {
           <section className="w-full bg-[#1A1A2E] border border-green-800 rounded-xl p-6">
             <div className="flex flex-col items-center gap-4">
               <p className="text-green-400 font-medium">
-                PDF generated successfully.
+                PDF가 성공적으로 생성되었습니다.
               </p>
 
-              {/* 다운로드 버튼 */}
               {pdfBlobUrl && (
                 <button
                   onClick={handleDownload}
                   className="px-8 py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition cursor-pointer"
                 >
-                  Download PDF
+                  PDF 다운로드
                 </button>
               )}
 
-              {/* 실패 파트 경고 */}
               {useGeneratorStore.getState().progress.failedParts.length > 0 && (
                 <p className="text-xs text-amber-400 text-center">
-                  Note: {useGeneratorStore.getState().progress.failedParts.length} part(s) used fallback text due to API errors.
+                  참고: {useGeneratorStore.getState().progress.failedParts.length}개 파트가 API 오류로 대체 텍스트를 사용했습니다.
                 </p>
               )}
 
@@ -267,7 +265,7 @@ export default function HomePage() {
                 onClick={handleReset}
                 className="px-6 py-2 bg-gray-800 text-gray-300 rounded-lg text-sm hover:bg-gray-700 transition cursor-pointer"
               >
-                Generate Another
+                새로 생성하기
               </button>
             </div>
           </section>
@@ -285,13 +283,13 @@ export default function HomePage() {
                   onClick={handleGenerate}
                   className="px-6 py-2 bg-purple-600 text-white rounded-lg text-sm hover:bg-purple-500 transition cursor-pointer"
                 >
-                  Retry
+                  다시 시도
                 </button>
                 <button
                   onClick={handleReset}
                   className="px-6 py-2 bg-gray-800 text-gray-300 rounded-lg text-sm hover:bg-gray-700 transition cursor-pointer"
                 >
-                  Start Over
+                  처음부터
                 </button>
               </div>
             </div>

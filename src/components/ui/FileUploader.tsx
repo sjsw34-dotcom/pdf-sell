@@ -71,11 +71,10 @@ export function FileUploader() {
 
   return (
     <section className="w-full">
-      <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-3">
-        Step 2 — Upload JSON Data
+      <h2 className="text-sm font-semibold text-gray-400 tracking-widest mb-3">
+        2단계 — 사주 JSON 데이터 입력
       </h2>
 
-      {/* 모드 전환 */}
       <div className="flex gap-2 mb-3">
         <button
           onClick={() => setMode('file')}
@@ -83,7 +82,7 @@ export function FileUploader() {
             mode === 'file' ? 'bg-purple-600 text-white' : 'bg-gray-800 text-gray-400'
           }`}
         >
-          File Upload
+          파일 업로드
         </button>
         <button
           onClick={() => setMode('paste')}
@@ -91,7 +90,7 @@ export function FileUploader() {
             mode === 'paste' ? 'bg-purple-600 text-white' : 'bg-gray-800 text-gray-400'
           }`}
         >
-          Paste JSON
+          직접 붙여넣기
         </button>
       </div>
 
@@ -111,8 +110,8 @@ export function FileUploader() {
                 id="json-upload"
               />
               <label htmlFor="json-upload" className="cursor-pointer">
-                <p className="text-gray-400 mb-1">Drop .json file here or click to browse</p>
-                <p className="text-xs text-gray-600">Saju analysis JSON (9 tabs)</p>
+                <p className="text-gray-400 mb-1">.json 파일을 여기에 끌어놓거나 클릭하여 선택하세요</p>
+                <p className="text-xs text-gray-600">사주 분석 JSON (9개 탭)</p>
               </label>
             </div>
           ) : (
@@ -120,7 +119,7 @@ export function FileUploader() {
               <textarea
                 value={pasteText}
                 onChange={(e) => setPasteText(e.target.value)}
-                placeholder='Paste your saju JSON here...'
+                placeholder="사주 JSON 데이터를 여기에 붙여넣으세요..."
                 rows={6}
                 className="w-full bg-[#1A1A2E] border border-gray-700 rounded-xl p-4 text-sm text-gray-300 placeholder-gray-600 focus:border-purple-500 focus:outline-none resize-none font-mono"
               />
@@ -129,40 +128,39 @@ export function FileUploader() {
                 disabled={!pasteText.trim()}
                 className="mt-2 px-4 py-2 bg-purple-600 text-white text-sm rounded-lg disabled:opacity-40 hover:bg-purple-500 transition"
               >
-                Parse JSON
+                JSON 파싱
               </button>
             </div>
           )}
         </>
       ) : (
-        /* 파싱 성공 표시 */
         <div className="bg-[#1A1A2E] border border-green-800 rounded-xl p-4">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-green-500 rounded-full" />
-              <span className="text-sm text-green-400 font-medium">JSON Loaded Successfully</span>
+              <span className="text-sm text-green-400 font-medium">JSON 로드 완료</span>
             </div>
             <button onClick={handleClear} className="text-xs text-gray-500 hover:text-red-400 transition">
-              Clear
+              초기화
             </button>
           </div>
           {info && (
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
               <div>
-                <span className="text-gray-500">Name</span>
-                <p className="text-white font-medium">{info.name || 'N/A'}</p>
+                <span className="text-gray-500">이름</span>
+                <p className="text-white font-medium">{info.name || '미입력'}</p>
               </div>
               <div>
-                <span className="text-gray-500">Gender</span>
-                <p className="text-white font-medium">{info.genderEnglish}</p>
+                <span className="text-gray-500">성별</span>
+                <p className="text-white font-medium">{info.gender === '남' ? '남성' : '여성'}</p>
               </div>
               <div>
-                <span className="text-gray-500">Birth Date</span>
+                <span className="text-gray-500">생년월일</span>
                 <p className="text-white font-medium">{info.birthDate}</p>
               </div>
               <div>
-                <span className="text-gray-500">Age</span>
-                <p className="text-white font-medium">{info.age}</p>
+                <span className="text-gray-500">나이</span>
+                <p className="text-white font-medium">{info.age}세</p>
               </div>
             </div>
           )}

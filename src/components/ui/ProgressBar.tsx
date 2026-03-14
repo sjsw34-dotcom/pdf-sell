@@ -18,20 +18,18 @@ export function ProgressBar() {
   return (
     <section className="w-full">
       <div className="bg-[#1A1A2E] border border-gray-700 rounded-xl p-5">
-        {/* 상태 라벨 */}
         <div className="flex items-center justify-between mb-3">
           <span className="text-sm font-medium text-gray-300">
             {status === 'generating' && progress.label}
-            {status === 'rendering' && 'Rendering PDF...'}
-            {status === 'error' && 'Generation Failed'}
+            {status === 'rendering' && 'PDF 렌더링 중...'}
+            {status === 'error' && '생성 실패'}
           </span>
           <span className="text-xs text-gray-500">
             {status === 'generating' && `${progress.current}/${progress.total}`}
-            {status === 'rendering' && 'Almost done'}
+            {status === 'rendering' && '거의 완료'}
           </span>
         </div>
 
-        {/* 프로그레스 바 */}
         <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
           <div
             className={`h-full rounded-full transition-all duration-500 ${
@@ -41,14 +39,12 @@ export function ProgressBar() {
           />
         </div>
 
-        {/* 실패 파트 경고 */}
         {status === 'generating' && hasFails && (
           <p className="mt-3 text-xs text-amber-400">
-            {progress.failedParts.length} part(s) used fallback text: {progress.failedParts.join(', ')}
+            {progress.failedParts.length}개 파트 대체 텍스트 사용: {progress.failedParts.join(', ')}
           </p>
         )}
 
-        {/* 에러 메시지 */}
         {status === 'error' && errorMessage && (
           <p className="mt-3 text-sm text-red-400">{errorMessage}</p>
         )}

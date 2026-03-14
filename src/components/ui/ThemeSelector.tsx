@@ -14,9 +14,9 @@ export function ThemeSelector() {
 
   return (
     <section className="w-full">
-      <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-3">
-        Step 4 — PDF Theme
-        {isLoveTier && <span className="ml-2 text-xs text-pink-400">(Fixed for Love tier)</span>}
+      <h2 className="text-sm font-semibold text-gray-400 tracking-widest mb-3">
+        4단계 — PDF 테마
+        {isLoveTier && <span className="ml-2 text-xs text-pink-400">(Love 티어는 자동 고정)</span>}
       </h2>
       <div className="flex gap-3 flex-wrap">
         {THEME_ORDER.map((code) => {
@@ -36,7 +36,6 @@ export function ThemeSelector() {
                   : 'border-gray-700 bg-[#1A1A2E] hover:border-gray-500 cursor-pointer'
               }`}
             >
-              {/* 컬러 칩 */}
               <div className="flex -space-x-1">
                 <span
                   className="w-4 h-4 rounded-full border border-gray-600"

@@ -39,8 +39,8 @@ export function ImageUploader() {
 
   return (
     <section className="w-full">
-      <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-3">
-        Step 3 — Cover Image <span className="text-gray-600">(Optional)</span>
+      <h2 className="text-sm font-semibold text-gray-400 tracking-widest mb-3">
+        3단계 — 커버 이미지 <span className="text-gray-600">(선택사항)</span>
       </h2>
 
       {!coverImage ? (
@@ -57,15 +57,15 @@ export function ImageUploader() {
             id="cover-upload"
           />
           <label htmlFor="cover-upload" className="cursor-pointer">
-            <p className="text-gray-400 text-sm">Drop image or click to upload</p>
-            <p className="text-xs text-gray-600 mt-1">Used as PDF cover background</p>
+            <p className="text-gray-400 text-sm">이미지를 끌어놓거나 클릭하여 업로드</p>
+            <p className="text-xs text-gray-600 mt-1">PDF 표지 배경으로 사용됩니다</p>
           </label>
         </div>
       ) : (
         <div className="relative inline-block">
           <img
             src={coverImage}
-            alt="Cover preview"
+            alt="커버 미리보기"
             className="w-32 h-44 object-cover rounded-lg border border-gray-700"
           />
           <button
