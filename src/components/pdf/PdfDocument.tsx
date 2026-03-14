@@ -379,47 +379,61 @@ export function PdfDocument({
   birthInfo,
 }: PdfDocumentProps) {
   const t = getThemeStyles(theme);
-  const g = (key: string): string => texts[key] || D[key] || '';
+  const g = (key: string): string => {
+    const val = texts?.[key] || D[key];
+    return typeof val === 'string' && val.length > 0 ? val : ' ';
+  };
+
+  // 티어별 콘텐츠를 단일 배열로 구성 — null/undefined 절대 반환 안 함
+  const tierContent = renderTierContent(tier, theme, g, sajuData, clientName);
 
   return (
     <Document
-      title={`${clientName} — Saju Reading`}
+      title={`${clientName || 'Guest'} — Saju Reading`}
       author="SajuMuse"
       subject="Four Pillars Destiny Analysis"
     >
-      {/* 표지 */}
       <CoverPage
         theme={theme}
-        name={clientName}
-        birthDate={birthInfo}
+        name={clientName || 'Guest'}
+        birthDate={birthInfo || ''}
         coverImageBase64={coverImage}
       />
 
-      {/* 인사말 + 목차 */}
-      <IntroPage theme={theme} tier={tier} name={clientName} />
+      <IntroPage theme={theme} tier={tier} name={clientName || 'Guest'} />
 
-      {/* 사주원국표 */}
       <Page size="A4" style={t.page}>
         <SajuChart theme={theme} pillar={sajuData.pillar} />
       </Page>
 
-      {/* 용신 + 음양오행 */}
       <Page size="A4" style={t.page}>
         <YongsinChart theme={theme} yongsin={sajuData.yongsin} />
         <View style={t.divider} />
         <YinyangChart theme={theme} yinyang={sajuData.yinyang} />
       </Page>
 
-      {/* 티어별 분기 */}
-      {tier === 'basic' ? renderBasic(theme, g) : undefined}
-      {tier === 'full' ? renderFull(theme, g, sajuData) : undefined}
-      {tier === 'premium' ? renderPremium(theme, g, sajuData) : undefined}
-      {tier === 'love' ? renderLove('love', g, sajuData, clientName) : undefined}
+      {tierContent}
 
-      {/* 마무리 */}
-      <EndingPage theme={theme} name={clientName} />
+      <EndingPage theme={theme} name={clientName || 'Guest'} />
     </Document>
   );
+}
+
+// 티어별 콘텐츠 — 항상 Fragment 반환, 내부에 null 없음
+function renderTierContent(
+  tier: TierCode,
+  theme: ThemeCode,
+  g: (k: string) => string,
+  data: SajuData,
+  clientName: string,
+): React.ReactNode {
+  switch (tier) {
+    case 'basic': return renderBasic(theme, g);
+    case 'love': return renderLove(theme, g, data, clientName);
+    case 'full': return renderFull(theme, g, data);
+    case 'premium': return renderPremium(theme, g, data);
+    default: return renderBasic(theme, g);
+  }
 }
 
 // ═══════════════════════════════════════════════════════════════
