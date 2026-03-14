@@ -1,64 +1,15 @@
 import { Font, StyleSheet } from '@react-pdf/renderer';
 
-// ─── 폰트 등록 ───
-// Vercel serverless에서는 로컬 폰트 파일이 없으므로 Helvetica fallback.
-// 로컬 개발 시 src/fonts/에 ttf 파일이 있으면 등록 시도.
+// ─── 폰트 ───
+// 커스텀 폰트 없이 Helvetica fallback 사용.
+// 추후 Google Fonts URL로 등록 가능.
 
-let hasInter = false;
-let hasPlayfair = false;
-let hasNotoSansKR = false;
-
-try {
-  // Dynamic require로 서버 환경에서만 fs/path 사용
-  const fs = require('fs');
-  const path = require('path');
-  const FONTS_DIR = path.join(process.cwd(), 'src', 'fonts');
-
-  function fontPath(f: string) { return path.join(FONTS_DIR, f); }
-  function exists(f: string) { try { return fs.existsSync(fontPath(f)); } catch { return false; } }
-
-  if (exists('Inter-Regular.ttf')) {
-    const fonts: { src: string; fontWeight: 'normal' | 'bold' }[] = [
-      { src: fontPath('Inter-Regular.ttf'), fontWeight: 'normal' },
-    ];
-    if (exists('Inter-Bold.ttf')) {
-      fonts.push({ src: fontPath('Inter-Bold.ttf'), fontWeight: 'bold' });
-    }
-    Font.register({ family: 'Inter', fonts });
-    hasInter = true;
-  }
-
-  if (exists('PlayfairDisplay-Regular.ttf')) {
-    const fonts: { src: string; fontWeight: 'normal' | 'bold' }[] = [
-      { src: fontPath('PlayfairDisplay-Regular.ttf'), fontWeight: 'normal' },
-    ];
-    if (exists('PlayfairDisplay-Bold.ttf')) {
-      fonts.push({ src: fontPath('PlayfairDisplay-Bold.ttf'), fontWeight: 'bold' });
-    }
-    Font.register({ family: 'Playfair Display', fonts });
-    hasPlayfair = true;
-  }
-
-  if (exists('NotoSansKR-Regular.ttf')) {
-    Font.register({ family: 'Noto Sans KR', src: fontPath('NotoSansKR-Regular.ttf') });
-    hasNotoSansKR = true;
-  }
-} catch {
-  // Vercel / edge 환경: fs 사용 불가 → Helvetica fallback
-}
+export const FONT_BODY = 'Helvetica';
+export const FONT_TITLE = 'Helvetica-Bold';
+export const FONT_CJK = 'Helvetica';
 
 // 하이픈 비활성화
-try {
-  Font.registerHyphenationCallback((word) => [word]);
-} catch {
-  // ignore
-}
-
-// ─── 실제 사용할 폰트명 (없으면 Helvetica fallback) ───
-
-export const FONT_BODY = hasInter ? 'Inter' : 'Helvetica';
-export const FONT_TITLE = hasPlayfair ? 'Playfair Display' : 'Helvetica-Bold';
-export const FONT_CJK = hasNotoSansKR ? 'Noto Sans KR' : 'Helvetica';
+try { Font.registerHyphenationCallback((word) => [word]); } catch { /* ignore */ }
 
 // ─── 공통 PDF 스타일 ───
 
