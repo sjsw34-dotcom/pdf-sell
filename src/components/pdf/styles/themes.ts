@@ -12,36 +12,36 @@ function buildThemeStyles(colors: ThemeColors) {
     page: {
       fontFamily: FONT_BODY,
       backgroundColor: colors.background,
-      paddingTop: 40,
-      paddingBottom: 40,
-      paddingLeft: 40,
-      paddingRight: 40,
+      paddingTop: 50,
+      paddingBottom: 45,
+      paddingLeft: 50,
+      paddingRight: 50,
     },
 
     title: {
       fontFamily: FONT_TITLE,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 'bold',
       color: colors.primary,
-      marginBottom: 12,
+      marginBottom: 10,
       lineHeight: 1.4,
     },
 
     subtitle: {
       fontFamily: FONT_TITLE,
-      fontSize: 14,
+      fontSize: 12,
       fontWeight: 'bold',
       color: colors.primary,
-      marginBottom: 8,
+      marginBottom: 6,
       lineHeight: 1.4,
     },
 
     body: {
       fontFamily: FONT_BODY,
-      fontSize: 11,
+      fontSize: 10.5,
       color: colors.text,
-      lineHeight: 1.6,
-      marginBottom: 6,
+      lineHeight: 1.7,
+      marginBottom: 8,
     },
 
     caption: {

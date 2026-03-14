@@ -251,12 +251,17 @@ function parsePillar(tab: RawSajuTab): PillarData {
 function parseYongsin(tab: RawSajuTab): YongsinData {
   // data: [["木"],["水"],["金"],["土"],["火"]]
   // column_headers 순서: 용신, 희신, 기신, 구신, 한신
+  const validElements = new Set(FIVE_ELEMENTS as readonly string[]);
+  function safeElement(arr: string[], idx: number): FiveElement {
+    const val = safeGet(arr, idx).trim();
+    return (validElements.has(val) ? val : '木') as FiveElement;
+  }
   return {
-    yongsin: safeGet(tab.data[0] ?? [], 0) as FiveElement,
-    huisin: safeGet(tab.data[1] ?? [], 0) as FiveElement,
-    gisin: safeGet(tab.data[2] ?? [], 0) as FiveElement,
-    gusin: safeGet(tab.data[3] ?? [], 0) as FiveElement,
-    hansin: safeGet(tab.data[4] ?? [], 0) as FiveElement,
+    yongsin: safeElement(tab.data[0] ?? [], 0),
+    huisin: safeElement(tab.data[1] ?? [], 0),
+    gisin: safeElement(tab.data[2] ?? [], 0),
+    gusin: safeElement(tab.data[3] ?? [], 0),
+    hansin: safeElement(tab.data[4] ?? [], 0),
   };
 }
 
