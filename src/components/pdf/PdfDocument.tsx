@@ -407,7 +407,7 @@ export function PdfDocument({
       <IntroPage theme={theme} tier={tier} name={clientName || 'Guest'} />
 
       <Page size="A4" style={t.page}>
-        <SajuChart theme={theme} pillar={sajuData.pillar} />
+        <SajuChart theme={theme} pillar={sajuData.pillar} info={sajuData.info} />
       </Page>
 
       <Page size="A4" style={t.page}>
