@@ -1,34 +1,38 @@
 import { Font, StyleSheet } from '@react-pdf/renderer';
 
-// ─── 웹 폰트 등록 (CDN URL — 서버/클라이언트 모두 동작) ───
+// ─── 폰트 등록 ───
+// public/ 폴더의 ttf 파일을 절대 URL로 참조.
+// 클라이언트 사이드(pdf().toBlob())에서도 동작하도록
+// window.location.origin 또는 환경변수로 base URL 결정.
+
+function getBaseUrl(): string {
+  if (typeof window !== 'undefined') {
+    return window.location.origin;
+  }
+  return process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+}
 
 try {
-  Font.register({
-    family: 'NotoSansKR',
-    fonts: [
-      { src: 'https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.ttf', fontWeight: 'normal' },
-      { src: 'https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.ttf', fontWeight: 'bold' },
-    ],
-  });
+  const base = getBaseUrl();
 
   Font.register({
-    family: 'Inter',
+    family: 'SpoqaHanSans',
     fonts: [
-      { src: 'https://cdn.jsdelivr.net/gh/rsms/inter@v4.1/docs/font-files/InterVariable.ttf', fontWeight: 'normal' },
+      { src: `${base}/SpoqaHanSansNeo-Regular.ttf`, fontWeight: 'normal' },
+      { src: `${base}/SpoqaHanSansNeo-Bold.ttf`, fontWeight: 'bold' },
     ],
   });
 } catch {
-  // fallback — 폰트 등록 실패 시 Helvetica 사용
+  // fallback
 }
 
-// 하이픈 비활성화
-try { Font.registerHyphenationCallback((word) => [word]); } catch { /* ignore */ }
+try { Font.registerHyphenationCallback((word) => [word]); } catch {}
 
 // ─── 폰트명 ───
 
-export const FONT_BODY = 'NotoSansKR';
-export const FONT_TITLE = 'NotoSansKR';
-export const FONT_CJK = 'NotoSansKR';
+export const FONT_BODY = 'SpoqaHanSans';
+export const FONT_TITLE = 'SpoqaHanSans';
+export const FONT_CJK = 'SpoqaHanSans';
 
 // ─── 공통 PDF 스타일 ───
 
@@ -36,30 +40,30 @@ export const pdfStyles = StyleSheet.create({
   page: {
     fontFamily: FONT_BODY,
     backgroundColor: '#FFFFFF',
-    paddingTop: 40,
-    paddingBottom: 40,
-    paddingLeft: 40,
-    paddingRight: 40,
+    paddingTop: 50,
+    paddingBottom: 45,
+    paddingLeft: 50,
+    paddingRight: 50,
   },
   title: {
     fontFamily: FONT_TITLE,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 12,
+    marginBottom: 10,
     lineHeight: 1.4,
   },
   subtitle: {
     fontFamily: FONT_TITLE,
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: 'bold',
-    marginBottom: 8,
+    marginBottom: 6,
     lineHeight: 1.4,
   },
   body: {
     fontFamily: FONT_BODY,
-    fontSize: 11,
-    lineHeight: 1.6,
-    marginBottom: 6,
+    fontSize: 10.5,
+    lineHeight: 1.7,
+    marginBottom: 8,
   },
   caption: {
     fontFamily: FONT_BODY,
