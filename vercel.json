@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "src/app/api/translate/route.ts": {
+      "maxDuration": 120
+    },
+    "src/app/api/generate-pdf/route.ts": {
+      "maxDuration": 120
+    }
+  }
+}

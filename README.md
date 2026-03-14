@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SajuMuse PDF Generator
+
+Transforms Korean Four Pillars (사주명리학) JSON data into premium English PDF reports using Claude AI.
+
+## Features
+
+- **4 Tiers**: Basic (~30p), Love (~60p), Full (~80p), Premium (~60+p with yearly breakdown)
+- **5 Themes**: Classic, Modern, Minimal, Elegant, Love (pastel pink)
+- **AI-Powered**: Claude Sonnet generates personalized analysis per section
+- **3-Layer Terminology**: Natural English + Classical + Original (漢字)
+- **PDF Components**: Saju chart, Yongsin chart, Yin-Yang bars, Shinsal table, Daeun timeline, Nyunun/Wolun cards
+
+## Tech Stack
+
+- Next.js 14+ (App Router, TypeScript strict)
+- @react-pdf/renderer (PDF generation)
+- @anthropic-ai/sdk (Claude API)
+- Zustand (state management)
+- Tailwind CSS (web UI)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create `.env.local`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+ANTHROPIC_API_KEY=sk-ant-...
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
 
-## Learn More
+### Fonts (Optional)
 
-To learn more about Next.js, take a look at the following resources:
+Place these `.ttf` files in `src/fonts/` for proper CJK rendering:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `Inter-Regular.ttf`, `Inter-Bold.ttf`
+- `PlayfairDisplay-Regular.ttf`, `PlayfairDisplay-Bold.ttf`
+- `NotoSansKR-Regular.ttf`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Without fonts, PDFs render with Helvetica fallback.
 
-## Deploy on Vercel
+### Run
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run dev        # Development server
+npm run build      # Production build
+npm run typecheck  # TypeScript check
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open http://localhost:3000
+
+## Usage
+
+1. Select a tier (Basic / Love / Full / Premium)
+2. Upload or paste saju JSON data
+3. Optionally upload a cover image
+4. Choose a PDF theme
+5. Click "Generate PDF with AI" or "Quick test" (dummy text)
+6. Download the generated PDF
+
+## API Routes
+
+| Route | Method | Description |
+|---|---|---|
+| `/api/translate` | POST | Claude AI analysis for a single part |
+| `/api/generate-pdf` | POST | Render PDF from saju data + texts |
+
+Both routes have `maxDuration: 120s` for Vercel Pro.
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── page.tsx            # Main generator UI
+│   └── api/
+│       ├── translate/      # Claude API endpoint
+│       └── generate-pdf/   # PDF rendering endpoint
+├── components/
+│   ├── ui/                 # Web UI components (Tailwind)
+│   └── pdf/                # @react-pdf/renderer components
+│       └── styles/         # PDF styles & themes
+├── lib/
+│   ├── types/              # TypeScript types (saju, tier, theme, pdf)
+│   ├── constants/          # Tiers, themes, terms, part keys
+│   ├── translate/          # Claude API client & prompts
+│   └── utils/              # JSON parsing, info extraction, tier filtering
+├── store/                  # Zustand store
+└── fonts/                  # TTF font files (gitignored)
+```
+
+## Deploy
+
+Deployed on Vercel (Pro plan recommended for 120s API timeout).
+
+```bash
+vercel --prod
+```
