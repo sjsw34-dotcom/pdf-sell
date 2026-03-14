@@ -16,6 +16,7 @@ import { DaeunTimeline } from './DaeunTimeline';
 import { NyununCard } from './NyununCard';
 import { WolunCard } from './WolunCard';
 import { CalloutBox } from './CalloutBox';
+import { WhatIsSajuPage } from './WhatIsSajuPage';
 import { EndingPage } from './EndingPage';
 
 // ═══════════════════════════════════════════════════════════════
@@ -400,6 +401,8 @@ export function PdfDocument({
         birthDate={birthInfo || ''}
         coverImageBase64={coverImage}
       />
+
+      <WhatIsSajuPage theme={theme} />
 
       <IntroPage theme={theme} tier={tier} name={clientName || 'Guest'} />
 
