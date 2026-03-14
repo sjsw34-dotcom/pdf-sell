@@ -69,7 +69,6 @@ export function CoverPage({ theme, tier, name, birthDate, coverImageBase64 }: Co
 
           <View style={s.spacer16} />
 
-          <Text style={s.birthInfo}>{birthDate}</Text>
           <Text style={[s.tierLabel, { color: hasImage ? '#CCCCCC' : colors.secondary }]}>
             {TIER_LABELS[tier]} Report
           </Text>
