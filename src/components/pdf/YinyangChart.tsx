@@ -7,26 +7,16 @@ import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
 
 // ─── 오행 컬러 ───
 
-const ELEMENT_COLORS: Record<FiveElement, string> = {
-  '木': '#2D8B46',
-  '火': '#D63031',
-  '土': '#C49B1A',
-  '金': '#7F8C8D',
-  '水': '#2E86C1',
+const ELEMENT_COLORS: Record<string, string> = {
+  '木': '#2D8B46', '火': '#D63031', '土': '#C49B1A', '金': '#7F8C8D', '水': '#2E86C1',
 };
 
-const ELEMENT_EN: Record<FiveElement, string> = {
+const ELEMENT_EN: Record<string, string> = {
   '木': 'Wood', '火': 'Fire', '土': 'Earth', '金': 'Metal', '水': 'Water',
 };
 
-// ─── 십신 그룹 영어 ───
-
-const GOD_GROUP_EN: Record<TenGodGroup, string> = {
-  '비겁': 'Self & Sibling',
-  '식상': 'Expression',
-  '재성': 'Wealth',
-  '관성': 'Authority',
-  '인성': 'Knowledge',
+const GOD_GROUP_EN: Record<string, string> = {
+  '비겁': 'Self & Sibling', '식상': 'Expression', '재성': 'Wealth', '관성': 'Authority', '인성': 'Knowledge',
 };
 
 const GOD_GROUP_COLORS: Record<TenGodGroup, string> = {
@@ -87,7 +77,7 @@ export function YinyangChart({ theme, yinyang }: YinyangChartProps) {
                 <Text style={[s.barHanja, { color: ELEMENT_COLORS[el.element] }]}>
                   {el.element}
                 </Text>
-                <Text style={s.barLabelEn}>{ELEMENT_EN[el.element]}</Text>
+                <Text style={s.barLabelEn}>{ELEMENT_EN[el.element] || el.element}</Text>
               </View>
               <View style={s.barTrack}>
                 <View
@@ -95,7 +85,7 @@ export function YinyangChart({ theme, yinyang }: YinyangChartProps) {
                     s.barFill,
                     {
                       width: `${barWidth}%`,
-                      backgroundColor: ELEMENT_COLORS[el.element],
+                      backgroundColor: ELEMENT_COLORS[el.element] || '#999',
                     },
                   ]}
                 >
@@ -116,8 +106,8 @@ export function YinyangChart({ theme, yinyang }: YinyangChartProps) {
           return (
             <View key={grp.group} style={s.barRow}>
               <View style={s.barLabelCol}>
-                <Text style={[s.barGroupLabel, { color: GOD_GROUP_COLORS[grp.group] }]}>
-                  {GOD_GROUP_EN[grp.group]}
+                <Text style={[s.barGroupLabel, { color: GOD_GROUP_COLORS[grp.group] || '#999' }]}>
+                  {GOD_GROUP_EN[grp.group] || grp.group}
                 </Text>
                 <Text style={s.barLabelKo}>{grp.group}</Text>
               </View>
@@ -127,7 +117,7 @@ export function YinyangChart({ theme, yinyang }: YinyangChartProps) {
                     s.barFill,
                     {
                       width: `${barWidth}%`,
-                      backgroundColor: GOD_GROUP_COLORS[grp.group],
+                      backgroundColor: GOD_GROUP_COLORS[grp.group] || '#999',
                     },
                   ]}
                 >
