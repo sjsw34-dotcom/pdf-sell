@@ -411,10 +411,10 @@ export function PdfDocument({
       </Page>
 
       {/* 티어별 분기 */}
-      {tier === 'basic' && renderBasic(theme, g)}
-      {tier === 'full' && renderFull(theme, g, sajuData)}
-      {tier === 'premium' && renderPremium(theme, g, sajuData)}
-      {tier === 'love' && renderLove('love', g, sajuData, clientName)}
+      {tier === 'basic' ? renderBasic(theme, g) : undefined}
+      {tier === 'full' ? renderFull(theme, g, sajuData) : undefined}
+      {tier === 'premium' ? renderPremium(theme, g, sajuData) : undefined}
+      {tier === 'love' ? renderLove('love', g, sajuData, clientName) : undefined}
 
       {/* 마무리 */}
       <EndingPage theme={theme} name={clientName} />
@@ -476,21 +476,21 @@ function renderFull(theme: ThemeCode, g: (k: string) => string, data: SajuData) 
 
       {/* Part 7: 귀인/신살 */}
       <PartHeader theme={theme} partNumber={7} title="Spirit Stars & Hidden Influences" subtitle="Destined Protectors & Challenges" />
-      {data.shinsal ? (
+      {data.shinsal && (
         <Page size="A4" style={t.page}>
           <ShinsalTable theme={theme} shinsal={data.shinsal} />
         </Page>
-      ) : null}
+      )}
       <ChapterPage theme={theme} chapterNumber={1} title="Your Protective Stars" content={g('part7_ch1')} />
       <ChapterPage theme={theme} chapterNumber={2} title="Cautionary Stars & Guidance" content={g('part7_ch2')} />
 
       {/* Part 8: 대운/개운 */}
       <PartHeader theme={theme} partNumber={8} title="Major Luck Cycles" subtitle="The Decades of Your Destiny" />
-      {data.daeun ? (
+      {data.daeun && (
         <Page size="A4" style={t.page}>
           <DaeunTimeline theme={theme} daeun={data.daeun} />
         </Page>
-      ) : null}
+      )}
       <ChapterPage theme={theme} chapterNumber={1} title="Decade-by-Decade Overview" content={g('part8_ch1')} />
       <ChapterPage theme={theme} chapterNumber={2} title="Destiny Modification Methods" content={g('part8_ch2')} />
     </>
@@ -539,11 +539,11 @@ function renderPremium(theme: ThemeCode, g: (k: string) => string, data: SajuDat
       />
 
       {/* 올해 월운 차트 */}
-      {data.wolun ? (
+      {data.wolun && (
         <Page size="A4" style={t.page}>
           <WolunCard theme={theme} wolun={data.wolun} />
         </Page>
-      ) : null}
+      )}
 
       {/* 올해 월별 상세: 상반기/하반기 */}
       <ChapterPage
@@ -560,11 +560,11 @@ function renderPremium(theme: ThemeCode, g: (k: string) => string, data: SajuDat
       />
 
       {/* 내년 월운 차트 (있는 경우) */}
-      {data.wolun2 ? (
+      {data.wolun2 && (
         <Page size="A4" style={t.page}>
           <WolunCard theme={theme} wolun={data.wolun2} />
         </Page>
-      ) : null}
+      )}
 
       {/* ════════ Part 10: 10-Year Fortune Cycle ════════ */}
       <PartHeader
@@ -582,25 +582,23 @@ function renderPremium(theme: ThemeCode, g: (k: string) => string, data: SajuDat
       />
 
       {/* 년운 차트 */}
-      {data.nyunun ? (
+      {data.nyunun && (
         <Page size="A4" style={t.page}>
           <NyununCard theme={theme} nyunun={data.nyunun} />
         </Page>
-      ) : null}
+      )}
 
       {/* 년도별 개별 분석 — 각 년도 1페이지 */}
-      {years.map((year) => {
-        const content = g(`year_${year}`);
-        if (!content) return null;
-        return (
+      {years
+        .filter((year) => g(`year_${year}`) !== '')
+        .map((year) => (
           <ChapterPage
             key={year}
             theme={theme}
             title={`${year} — Annual Fortune`}
-            content={content}
+            content={g(`year_${year}`)}
           />
-        );
-      })}
+        ))}
     </>
   );
 }
@@ -669,11 +667,11 @@ function renderLove(
           text={g('love_callout_timing')}
         />
       </Page>
-      {data.nyunun ? (
+      {data.nyunun && (
         <Page size="A4" style={t.page}>
           <NyununCard theme={theme} nyunun={data.nyunun} />
         </Page>
-      ) : null}
+      )}
       <ChapterPage theme={theme} title="Romantic Timing & Lucky Places" content={g('love_p4')} />
 
       {/* Part 5: Adult Only */}
