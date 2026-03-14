@@ -1,42 +1,26 @@
 import React from 'react';
 import { View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { ThemeCode } from '@/lib/types/theme';
-import type { YongsinData, FiveElement } from '@/lib/types/saju';
+import type { YongsinData } from '@/lib/types/saju';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
 
-// ─── 오행 컬러 (fallback 포함) ───
+// ─── 오행 매핑 ───
 
-const ELEMENT_COLORS: Record<string, string> = {
-  '木': '#2D8B46', '火': '#D63031', '土': '#C49B1A', '金': '#7F8C8D', '水': '#2E86C1',
+const ELEMENT_INFO: Record<string, { en: string; classical: string; hanja: string; color: string }> = {
+  '木': { en: 'Growth & Flexibility', classical: 'Wood', hanja: '木', color: '#2D8B46' },
+  '火': { en: 'Passion & Energy', classical: 'Fire', hanja: '火', color: '#D63031' },
+  '土': { en: 'Stability & Trust', classical: 'Earth', hanja: '土', color: '#C49B1A' },
+  '金': { en: 'Precision & Strength', classical: 'Metal', hanja: '金', color: '#7F8C8D' },
+  '水': { en: 'Wisdom & Adaptability', classical: 'Water', hanja: '水', color: '#2E86C1' },
 };
-
-const ELEMENT_BG: Record<string, string> = {
-  '木': '#E8F5E9', '火': '#FFEBEE', '土': '#FFF8E1', '金': '#F5F5F5', '水': '#E3F2FD',
-};
-
-const ELEMENT_EN: Record<string, { natural: string; classical: string }> = {
-  '木': { natural: 'Growth & Flexibility', classical: 'Wood' },
-  '火': { natural: 'Passion & Energy', classical: 'Fire' },
-  '土': { natural: 'Stability & Trust', classical: 'Earth' },
-  '金': { natural: 'Precision & Strength', classical: 'Metal' },
-  '水': { natural: 'Wisdom & Adaptability', classical: 'Water' },
-};
-
-const FALLBACK_COLOR = '#999999';
-const FALLBACK_BG = '#F0F0F0';
-const FALLBACK_EN = { natural: 'Unknown', classical: '?' };
-
-function elColor(el: string) { return ELEMENT_COLORS[el] || FALLBACK_COLOR; }
-function elBg(el: string) { return ELEMENT_BG[el] || FALLBACK_BG; }
-function elEn(el: string) { return ELEMENT_EN[el] || FALLBACK_EN; }
 
 const YONGSIN_LABELS = [
-  { key: 'yongsin' as const, korean: '용신', natural: 'Your Key Balancer', hanja: '用神' },
-  { key: 'huisin' as const, korean: '희신', natural: 'Your Lucky Support', hanja: '喜神' },
-  { key: 'gisin' as const, korean: '기신', natural: 'Your Challenge', hanja: '忌神' },
-  { key: 'gusin' as const, korean: '구신', natural: 'Hidden Obstacle', hanja: '仇神' },
-  { key: 'hansin' as const, korean: '한신', natural: 'Neutral Energy', hanja: '閑神' },
+  { key: 'yongsin' as const, en: 'Favorable Element', ko: '용신', hanja: '用神' },
+  { key: 'huisin' as const, en: 'Joyful Element', ko: '희신', hanja: '喜神' },
+  { key: 'gisin' as const, en: 'Unfavorable Element', ko: '기신', hanja: '忌神' },
+  { key: 'gusin' as const, en: 'Antagonistic Element', ko: '구신', hanja: '仇神' },
+  { key: 'hansin' as const, en: 'Neutral Element', ko: '한신', hanja: '閑神' },
 ] as const;
 
 interface YongsinChartProps {
@@ -46,59 +30,100 @@ interface YongsinChartProps {
 
 export function YongsinChart({ theme, yongsin }: YongsinChartProps) {
   const colors = THEMES[theme].colors;
-  const s = styles(colors);
 
   return (
     <View style={s.container}>
-      <Text style={s.chartTitle}>ELEMENTAL BALANCE</Text>
-      <Text style={s.chartSubtitle}>用神 體系 · Yongsin System</Text>
+      {/* 타이틀 */}
+      <Text style={[s.title, { color: colors.primary }]}>
+        Favorable Element Analysis (용신분석 · 用神分析)
+      </Text>
+      <Text style={[s.subtitle, { color: colors.textSecondary }]}>
+        Balance and Harmony of the Five Elements (오행 · 五行)
+      </Text>
 
+      <View style={[s.divider, { backgroundColor: colors.border }]} />
+
+      {/* 용신 리스트 */}
       {YONGSIN_LABELS.map((label) => {
-        const element = yongsin[label.key] || '?';
-        const ec = elColor(element);
-        const eb = elBg(element);
-        const ee = elEn(element);
+        const element = yongsin[label.key] || '';
+        const info = ELEMENT_INFO[element];
+        const elText = info ? `${info.classical} (${info.hanja})` : element || '—';
+        const elColor = info ? info.color : '#999';
 
         return (
           <View key={label.key} style={s.row}>
-            <View style={s.labelCol}>
-              <Text style={s.labelNatural}>{label.natural}</Text>
-              <Text style={s.labelOriginal}>{label.hanja} {label.korean}</Text>
-            </View>
-
-            <View style={[s.elementCol, { backgroundColor: eb }]}>
-              <View style={s.elementInner}>
-                <View style={[s.elementDot, { backgroundColor: ec }]}>
-                  <Text style={s.elementHanja}>{element}</Text>
-                </View>
-                <View style={s.elementText}>
-                  <Text style={[s.elementNatural, { color: ec }]}>{ee.natural}</Text>
-                  <Text style={s.elementClassical}>{ee.classical}</Text>
-                </View>
-              </View>
+            <View style={[s.bullet, { backgroundColor: elColor }]} />
+            <View style={s.rowContent}>
+              <Text style={[s.rowLabel, { color: colors.text }]}>
+                {label.en} ({label.ko} · {label.hanja}):
+              </Text>
+              <Text style={[s.rowValue, { color: elColor }]}> {elText}</Text>
             </View>
           </View>
         );
       })}
+
+      <View style={[s.divider, { backgroundColor: colors.border }]} />
+
+      {/* 해설 */}
+      <Text style={[s.note, { color: colors.textSecondary }]}>
+        The Favorable Element (용신) is the energy that brings balance to your chart. The Joyful Element (희신) supports it. When these elements are strong in your environment, career, or relationships, positive outcomes are more likely.
+      </Text>
     </View>
   );
 }
 
-function styles(colors: { primary: string; textSecondary: string; border: string; surface: string }) {
-  return StyleSheet.create({
-    container: { marginBottom: 20 },
-    chartTitle: { fontFamily: FONT_TITLE, fontSize: 16, fontWeight: 'bold', color: colors.primary, textAlign: 'center', marginBottom: 2 },
-    chartSubtitle: { fontFamily: FONT_CJK, fontSize: 9, color: colors.textSecondary, textAlign: 'center', marginBottom: 14 },
-    row: { flexDirection: 'row', marginBottom: 6 },
-    labelCol: { width: 130, justifyContent: 'center', paddingRight: 10 },
-    labelNatural: { fontFamily: FONT_BODY, fontSize: 9, fontWeight: 'bold', color: colors.primary },
-    labelOriginal: { fontFamily: FONT_CJK, fontSize: 7, color: colors.textSecondary, marginTop: 1 },
-    elementCol: { flex: 1, borderRadius: 4, padding: 8 },
-    elementInner: { flexDirection: 'row', alignItems: 'center' },
-    elementDot: { width: 30, height: 30, borderRadius: 15, justifyContent: 'center', alignItems: 'center', marginRight: 10 },
-    elementHanja: { fontFamily: FONT_CJK, fontSize: 14, fontWeight: 'bold', color: '#FFFFFF' },
-    elementText: { flex: 1 },
-    elementNatural: { fontFamily: FONT_BODY, fontSize: 9, fontWeight: 'bold' },
-    elementClassical: { fontFamily: FONT_BODY, fontSize: 7, color: colors.textSecondary, marginTop: 1 },
-  });
-}
+const s = StyleSheet.create({
+  container: {
+    marginBottom: 20,
+  },
+  title: {
+    fontFamily: FONT_TITLE,
+    fontSize: 13,
+    fontWeight: 'bold',
+    marginBottom: 4,
+  },
+  subtitle: {
+    fontFamily: FONT_BODY,
+    fontSize: 9,
+    marginBottom: 8,
+  },
+  divider: {
+    width: '100%',
+    height: 1,
+    marginTop: 8,
+    marginBottom: 12,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+    paddingLeft: 4,
+  },
+  bullet: {
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+    marginRight: 10,
+  },
+  rowContent: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    flex: 1,
+  },
+  rowLabel: {
+    fontFamily: FONT_CJK,
+    fontSize: 10,
+  },
+  rowValue: {
+    fontFamily: FONT_TITLE,
+    fontSize: 10,
+    fontWeight: 'bold',
+  },
+  note: {
+    fontFamily: FONT_BODY,
+    fontSize: 8.5,
+    lineHeight: 1.6,
+    paddingLeft: 4,
+  },
+});
