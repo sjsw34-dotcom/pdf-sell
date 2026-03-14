@@ -1,15 +1,34 @@
 import { Font, StyleSheet } from '@react-pdf/renderer';
 
-// ─── 폰트 ───
-// 커스텀 폰트 없이 Helvetica fallback 사용.
-// 추후 Google Fonts URL로 등록 가능.
+// ─── 웹 폰트 등록 (CDN URL — 서버/클라이언트 모두 동작) ───
 
-export const FONT_BODY = 'Helvetica';
-export const FONT_TITLE = 'Helvetica-Bold';
-export const FONT_CJK = 'Helvetica';
+try {
+  Font.register({
+    family: 'NotoSansKR',
+    fonts: [
+      { src: 'https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.ttf', fontWeight: 'normal' },
+      { src: 'https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.ttf', fontWeight: 'bold' },
+    ],
+  });
+
+  Font.register({
+    family: 'Inter',
+    fonts: [
+      { src: 'https://cdn.jsdelivr.net/gh/rsms/inter@v4.1/docs/font-files/InterVariable.ttf', fontWeight: 'normal' },
+    ],
+  });
+} catch {
+  // fallback — 폰트 등록 실패 시 Helvetica 사용
+}
 
 // 하이픈 비활성화
 try { Font.registerHyphenationCallback((word) => [word]); } catch { /* ignore */ }
+
+// ─── 폰트명 ───
+
+export const FONT_BODY = 'NotoSansKR';
+export const FONT_TITLE = 'NotoSansKR';
+export const FONT_CJK = 'NotoSansKR';
 
 // ─── 공통 PDF 스타일 ───
 
@@ -58,22 +77,12 @@ export const pdfStyles = StyleSheet.create({
     marginTop: 12,
     marginBottom: 12,
   },
-  section: {
-    marginBottom: 16,
-  },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-  },
-  col2: {
-    flex: 1,
-    paddingRight: 8,
-  },
+  section: { marginBottom: 16 },
+  row: { flexDirection: 'row', alignItems: 'flex-start' },
+  col2: { flex: 1, paddingRight: 8 },
   pageNumber: {
     position: 'absolute',
-    bottom: 20,
-    left: 0,
-    right: 0,
+    bottom: 20, left: 0, right: 0,
     textAlign: 'center',
     fontSize: 9,
     fontFamily: FONT_BODY,

@@ -26,8 +26,9 @@ Key term mappings you MUST use:
 export const OUTPUT_RULES = `
 [Output Rules]
 - Write 300-500 words per chapter in flowing prose paragraphs.
-- Do NOT use markdown headers, bullet points, or numbered lists unless specifically instructed.
+- ABSOLUTELY NO MARKDOWN: Do not use **bold**, *italic*, headers (#), or bullet points. Write plain text only. The PDF renderer cannot display markdown formatting.
 - Do NOT include the section title — it is added separately by the system.
+- When mentioning saju terms, write them inline without any special formatting: "Your Key Balancer (Favorable God / 用神 Yong-sin) is Wood" — no bold, no asterisks.
 - Each paragraph must contain at least one concrete, personalized insight referencing the client's actual chart data.
 - Frame all challenges as growth opportunities. Never use doom-and-gloom language.
 - Address the client by name at least once per chapter for personalization.
