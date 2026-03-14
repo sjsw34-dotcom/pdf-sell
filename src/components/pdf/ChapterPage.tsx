@@ -2,6 +2,8 @@ import React from 'react';
 import { Page, View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { ThemeCode } from '@/lib/types/theme';
 import { getThemeStyles } from './styles/themes';
+import { PageFooter } from './PageFooter';
+import { THEMES } from '@/lib/constants/themes';
 
 interface ChapterPageProps {
   theme: ThemeCode;
@@ -13,16 +15,17 @@ interface ChapterPageProps {
 /** AI 텍스트에서 마크다운 서식을 제거 */
 function stripMarkdown(text: string): string {
   return text
-    .replace(/\*\*(.*?)\*\*/g, '$1')   // **bold** → bold
-    .replace(/\*(.*?)\*/g, '$1')       // *italic* → italic
-    .replace(/^#{1,3}\s+/gm, '')       // ### heading → heading
-    .replace(/^[-*]\s+/gm, '• ')       // - item → • item
-    .replace(/^\d+\.\s+/gm, '')        // 1. item → item
+    .replace(/\*\*(.*?)\*\*/g, '$1')
+    .replace(/\*(.*?)\*/g, '$1')
+    .replace(/^#{1,3}\s+/gm, '')
+    .replace(/^[-*]\s+/gm, '• ')
+    .replace(/^\d+\.\s+/gm, '')
     .trim();
 }
 
 export function ChapterPage({ theme, title, content, chapterNumber }: ChapterPageProps) {
   const t = getThemeStyles(theme);
+  const colors = THEMES[theme].colors;
   const safeContent = stripMarkdown(content || '');
   const paragraphs = safeContent.split(/\n\n+/).filter((p) => p.trim() !== '');
 
@@ -45,16 +48,12 @@ export function ChapterPage({ theme, title, content, chapterNumber }: ChapterPag
         }
       </View>
 
-      <Text
-        style={t.pageNumber}
-        render={({ pageNumber }) => `${pageNumber}`}
-        fixed
-      />
+      <PageFooter color={colors.textSecondary} />
     </Page>
   );
 }
 
 const s = StyleSheet.create({
   header: { marginBottom: 16 },
-  body: { flex: 1 },
+  body: { flex: 1, paddingBottom: 30 },
 });

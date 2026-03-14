@@ -17,6 +17,7 @@ import { NyununCard } from './NyununCard';
 import { WolunCard } from './WolunCard';
 import { CalloutBox } from './CalloutBox';
 import { WhatIsSajuPage } from './WhatIsSajuPage';
+import { PageFooter } from './PageFooter';
 import { EndingPage } from './EndingPage';
 
 // ═══════════════════════════════════════════════════════════════
@@ -408,18 +409,22 @@ export function PdfDocument({
 
       <Page size="A4" style={t.page}>
         <SajuChart theme={theme} pillar={sajuData.pillar} info={sajuData.info} />
+        <PageFooter />
       </Page>
 
       <Page size="A4" style={t.page}>
         <YongsinChart theme={theme} yongsin={sajuData.yongsin} />
+        <PageFooter />
       </Page>
 
       <Page size="A4" style={t.page} wrap>
         <YinyangChart theme={theme} yinyang={sajuData.yinyang} />
+        <PageFooter />
       </Page>
 
       <Page size="A4" style={t.page} wrap>
         <TenGodsChart theme={theme} yinyang={sajuData.yinyang} />
+        <PageFooter />
       </Page>
 
       {tierContent}
@@ -503,6 +508,7 @@ function renderFull(theme: ThemeCode, g: (k: string) => string, data: SajuData) 
       {data.shinsal && (
         <Page size="A4" style={t.page}>
           <ShinsalTable theme={theme} shinsal={data.shinsal} />
+          <PageFooter />
         </Page>
       )}
       <ChapterPage theme={theme} chapterNumber={1} title="Your Protective Stars" content={g('part7_ch1')} />
@@ -513,6 +519,7 @@ function renderFull(theme: ThemeCode, g: (k: string) => string, data: SajuData) 
       {data.daeun && (
         <Page size="A4" style={t.page}>
           <DaeunTimeline theme={theme} daeun={data.daeun} />
+          <PageFooter />
         </Page>
       )}
       <ChapterPage theme={theme} chapterNumber={1} title="Decade-by-Decade Overview" content={g('part8_ch1')} />
@@ -566,6 +573,7 @@ function renderPremium(theme: ThemeCode, g: (k: string) => string, data: SajuDat
       {data.wolun && (
         <Page size="A4" style={t.page}>
           <WolunCard theme={theme} wolun={data.wolun} />
+          <PageFooter />
         </Page>
       )}
 
@@ -587,6 +595,7 @@ function renderPremium(theme: ThemeCode, g: (k: string) => string, data: SajuDat
       {data.wolun2 && (
         <Page size="A4" style={t.page}>
           <WolunCard theme={theme} wolun={data.wolun2} />
+          <PageFooter />
         </Page>
       )}
 
@@ -609,6 +618,7 @@ function renderPremium(theme: ThemeCode, g: (k: string) => string, data: SajuDat
       {data.nyunun && (
         <Page size="A4" style={t.page}>
           <NyununCard theme={theme} nyunun={data.nyunun} />
+          <PageFooter />
         </Page>
       )}
 
@@ -654,6 +664,7 @@ function renderLove(
           label={`${name}'s Romance DNA in One Phrase`}
           text={g('love_callout_dna')}
         />
+        <PageFooter />
       </Page>
       <ChapterPage theme={theme} title="Your Romantic Blueprint" content={g('love_p1')} />
       <Page size="A4" style={t.page}>
@@ -663,6 +674,7 @@ function renderLove(
           label="Your Secret First-Impression Weapon"
           text={g('love_callout_first')}
         />
+        <PageFooter />
       </Page>
 
       {/* Part 2: 연애 강점 + 스타일 */}
@@ -678,6 +690,7 @@ function renderLove(
           label="Your Cosmic Match Blueprint"
           text={g('love_callout_match')}
         />
+        <PageFooter />
       </Page>
       <ChapterPage theme={theme} title="Compatibility & Dealbreakers" content={g('love_p3')} />
 
@@ -690,10 +703,12 @@ function renderLove(
           label="Your Love Calendar"
           text={g('love_callout_timing')}
         />
+        <PageFooter />
       </Page>
       {data.nyunun && (
         <Page size="A4" style={t.page}>
           <NyununCard theme={theme} nyunun={data.nyunun} />
+          <PageFooter />
         </Page>
       )}
       <ChapterPage theme={theme} title="Romantic Timing & Lucky Places" content={g('love_p4')} />
@@ -707,6 +722,7 @@ function renderLove(
           label="Your Intimate Connection Style"
           text={g('love_callout_adult')}
         />
+        <PageFooter />
       </Page>
       <ChapterPage theme={theme} title="Physical & Emotional Intimacy" content={g('love_p5')} />
 
@@ -719,6 +735,7 @@ function renderLove(
           label="Your Love Luck Amplifiers"
           text={g('love_callout_luck')}
         />
+        <PageFooter />
       </Page>
       <ChapterPage theme={theme} title="Colors, Numbers & Strategic Tips" content={g('love_p6')} />
     </>
