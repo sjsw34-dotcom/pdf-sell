@@ -395,6 +395,7 @@ export function PdfDocument({
     >
       <CoverPage
         theme={theme}
+        tier={tier}
         name={clientName || 'Guest'}
         birthDate={birthInfo || ''}
         coverImageBase64={coverImage}
