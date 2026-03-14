@@ -3,6 +3,7 @@ import { Page, View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { ThemeCode } from '@/lib/types/theme';
 import { getThemeStyles } from './styles/themes';
 import { PageFooter } from './PageFooter';
+import { FONT_BODY } from './styles/pdfStyles';
 import { THEMES } from '@/lib/constants/themes';
 
 interface ChapterPageProps {
@@ -10,6 +11,10 @@ interface ChapterPageProps {
   title: string;
   content: string;
   chapterNumber?: number;
+  /** "Chapter 1-1" 같은 커스텀 라벨. chapterNumber보다 우선 */
+  chapterLabel?: string;
+  /** Part 소속 제목 (예: "My Four Pillars — Detailed Analysis") */
+  sectionTitle?: string;
 }
 
 /** AI 텍스트에서 마크다운 서식을 제거 */
@@ -23,19 +28,24 @@ function stripMarkdown(text: string): string {
     .trim();
 }
 
-export function ChapterPage({ theme, title, content, chapterNumber }: ChapterPageProps) {
+export function ChapterPage({ theme, title, content, chapterNumber, chapterLabel, sectionTitle }: ChapterPageProps) {
   const t = getThemeStyles(theme);
   const colors = THEMES[theme].colors;
   const safeContent = stripMarkdown(content || '');
   const paragraphs = safeContent.split(/\n\n+/).filter((p) => p.trim() !== '');
 
+  const label = chapterLabel || (chapterNumber !== undefined ? `CHAPTER ${chapterNumber}` : undefined);
+
   return (
     <Page size="A4" style={t.page} wrap>
       <View style={s.header}>
-        {chapterNumber !== undefined && (
-          <Text style={t.label}>CHAPTER {chapterNumber}</Text>
+        {label && (
+          <Text style={t.label}>{label}</Text>
         )}
         <Text style={t.title}>{title || ''}</Text>
+        {sectionTitle && (
+          <Text style={[s.sectionTitle, { color: colors.textSecondary }]}>{sectionTitle}</Text>
+        )}
         <View style={t.divider} />
       </View>
 
@@ -55,5 +65,6 @@ export function ChapterPage({ theme, title, content, chapterNumber }: ChapterPag
 
 const s = StyleSheet.create({
   header: { marginBottom: 16 },
+  sectionTitle: { fontFamily: FONT_BODY, fontSize: 9, marginTop: 2, marginBottom: 4 },
   body: { flex: 1, paddingBottom: 30 },
 });

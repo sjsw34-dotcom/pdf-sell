@@ -474,56 +474,56 @@ function renderFull(theme: ThemeCode, g: (k: string) => string, data: SajuData) 
   return (
     <>
       {/* Part 1: 사주 상세 분석 */}
-      <PartHeader theme={theme} partNumber={1} title="Your Destiny Chart" subtitle="The Four Pillars in Depth" />
-      <ChapterPage theme={theme} chapterNumber={1} title="Pillar-by-Pillar Analysis" content={g('part1_ch1')} />
-      <ChapterPage theme={theme} chapterNumber={2} title="Hidden Stems & Napeum" content={g('part1_ch2')} />
+      <PartHeader theme={theme} partNumber={1} title="Detailed Analysis of My Four Pillars" subtitle="In-Depth Interpretation of the Birth Chart" />
+      <ChapterPage theme={theme} chapterLabel="Chapter 1-1" title="Exploring Your Four Pillars Composition" sectionTitle="My Four Pillars — Detailed Analysis" content={g('part1_ch1')} />
+      <ChapterPage theme={theme} chapterLabel="Chapter 1-2" title="What Your Four Pillars Reveal About Your Destiny" sectionTitle="My Four Pillars — Detailed Analysis" content={g('part1_ch2')} />
 
       {/* Part 2: 황금기 */}
-      <PartHeader theme={theme} partNumber={2} title="My Life's Golden Period" subtitle="When the Stars Align" />
-      <ChapterPage theme={theme} chapterNumber={1} title="Your Peak Decades" content={g('part2_ch1')} />
-      <ChapterPage theme={theme} chapterNumber={2} title="Seasonal & Daily Timing" content={g('part2_ch2')} />
+      <PartHeader theme={theme} partNumber={2} title="The Golden Peaks of My Life" subtitle="Major Luck Cycle and Annual Fortune Analysis" />
+      <ChapterPage theme={theme} chapterLabel="Chapter 2-1" title="Analyzing the Golden Peaks of Your Life" sectionTitle="The Golden Peaks of My Life" content={g('part2_ch1')} />
+      <ChapterPage theme={theme} chapterLabel="Chapter 2-2" title="Seasonal and Daily Timing" sectionTitle="The Golden Peaks of My Life" content={g('part2_ch2')} />
 
       {/* Part 3: 연애운 */}
-      <PartHeader theme={theme} partNumber={3} title="Love & Marriage Fortune" subtitle="Romance in the Stars" />
-      <ChapterPage theme={theme} chapterNumber={1} title="Your Romantic Archetype" content={g('part3_ch1')} />
-      <ChapterPage theme={theme} chapterNumber={2} title="Timing & Compatibility" content={g('part3_ch2')} />
+      <PartHeader theme={theme} partNumber={3} title="Romance Fortune and Partner Destiny" subtitle="Love and Marriage Analysis" />
+      <ChapterPage theme={theme} chapterLabel="Chapter 3-1" title="Romance Tendencies and Romance Fortune" sectionTitle="Romance Fortune and Partner Destiny" content={g('part3_ch1')} />
+      <ChapterPage theme={theme} chapterLabel="Chapter 3-2" title="Marriage Fortune and Timing" sectionTitle="Romance Fortune and Partner Destiny" content={g('part3_ch2')} />
 
       {/* Part 4: 재물운 */}
-      <PartHeader theme={theme} partNumber={4} title="Wealth & Prosperity" subtitle="Your Financial Destiny" />
-      <ChapterPage theme={theme} chapterNumber={1} title="Wealth Pattern Analysis" content={g('part4_ch1')} />
-      <ChapterPage theme={theme} chapterNumber={2} title="Prosperous Periods & Strategy" content={g('part4_ch2')} />
+      <PartHeader theme={theme} partNumber={4} title="My Financial Fortune Analysis" subtitle="Wealth and Investment Analysis" />
+      <ChapterPage theme={theme} chapterLabel="Chapter 4-1" title="Innate Financial Fortune" sectionTitle="My Financial Fortune Analysis" content={g('part4_ch1')} />
+      <ChapterPage theme={theme} chapterLabel="Chapter 4-2" title="Wealth Accumulation Style and Investment Tendencies" sectionTitle="My Financial Fortune Analysis" content={g('part4_ch2')} />
 
       {/* Part 5: 직업운 */}
-      <PartHeader theme={theme} partNumber={5} title="Career & Success Destiny" subtitle="Your Professional Path" />
-      <ChapterPage theme={theme} chapterNumber={1} title="Ideal Career Fields" content={g('part5_ch1')} />
-      <ChapterPage theme={theme} chapterNumber={2} title="Leadership & Work Style" content={g('part5_ch2')} />
+      <PartHeader theme={theme} partNumber={5} title="Career and the Destiny of Success" subtitle="Career Fortune Analysis" />
+      <ChapterPage theme={theme} chapterLabel="Chapter 5-1" title="Natural Aptitudes and Career Fields" sectionTitle="Career and the Destiny of Success" content={g('part5_ch1')} />
+      <ChapterPage theme={theme} chapterLabel="Chapter 5-2" title="Career Fortune and Business Fortune" sectionTitle="Career and the Destiny of Success" content={g('part5_ch2')} />
 
       {/* Part 6: 건강 */}
-      <PartHeader theme={theme} partNumber={6} title="Health & Constitution" subtitle="Your Body's Blueprint" />
-      <ChapterPage theme={theme} chapterNumber={1} title="Constitutional Health Profile" content={g('part6_ch1')} />
-      <ChapterPage theme={theme} chapterNumber={2} title="Seasonal Health & Remedies" content={g('part6_ch2')} />
+      <PartHeader theme={theme} partNumber={6} title="Health and Constitution Through Saju" subtitle="Health Fortune Analysis" />
+      <ChapterPage theme={theme} chapterLabel="Chapter 6-1" title="Innate Constitution and Health Characteristics" sectionTitle="Health and Constitution Through Saju" content={g('part6_ch1')} />
+      <ChapterPage theme={theme} chapterLabel="Chapter 6-2" title="Health Issues to Watch" sectionTitle="Health and Constitution Through Saju" content={g('part6_ch2')} />
 
       {/* Part 7: 귀인/신살 */}
-      <PartHeader theme={theme} partNumber={7} title="Spirit Stars & Hidden Influences" subtitle="Destined Protectors & Challenges" />
+      <PartHeader theme={theme} partNumber={7} title="The Destined Benefactors Who Will Help You" subtitle="Benefactor & Connection Analysis" />
       {data.shinsal && (
         <Page size="A4" style={t.page}>
           <ShinsalTable theme={theme} shinsal={data.shinsal} />
           <PageFooter />
         </Page>
       )}
-      <ChapterPage theme={theme} chapterNumber={1} title="Your Protective Stars" content={g('part7_ch1')} />
-      <ChapterPage theme={theme} chapterNumber={2} title="Cautionary Stars & Guidance" content={g('part7_ch2')} />
+      <ChapterPage theme={theme} chapterLabel="Chapter 7-1" title="Characteristics of Your Benefactors" sectionTitle="The Destined Benefactors Who Will Help You" content={g('part7_ch1')} />
+      <ChapterPage theme={theme} chapterLabel="Chapter 7-2" title="How to Meet Your Benefactors" sectionTitle="The Destined Benefactors Who Will Help You" content={g('part7_ch2')} />
 
       {/* Part 8: 대운/개운 */}
-      <PartHeader theme={theme} partNumber={8} title="Major Luck Cycles" subtitle="The Decades of Your Destiny" />
+      <PartHeader theme={theme} partNumber={8} title="How to Shape Your Destiny" subtitle="Fortune Improvement Guide" />
       {data.daeun && (
         <Page size="A4" style={t.page}>
           <DaeunTimeline theme={theme} daeun={data.daeun} />
           <PageFooter />
         </Page>
       )}
-      <ChapterPage theme={theme} chapterNumber={1} title="Decade-by-Decade Overview" content={g('part8_ch1')} />
-      <ChapterPage theme={theme} chapterNumber={2} title="Destiny Modification Methods" content={g('part8_ch2')} />
+      <ChapterPage theme={theme} chapterLabel="Chapter 8-1" title="Advice for Improving Your Destiny" sectionTitle="How to Shape Your Destiny" content={g('part8_ch1')} />
+      <ChapterPage theme={theme} chapterLabel="Chapter 8-2" title="Habits That Invite Good Fortune" sectionTitle="How to Shape Your Destiny" content={g('part8_ch2')} />
     </>
   );
 }
