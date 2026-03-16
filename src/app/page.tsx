@@ -9,7 +9,6 @@ import { FileUploader } from '@/components/ui/FileUploader';
 import { ImageUploader } from '@/components/ui/ImageUploader';
 import { ThemeSelector } from '@/components/ui/ThemeSelector';
 import { AdditionalRequest } from '@/components/ui/AdditionalRequest';
-import { PersonalQA } from '@/components/ui/PersonalQA';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Toast } from '@/components/ui/Toast';
 
@@ -214,7 +213,6 @@ export default function HomePage() {
             <ImageUploader />
             <ThemeSelector />
             <AdditionalRequest />
-            <PersonalQA />
           </div>
         </div>
 
