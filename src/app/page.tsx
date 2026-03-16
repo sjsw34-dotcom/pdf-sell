@@ -205,6 +205,13 @@ export default function HomePage() {
         <header className="text-center mb-10">
           <h1 className="text-3xl font-bold text-white mb-2">SajuMuse PDF 생성기</h1>
           <p className="text-sm text-gray-400">사주명리 분석 데이터를 프리미엄 영문 PDF 리포트로 변환합니다</p>
+          <a
+            href="/mailer"
+            target="_blank"
+            className="inline-block mt-4 px-5 py-2 text-sm font-medium text-amber-400 border border-amber-700/50 rounded-lg hover:bg-amber-900/20 transition"
+          >
+            이메일 발송 도구 열기
+          </a>
         </header>
 
         <div className={isWorking ? 'pointer-events-none opacity-50' : ''}>
