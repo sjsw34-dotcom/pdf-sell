@@ -3,7 +3,8 @@ import { Page, View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { ThemeCode } from '@/lib/types/theme';
 import type { TierCode } from '@/lib/types/tier';
 import { THEMES } from '@/lib/constants/themes';
-import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
+import { FONT_BODY, FONT_TITLE, FONT_CJK, ANTI_LIGATURE, fixLigatures } from './styles/pdfStyles';
+import { PageFooter } from './PageFooter';
 
 // ─── 티어별 목차 ───
 
@@ -61,9 +62,10 @@ interface IntroPageProps {
   theme: ThemeCode;
   tier: TierCode;
   name: string;
+  hasPersonalQuestion?: boolean;
 }
 
-export function IntroPage({ theme, tier, name }: IntroPageProps) {
+export function IntroPage({ theme, tier, name, hasPersonalQuestion }: IntroPageProps) {
   const colors = THEMES[theme].colors;
   const items = TOC[tier];
 
@@ -92,16 +94,27 @@ export function IntroPage({ theme, tier, name }: IntroPageProps) {
           <Text style={[s.greeting, { color: colors.primary }]}>Dear {name || 'Valued Guest'},</Text>
 
           <Text style={[s.body, { color: colors.text }]}>
-            This report is a personalized destiny analysis prepared exclusively based on your 사주팔자 · Four Pillars of Destiny.
+            {fixLigatures('This report is a personalized destiny analysis prepared exclusively based on your 사주팔자 · Four Pillars of Destiny.')}
           </Text>
 
           <Text style={[s.body, { color: colors.text }]}>
-            Saju (사주명리학) is a wisdom tradition with thousands of years of history rooted in Eastern philosophy. By interpreting the cosmic energies present at the moment of your birth, it offers deep insight into your innate nature and the natural flow of your life.
+            {fixLigatures('Saju (사주명리학) is a wisdom tradition with thousands of years of history rooted in Eastern philosophy. By interpreting the cosmic energies present at the moment of your birth, it offers deep insight into your innate nature and the natural flow of your life.')}
           </Text>
 
           <Text style={[s.body, { color: colors.text }]}>
-            Drawing on years of experience reading the lives of countless individuals, this analysis has been crafted with great care — just for you. May this report serve as a guiding light as you navigate your path forward.
+            {fixLigatures('Drawing on years of experience reading the lives of countless individuals, this analysis has been crafted with great care — just for you. May this report serve as a guiding light as you navigate your path forward.')}
           </Text>
+
+          {hasPersonalQuestion && (
+            <>
+              <View style={s.spacer12} />
+              <View style={[s.personalNote, { backgroundColor: colors.surface, borderLeftColor: colors.secondary }]}>
+                <Text style={[s.personalNoteText, { color: colors.text }]}>
+                  {fixLigatures('You also submitted a personal question. After the full analysis, you will find a dedicated section at the end of this report with a personalized answer crafted just for you.')}
+                </Text>
+              </View>
+            </>
+          )}
 
           <View style={s.spacer24} />
 
@@ -109,9 +122,7 @@ export function IntroPage({ theme, tier, name }: IntroPageProps) {
           <Text style={[s.signoffBrand, { color: colors.primary }]}>SajuMuse</Text>
         </View>
 
-        <View style={[s.footer, { borderTopColor: colors.border }]}>
-          <Text style={[s.footerText, { color: colors.textSecondary }]}>SajuMuse</Text>
-        </View>
+        <PageFooter color={colors.textSecondary} />
       </Page>
 
       {/* ══════ 페이지 2: Table of Contents ══════ */}
@@ -143,9 +154,7 @@ export function IntroPage({ theme, tier, name }: IntroPageProps) {
           <View style={[s.tocDividerBottom, { backgroundColor: colors.primary }]} />
         </View>
 
-        <View style={[s.footer, { borderTopColor: colors.border }]}>
-          <Text style={[s.footerText, { color: colors.textSecondary }]}>SajuMuse</Text>
-        </View>
+        <PageFooter color={colors.textSecondary} />
       </Page>
     </>
   );
@@ -165,13 +174,13 @@ const s = StyleSheet.create({
   // Overview 페이지
   overviewLabel: {
     fontFamily: FONT_BODY,
-    fontSize: 10,
+    fontSize: 11,
     letterSpacing: 1,
     marginBottom: 4,
   },
   tierLabel: {
     fontFamily: FONT_TITLE,
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: 'bold',
     marginBottom: 8,
   },
@@ -183,7 +192,7 @@ const s = StyleSheet.create({
   },
   brandLine: {
     fontFamily: FONT_BODY,
-    fontSize: 9,
+    fontSize: 10,
     letterSpacing: 1,
     marginBottom: 8,
   },
@@ -194,38 +203,39 @@ const s = StyleSheet.create({
   },
   sectionTag: {
     fontFamily: FONT_BODY,
-    fontSize: 9,
+    fontSize: 10,
     fontWeight: 'bold',
     letterSpacing: 2,
     textTransform: 'uppercase',
   },
   greeting: {
     fontFamily: FONT_TITLE,
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: 'bold',
-    marginBottom: 14,
+    marginBottom: 16,
   },
   body: {
     fontFamily: FONT_BODY,
-    fontSize: 10.5,
-    lineHeight: 1.7,
-    marginBottom: 10,
+    fontSize: 14,
+    lineHeight: 1.8,
+    marginBottom: 12,
+    letterSpacing: ANTI_LIGATURE,
   },
   signoff: {
     fontFamily: FONT_BODY,
-    fontSize: 10,
+    fontSize: 14,
     marginBottom: 4,
   },
   signoffBrand: {
     fontFamily: FONT_TITLE,
-    fontSize: 12,
+    fontSize: 16,
     fontWeight: 'bold',
   },
 
   // Table of Contents 페이지
   tocTitle: {
     fontFamily: FONT_TITLE,
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 16,
   },
@@ -241,13 +251,13 @@ const s = StyleSheet.create({
   },
   tocHeaderNum: {
     fontFamily: FONT_BODY,
-    fontSize: 9,
+    fontSize: 10,
     fontWeight: 'bold',
     width: 40,
   },
   tocHeaderSection: {
     fontFamily: FONT_BODY,
-    fontSize: 9,
+    fontSize: 10,
     fontWeight: 'bold',
     flex: 1,
   },
@@ -260,19 +270,33 @@ const s = StyleSheet.create({
   },
   tocNum: {
     fontFamily: FONT_TITLE,
-    fontSize: 11,
+    fontSize: 14,
     fontWeight: 'bold',
-    width: 40,
+    width: 44,
   },
   tocSection: {
     fontFamily: FONT_BODY,
-    fontSize: 11,
+    fontSize: 14,
     flex: 1,
     lineHeight: 1.4,
   },
   tocDividerBottom: {
     width: '100%',
     height: 2,
+  },
+
+  // 개인 질문 안내
+  personalNote: {
+    borderLeftWidth: 3,
+    borderLeftStyle: 'solid',
+    padding: 14,
+    borderRadius: 4,
+  },
+  personalNoteText: {
+    fontFamily: FONT_BODY,
+    fontSize: 12,
+    lineHeight: 1.6,
+    letterSpacing: ANTI_LIGATURE,
   },
 
   // 공통

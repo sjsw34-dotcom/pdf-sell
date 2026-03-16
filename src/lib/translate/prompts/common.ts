@@ -21,10 +21,15 @@ Key term mappings you MUST use:
 - Five Elements:
   Wood (목 · 木), Fire (화 · 火), Earth (토 · 土), Metal (금 · 金), Water (수 · 水)
 
-- Heavenly Stems (천간 · 天干) — always use romanization + Korean + Hanja:
-  Gap (갑 · 甲), Eul (을 · 乙), Byeong (병 · 丙), Jeong (정 · 丁),
-  Mu (무 · 戊), Gi (기 · 己), Gyeong (경 · 庚), Sin (신 · 辛),
-  Im (임 · 壬), Gye (계 · 癸)
+- Heavenly Stems (천간 · 天干) — always use romanization + Korean + Hanja + CORRECT Yin/Yang + Element:
+  Gap (갑 · 甲) · Yang Wood, Eul (을 · 乙) · Yin Wood,
+  Byeong (병 · 丙) · Yang Fire, Jeong (정 · 丁) · Yin Fire,
+  Mu (무 · 戊) · Yang Earth, Gi (기 · 己) · Yin Earth,
+  Gyeong (경 · 庚) · Yang Metal, Sin (신 · 辛) · Yin Metal,
+  Im (임 · 壬) · Yang Water, Gye (계 · 癸) · Yin Water
+
+  CRITICAL: Odd-numbered stems (甲丙戊庚壬) are YANG, even-numbered stems (乙丁己辛癸) are YIN.
+  Never confuse Yin/Yang — this is a fundamental accuracy requirement.
 
 - Earthly Branches (지지 · 地支) — always use romanization + Korean + Hanja + animal:
   Ja (자 · 子) Rat, Chuk (축 · 丑) Ox, In (인 · 寅) Tiger, Myo (묘 · 卯) Rabbit,

@@ -40,7 +40,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# fonts (large binary files)
+# fonts (large binary files — only subset fonts are committed)
 src/fonts/*.ttf
+public/fonts/*.ttf
+!public/fonts/*-subset.ttf
+public/fonts/*.otf
+public/fonts/*.eot
+public/fonts/*.woff
+public/fonts/*.woff2
 
 .vercel

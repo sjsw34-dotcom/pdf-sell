@@ -1,7 +1,7 @@
 import { StyleSheet } from '@react-pdf/renderer';
 import type { ThemeCode, ThemeColors } from '@/lib/types/theme';
 import { THEMES } from '@/lib/constants/themes';
-import { FONT_TITLE, FONT_BODY, FONT_CJK } from './pdfStyles';
+import { FONT_TITLE, FONT_BODY, FONT_CJK, ANTI_LIGATURE } from './pdfStyles';
 
 // ─── 테마별 PDF 스타일 타입 ───
 
@@ -20,36 +20,40 @@ function buildThemeStyles(colors: ThemeColors) {
 
     title: {
       fontFamily: FONT_TITLE,
-      fontSize: 16,
-      fontWeight: 'bold',
-      color: colors.primary,
-      marginBottom: 10,
-      lineHeight: 1.4,
-    },
-
-    subtitle: {
-      fontFamily: FONT_TITLE,
-      fontSize: 12,
+      fontSize: 20,
       fontWeight: 'bold',
       color: colors.primary,
       marginBottom: 6,
       lineHeight: 1.4,
+      letterSpacing: ANTI_LIGATURE,
+    },
+
+    subtitle: {
+      fontFamily: FONT_TITLE,
+      fontSize: 16,
+      fontWeight: 'bold',
+      color: colors.primary,
+      marginBottom: 8,
+      lineHeight: 1.4,
+      letterSpacing: ANTI_LIGATURE,
     },
 
     body: {
       fontFamily: FONT_BODY,
-      fontSize: 10.5,
+      fontSize: 14,
       color: colors.text,
-      lineHeight: 1.7,
-      marginBottom: 8,
+      lineHeight: 1.8,
+      marginBottom: 10,
+      letterSpacing: ANTI_LIGATURE,
     },
 
     caption: {
       fontFamily: FONT_BODY,
-      fontSize: 9,
+      fontSize: 13,
       color: colors.textSecondary,
-      lineHeight: 1.4,
-      marginBottom: 4,
+      lineHeight: 1.5,
+      marginBottom: 6,
+      letterSpacing: ANTI_LIGATURE,
     },
 
     cjk: {
@@ -63,8 +67,8 @@ function buildThemeStyles(colors: ThemeColors) {
       borderLeftWidth: 3,
       borderLeftColor: colors.secondary,
       borderLeftStyle: 'solid',
-      padding: 12,
-      marginBottom: 12,
+      padding: 16,
+      marginBottom: 16,
     },
 
     // 테이블 헤더
@@ -72,9 +76,10 @@ function buildThemeStyles(colors: ThemeColors) {
       backgroundColor: colors.primary,
       color: '#FFFFFF',
       fontFamily: FONT_BODY,
-      fontSize: 10,
+      fontSize: 13,
       fontWeight: 'bold',
-      padding: 6,
+      padding: 8,
+      letterSpacing: ANTI_LIGATURE,
     },
 
     // 테이블 셀
@@ -83,9 +88,10 @@ function buildThemeStyles(colors: ThemeColors) {
       borderBottomColor: colors.border,
       borderBottomStyle: 'solid',
       fontFamily: FONT_BODY,
-      fontSize: 10,
+      fontSize: 13,
       color: colors.text,
-      padding: 6,
+      padding: 8,
+      letterSpacing: ANTI_LIGATURE,
     },
 
     // 테이블 셀 — 짝수 행
@@ -95,9 +101,10 @@ function buildThemeStyles(colors: ThemeColors) {
       borderBottomColor: colors.border,
       borderBottomStyle: 'solid',
       fontFamily: FONT_BODY,
-      fontSize: 10,
+      fontSize: 13,
       color: colors.text,
-      padding: 6,
+      padding: 8,
+      letterSpacing: ANTI_LIGATURE,
     },
 
     // 구분선
@@ -105,8 +112,8 @@ function buildThemeStyles(colors: ThemeColors) {
       borderBottomWidth: 1,
       borderBottomColor: colors.border,
       borderBottomStyle: 'solid',
-      marginTop: 12,
-      marginBottom: 12,
+      marginTop: 14,
+      marginBottom: 14,
     },
 
     // 파트 헤더 페이지
@@ -128,7 +135,7 @@ function buildThemeStyles(colors: ThemeColors) {
 
     partHeaderSubtitle: {
       fontFamily: FONT_BODY,
-      fontSize: 14,
+      fontSize: 16,
       color: colors.secondary,
     },
 
@@ -158,12 +165,12 @@ function buildThemeStyles(colors: ThemeColors) {
     // 서브 라벨 (secondary 색상)
     label: {
       fontFamily: FONT_BODY,
-      fontSize: 9,
+      fontSize: 12,
       color: colors.secondary,
       fontWeight: 'bold',
       textTransform: 'uppercase',
-      letterSpacing: 1,
-      marginBottom: 4,
+      letterSpacing: 1.5,
+      marginBottom: 6,
     },
   });
 }

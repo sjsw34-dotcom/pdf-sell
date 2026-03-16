@@ -2,7 +2,8 @@ import React from 'react';
 import { Page, View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { ThemeCode } from '@/lib/types/theme';
 import { THEMES } from '@/lib/constants/themes';
-import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
+import { FONT_BODY, FONT_TITLE, FONT_CJK, ANTI_LIGATURE, fixLigatures } from './styles/pdfStyles';
+import { PageFooter } from './PageFooter';
 
 interface WhatIsSajuPageProps {
   theme: ThemeCode;
@@ -10,6 +11,7 @@ interface WhatIsSajuPageProps {
 
 export function WhatIsSajuPage({ theme }: WhatIsSajuPageProps) {
   const colors = THEMES[theme].colors;
+  const L = fixLigatures;
 
   return (
     <>
@@ -24,32 +26,30 @@ export function WhatIsSajuPage({ theme }: WhatIsSajuPageProps) {
           <Text style={[s.sectionTitle, { color: colors.primary }]}>What is Saju?</Text>
 
           <Text style={[s.body, { color: colors.text }]}>
-            Saju is an analytical method rooted in traditional Eastern philosophy and statistical principles. It interprets an individual's personality and destiny based on the year, month, day, and hour of birth. Saju (四柱) literally means "Four Pillars," each representing the Year (年), Month (月), Day (日), and Hour (時).
+            {L('Saju is an analytical method rooted in traditional Eastern philosophy and statistical principles. It interprets an individual\'s personality and destiny based on the year, month, day, and hour of birth. Saju (四柱) literally means "Four Pillars," each representing the Year (年), Month (月), Day (日), and Hour (時).')}
           </Text>
 
           <Text style={[s.body, { color: colors.text }]}>
-            Unlike fortune-telling based on subjective intuition, Saju pursues objective interpretation grounded in statistical data accumulated over centuries and the theory of Yin-Yang and the Five Elements (陰陽五行). Yin and Yang represent the principle of dividing all phenomena into two opposing natures — light and darkness, day and night. The Five Elements consist of Wood (木), Fire (火), Earth (土), Metal (金), and Water (水), and through the way these elements influence one another, our lives are interpreted.
+            {L('Unlike fortune-telling based on subjective intuition, Saju pursues objective interpretation grounded in statistical data accumulated over centuries and the theory of Yin-Yang and the Five Elements (陰陽五行). Yin and Yang represent the principle of dividing all phenomena into two opposing natures — light and darkness, day and night. The Five Elements consist of Wood (木), Fire (火), Earth (土), Metal (金), and Water (水), and through the way these elements influence one another, our lives are interpreted.')}
           </Text>
 
           <View style={s.spacer} />
 
-          <Text style={[s.sectionTitle, { color: colors.primary }]}>What can Saju reveal?</Text>
+          <Text style={[s.sectionTitle, { color: colors.primary }]}>{L('What can Saju reveal?')}</Text>
 
           <Text style={[s.body, { color: colors.text }]}>
-            Saju is not simply a tool for predicting the future. Its true significance lies in helping you better understand yourself by analyzing your personality, strengths and weaknesses, and the flow of your life. You can use it as a reference when making important decisions or to find direction for addressing areas where you may be lacking.
+            {L('Saju is not simply a tool for predicting the future. Its true significance lies in helping you better understand yourself by analyzing your personality, strengths and weaknesses, and the flow of your life. You can use it as a reference when making important decisions or to find direction for addressing areas where you may be lacking.')}
           </Text>
         </View>
 
-        <View style={s.footer}>
-          <Text style={[s.footerText, { color: colors.textSecondary }]}>SajuMuse</Text>
-        </View>
+        <PageFooter color={colors.textSecondary} />
       </Page>
 
       {/* 페이지 2 */}
       <Page size="A4" style={[s.page, { backgroundColor: colors.background }]}>
         <View style={s.content}>
           <Text style={[s.body, { color: colors.text }]}>
-            At SajuMuse, we aim to help you discover your own unique story through Saju and empower you to make better choices. We will walk you through the path of your life in an approachable and friendly way.
+            {L('At SajuMuse, we aim to help you discover your own unique story through Saju and empower you to make better choices. We will walk you through the path of your life in an approachable and friendly way.')}
           </Text>
 
           <View style={s.spacer} />
@@ -65,15 +65,15 @@ export function WhatIsSajuPage({ theme }: WhatIsSajuPageProps) {
           <Text style={[s.sectionTitle, { color: colors.primary }]}>How to Read This Report</Text>
 
           <Text style={[s.body, { color: colors.text }]}>
-            Your Saju birth chart is organized into Four Pillars, each derived from your birth year, month, day, and hour. Every pillar contains two elements: a Heavenly Stem (top) and an Earthly Branch (bottom).
+            {L('Your Saju birth chart is organized into Four Pillars, each derived from your birth year, month, day, and hour. Every pillar contains two elements: a Heavenly Stem (top) and an Earthly Branch (bottom).')}
           </Text>
 
           <Text style={[s.body, { color: colors.text }]}>
-            The Day Pillar's Heavenly Stem — marked "Day Master" — represents your core self. The surrounding stars describe how different energies interact with your Day Master, shaping your personality, relationships, career, and life flow.
+            {L('The Day Pillar\'s Heavenly Stem — marked "Day Master" — represents your core self. The surrounding stars describe how different energies interact with your Day Master, shaping your personality, relationships, career, and life flow.')}
           </Text>
 
           <Text style={[s.body, { color: colors.text }]}>
-            Don't worry if the terminology feels unfamiliar — the Comprehensive Analysis section that follows translates all of this into plain language about your life.
+            {L('Don\'t worry if the terminology feels unfamiliar — the Comprehensive Analysis section that follows translates all of this into plain language about your life.')}
           </Text>
 
           <View style={s.spacer} />
@@ -102,9 +102,7 @@ export function WhatIsSajuPage({ theme }: WhatIsSajuPageProps) {
           </View>
         </View>
 
-        <View style={s.footer}>
-          <Text style={[s.footerText, { color: colors.textSecondary }]}>SajuMuse</Text>
-        </View>
+        <PageFooter color={colors.textSecondary} />
       </Page>
     </>
   );
@@ -123,7 +121,7 @@ const s = StyleSheet.create({
 
   tagline: {
     fontFamily: FONT_TITLE,
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#333333',
     marginBottom: 4,
@@ -142,16 +140,17 @@ const s = StyleSheet.create({
 
   sectionTitle: {
     fontFamily: FONT_TITLE,
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 12,
+    marginBottom: 14,
   },
 
   body: {
     fontFamily: FONT_BODY,
-    fontSize: 10.5,
-    lineHeight: 1.7,
-    marginBottom: 10,
+    fontSize: 14,
+    lineHeight: 1.8,
+    marginBottom: 12,
+    letterSpacing: ANTI_LIGATURE,
   },
 
   spacer: {
@@ -180,13 +179,13 @@ const s = StyleSheet.create({
   },
   termLabel: {
     fontFamily: FONT_TITLE,
-    fontSize: 10,
+    fontSize: 14,
     fontWeight: 'bold',
-    marginBottom: 2,
+    marginBottom: 3,
   },
   termDesc: {
     fontFamily: FONT_BODY,
-    fontSize: 9,
+    fontSize: 13,
     lineHeight: 1.5,
   },
 

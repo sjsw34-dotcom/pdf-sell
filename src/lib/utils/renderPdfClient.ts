@@ -13,6 +13,8 @@ interface RenderParams {
   theme: ThemeCode;
   clientName: string;
   birthInfo: string;
+  personalQuestion?: string;
+  personalAnswer?: string;
 }
 
 /**
@@ -28,6 +30,8 @@ export async function renderPdfOnClient(params: RenderParams): Promise<Blob> {
     theme: params.theme,
     clientName: params.clientName,
     birthInfo: params.birthInfo,
+    personalQuestion: params.personalQuestion,
+    personalAnswer: params.personalAnswer,
   });
 
   const instance = pdf(

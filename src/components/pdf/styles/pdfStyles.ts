@@ -15,11 +15,22 @@ function getBaseUrl(): string {
 try {
   const base = getBaseUrl();
 
+  // SpoqaHanSans — 영어/한글 본문용 (백업)
   Font.register({
     family: 'SpoqaHanSans',
     fonts: [
       { src: `${base}/SpoqaHanSansNeo-Regular.ttf`, fontWeight: 'normal' },
       { src: `${base}/SpoqaHanSansNeo-Bold.ttf`, fontWeight: 'bold' },
+    ],
+  });
+
+  // NotoSansKR — 한자(漢字) 지원 폰트 (메인)
+  // subset 버전: PDF에 사용되는 CJK 문자만 포함 (6MB → 116KB)
+  Font.register({
+    family: 'NotoSansKR',
+    fonts: [
+      { src: `${base}/fonts/NotoSansKR-Regular-subset.ttf`, fontWeight: 'normal' },
+      { src: `${base}/fonts/NotoSansKR-Bold-subset.ttf`, fontWeight: 'bold' },
     ],
   });
 } catch {
@@ -29,10 +40,28 @@ try {
 try { Font.registerHyphenationCallback((word) => [word]); } catch {}
 
 // ─── 폰트명 ───
+// NotoSansKR 통일 — 한글+한자+영어 모두 지원
+// fi/fl 리가처 이슈는 letterSpacing: 0.1 로 해결
 
-export const FONT_BODY = 'SpoqaHanSans';
-export const FONT_TITLE = 'SpoqaHanSans';
-export const FONT_CJK = 'SpoqaHanSans';
+export const FONT_BODY = 'NotoSansKR';
+export const FONT_TITLE = 'NotoSansKR';
+export const FONT_CJK = 'NotoSansKR';
+
+/**
+ * fi/fl 리가처 깨짐 방지용 letterSpacing 값.
+ * 모든 body 텍스트 스타일에 적용.
+ */
+export const ANTI_LIGATURE = 0.15;
+
+/**
+ * fi/fl/ff 리가처 깨짐 방지 — f + i/l/f 사이에 zero-width space 삽입.
+ * @react-pdf/renderer + NotoSansKR에서 리가처가 글자를 삼키는 현상 방지.
+ * 모든 텍스트 출력 전에 적용해야 함.
+ */
+export function fixLigatures(text: string): string {
+  // f + i, f + l, f + f 조합에 zero-width space (U+200B) 삽입
+  return text.replace(/f([ilf])/g, 'f\u200B$1');
+}
 
 // ─── 공통 PDF 스타일 ───
 
@@ -47,29 +76,33 @@ export const pdfStyles = StyleSheet.create({
   },
   title: {
     fontFamily: FONT_TITLE,
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 12,
     lineHeight: 1.4,
+    letterSpacing: ANTI_LIGATURE,
   },
   subtitle: {
     fontFamily: FONT_TITLE,
-    fontSize: 12,
+    fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 6,
+    marginBottom: 8,
     lineHeight: 1.4,
+    letterSpacing: ANTI_LIGATURE,
   },
   body: {
     fontFamily: FONT_BODY,
-    fontSize: 10.5,
-    lineHeight: 1.7,
-    marginBottom: 8,
+    fontSize: 14,
+    lineHeight: 1.8,
+    marginBottom: 10,
+    letterSpacing: ANTI_LIGATURE,
   },
   caption: {
     fontFamily: FONT_BODY,
-    fontSize: 9,
-    lineHeight: 1.4,
-    marginBottom: 4,
+    fontSize: 13,
+    lineHeight: 1.5,
+    marginBottom: 6,
+    letterSpacing: ANTI_LIGATURE,
   },
   cjk: {
     fontFamily: FONT_CJK,
@@ -78,10 +111,10 @@ export const pdfStyles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#E0E0E0',
     borderBottomStyle: 'solid',
-    marginTop: 12,
-    marginBottom: 12,
+    marginTop: 14,
+    marginBottom: 14,
   },
-  section: { marginBottom: 16 },
+  section: { marginBottom: 20 },
   row: { flexDirection: 'row', alignItems: 'flex-start' },
   col2: { flex: 1, paddingRight: 8 },
   pageNumber: {

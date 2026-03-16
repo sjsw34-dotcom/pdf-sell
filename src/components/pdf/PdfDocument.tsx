@@ -19,6 +19,8 @@ import { CalloutBox } from './CalloutBox';
 import { WhatIsSajuPage } from './WhatIsSajuPage';
 import { PageFooter } from './PageFooter';
 import { EndingPage } from './EndingPage';
+import { PersonalQAPage } from './PersonalQAPage';
+import { fixLigatures } from './styles/pdfStyles';
 
 // ═══════════════════════════════════════════════════════════════
 // 더미 텍스트 — Claude API 연동 전 테스트용
@@ -369,6 +371,8 @@ interface PdfDocumentProps {
   theme: ThemeCode;
   clientName: string;
   birthInfo: string;
+  personalQuestion?: string;
+  personalAnswer?: string;
 }
 
 export function PdfDocument({
@@ -379,11 +383,14 @@ export function PdfDocument({
   theme,
   clientName,
   birthInfo,
+  personalQuestion,
+  personalAnswer,
 }: PdfDocumentProps) {
   const t = getThemeStyles(theme);
   const g = (key: string): string => {
     const val = texts?.[key] || D[key];
-    return typeof val === 'string' && val.length > 0 ? val : ' ';
+    const raw = typeof val === 'string' && val.length > 0 ? val : ' ';
+    return fixLigatures(raw);
   };
 
   // 티어별 콘텐츠를 단일 배열로 구성 — null/undefined 절대 반환 안 함
@@ -405,7 +412,7 @@ export function PdfDocument({
 
       <WhatIsSajuPage theme={theme} />
 
-      <IntroPage theme={theme} tier={tier} name={clientName || 'Guest'} />
+      <IntroPage theme={theme} tier={tier} name={clientName || 'Guest'} hasPersonalQuestion={!!(personalQuestion && personalAnswer)} />
 
       <Page size="A4" style={t.page}>
         <SajuChart theme={theme} pillar={sajuData.pillar} info={sajuData.info} />
@@ -429,7 +436,15 @@ export function PdfDocument({
 
       {tierContent}
 
-      <EndingPage theme={theme} name={clientName || 'Guest'} />
+      {personalQuestion && personalAnswer && (
+        <PersonalQAPage
+          theme={theme}
+          question={personalQuestion}
+          answer={personalAnswer}
+        />
+      )}
+
+      <EndingPage theme={theme} name={clientName || 'Guest'} tier={tier} />
     </Document>
   );
 }

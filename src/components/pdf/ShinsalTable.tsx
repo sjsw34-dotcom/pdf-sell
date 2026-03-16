@@ -22,7 +22,6 @@ interface ShinsalTableProps {
 
 export function ShinsalTable({ theme, shinsal }: ShinsalTableProps) {
   const colors = THEMES[theme].colors;
-  const s = styles(colors);
 
   const sentimentColor: Record<string, string> = {
     positive: colors.positive,
@@ -32,31 +31,31 @@ export function ShinsalTable({ theme, shinsal }: ShinsalTableProps) {
 
   return (
     <View style={s.container}>
-      <Text style={s.chartTitle}>SPIRIT STARS</Text>
-      <Text style={s.chartSubtitle}>神殺 · Shinsal Analysis</Text>
+      <Text style={[s.chartTitle, { color: colors.text }]}>SPIRIT STARS</Text>
+      <Text style={[s.chartSubtitle, { color: colors.textSecondary }]}>神殺 · Shinsal Analysis</Text>
 
       {/* 공망 / 천을귀인 / 월령 */}
       <View style={s.infoRow}>
-        <View style={s.infoItem}>
-          <Text style={s.infoLabel}>Void (空亡)</Text>
-          <Text style={s.infoValue}>
+        <View style={[s.infoItem, { backgroundColor: colors.surface }]}>
+          <Text style={[s.infoLabel, { color: colors.primary }]}>Void (空亡)</Text>
+          <Text style={[s.infoValue, { color: colors.text }]}>
             Year: {shinsal.gongmang.year.join('')}{'  '}
             Day: {shinsal.gongmang.day.join('')}
           </Text>
         </View>
-        <View style={s.infoItem}>
-          <Text style={s.infoLabel}>Guardian Noble (天乙貴人)</Text>
-          <Text style={s.infoValue}>{shinsal.cheonEulGwiIn}</Text>
+        <View style={[s.infoItem, { backgroundColor: colors.surface }]}>
+          <Text style={[s.infoLabel, { color: colors.primary }]}>Guardian Noble (天乙貴人)</Text>
+          <Text style={[s.infoValue, { color: colors.text }]}>{shinsal.cheonEulGwiIn}</Text>
         </View>
-        <View style={s.infoItem}>
-          <Text style={s.infoLabel}>Monthly Ruler (월령)</Text>
-          <Text style={s.infoValue}>{shinsal.wolryeong}</Text>
+        <View style={[s.infoItem, { backgroundColor: colors.surface }]}>
+          <Text style={[s.infoLabel, { color: colors.primary }]}>Monthly Ruler (월령)</Text>
+          <Text style={[s.infoValue, { color: colors.text }]}>{shinsal.wolryeong}</Text>
         </View>
       </View>
 
       {/* 12신살 + 세부신살 테이블 */}
       {/* 헤더 */}
-      <View style={s.tableRow}>
+      <View style={[s.tableRow, { backgroundColor: colors.primary }]}>
         <View style={s.tableHeaderLabel}>
           <Text style={s.headerText}> </Text>
         </View>
@@ -69,71 +68,34 @@ export function ShinsalTable({ theme, shinsal }: ShinsalTableProps) {
       </View>
 
       {/* 공망위치 */}
-      <View style={s.tableRow}>
-        <View style={s.rowLabel}>
-          <Text style={s.rowLabelText}>Void Position</Text>
-        </View>
-        {POSITIONS.map((pos) => {
-          const val = shinsal.pillars[pos].gongmangPosition;
-          return (
-            <View key={pos} style={s.cell}>
-              {val ? (
-                <Text style={[s.cellText, { color: sentimentColor.neutral }]}>{val}</Text>
-              ) : (
-                <Text style={s.cellEmpty}>—</Text>
-              )}
-            </View>
-          );
-        })}
-      </View>
+      {renderTableRow('Void Position', POSITIONS.map((pos) => {
+        const val = shinsal.pillars[pos].gongmangPosition;
+        return { text: val || '—', sentiment: 'neutral' };
+      }), colors)}
 
       {/* 12신살 년지기준 */}
-      <View style={s.tableRow}>
-        <View style={s.rowLabel}>
-          <Text style={s.rowLabelText}>12 Stars (Year)</Text>
-        </View>
-        {POSITIONS.map((pos) => {
-          const val = shinsal.pillars[pos].twelveShinsalByYear;
-          const sentiment = val ? getShinsalSentiment(val) : 'neutral';
-          return (
-            <View key={pos} style={s.cell}>
-              <Text style={[s.cellText, { color: sentimentColor[sentiment] }]}>
-                {(SHINSAL_EN[val] ?? val) || '—'}
-              </Text>
-              {val && <Text style={s.cellSub}>{val}</Text>}
-            </View>
-          );
-        })}
-      </View>
+      {renderTableRow('12 Stars (Year)', POSITIONS.map((pos) => {
+        const val = shinsal.pillars[pos].twelveShinsalByYear;
+        return { text: val ? (SHINSAL_EN[val] ?? val) : '—', sub: val || '', sentiment: val ? getShinsalSentiment(val) : 'neutral' };
+      }), colors)}
 
       {/* 12신살 일지기준 */}
-      <View style={s.tableRow}>
-        <View style={s.rowLabel}>
-          <Text style={s.rowLabelText}>12 Stars (Day)</Text>
-        </View>
-        {POSITIONS.map((pos) => {
-          const val = shinsal.pillars[pos].twelveShinsalByDay;
-          const sentiment = val ? getShinsalSentiment(val) : 'neutral';
-          return (
-            <View key={pos} style={s.cell}>
-              <Text style={[s.cellText, { color: sentimentColor[sentiment] }]}>
-                {(SHINSAL_EN[val] ?? val) || '—'}
-              </Text>
-              {val && <Text style={s.cellSub}>{val}</Text>}
-            </View>
-          );
-        })}
-      </View>
+      {renderTableRow('12 Stars (Day)', POSITIONS.map((pos) => {
+        const val = shinsal.pillars[pos].twelveShinsalByDay;
+        return { text: val ? (SHINSAL_EN[val] ?? val) : '—', sub: val || '', sentiment: val ? getShinsalSentiment(val) : 'neutral' };
+      }), colors)}
 
       {/* 세부신살 */}
       <View style={s.detailSection}>
-        <Text style={s.detailTitle}>DETAILED STARS BY PILLAR</Text>
+        <Text style={[s.detailTitle, { color: colors.primary }]}>DETAILED STARS BY PILLAR</Text>
         <View style={s.detailGrid}>
           {POSITIONS.filter((pos) => shinsal.pillars[pos].detailedShinsals.length > 0).map((pos) => {
             const shinsals = shinsal.pillars[pos].detailedShinsals;
             return (
               <View key={pos} style={s.detailCol}>
-                <Text style={s.detailColHeader}>{PILLAR_LABELS[pos].en}</Text>
+                <Text style={[s.detailColHeader, { color: colors.primary, borderBottomColor: colors.border }]}>
+                  {PILLAR_LABELS[pos].en}
+                </Text>
                 {shinsals.map((name, i) => {
                   const sentiment = getShinsalSentiment(name);
                   return (
@@ -143,7 +105,7 @@ export function ShinsalTable({ theme, shinsal }: ShinsalTableProps) {
                         <Text style={[s.tagName, { color: sentimentColor[sentiment] }]}>
                           {SHINSAL_EN[name] ?? name}
                         </Text>
-                        <Text style={s.tagKo}>{name}</Text>
+                        <Text style={[s.tagKo, { color: colors.textSecondary }]}>{name}</Text>
                       </View>
                     </View>
                   );
@@ -158,90 +120,112 @@ export function ShinsalTable({ theme, shinsal }: ShinsalTableProps) {
       <View style={s.legend}>
         <View style={s.legendItem}>
           <View style={[s.legendDot, { backgroundColor: colors.positive }]} />
-          <Text style={s.legendText}>Positive</Text>
+          <Text style={[s.legendText, { color: colors.textSecondary }]}>Positive</Text>
         </View>
         <View style={s.legendItem}>
           <View style={[s.legendDot, { backgroundColor: colors.neutral }]} />
-          <Text style={s.legendText}>Neutral</Text>
+          <Text style={[s.legendText, { color: colors.textSecondary }]}>Neutral</Text>
         </View>
         <View style={s.legendItem}>
           <View style={[s.legendDot, { backgroundColor: colors.caution }]} />
-          <Text style={s.legendText}>Caution</Text>
+          <Text style={[s.legendText, { color: colors.textSecondary }]}>Caution</Text>
         </View>
       </View>
     </View>
   );
 }
 
-function styles(colors: { primary: string; secondary: string; surface: string; text: string; textSecondary: string; border: string; background: string; positive: string; neutral: string; caution: string }) {
-  return StyleSheet.create({
-    container: { marginBottom: 20 },
-    chartTitle: {
-      fontFamily: FONT_TITLE, fontSize: 16, fontWeight: 'bold',
-      color: colors.primary, textAlign: 'center', marginBottom: 2,
-    },
-    chartSubtitle: {
-      fontFamily: FONT_CJK, fontSize: 9,
-      color: colors.textSecondary, textAlign: 'center', marginBottom: 14,
-    },
-
-    // 상단 요약
-    infoRow: { flexDirection: 'row', marginBottom: 12 },
-    infoItem: { flex: 1, backgroundColor: colors.surface, borderRadius: 4, padding: 8, marginRight: 6 },
-    infoLabel: { fontFamily: FONT_BODY, fontSize: 7, fontWeight: 'bold', color: colors.primary, marginBottom: 3 },
-    infoValue: { fontFamily: FONT_CJK, fontSize: 9, color: colors.text },
-
-    // 테이블
-    tableRow: { flexDirection: 'row' },
-    tableHeaderLabel: {
-      width: 90, backgroundColor: colors.primary, padding: 5,
-      borderBottomWidth: 1, borderBottomColor: colors.background, borderBottomStyle: 'solid',
-    },
-    tableHeaderCell: {
-      flex: 1, backgroundColor: colors.primary, padding: 5, alignItems: 'center',
-      borderLeftWidth: 1, borderLeftColor: colors.background, borderLeftStyle: 'solid',
-      borderBottomWidth: 1, borderBottomColor: colors.background, borderBottomStyle: 'solid',
-    },
-    headerText: { fontFamily: FONT_BODY, fontSize: 8, fontWeight: 'bold', color: '#FFFFFF' },
-    headerSub: { fontFamily: FONT_CJK, fontSize: 6, color: colors.secondary },
-    rowLabel: {
-      width: 90, backgroundColor: colors.surface, padding: 5, justifyContent: 'center',
-      borderBottomWidth: 1, borderBottomColor: colors.border, borderBottomStyle: 'solid',
-    },
-    rowLabelText: { fontFamily: FONT_BODY, fontSize: 7, fontWeight: 'bold', color: colors.text },
-    cell: {
-      flex: 1, padding: 5, alignItems: 'center', justifyContent: 'center',
-      borderBottomWidth: 1, borderBottomColor: colors.border, borderBottomStyle: 'solid',
-      borderLeftWidth: 1, borderLeftColor: colors.border, borderLeftStyle: 'solid',
-    },
-    cellText: { fontFamily: FONT_BODY, fontSize: 7, fontWeight: 'bold', textAlign: 'center' },
-    cellSub: { fontFamily: FONT_CJK, fontSize: 6, color: colors.textSecondary, marginTop: 1 },
-    cellEmpty: { fontFamily: FONT_BODY, fontSize: 7, color: colors.border },
-
-    // 세부 신살
-    detailSection: { marginTop: 14 },
-    detailTitle: {
-      fontFamily: FONT_BODY, fontSize: 8, fontWeight: 'bold',
-      color: colors.primary, letterSpacing: 2, marginBottom: 8,
-    },
-    detailGrid: { flexDirection: 'row' },
-    detailCol: { flex: 1, marginRight: 6 },
-    detailColHeader: {
-      fontFamily: FONT_BODY, fontSize: 8, fontWeight: 'bold',
-      color: colors.primary, marginBottom: 5,
-      borderBottomWidth: 1, borderBottomColor: colors.border, borderBottomStyle: 'solid',
-      paddingBottom: 3,
-    },
-    tag: { flexDirection: 'row', alignItems: 'center', marginBottom: 3 },
-    tagDot: { width: 5, height: 5, borderRadius: 3, marginRight: 4 },
-    tagTextWrap: { flex: 1 },
-    tagName: { fontFamily: FONT_BODY, fontSize: 7, fontWeight: 'bold' },
-    tagKo: { fontFamily: FONT_CJK, fontSize: 6, color: colors.textSecondary },
-
-    // 범례
-    legend: { flexDirection: 'row', marginTop: 12, justifyContent: 'center' },
-    legendItem: { flexDirection: 'row', alignItems: 'center', marginRight: 16 },
-    legendDot: { width: 6, height: 6, borderRadius: 3, marginRight: 4 },
-    legendText: { fontFamily: FONT_BODY, fontSize: 7, color: colors.textSecondary },
-  });
+function renderTableRow(
+  label: string,
+  cells: { text: string; sub?: string; sentiment: string }[],
+  colors: { surface: string; border: string; text: string; textSecondary: string; positive: string; neutral: string; caution: string },
+) {
+  const sentimentColor: Record<string, string> = {
+    positive: colors.positive, neutral: colors.neutral, caution: colors.caution,
+  };
+  return (
+    <View style={[s.tableRow, { borderBottomColor: colors.border }]}>
+      <View style={[s.rowLabel, { backgroundColor: colors.surface, borderBottomColor: colors.border }]}>
+        <Text style={[s.rowLabelText, { color: colors.text }]}>{label}</Text>
+      </View>
+      {cells.map((cell, i) => (
+        <View key={i} style={[s.cell, { borderBottomColor: colors.border, borderLeftColor: colors.border }]}>
+          <Text style={[s.cellText, { color: sentimentColor[cell.sentiment] || colors.text }]}>
+            {cell.text}
+          </Text>
+          {cell.sub ? <Text style={[s.cellSub, { color: colors.textSecondary }]}>{cell.sub}</Text> : null}
+        </View>
+      ))}
+    </View>
+  );
 }
+
+const s = StyleSheet.create({
+  container: { marginBottom: 20 },
+  chartTitle: {
+    fontFamily: FONT_TITLE, fontSize: 18, fontWeight: 'bold',
+    textAlign: 'center', marginBottom: 2,
+  },
+  chartSubtitle: {
+    fontFamily: FONT_CJK, fontSize: 11,
+    textAlign: 'center', marginBottom: 16,
+  },
+
+  // 상단 요약
+  infoRow: { flexDirection: 'row', marginBottom: 16 },
+  infoItem: { flex: 1, borderRadius: 4, padding: 10, marginRight: 6 },
+  infoLabel: { fontFamily: FONT_BODY, fontSize: 9, fontWeight: 'bold', marginBottom: 4 },
+  infoValue: { fontFamily: FONT_CJK, fontSize: 11 },
+
+  // 테이블
+  tableRow: { flexDirection: 'row' },
+  tableHeaderLabel: {
+    width: 100, padding: 8,
+    borderBottomWidth: 1, borderBottomColor: '#FFFFFF22', borderBottomStyle: 'solid',
+  },
+  tableHeaderCell: {
+    flex: 1, padding: 8, alignItems: 'center',
+    borderLeftWidth: 1, borderLeftColor: '#FFFFFF22', borderLeftStyle: 'solid',
+    borderBottomWidth: 1, borderBottomColor: '#FFFFFF22', borderBottomStyle: 'solid',
+  },
+  headerText: { fontFamily: FONT_BODY, fontSize: 10, fontWeight: 'bold', color: '#FFFFFF' },
+  headerSub: { fontFamily: FONT_CJK, fontSize: 8, color: '#FFFFFFBB', marginTop: 1 },
+  rowLabel: {
+    width: 100, padding: 8, justifyContent: 'center',
+    borderBottomWidth: 1, borderBottomStyle: 'solid',
+  },
+  rowLabelText: { fontFamily: FONT_BODY, fontSize: 10, fontWeight: 'bold' },
+  cell: {
+    flex: 1, padding: 8, alignItems: 'center', justifyContent: 'center',
+    borderBottomWidth: 1, borderBottomStyle: 'solid',
+    borderLeftWidth: 1, borderLeftStyle: 'solid',
+  },
+  cellText: { fontFamily: FONT_BODY, fontSize: 10, fontWeight: 'bold', textAlign: 'center' },
+  cellSub: { fontFamily: FONT_CJK, fontSize: 8, marginTop: 2 },
+
+  // 세부 신살
+  detailSection: { marginTop: 16 },
+  detailTitle: {
+    fontFamily: FONT_BODY, fontSize: 11, fontWeight: 'bold',
+    letterSpacing: 2, marginBottom: 10,
+  },
+  detailGrid: { flexDirection: 'row' },
+  detailCol: { flex: 1, marginRight: 8 },
+  detailColHeader: {
+    fontFamily: FONT_BODY, fontSize: 10, fontWeight: 'bold',
+    marginBottom: 6,
+    borderBottomWidth: 1, borderBottomStyle: 'solid',
+    paddingBottom: 4,
+  },
+  tag: { flexDirection: 'row', alignItems: 'center', marginBottom: 5 },
+  tagDot: { width: 6, height: 6, borderRadius: 3, marginRight: 6 },
+  tagTextWrap: { flex: 1 },
+  tagName: { fontFamily: FONT_BODY, fontSize: 10, fontWeight: 'bold' },
+  tagKo: { fontFamily: FONT_CJK, fontSize: 8 },
+
+  // 범례
+  legend: { flexDirection: 'row', marginTop: 14, justifyContent: 'center' },
+  legendItem: { flexDirection: 'row', alignItems: 'center', marginRight: 20 },
+  legendDot: { width: 8, height: 8, borderRadius: 4, marginRight: 6 },
+  legendText: { fontFamily: FONT_BODY, fontSize: 10 },
+});

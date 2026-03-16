@@ -1,7 +1,19 @@
 import Anthropic from '@anthropic-ai/sdk';
 import type { TierCode } from '@/lib/types/tier';
-import type { SajuData } from '@/lib/types/saju';
+import type { SajuData, InfoData } from '@/lib/types/saju';
 import { getPartPrompt, THREE_LAYER_RULES, OUTPUT_RULES } from './prompts';
+
+// ─── 유틸리티 ───
+
+function extractBirthYear(info: InfoData): number | null {
+  // solarDate: "1973년 05월 18일 14:30" 형태
+  const match = info.solarDate.match(/(\d{4})년/);
+  return match ? parseInt(match[1], 10) : null;
+}
+
+function getDecade(age: number): number {
+  return Math.floor(age / 10) * 10;
+}
 
 let _anthropic: Anthropic | null = null;
 function getClient(): Anthropic {
@@ -33,6 +45,9 @@ Important rules:
 - Never provide medical, legal, or financial advice — use phrases like "energetic tendencies" and "your chart suggests"
 - The analysis is for entertainment and self-reflection — include this perspective naturally
 - Respect the client's intelligence — explain without condescending
+- CRITICAL ACCURACY: When referencing Heavenly Stems, ALWAYS use the correct Yin/Yang polarity from the reference table. 甲(Yang Wood), 乙(Yin Wood), 丙(Yang Fire), 丁(Yin Fire), 戊(Yang Earth), 己(Yin Earth), 庚(Yang Metal), 辛(Yin Metal), 壬(Yang Water), 癸(Yin Water). Misattributing Yin/Yang destroys credibility with knowledgeable readers.
+- PILLAR DATA ACCURACY: When referencing specific pillar data (Life Stage, Ten God, etc.), ALWAYS cross-check which pillar you are describing. Hour Pillar (시주), Day Pillar (일주), Month Pillar (월주), Year Pillar (년주) — never swap data between pillars. For example, if the Month Pillar's Life Stage is "Decline (쇠)" and the Year Pillar's is "Nurturing (양)", do NOT attribute Year Pillar data to the Month Pillar.
+- TEN GODS PRECISION: When discussing Ten God groups (비겁, 식상, 재성, 관성, 인성), ONLY reference the specific ten gods that actually appear in the chart. If the chart shows 3x Indirect Authority (편관) and 0x Direct Authority (정관), do NOT mention Direct Authority as if it exists. Check the actual pillar data before listing which ten gods are present.
 
 ${THREE_LAYER_RULES}
 
@@ -48,6 +63,52 @@ Please incorporate this request naturally into the analysis where relevant.`;
   }
 
   return system;
+}
+
+// ─── 실제 십신 추출 ───
+
+function extractActualTenGods(sajuData: SajuData): string | null {
+  const pillar = sajuData.pillar;
+  if (!pillar) return null;
+
+  const tenGods: Record<string, number> = {};
+  const pillars = [pillar.hourPillar, pillar.dayPillar, pillar.monthPillar, pillar.yearPillar];
+
+  for (const p of pillars) {
+    // 천간 십신
+    if (p.stemTenGod && p.stemTenGod !== '일간(나)') {
+      tenGods[p.stemTenGod] = (tenGods[p.stemTenGod] || 0) + 1;
+    }
+    // 지지 십신
+    if (p.branchTenGod) {
+      tenGods[p.branchTenGod] = (tenGods[p.branchTenGod] || 0) + 1;
+    }
+  }
+
+  const entries = Object.entries(tenGods).sort((a, b) => b[1] - a[1]);
+  if (entries.length === 0) return null;
+
+  const TEN_GOD_EN: Record<string, string> = {
+    '비견': 'Companion (비견 · 比肩)', '겁재': 'Rob Wealth (겁재 · 劫財)',
+    '식신': 'Eating God (식신 · 食神)', '상관': 'Hurting Officer (상관 · 傷官)',
+    '편재': 'Indirect Wealth (편재 · 偏財)', '정재': 'Direct Wealth (정재 · 正財)',
+    '편관': 'Indirect Authority (편관 · 偏官)', '정관': 'Direct Authority (정관 · 正官)',
+    '편인': 'Indirect Seal (편인 · 偏印)', '정인': 'Direct Seal (정인 · 正印)',
+  };
+
+  const list = entries.map(([k, v]) => `  - ${TEN_GOD_EN[k] || k}: ${v}x`).join('\n');
+
+  // 없는 십신도 명시
+  const allTenGods = ['비견', '겁재', '식신', '상관', '편재', '정재', '편관', '정관', '편인', '정인'];
+  const absent = allTenGods.filter(g => !tenGods[g]);
+  const absentList = absent.map(k => TEN_GOD_EN[k] || k).join(', ');
+
+  return `TEN GODS ACTUALLY PRESENT IN THIS CHART (DO NOT mention ten gods that are NOT listed here):
+${list}
+
+NOT present (count = 0, do NOT reference these as if they exist): ${absentList}
+
+IMPORTANT: When discussing a ten god group (e.g. Authority Group 관성), only mention the specific ten gods that actually exist. For example, if only Indirect Authority (편관) appears with 0 Direct Authority (정관), say "Indirect Authority (편관 · 偏官)" — do NOT say "both Indirect Authority and Direct Authority".`;
 }
 
 // ─── 유저 프롬프트 ───
@@ -72,13 +133,63 @@ ${JSON.stringify(sajuData, null, 2)}`;
   // {clientName} 플레이스홀더를 실제 이름으로 치환
   const instruction = prompt.instruction.replace(/\{clientName\}/g, clientName);
 
+  // ─── 데이터 이상 감지 ───
+  const notes: string[] = [];
+
+  // 용신 체계 이상 감지 (모든 조합)
+  if (sajuData.yongsin) {
+    const y = sajuData.yongsin;
+    const yongsinConflicts: string[] = [];
+    if (y.yongsin === y.gisin) yongsinConflicts.push(`Favorable (용신) and Unfavorable (기신) are BOTH "${y.yongsin}"`);
+    if (y.huisin === y.gusin) yongsinConflicts.push(`Joyful (희신) and Antagonistic (구신) are BOTH "${y.huisin}"`);
+    if (y.yongsin === y.gusin) yongsinConflicts.push(`Favorable (용신) and Antagonistic (구신) are BOTH "${y.yongsin}"`);
+    if (y.huisin === y.gisin) yongsinConflicts.push(`Joyful (희신) and Unfavorable (기신) are BOTH "${y.huisin}"`);
+    if (yongsinConflicts.length > 0) {
+      notes.push(
+        `YONGSIN ANOMALY DETECTED:\n${yongsinConflicts.map(c => `  - ${c}`).join('\n')}\nThis is an unusual configuration. If you reference the Yongsin system, acknowledge this directly and explain it from a 명리학 perspective. Do NOT treat conflicting elements as simply "good" or "bad" — explain the dual role.`
+      );
+    }
+  }
+
+  // 나이 일관성 — 생년으로부터 서양식 만 나이 계산
+  if (sajuData.info) {
+    const birthYear = extractBirthYear(sajuData.info);
+    if (birthYear) {
+      const currentYear = new Date().getFullYear();
+      const westernAge = currentYear - birthYear;
+      notes.push(
+        `CLIENT AGE: ${clientName} was born in ${birthYear}. In Western age calculation, they are ${westernAge - 1} or ${westernAge} years old in ${currentYear} (depending on whether their birthday has passed). ALWAYS use this age consistently — do NOT use Korean age (세) or any other calculation. If referencing age, say "at ${westernAge - 1}" or "in their ${getDecade(westernAge - 1)}s".`
+      );
+    }
+  }
+
+  // 월운 데이터 연도 명시 — Claude가 올바른 연도 데이터를 사용하도록
+  const isWolunRelated = partKey.startsWith('part10_') || partKey.startsWith('month_') || partKey === 'this_year_forecast';
+  if (isWolunRelated && sajuData.wolun) {
+    const wolunYear = sajuData.wolun.year;
+    const wolun2Year = sajuData.wolun2?.year;
+    notes.push(
+      `MONTHLY FORTUNE YEAR DATA:\n  - "wolun" contains monthly data for year ${wolunYear}\n  - ${wolun2Year ? `"wolun2" contains monthly data for year ${wolun2Year}` : 'No wolun2 data'}\n\nCRITICAL: For this section, you MUST use the "wolun" data (year ${wolunYear}) ONLY. Do NOT use wolun2 data. When referencing months, always specify they are in ${wolunYear}. Double-check every Heavenly Stem and Earthly Branch against the wolun.entries array for year ${wolunYear}.`
+    );
+  }
+
+  // 실제 존재하는 십신 목록 추출 — Claude가 없는 십신을 언급하지 않도록
+  const actualTenGods = extractActualTenGods(sajuData);
+  if (actualTenGods) {
+    notes.push(actualTenGods);
+  }
+
+  const notesBlock = notes.length > 0
+    ? `\n\n[CRITICAL DATA NOTES — READ BEFORE WRITING]\n${notes.join('\n\n')}\n`
+    : '';
+
   return `Write the "${prompt.title}" section for this client's Saju report.
 
 Client Name: ${clientName}
 
 Instructions:
 ${instruction}
-
+${notesBlock}
 Chart Data (JSON):
 ${JSON.stringify(sajuData, null, 2)}
 
@@ -95,6 +206,12 @@ interface TranslateParams {
   clientName: string;
 }
 
+// 서버 측 재시도: 1회만 (Vercel 120초 제한 내에서 안전하게)
+// 클라이언트(page.tsx)에서 추가 1회 재시도하므로 총 최대 4회
+const MAX_RETRIES = 1;
+const RETRY_DELAY_MS = 2000;
+const PER_CALL_TIMEOUT_MS = 50_000; // 50초 (2번 × 50초 + 대기 = ~102초 < 120초 Vercel 제한)
+
 export async function translateAndAnalyze({
   tier,
   partKey,
@@ -105,25 +222,53 @@ export async function translateAndAnalyze({
   const system = buildSystemPrompt(additionalRequest);
   const userMessage = buildUserPrompt(tier, partKey, sajuData, clientName);
 
-  try {
-    const response = await getClient().messages.create({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 4096,
-      temperature: 0.7,
-      system,
-      messages: [{ role: 'user', content: userMessage }],
-    });
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const response = await getClient().messages.create(
+        {
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 4096,
+          temperature: 0.7,
+          system,
+          messages: [{ role: 'user', content: userMessage }],
+        },
+        { timeout: PER_CALL_TIMEOUT_MS },
+      );
 
-    const textBlock = response.content.find((b) => b.type === 'text');
-    if (!textBlock || textBlock.type !== 'text') {
-      console.error(`[translate] No text block in response for partKey="${partKey}"`);
-      return null;
+      const textBlock = response.content.find((b) => b.type === 'text');
+      if (!textBlock || textBlock.type !== 'text') {
+        console.error(`[translate] No text block for partKey="${partKey}" (attempt ${attempt + 1})`);
+        if (attempt < MAX_RETRIES) {
+          await sleep(RETRY_DELAY_MS);
+          continue;
+        }
+        return null;
+      }
+
+      return textBlock.text;
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Unknown error';
+      console.error(`[translate] Failed partKey="${partKey}" (attempt ${attempt + 1}/${MAX_RETRIES + 1}): ${message}`);
+
+      // Anthropic SDK 에러 타입으로 정확히 판별
+      const isNonRetryable =
+        err instanceof Anthropic.BadRequestError ||      // 400
+        err instanceof Anthropic.AuthenticationError ||  // 401
+        err instanceof Anthropic.PermissionDeniedError || // 403
+        err instanceof Anthropic.NotFoundError;           // 404
+
+      if (isNonRetryable || attempt >= MAX_RETRIES) {
+        return null;
+      }
+
+      console.log(`[translate] Retrying partKey="${partKey}" in ${RETRY_DELAY_MS}ms...`);
+      await sleep(RETRY_DELAY_MS);
     }
-
-    return textBlock.text;
-  } catch (err) {
-    const message = err instanceof Error ? err.message : 'Unknown error';
-    console.error(`[translate] Failed for partKey="${partKey}": ${message}`);
-    return null;
   }
+
+  return null;
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }

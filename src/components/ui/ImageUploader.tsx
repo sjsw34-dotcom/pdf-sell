@@ -3,10 +3,10 @@
 import { useCallback, useState } from 'react';
 import { useGeneratorStore } from '@/store/useGeneratorStore';
 
-const MAX_WIDTH = 1200;
-const MAX_HEIGHT = 1600;
-const JPEG_QUALITY = 0.8;
-const MAX_BASE64_KB = 800;
+const MAX_WIDTH = 800;
+const MAX_HEIGHT = 1100;
+const JPEG_QUALITY = 0.6;
+const MAX_BASE64_KB = 200;
 
 /**
  * 이미지를 Canvas로 리사이즈 + JPEG 압축하여 base64로 변환.

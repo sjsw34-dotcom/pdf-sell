@@ -65,6 +65,6 @@ export function ChapterPage({ theme, title, content, chapterNumber, chapterLabel
 
 const s = StyleSheet.create({
   header: { marginBottom: 16 },
-  sectionTitle: { fontFamily: FONT_BODY, fontSize: 9, marginTop: 2, marginBottom: 4 },
+  sectionTitle: { fontFamily: FONT_BODY, fontSize: 13, marginTop: 4, marginBottom: 6 },
   body: { flex: 1, paddingBottom: 30 },
 });

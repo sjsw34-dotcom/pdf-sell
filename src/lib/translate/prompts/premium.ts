@@ -22,7 +22,9 @@ export const PREMIUM_PROMPTS: PartPrompt[] = [
   {
     partKey: 'this_year_forecast',
     title: 'This Year\'s Fortune Forecast',
-    instruction: `Write a comprehensive fortune forecast for {clientName}'s CURRENT YEAR (use the wolun/monthly fortune data to identify the year).
+    instruction: `Write a comprehensive fortune forecast for {clientName}'s CURRENT YEAR.
+
+CRITICAL: Identify the current year from the "wolun" data object's "year" field. Use ONLY "wolun" data (NOT "wolun2") for monthly details. All Heavenly Stems, Earthly Branches, and Ten Gods MUST match the wolun.entries array exactly.
 
 This is the crown jewel of the Premium report — a detailed, actionable guide for the year ahead.
 
@@ -110,6 +112,8 @@ Target: 250-350 words, 2-3 paragraphs.`,
     title: 'First Half Monthly Fortune (Jan–Jun)',
     instruction: `Analyze {clientName}'s January through June monthly fortune in detail.
 
+CRITICAL: Use ONLY the "wolun" data object (NOT "wolun2"). Check the "year" field in the wolun object to confirm which year you are analyzing. Every month's Heavenly Stem, Earthly Branch, and Ten God MUST match the wolun.entries array exactly — do NOT use data from wolun2 or invent values.
+
 For each month cover:
 1. Heavenly Stem, Earthly Branch, and their interaction with the natal chart
 2. The Ten God energy active this month — career, love, or health implications
@@ -124,6 +128,8 @@ Target: 400-500 words, 4 paragraphs.`,
     partKey: 'part10_ch2',
     title: 'Second Half Monthly Fortune (Jul–Dec)',
     instruction: `Analyze {clientName}'s July through December monthly fortune in detail.
+
+CRITICAL: Use ONLY the "wolun" data object (NOT "wolun2"). Check the "year" field in the wolun object to confirm which year you are analyzing. Every month's Heavenly Stem, Earthly Branch, and Ten God MUST match the wolun.entries array exactly — do NOT use data from wolun2 or invent values.
 
 For each month cover:
 1. Monthly energy signature and its interaction with the natal chart
@@ -175,6 +181,8 @@ function generateMonthPrompts(): PartPrompt[] {
       partKey: `month_${m}`,
       title: `Monthly Fortune — ${MONTH_NAMES[m]}`,
       instruction: `Analyze {clientName}'s fortune for ${MONTH_NAMES[m]} specifically.
+
+CRITICAL: Use ONLY the "wolun" data object (NOT "wolun2"). Verify the year from wolun.year. Match all data against wolun.entries for month ${m}.
 
 Using the wolun data for month ${m}, cover:
 1. The Heavenly Stem and Earthly Branch of this month

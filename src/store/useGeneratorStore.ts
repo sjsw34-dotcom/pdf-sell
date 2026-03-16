@@ -20,6 +20,8 @@ interface GeneratorState {
   coverImage: string | null;
   selectedTheme: ThemeCode;
   additionalRequest: string;
+  personalQuestion: string;
+  personalAnswer: string;
   generatedTexts: Record<string, string>;
   progress: Progress;
   status: Status;
@@ -34,6 +36,8 @@ interface GeneratorActions {
   setCoverImage: (base64: string | null) => void;
   setTheme: (theme: ThemeCode) => void;
   setAdditionalRequest: (text: string) => void;
+  setPersonalQuestion: (text: string) => void;
+  setPersonalAnswer: (text: string) => void;
   setGeneratedText: (partKey: string, text: string) => void;
   addFailedPart: (partKey: string) => void;
   setProgress: (progress: Partial<Progress>) => void;
@@ -51,6 +55,8 @@ const initialState: GeneratorState = {
   coverImage: null,
   selectedTheme: 'classic',
   additionalRequest: '',
+  personalQuestion: '',
+  personalAnswer: '',
   generatedTexts: {},
   progress: { current: 0, total: 0, label: '', failedParts: [] },
   status: 'idle',
@@ -85,6 +91,12 @@ export const useGeneratorStore = create<GeneratorState & GeneratorActions>()(
 
     setAdditionalRequest: (text) =>
       set({ additionalRequest: text.slice(0, MAX_ADDITIONAL_REQUEST) }),
+
+    setPersonalQuestion: (text) =>
+      set({ personalQuestion: text.slice(0, 500) }),
+
+    setPersonalAnswer: (text) =>
+      set({ personalAnswer: text }),
 
     setGeneratedText: (partKey, text) =>
       set((state) => ({

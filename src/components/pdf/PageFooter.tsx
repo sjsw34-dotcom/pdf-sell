@@ -39,11 +39,11 @@ const s = StyleSheet.create({
   },
   brand: {
     fontFamily: FONT_BODY,
-    fontSize: 7,
+    fontSize: 8,
     letterSpacing: 1,
   },
   pageNum: {
     fontFamily: FONT_BODY,
-    fontSize: 7,
+    fontSize: 8,
   },
 });

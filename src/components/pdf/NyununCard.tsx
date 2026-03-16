@@ -79,25 +79,25 @@ export function NyununCard({ theme, nyunun }: NyununCardProps) {
 
 const s = StyleSheet.create({
   container: { marginBottom: 16 },
-  title: { fontFamily: FONT_TITLE, fontSize: 13, fontWeight: 'bold', marginBottom: 4 },
-  subtitle: { fontFamily: FONT_BODY, fontSize: 9, marginBottom: 6 },
-  divider: { width: '100%', height: 1, marginBottom: 10 },
+  title: { fontFamily: FONT_TITLE, fontSize: 15, fontWeight: 'bold', marginBottom: 4 },
+  subtitle: { fontFamily: FONT_BODY, fontSize: 11, marginBottom: 8 },
+  divider: { width: '100%', height: 1, marginBottom: 12 },
 
-  table: { borderWidth: 0.5, borderStyle: 'solid', borderRadius: 2, overflow: 'hidden' },
+  table: { borderWidth: 0.5, borderStyle: 'solid', borderRadius: 3, overflow: 'hidden' },
 
-  headerRow: { flexDirection: 'row', paddingTop: 6, paddingBottom: 6 },
-  headerText: { fontFamily: FONT_BODY, fontSize: 7, fontWeight: 'bold', color: '#FFFFFF', textAlign: 'center', lineHeight: 1.3, paddingLeft: 3, paddingRight: 3 },
+  headerRow: { flexDirection: 'row', paddingTop: 8, paddingBottom: 8 },
+  headerText: { fontFamily: FONT_BODY, fontSize: 9, fontWeight: 'bold', color: '#FFFFFF', textAlign: 'center', lineHeight: 1.3, paddingLeft: 4, paddingRight: 4 },
 
-  dataRow: { flexDirection: 'row', borderBottomWidth: 0.5, borderBottomStyle: 'solid', paddingTop: 5, paddingBottom: 5, alignItems: 'center' },
+  dataRow: { flexDirection: 'row', borderBottomWidth: 0.5, borderBottomStyle: 'solid', paddingTop: 7, paddingBottom: 7, alignItems: 'center' },
 
-  hYear: { width: 52, paddingLeft: 6 },
-  hStem: { flex: 1, paddingLeft: 4, paddingRight: 2 },
-  hStemBranch: { width: 36, textAlign: 'center' },
-  hBranch: { flex: 1, paddingLeft: 4, paddingRight: 2 },
-  hStage: { width: 78, paddingRight: 6 },
+  hYear: { width: 56, paddingLeft: 8 },
+  hStem: { flex: 1, paddingLeft: 6, paddingRight: 4 },
+  hStemBranch: { width: 40, textAlign: 'center' },
+  hBranch: { flex: 1, paddingLeft: 6, paddingRight: 4 },
+  hStage: { width: 82, paddingRight: 8 },
 
-  yearText: { fontFamily: FONT_TITLE, fontSize: 9, fontWeight: 'bold' },
-  ageText: { fontFamily: FONT_BODY, fontSize: 6 },
-  cellText: { fontFamily: FONT_CJK, fontSize: 7, lineHeight: 1.3 },
-  cellHanja: { fontFamily: FONT_CJK, fontSize: 10, fontWeight: 'bold', textAlign: 'center' },
+  yearText: { fontFamily: FONT_TITLE, fontSize: 11, fontWeight: 'bold' },
+  ageText: { fontFamily: FONT_BODY, fontSize: 8 },
+  cellText: { fontFamily: FONT_CJK, fontSize: 9, lineHeight: 1.3 },
+  cellHanja: { fontFamily: FONT_CJK, fontSize: 13, fontWeight: 'bold', textAlign: 'center' },
 });

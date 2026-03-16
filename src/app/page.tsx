@@ -9,6 +9,7 @@ import { FileUploader } from '@/components/ui/FileUploader';
 import { ImageUploader } from '@/components/ui/ImageUploader';
 import { ThemeSelector } from '@/components/ui/ThemeSelector';
 import { AdditionalRequest } from '@/components/ui/AdditionalRequest';
+import { PersonalQA } from '@/components/ui/PersonalQA';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Toast } from '@/components/ui/Toast';
 
@@ -44,6 +45,8 @@ export default function HomePage() {
       theme: selectedTheme,
       clientName,
       birthInfo,
+      personalQuestion: store.personalQuestion || undefined,
+      personalAnswer: store.personalAnswer || undefined,
     });
 
     const url = URL.createObjectURL(blob);
@@ -66,50 +69,87 @@ export default function HomePage() {
     setPdfBlobUrl(null);
     setProgress({ current: 0, total: partKeys.length, label: '시작 중...', failedParts: [] });
 
-    let consecutiveFailures = 0;
-    const MAX_CONSECUTIVE_FAILURES = 3;
+    const CONCURRENCY = 2; // 동시 호출 수 (rate limit 안전 마진 확보)
+    let completedCount = 0;
+    let totalFailures = 0;
+    const MAX_TOTAL_FAILURES = 5;
+    let aborted = false;
 
-    for (let i = 0; i < partKeys.length; i++) {
-      const partKey = partKeys[i];
-      setProgress({ current: i + 1, label: `분석 생성 중: ${partKey} (${i + 1}/${partKeys.length})` });
+    // 단일 파트 호출 함수
+    async function fetchPart(partKey: string): Promise<{ partKey: string; text: string }> {
+      const res = await fetch('/api/translate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          tier: selectedTier,
+          partKey,
+          sajuData,
+          additionalRequest: additionalRequest || null,
+          clientName,
+        }),
+      });
 
-      try {
-        const res = await fetch('/api/translate', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            tier: selectedTier,
-            partKey,
-            sajuData,
-            additionalRequest: additionalRequest || null,
-            clientName,
-          }),
-        });
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({ error: res.statusText }));
+        throw new Error(errData.error || `HTTP ${res.status}`);
+      }
 
-        if (!res.ok) {
-          const errData = await res.json().catch(() => ({ error: res.statusText }));
-          throw new Error(errData.error || `HTTP ${res.status}`);
-        }
+      const data = await res.json();
+      if (!data.text) throw new Error('Empty response');
+      return { partKey, text: data.text as string };
+    }
 
-        const data = await res.json();
-        if (data.text) {
-          setGeneratedText(partKey, data.text);
-          consecutiveFailures = 0;
+    // partKeys를 CONCURRENCY 크기의 청크로 분할
+    for (let batchStart = 0; batchStart < partKeys.length; batchStart += CONCURRENCY) {
+      if (aborted) break;
+
+      const batch = partKeys.slice(batchStart, batchStart + CONCURRENCY);
+
+      // 배치 내 호출을 동시 실행
+      const results = await Promise.allSettled(batch.map(fetchPart));
+
+      // 1차 실패한 파트 수집
+      const retryKeys: string[] = [];
+      for (let i = 0; i < results.length; i++) {
+        const result = results[i];
+        if (result.status === 'fulfilled') {
+          setGeneratedText(result.value.partKey, result.value.text);
+          completedCount++;
         } else {
-          throw new Error('Empty response');
-        }
-      } catch (err) {
-        const msg = err instanceof Error ? err.message : 'Unknown error';
-        addFailedPart(partKey);
-        showToast(`"${partKey}" 파트 실패 — 대체 텍스트를 사용합니다`);
-        consecutiveFailures++;
-
-        if (consecutiveFailures >= MAX_CONSECUTIVE_FAILURES) {
-          setError(`생성 중단: API 연속 ${MAX_CONSECUTIVE_FAILURES}회 실패. 마지막 오류: ${msg}`);
-          return;
+          retryKeys.push(batch[i]);
         }
       }
+
+      // 실패 파트 1회 재시도 (순차적으로, rate limit 방지)
+      for (const rk of retryKeys) {
+        if (aborted) break;
+        showToast(`"${rk}" 파트 재시도 중...`);
+        try {
+          // 재시도 전 1.5초 대기
+          await new Promise((r) => setTimeout(r, 1500));
+          const result = await fetchPart(rk);
+          setGeneratedText(result.partKey, result.text);
+        } catch {
+          addFailedPart(rk);
+          showToast(`"${rk}" 파트 최종 실패 — 대체 텍스트를 사용합니다`);
+          totalFailures++;
+        }
+        completedCount++;
+      }
+
+      setProgress({
+        current: completedCount,
+        label: `분석 생성 중... (${completedCount}/${partKeys.length})`,
+      });
+
+      // 누적 실패가 너무 많으면 중단
+      if (totalFailures >= MAX_TOTAL_FAILURES) {
+        setError(`생성 중단: 총 ${totalFailures}개 파트 실패. API 상태를 확인해 주세요.`);
+        aborted = true;
+      }
     }
+
+    if (aborted) return;
 
     setProgress({ current: partKeys.length, label: '모든 파트 완료' });
     setStatus('rendering');
@@ -174,6 +214,7 @@ export default function HomePage() {
             <ImageUploader />
             <ThemeSelector />
             <AdditionalRequest />
+            <PersonalQA />
           </div>
         </div>
 

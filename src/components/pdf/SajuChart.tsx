@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { ThemeCode } from '@/lib/types/theme';
-import type { PillarData, Pillar as PillarType, HiddenStemEntry, InfoData } from '@/lib/types/saju';
+import type { PillarData, InfoData } from '@/lib/types/saju';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
 
@@ -34,19 +34,19 @@ const STEM_INFO: Record<string, { roma: string; ko: string; hanja: string; yinya
   '癸': { roma: 'Gye', ko: '계', hanja: '癸', yinyang: 'Yin', element: 'Water' },
 };
 
-const BRANCH_INFO: Record<string, { roma: string; ko: string; hanja: string; animal: string }> = {
-  '子': { roma: 'Ja', ko: '자', hanja: '子', animal: 'Rat' },
-  '丑': { roma: 'Chuk', ko: '축', hanja: '丑', animal: 'Ox' },
-  '寅': { roma: 'In', ko: '인', hanja: '寅', animal: 'Tiger' },
-  '卯': { roma: 'Myo', ko: '묘', hanja: '卯', animal: 'Rabbit' },
-  '辰': { roma: 'Jin', ko: '진', hanja: '辰', animal: 'Dragon' },
-  '巳': { roma: 'Sa', ko: '사', hanja: '巳', animal: 'Snake' },
-  '午': { roma: 'O', ko: '오', hanja: '午', animal: 'Horse' },
-  '未': { roma: 'Mi', ko: '미', hanja: '未', animal: 'Goat' },
-  '申': { roma: 'Sin', ko: '신', hanja: '申', animal: 'Monkey' },
-  '酉': { roma: 'Yu', ko: '유', hanja: '酉', animal: 'Rooster' },
-  '戌': { roma: 'Sul', ko: '술', hanja: '戌', animal: 'Dog' },
-  '亥': { roma: 'Hae', ko: '해', hanja: '亥', animal: 'Pig' },
+const BRANCH_INFO: Record<string, { roma: string; ko: string; hanja: string; animal: string; element: string }> = {
+  '子': { roma: 'Ja', ko: '자', hanja: '子', animal: 'Rat', element: 'Water' },
+  '丑': { roma: 'Chuk', ko: '축', hanja: '丑', animal: 'Ox', element: 'Earth' },
+  '寅': { roma: 'In', ko: '인', hanja: '寅', animal: 'Tiger', element: 'Wood' },
+  '卯': { roma: 'Myo', ko: '묘', hanja: '卯', animal: 'Rabbit', element: 'Wood' },
+  '辰': { roma: 'Jin', ko: '진', hanja: '辰', animal: 'Dragon', element: 'Earth' },
+  '巳': { roma: 'Sa', ko: '사', hanja: '巳', animal: 'Snake', element: 'Fire' },
+  '午': { roma: 'O', ko: '오', hanja: '午', animal: 'Horse', element: 'Fire' },
+  '未': { roma: 'Mi', ko: '미', hanja: '未', animal: 'Goat', element: 'Earth' },
+  '申': { roma: 'Sin', ko: '신', hanja: '申', animal: 'Monkey', element: 'Metal' },
+  '酉': { roma: 'Yu', ko: '유', hanja: '酉', animal: 'Rooster', element: 'Metal' },
+  '戌': { roma: 'Sul', ko: '술', hanja: '戌', animal: 'Dog', element: 'Earth' },
+  '亥': { roma: 'Hae', ko: '해', hanja: '亥', animal: 'Pig', element: 'Water' },
 };
 
 const STAGE_FULL: Record<string, { en: string; ko: string; hanja: string }> = {
@@ -64,30 +64,31 @@ const STAGE_FULL: Record<string, { en: string; ko: string; hanja: string }> = {
   '양': { en: 'Nurturing', ko: '양', hanja: '養' },
 };
 
+// ─── 오행별 색상 ───
+const ELEMENT_COLOR: Record<string, string> = {
+  'Wood': '#2D8B46', 'Fire': '#D63031', 'Earth': '#C49B1A', 'Metal': '#7F8C8D', 'Water': '#2E86C1',
+};
+
+function getHanjaColor(hanja: string): string {
+  const stem = STEM_INFO[hanja];
+  if (stem) return ELEMENT_COLOR[stem.element] || '#333';
+  const branch = BRANCH_INFO[hanja];
+  if (branch) return ELEMENT_COLOR[branch.element] || '#333';
+  return '#333';
+}
+
 // ─── 헬퍼 ───
 
-function tenGodText(v: string): string {
+function tenGodLabel(v: string): string {
   const info = TEN_GOD_FULL[v];
   if (!info) return v || '—';
-  return `${info.en} (${info.ko} · ${info.hanja})`;
+  return `${info.en}\n(${info.ko} · ${info.hanja})`;
 }
 
-function stemText(v: string): string {
-  const info = STEM_INFO[v];
-  if (!info) return v || '—';
-  return `${info.roma} (${info.ko} · ${info.hanja}) · ${info.yinyang} ${info.element}`;
-}
-
-function branchText(v: string): string {
-  const info = BRANCH_INFO[v];
-  if (!info) return v || '—';
-  return `${info.roma} (${info.ko} · ${info.hanja}) · ${info.animal}`;
-}
-
-function stageText(v: string): string {
+function stageLabel(v: string): string {
   const info = STAGE_FULL[v];
   if (!info) return v || '—';
-  return `${info.en} (${info.ko} · ${info.hanja})`;
+  return `${info.en}\n(${info.ko} · ${info.hanja})`;
 }
 
 // ─── 컴포넌트 ───
@@ -100,133 +101,198 @@ interface SajuChartProps {
 
 export function SajuChart({ theme, pillar, info }: SajuChartProps) {
   const colors = THEMES[theme].colors;
+  const genderEn = info.gender === '남' ? 'Male' : 'Female';
 
   const cols = [
-    { label: 'Hour Pillar\n(시주 · 時柱)', data: pillar.hourPillar },
-    { label: 'Day Pillar\n(일주 · 日柱)', data: pillar.dayPillar },
-    { label: 'Month Pillar\n(월주 · 月柱)', data: pillar.monthPillar },
-    { label: 'Year Pillar\n(년주 · 年柱)', data: pillar.yearPillar },
+    { label: 'Hour Pillar', sub: '(시주 · 時柱)', data: pillar.hourPillar },
+    { label: 'Day Pillar', sub: '(일주 · 日柱)', data: pillar.dayPillar },
+    { label: 'Month Pillar', sub: '(월주 · 月柱)', data: pillar.monthPillar },
+    { label: 'Year Pillar', sub: '(년주 · 年柱)', data: pillar.yearPillar },
   ];
-
-  const genderEn = info.gender === '남' ? 'Male' : 'Female';
 
   return (
     <View style={s.container}>
-      {/* 타이틀 */}
-      <Text style={[s.title, { color: colors.primary }]}>
-        사주원국표 · Four Pillars Birth Chart — THE DESTINY CHART
-      </Text>
+      {/* 타이틀 — 영어 우선 */}
+      <Text style={[s.mainTitle, { color: colors.text }]}>Four Pillars Birth Chart</Text>
+      <Text style={[s.mainTitleSub, { color: colors.textSecondary }]}>사주원국표 · 四柱原局表</Text>
+      <Text style={[s.subTitle, { color: colors.textSecondary }]}>THE DESTINY CHART</Text>
 
       {/* 인적 정보 */}
-      <View style={[s.infoBar, { backgroundColor: colors.surface, borderColor: colors.border }]}>
-        <Text style={[s.infoText, { color: colors.text }]}>
+      <View style={[s.infoBar, { backgroundColor: colors.surface }]}>
+        <Text style={[s.infoName, { color: colors.text }]}>
           {info.name || 'Guest'} ({genderEn})
         </Text>
-        <Text style={[s.infoText, { color: colors.textSecondary }]}>
-          {info.solarDate ? `Solar: ${info.solarDate}` : ''}
-        </Text>
+        <View style={s.infoDetails}>
+          {info.solarDate && (
+            <Text style={[s.infoText, { color: colors.textSecondary }]}>
+              Solar: {info.solarDate}
+            </Text>
+          )}
+          {info.lunarDate && (
+            <Text style={[s.infoText, { color: colors.textSecondary }]}>
+              Lunar: {info.lunarDate}
+            </Text>
+          )}
+        </View>
       </View>
 
-      {/* 테이블 */}
+      {/* ─── 메인 테이블 ─── */}
       <View style={[s.table, { borderColor: colors.border }]}>
 
         {/* 헤더 행 */}
         <View style={s.tableRow}>
-          <View style={[s.catCell, { backgroundColor: colors.primary }]}>
-            <Text style={s.catText}>Category</Text>
+          <View style={[s.catCell, { backgroundColor: colors.surface }]}>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Category</Text>
           </View>
           {cols.map((col, i) => (
-            <View key={i} style={[s.dataCell, { backgroundColor: colors.primary }]}>
-              <Text style={s.headerText}>{col.label}</Text>
+            <View key={i} style={[s.dataCell, { backgroundColor: colors.surface, borderLeftColor: colors.border }]}>
+              <Text style={[s.headerLabel, { color: colors.text }]}>{col.label}</Text>
+              <Text style={[s.headerSub, { color: colors.textSecondary }]}>{col.sub}</Text>
             </View>
           ))}
         </View>
 
-        {/* Ten God */}
-        {renderRow('Ten God', cols.map(c => tenGodText(c.data.stemTenGod)), colors, false)}
-
-        {/* Heavenly Stem */}
-        {renderRow('Heavenly\nStem', cols.map(c => stemText(c.data.heavenlyStem)), colors, true)}
-
-        {/* Earthly Branch */}
-        {renderRow('Earthly\nBranch', cols.map(c => branchText(c.data.earthlyBranch)), colors, false)}
-
-        {/* Ten God (Branch) */}
-        {renderRow('Ten God\n(Branch)', cols.map(c => tenGodText(c.data.branchTenGod)), colors, true)}
-
-        {/* Life Stage */}
-        {renderRow('Life\nStage', cols.map(c => stageText(c.data.twelveStage)), colors, false)}
-
-        {/* Hidden Stems */}
-        {renderRow('Hidden\nStems', cols.map(c => {
-          const parts: string[] = [];
-          if (c.data.hiddenStems.yeogi) parts.push(`${c.data.hiddenStems.yeogi.stem} ${c.data.hiddenStems.yeogi.tenGod}`);
-          if (c.data.hiddenStems.junggi) parts.push(`${c.data.hiddenStems.junggi.stem} ${c.data.hiddenStems.junggi.tenGod}`);
-          if (c.data.hiddenStems.bongi) parts.push(`${c.data.hiddenStems.bongi.stem} ${c.data.hiddenStems.bongi.tenGod}`);
-          return parts.length > 0 ? parts.join('\n') : '—';
-        }), colors, true)}
-
-        {/* Naeum */}
-        {renderRow('Naeum\n(납음오행)', cols.map(c => c.data.napEumOheng || '—'), colors, false)}
-
-      </View>
-    </View>
-  );
-}
-
-function renderRow(
-  label: string,
-  values: string[],
-  colors: { surface: string; background: string; text: string; textSecondary: string; border: string; primary: string },
-  alt: boolean,
-) {
-  const bg = alt ? colors.surface : colors.background;
-  return (
-    <View style={s.tableRow}>
-      <View style={[s.catCell, { backgroundColor: colors.surface, borderBottomColor: colors.border }]}>
-        <Text style={[s.catLabel, { color: colors.primary }]}>{label}</Text>
-      </View>
-      {values.map((val, i) => (
-        <View key={i} style={[s.dataCell, { backgroundColor: bg, borderBottomColor: colors.border, borderLeftColor: colors.border }]}>
-          <Text style={[s.dataText, { color: colors.text }]}>{val}</Text>
+        {/* Ten God — 십성 */}
+        <View style={s.tableRow}>
+          <View style={[s.catCell, { borderBottomColor: colors.border }]}>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Ten God</Text>
+            <Text style={[s.catSub, { color: colors.textSecondary }]}>(십성 · 十星)</Text>
+          </View>
+          {cols.map((col, i) => (
+            <View key={i} style={[s.dataCell, { borderBottomColor: colors.border, borderLeftColor: colors.border }]}>
+              <Text style={[s.cellText, { color: colors.text }]}>{tenGodLabel(col.data.stemTenGod)}</Text>
+            </View>
+          ))}
         </View>
-      ))}
+
+        {/* Heavenly Stem — 천간 (큰 한자) */}
+        <View style={s.tableRow}>
+          <View style={[s.catCell, { borderBottomColor: colors.border }]}>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Heavenly Stem</Text>
+            <Text style={[s.catSub, { color: colors.textSecondary }]}>(천간 · 天干)</Text>
+          </View>
+          {cols.map((col, i) => (
+            <View key={i} style={[s.dataCellLarge, { borderBottomColor: colors.border, borderLeftColor: colors.border }]}>
+              <Text style={[s.hanjaLarge, { color: getHanjaColor(col.data.heavenlyStem) }]}>
+                {col.data.heavenlyStem}
+              </Text>
+            </View>
+          ))}
+        </View>
+
+        {/* Earthly Branch — 지지 (큰 한자) */}
+        <View style={s.tableRow}>
+          <View style={[s.catCell, { borderBottomColor: colors.border }]}>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Earthly Branch</Text>
+            <Text style={[s.catSub, { color: colors.textSecondary }]}>(지지 · 地支)</Text>
+          </View>
+          {cols.map((col, i) => (
+            <View key={i} style={[s.dataCellLarge, { borderBottomColor: colors.border, borderLeftColor: colors.border }]}>
+              <Text style={[s.hanjaLarge, { color: getHanjaColor(col.data.earthlyBranch) }]}>
+                {col.data.earthlyBranch}
+              </Text>
+            </View>
+          ))}
+        </View>
+
+        {/* Ten God (Branch) — 십성(지지) */}
+        <View style={s.tableRow}>
+          <View style={[s.catCell, { borderBottomColor: colors.border }]}>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Ten God</Text>
+            <Text style={[s.catSub, { color: colors.textSecondary }]}>(Branch)</Text>
+          </View>
+          {cols.map((col, i) => (
+            <View key={i} style={[s.dataCell, { borderBottomColor: colors.border, borderLeftColor: colors.border }]}>
+              <Text style={[s.cellText, { color: colors.text }]}>{tenGodLabel(col.data.branchTenGod)}</Text>
+            </View>
+          ))}
+        </View>
+
+        {/* Life Stage — 운성 */}
+        <View style={s.tableRow}>
+          <View style={[s.catCell, { borderBottomColor: colors.border }]}>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Life Stage</Text>
+            <Text style={[s.catSub, { color: colors.textSecondary }]}>(운성 · 運星)</Text>
+          </View>
+          {cols.map((col, i) => (
+            <View key={i} style={[s.dataCell, { borderBottomColor: colors.border, borderLeftColor: colors.border }]}>
+              <Text style={[s.cellText, { color: colors.text }]}>{stageLabel(col.data.twelveStage)}</Text>
+            </View>
+          ))}
+        </View>
+
+        {/* Naeum — 납음오행 */}
+        <View style={s.tableRow}>
+          <View style={[s.catCell, { borderBottomColor: colors.border }]}>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Naeum</Text>
+            <Text style={[s.catSub, { color: colors.textSecondary }]}>(납음 · 納音)</Text>
+          </View>
+          {cols.map((col, i) => (
+            <View key={i} style={[s.dataCell, { borderBottomColor: colors.border, borderLeftColor: colors.border }]}>
+              <Text style={[s.cellText, { color: colors.text }]}>{col.data.napEumOheng || '—'}</Text>
+            </View>
+          ))}
+        </View>
+      </View>
     </View>
   );
 }
 
 const s = StyleSheet.create({
-  container: { marginBottom: 16 },
+  container: { marginBottom: 20 },
 
-  title: {
+  mainTitle: {
     fontFamily: FONT_TITLE,
-    fontSize: 13,
+    fontSize: 22,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: 10,
+    marginBottom: 2,
+  },
+  mainTitleSub: {
+    fontFamily: FONT_CJK,
+    fontSize: 12,
+    textAlign: 'center',
+    marginBottom: 4,
+  },
+  subTitle: {
+    fontFamily: FONT_BODY,
+    fontSize: 10,
+    textAlign: 'center',
+    letterSpacing: 3,
+    marginBottom: 18,
   },
 
+  // 인적 정보
   infoBar: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 16,
+    paddingRight: 16,
+    borderRadius: 4,
+    marginBottom: 16,
+    alignItems: 'center',
+  },
+  infoName: {
+    fontFamily: FONT_BODY,
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginBottom: 4,
+  },
+  infoDetails: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingTop: 6,
-    paddingBottom: 6,
-    paddingLeft: 10,
-    paddingRight: 10,
-    borderWidth: 0.5,
-    borderStyle: 'solid',
-    borderRadius: 3,
-    marginBottom: 8,
   },
   infoText: {
     fontFamily: FONT_BODY,
-    fontSize: 9,
+    fontSize: 11,
+    marginLeft: 8,
+    marginRight: 8,
   },
 
+  // 테이블
   table: {
     borderWidth: 0.5,
     borderStyle: 'solid',
-    borderRadius: 2,
+    borderRadius: 3,
     overflow: 'hidden',
   },
   tableRow: {
@@ -234,30 +300,29 @@ const s = StyleSheet.create({
   },
 
   catCell: {
-    width: 70,
-    padding: 5,
+    width: 80,
+    padding: 8,
     justifyContent: 'center',
+    alignItems: 'center',
     borderBottomWidth: 0.5,
     borderBottomStyle: 'solid',
   },
-  catText: {
-    fontFamily: FONT_BODY,
-    fontSize: 7,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-    textAlign: 'center',
-  },
   catLabel: {
     fontFamily: FONT_BODY,
-    fontSize: 7,
+    fontSize: 10,
     fontWeight: 'bold',
     textAlign: 'center',
-    lineHeight: 1.3,
+  },
+  catSub: {
+    fontFamily: FONT_CJK,
+    fontSize: 8,
+    textAlign: 'center',
+    marginTop: 1,
   },
 
   dataCell: {
     flex: 1,
-    padding: 5,
+    padding: 8,
     justifyContent: 'center',
     alignItems: 'center',
     borderBottomWidth: 0.5,
@@ -265,17 +330,43 @@ const s = StyleSheet.create({
     borderLeftWidth: 0.5,
     borderLeftStyle: 'solid',
   },
-  headerText: {
-    fontFamily: FONT_BODY,
-    fontSize: 7,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-    textAlign: 'center',
-    lineHeight: 1.3,
+  dataCellLarge: {
+    flex: 1,
+    paddingTop: 14,
+    paddingBottom: 14,
+    paddingLeft: 8,
+    paddingRight: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderBottomWidth: 0.5,
+    borderBottomStyle: 'solid',
+    borderLeftWidth: 0.5,
+    borderLeftStyle: 'solid',
   },
-  dataText: {
+
+  headerLabel: {
+    fontFamily: FONT_BODY,
+    fontSize: 11,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  headerSub: {
     fontFamily: FONT_CJK,
-    fontSize: 7.5,
+    fontSize: 8,
+    textAlign: 'center',
+    marginTop: 1,
+  },
+
+  hanjaLarge: {
+    fontFamily: FONT_CJK,
+    fontSize: 34,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+
+  cellText: {
+    fontFamily: FONT_CJK,
+    fontSize: 10,
     textAlign: 'center',
     lineHeight: 1.4,
   },

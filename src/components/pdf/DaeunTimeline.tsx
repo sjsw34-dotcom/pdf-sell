@@ -13,7 +13,6 @@ interface DaeunTimelineProps {
 
 export function DaeunTimeline({ theme, daeun }: DaeunTimelineProps) {
   const colors = THEMES[theme].colors;
-  const s = styles(colors);
 
   const sentimentColor: Record<string, string> = {
     positive: colors.positive,
@@ -21,13 +20,12 @@ export function DaeunTimeline({ theme, daeun }: DaeunTimelineProps) {
     caution: colors.caution,
   };
 
-  // 나이순 정렬 (9세 → 99세)
   const sorted = [...daeun.entries].sort((a, b) => a.startAge - b.startAge);
 
   return (
     <View style={s.container}>
-      <Text style={s.chartTitle}>MAJOR LUCK CYCLES</Text>
-      <Text style={s.chartSubtitle}>大運 · Daeun (10-Year Periods)</Text>
+      <Text style={[s.chartTitle, { color: colors.text }]}>MAJOR LUCK CYCLES</Text>
+      <Text style={[s.chartSubtitle, { color: colors.textSecondary }]}>大運 · Daeun (10-Year Periods)</Text>
 
       {sorted.map((entry, idx) => {
         const isEven = idx % 2 === 0;
@@ -36,31 +34,37 @@ export function DaeunTimeline({ theme, daeun }: DaeunTimelineProps) {
             {/* 타임라인 도트 + 라인 */}
             <View style={s.timeline}>
               <View style={[s.dot, { backgroundColor: colors.primary }]} />
-              {idx < sorted.length - 1 && <View style={s.line} />}
+              {idx < sorted.length - 1 && <View style={[s.line, { backgroundColor: colors.border }]} />}
             </View>
 
             {/* 카드 */}
-            <View style={[s.card, isEven ? s.cardDefault : s.cardAlt]}>
-              {/* 상단: 나이 + 천간/지지 */}
+            <View style={[s.card, { backgroundColor: isEven ? colors.background : colors.surface, borderColor: colors.border }]}>
               <View style={s.cardHeader}>
+                {/* 나이 */}
                 <View style={s.ageBox}>
-                  <Text style={s.ageText}>{entry.startAge}</Text>
-                  <Text style={s.ageSuffix}>~{entry.startAge + 9}</Text>
+                  <Text style={[s.ageText, { color: colors.primary }]}>{entry.startAge}</Text>
+                  <Text style={[s.ageSuffix, { color: colors.textSecondary }]}>~{entry.startAge + 9}</Text>
                 </View>
+
+                {/* 한자 */}
                 <View style={s.stemBranch}>
-                  <Text style={s.hanjaLarge}>{entry.heavenlyStem}{entry.earthlyBranch}</Text>
+                  <Text style={[s.hanjaLarge, { color: colors.text }]}>{entry.heavenlyStem}{entry.earthlyBranch}</Text>
                 </View>
+
+                {/* 십신 */}
                 <View style={s.godInfo}>
-                  <Text style={s.godLabel}>{TEN_GOD_EN[entry.stemTenGod] ?? entry.stemTenGod}</Text>
-                  <Text style={s.godSub}>{entry.stemTenGod} / {entry.branchTenGod}</Text>
+                  <Text style={[s.godLabel, { color: colors.text }]}>{TEN_GOD_EN[entry.stemTenGod] ?? entry.stemTenGod}</Text>
+                  <Text style={[s.godSub, { color: colors.textSecondary }]}>{entry.stemTenGod} / {entry.branchTenGod}</Text>
                 </View>
+
+                {/* 운성 */}
                 <View style={s.stageInfo}>
-                  <Text style={s.stageLabel}>{TWELVE_STAGE_EN[entry.twelveStage] ?? entry.twelveStage}</Text>
-                  <Text style={s.stageSub}>{entry.twelveStage}</Text>
+                  <Text style={[s.stageLabel, { color: colors.secondary }]}>{TWELVE_STAGE_EN[entry.twelveStage] ?? entry.twelveStage}</Text>
+                  <Text style={[s.stageSub, { color: colors.textSecondary }]}>{entry.twelveStage}</Text>
                 </View>
               </View>
 
-              {/* 하단: 주요 신살 태그 */}
+              {/* 신살 태그 */}
               <View style={s.tagRow}>
                 {[entry.shinsals.byYear, entry.shinsals.byDay, ...entry.shinsals.auxiliary]
                   .filter((n) => n && n !== '-')
@@ -84,58 +88,54 @@ export function DaeunTimeline({ theme, daeun }: DaeunTimelineProps) {
   );
 }
 
-function styles(colors: { primary: string; secondary: string; surface: string; text: string; textSecondary: string; border: string; background: string }) {
-  return StyleSheet.create({
-    container: { marginBottom: 20 },
-    chartTitle: {
-      fontFamily: FONT_TITLE, fontSize: 16, fontWeight: 'bold',
-      color: colors.primary, textAlign: 'center', marginBottom: 2,
-    },
-    chartSubtitle: {
-      fontFamily: FONT_CJK, fontSize: 9,
-      color: colors.textSecondary, textAlign: 'center', marginBottom: 14,
-    },
+const s = StyleSheet.create({
+  container: { marginBottom: 20 },
+  chartTitle: {
+    fontFamily: FONT_TITLE, fontSize: 18, fontWeight: 'bold',
+    textAlign: 'center', marginBottom: 2,
+  },
+  chartSubtitle: {
+    fontFamily: FONT_CJK, fontSize: 11,
+    textAlign: 'center', marginBottom: 16,
+  },
 
-    entryRow: { flexDirection: 'row', marginBottom: 0 },
+  entryRow: { flexDirection: 'row', marginBottom: 0 },
 
-    // 타임라인
-    timeline: { width: 20, alignItems: 'center' },
-    dot: { width: 8, height: 8, borderRadius: 4, marginTop: 8 },
-    line: { width: 2, flex: 1, backgroundColor: colors.border },
+  // 타임라인
+  timeline: { width: 24, alignItems: 'center' },
+  dot: { width: 10, height: 10, borderRadius: 5, marginTop: 10 },
+  line: { width: 2, flex: 1 },
 
-    // 카드
-    card: {
-      flex: 1, marginLeft: 8, marginBottom: 6,
-      borderRadius: 4, padding: 8,
-      borderWidth: 1, borderColor: colors.border, borderStyle: 'solid',
-    },
-    cardDefault: { backgroundColor: colors.background },
-    cardAlt: { backgroundColor: colors.surface },
+  // 카드
+  card: {
+    flex: 1, marginLeft: 10, marginBottom: 8,
+    borderRadius: 6, padding: 12,
+    borderWidth: 1, borderStyle: 'solid',
+  },
 
-    cardHeader: { flexDirection: 'row', alignItems: 'center', marginBottom: 5 },
+  cardHeader: { flexDirection: 'row', alignItems: 'center', marginBottom: 6 },
 
-    ageBox: { flexDirection: 'row', alignItems: 'baseline', width: 55 },
-    ageText: { fontFamily: FONT_BODY, fontSize: 16, fontWeight: 'bold', color: colors.primary },
-    ageSuffix: { fontFamily: FONT_BODY, fontSize: 8, color: colors.textSecondary, marginLeft: 1 },
+  ageBox: { flexDirection: 'row', alignItems: 'baseline', width: 60 },
+  ageText: { fontFamily: FONT_BODY, fontSize: 18, fontWeight: 'bold' },
+  ageSuffix: { fontFamily: FONT_BODY, fontSize: 10, marginLeft: 2 },
 
-    stemBranch: { width: 36, alignItems: 'center' },
-    hanjaLarge: { fontFamily: FONT_CJK, fontSize: 14, fontWeight: 'bold', color: colors.text },
+  stemBranch: { width: 42, alignItems: 'center' },
+  hanjaLarge: { fontFamily: FONT_CJK, fontSize: 16, fontWeight: 'bold' },
 
-    godInfo: { flex: 1, marginLeft: 8 },
-    godLabel: { fontFamily: FONT_BODY, fontSize: 8, fontWeight: 'bold', color: colors.text },
-    godSub: { fontFamily: FONT_CJK, fontSize: 6, color: colors.textSecondary, marginTop: 1 },
+  godInfo: { flex: 1, marginLeft: 10 },
+  godLabel: { fontFamily: FONT_BODY, fontSize: 10, fontWeight: 'bold' },
+  godSub: { fontFamily: FONT_CJK, fontSize: 8, marginTop: 1 },
 
-    stageInfo: { width: 60, alignItems: 'flex-end' },
-    stageLabel: { fontFamily: FONT_BODY, fontSize: 7, color: colors.secondary },
-    stageSub: { fontFamily: FONT_CJK, fontSize: 6, color: colors.textSecondary },
+  stageInfo: { width: 70, alignItems: 'flex-end' },
+  stageLabel: { fontFamily: FONT_BODY, fontSize: 10 },
+  stageSub: { fontFamily: FONT_CJK, fontSize: 8 },
 
-    // 신살 태그
-    tagRow: { flexDirection: 'row', flexWrap: 'wrap' },
-    tag: {
-      borderWidth: 1, borderStyle: 'solid', borderRadius: 3,
-      paddingTop: 2, paddingBottom: 2, paddingLeft: 5, paddingRight: 5,
-      marginRight: 4, marginBottom: 2,
-    },
-    tagText: { fontFamily: FONT_BODY, fontSize: 6, fontWeight: 'bold' },
-  });
-}
+  // 신살 태그
+  tagRow: { flexDirection: 'row', flexWrap: 'wrap' },
+  tag: {
+    borderWidth: 1, borderStyle: 'solid', borderRadius: 4,
+    paddingTop: 3, paddingBottom: 3, paddingLeft: 7, paddingRight: 7,
+    marginRight: 5, marginBottom: 3,
+  },
+  tagText: { fontFamily: FONT_BODY, fontSize: 8, fontWeight: 'bold' },
+});

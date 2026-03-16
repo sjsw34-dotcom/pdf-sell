@@ -185,10 +185,12 @@ const s = StyleSheet.create({
   },
   clientName: {
     fontFamily: FONT_TITLE,
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: 'bold',
     color: '#FFFFFF',
-    letterSpacing: 1,
+    letterSpacing: 0.5,
+    textAlign: 'center',
+    maxWidth: '100%',
   },
   birthInfo: {
     fontFamily: FONT_BODY,

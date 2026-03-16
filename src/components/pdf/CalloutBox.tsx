@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { ThemeCode } from '@/lib/types/theme';
 import { THEMES } from '@/lib/constants/themes';
-import { FONT_BODY } from './styles/pdfStyles';
+import { FONT_BODY, ANTI_LIGATURE, fixLigatures } from './styles/pdfStyles';
 
 interface CalloutBoxProps {
   theme: ThemeCode;
@@ -34,7 +34,7 @@ export function CalloutBox({ theme, text, label, variant = 'default' }: CalloutB
       {label && (
         <Text style={[s.label, { color: v.labelColor }]}>{label}</Text>
       )}
-      <Text style={s.text}>{text || ' '}</Text>
+      <Text style={s.text}>{fixLigatures(text || ' ')}</Text>
     </View>
   );
 }
@@ -50,7 +50,7 @@ function styles(colors: { text: string; textSecondary: string }) {
     },
     label: {
       fontFamily: FONT_BODY,
-      fontSize: 8,
+      fontSize: 12,
       fontWeight: 'bold',
       letterSpacing: 1,
       textTransform: 'uppercase',
@@ -58,9 +58,10 @@ function styles(colors: { text: string; textSecondary: string }) {
     },
     text: {
       fontFamily: FONT_BODY,
-      fontSize: 11,
+      fontSize: 14,
       color: colors.text,
       lineHeight: 1.6,
+      letterSpacing: ANTI_LIGATURE,
     },
   });
 }
