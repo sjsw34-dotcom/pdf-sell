@@ -5,13 +5,9 @@ import { useState, useRef } from 'react';
 const INITIAL_FORM = {
   customerName: '',
   customerEmail: '',
-  birthDate: '',
-  readingType: '프리미엄 사주 리딩',
-  orderId: '',
   customMessage:
     'Thank you for choosing Saju Muse. Your personalized Four Pillars reading has been carefully prepared based on your birth details.\n\nPlease find your detailed report attached to this email. Take your time reading through it — there are deep insights about your life path, relationships, and career waiting for you.',
   pdfDownloadLink: '',
-  reviewLink: '',
 };
 
 export default function MailerPage() {
@@ -56,7 +52,7 @@ export default function MailerPage() {
       const res = await fetch('/api/preview', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, birthDate: '', readingType: '', orderId: '', reviewLink: '' }),
       });
       const data = await res.json();
       setPreviewHTML(data.html);
@@ -87,6 +83,11 @@ export default function MailerPage() {
       Object.entries(form).forEach(([key, value]) => {
         formData.append(key, value);
       });
+      // API가 기대하는 필드 기본값
+      formData.append('birthDate', '');
+      formData.append('readingType', '');
+      formData.append('orderId', '');
+      formData.append('reviewLink', '');
       files.forEach((file) => {
         formData.append('files', file);
       });
@@ -580,47 +581,6 @@ export default function MailerPage() {
               value={form.customerEmail}
               onChange={handleChange}
               placeholder="customer@email.com"
-            />
-          </div>
-          <div className="field">
-            <label>생년월일</label>
-            <input
-              name="birthDate"
-              value={form.birthDate}
-              onChange={handleChange}
-              placeholder="예: March 15, 1992"
-            />
-          </div>
-          <div className="field">
-            <label>리딩 유형</label>
-            <select
-              name="readingType"
-              value={form.readingType}
-              onChange={handleChange}
-            >
-              <option>프리미엄 사주 리딩</option>
-              <option>궁합 리딩</option>
-              <option>직업 &amp; 재물 리딩</option>
-              <option>신년운세 리딩</option>
-              <option>커스텀 리딩</option>
-            </select>
-          </div>
-          <div className="field">
-            <label>주문 ID</label>
-            <input
-              name="orderId"
-              value={form.orderId}
-              onChange={handleChange}
-              placeholder="예: SM-2026-0042"
-            />
-          </div>
-          <div className="field">
-            <label>리뷰 링크 (선택)</label>
-            <input
-              name="reviewLink"
-              value={form.reviewLink}
-              onChange={handleChange}
-              placeholder="예: Fiverr 리뷰 URL"
             />
           </div>
         </div>
