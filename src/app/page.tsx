@@ -10,6 +10,7 @@ import { ImageUploader } from '@/components/ui/ImageUploader';
 import { ThemeSelector } from '@/components/ui/ThemeSelector';
 import { AdditionalRequest } from '@/components/ui/AdditionalRequest';
 import { ProgressBar } from '@/components/ui/ProgressBar';
+import { EmailSender } from '@/components/ui/EmailSender';
 import { Toast } from '@/components/ui/Toast';
 
 export default function HomePage() {
@@ -234,17 +235,27 @@ export default function HomePage() {
         <ProgressBar />
 
         {status === 'done' && (
-          <section className="w-full bg-[#1A1A2E] border border-green-800 rounded-xl p-6">
+          <section className="w-full bg-[#1A1A2E] border border-green-800 rounded-xl p-6 space-y-6">
             <div className="flex flex-col items-center gap-4">
               <p className="text-green-400 font-medium">PDF가 성공적으로 생성되었습니다.</p>
-              {pdfBlobUrl && (
-                <button onClick={handleDownload} className="px-8 py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition cursor-pointer">
-                  PDF 다운로드
+              <div className="flex gap-3">
+                {pdfBlobUrl && (
+                  <button onClick={handleDownload} className="px-8 py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition cursor-pointer">
+                    PDF 다운로드
+                  </button>
+                )}
+                <button onClick={handleReset} className="px-6 py-2 bg-gray-800 text-gray-300 rounded-lg text-sm hover:bg-gray-700 transition cursor-pointer">
+                  새로 생성하기
                 </button>
-              )}
-              <button onClick={handleReset} className="px-6 py-2 bg-gray-800 text-gray-300 rounded-lg text-sm hover:bg-gray-700 transition cursor-pointer">
-                새로 생성하기
-              </button>
+              </div>
+            </div>
+
+            <div className="border-t border-[#2a2a45] pt-6">
+              <EmailSender
+                pdfBlobUrl={pdfBlobUrl}
+                clientName={sajuData ? (extractInfo(sajuData).name || 'Valued Guest') : 'Valued Guest'}
+                tier={selectedTier || 'premium'}
+              />
             </div>
           </section>
         )}
