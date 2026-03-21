@@ -210,11 +210,22 @@ function showChapterStatus(): void {
 
 // ─── DOCX 생성 ───
 
-async function generateDocx(chapters: Record<string, ChapterData>, outputName: string): Promise<void> {
+async function generateDocx(chapters: Record<string, ChapterData>, outputName: string, preview = false): Promise<void> {
   console.log('\n📝 DOCX 생성 중...');
 
+  // 미리보기 모드: 챕터 번호가 16 이상이면 full 에디션 사용
+  let effectiveEdition = edition;
+  if (preview) {
+    const chapterKeys = Object.keys(chapters);
+    const hasFullOnly = chapterKeys.some(k => {
+      const num = parseInt(k.replace('chapter_', ''), 10);
+      return num > 15;
+    });
+    if (hasFullOnly) effectiveEdition = 'full';
+  }
+
   const { buildEbookDocx } = await import('../src/lib/docx/buildEbookDocx');
-  const buffer = await buildEbookDocx(edition, chapters);
+  const buffer = await buildEbookDocx(effectiveEdition, chapters, { preview });
 
   const outPath = path.join(OUTPUT_DIR, `${outputName}.docx`);
   fs.writeFileSync(outPath, buffer);
@@ -315,7 +326,7 @@ async function main() {
     const outputName = `preview-chapter-${padded}`;
 
     if (format === 'docx' || format === 'both') {
-      await generateDocx(chapters, outputName);
+      await generateDocx(chapters, outputName, true);
     }
     if (format === 'pdf' || format === 'both') {
       await generatePdf(chapters, outputName);

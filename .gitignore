@@ -40,6 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# ebook output
+/output/
+
 # fonts (large binary files — only subset fonts are committed)
 src/fonts/*.ttf
 public/fonts/*.ttf
