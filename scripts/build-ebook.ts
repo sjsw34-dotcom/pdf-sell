@@ -243,11 +243,11 @@ async function generatePdf(chapters: Record<string, ChapterData>, outputName: st
   const { Font } = await import('@react-pdf/renderer');
   const fontsDir = path.join(ROOT, 'public', 'fonts');
 
-  const regularPath = path.join(fontsDir, 'NotoSansKR-Regular-subset.ttf');
-  const boldPath = path.join(fontsDir, 'NotoSansKR-Bold-subset.ttf');
+  const regularPath = path.join(fontsDir, 'NotoSansKR-Regular.ttf');
+  const boldPath = path.join(fontsDir, 'NotoSansKR-Bold.ttf');
 
   if (!fs.existsSync(regularPath) || !fs.existsSync(boldPath)) {
-    console.error('❌ 서브셋 폰트가 없습니다. 먼저 python scripts/build-font-subset.py 를 실행하세요.');
+    console.error('❌ NotoSansKR 폰트 파일이 없습니다. public/fonts/ 디렉토리를 확인하세요.');
     process.exit(1);
   }
 

@@ -25,74 +25,47 @@ The character 比 (*bi*) means "to compare" and 肩 (*gyeon*) means "shoulder" �
 
 ## Friend (비견) — The Equal
 
-The **Friend** — *Bigyeon* (비견 比肩) — is the purest form of companionship in Saju. It is the element that is exactly you: same element, same polarity. It is the person who understands without explanation, the partner who shares your wavelength, the sibling who finishes your sentences.
+The Friend, *Bigyeon* (비견 比肩), is the purest form of companionship in Saju. It is the element that is exactly you, same element, same polarity. It is the person who understands without explanation, the partner who shares your wavelength, the sibling who finishes your sentences.
 
 ### Core Nature
 
-The Friend matches the Day Master perfectly — same element, same polarity. There is no friction, no tension, no productive conflict. This creates deep understanding but also potential stagnation: two identical forces moving in the same direction neither challenge nor refine each other.
+The Friend matches the Day Master perfectly, same element, same polarity. There is no friction, no tension, no productive conflict. This creates deep understanding but also potential stagnation. Two identical forces moving in the same direction neither challenge nor refine each other.
 
-**Key characteristics:**
-- **Peer support** — people who share your perspective, values, and approach
-- **Self-confidence** — the presence of Friends in the chart reinforces the Day Master's sense of identity
-- **Collaboration** — working together as equals, not in hierarchy
-- **Siblings** — traditionally represents brothers or sisters of the same gender
-- **Independence** — the Friend strengthens the Day Master's ability to stand alone
+Peer support comes from people who share your perspective, values, and approach. Self-confidence grows as the presence of Friends in the chart reinforces the Day Master's sense of identity. Collaboration is natural, with people working together as equals rather than in hierarchy. Traditionally, the Friend represents brothers or sisters of the same gender. Independence strengthens as the Friend reinforces the Day Master's ability to stand alone.
 
 ### The Friend in Life
 
-A person with strong Friend presence tends to:
+A person with strong Friend presence tends to build genuine peer networks, not hierarchical alliances but true equal partnerships. They feel confident in their identity, knowing who they are without needing external validation. Collaborative settings bring out their best work, whether as co-founders, in partnerships, or in team-based environments. Resources are shared willingly with generosity toward those they see as equals. The Friend energy does not bow. It stands parallel.
 
-- **Build genuine peer networks** — not hierarchical alliances but true equal partnerships
-- **Feel confident in their identity** — they know who they are without needing external validation
-- **Work best in collaborative settings** — co-founders, partnerships, team-based environments
-- **Share resources willingly** — generosity toward those they see as equals
-- **Resist subordination** — the Friend energy does not bow; it stands parallel
-
-In career, Friend-dominant people gravitate toward: partnerships, co-operative ventures, peer-based professions (consulting teams, medical groups, law firms), and any setting where equality rather than hierarchy drives collaboration.
+In career, Friend-dominant people gravitate toward partnerships, co-operative ventures, peer-based professions (consulting teams, medical groups, law firms), and any setting where equality rather than hierarchy drives collaboration.
 
 ### The Risk of Too Many Friends
 
 Excess Friend energy creates an echo chamber. Everyone around you agrees, validates, and mirrors your perspective — but no one challenges it. Growth stalls. Innovation dies. The comfort of sameness prevents the discomfort of transformation.
 
-Additionally, too many Companion Stars (Friends + Rob Wealth combined) can overwhelm Wealth Stars. Remember: Companions share the Day Master's element, and the Day Master controls Wealth. Multiple Companions all trying to control the same Wealth creates competition — not external competition, but internal dilution. The wealth gets divided among too many claimants.
+Additionally, too many Companion Stars (Friends + Rob Wealth combined) can overwhelm Wealth Stars. Companions share the Day Master's element, and the Day Master controls Wealth. Multiple Companions all trying to control the same Wealth creates competition, not external competition, but internal dilution. The wealth gets divided among too many claimants.
 
 ## Rob Wealth (겁재) — The Competitor
 
-The **Rob Wealth** — *Geopjae* (겁재 劫財) — is companionship with an edge. It is the same element but different polarity — a sibling who understands you perfectly but also competes with you for everything. The Rob Wealth pushes you harder than anyone else can, precisely because they are operating on your frequency.
+The Rob Wealth, *Geopjae* (겁재 劫財), is companionship with an edge. It is the same element but different polarity, a sibling who understands you perfectly but also competes with you for everything. The Rob Wealth pushes you harder than anyone else can, precisely because they are operating on your frequency.
 
 ### Core Nature
 
-The Rob Wealth has different polarity from the Day Master, creating a complementary but competitive dynamic. Yang and Yin of the same element are like two sides of a blade — they belong together but face opposite directions.
+The Rob Wealth has different polarity from the Day Master, creating a complementary but competitive dynamic. Yang and Yin of the same element are like two sides of a blade. They belong together but face opposite directions.
 
-**Key characteristics:**
-- **Competitive drive** — the presence of Rob Wealth pushes the Day Master to perform
-- **Ambitious rivalry** — not hostile competition but the kind that elevates both parties
-- **Resource competition** — Rob Wealth literally "robs" wealth by competing for the same financial and material resources
-- **Opposite-gender siblings** — traditionally represents brothers or sisters of the opposite gender
-- **Action catalyst** — Rob Wealth prevents complacency and forces movement
+The competitive drive is strong, as the presence of Rob Wealth pushes the Day Master to perform. The rivalry is ambitious but not hostile, the kind that elevates both parties. Resource competition is real, with Rob Wealth literally "robbing" wealth by competing for the same financial and material resources. Traditionally, Rob Wealth represents brothers or sisters of the opposite gender. It also serves as an action catalyst, preventing complacency and forcing movement.
 
 ### The Rob Wealth in Life
 
-A person with strong Rob Wealth presence tends to:
+A person with strong Rob Wealth presence tends to thrive in competitive environments such as sales, sports, startups, and any arena with clear winners. Their greatest growth comes through rivalry rather than mentorship. Financial volatility is common because Rob Wealth literally competes for the same resources. Where the Friend deliberates, the Rob Wealth acts. Their social circle is filled with driven, competitive personalities.
 
-- **Thrive in competitive environments** — sales, sports, startups, any arena with clear winners
-- **Be pushed by peers** — their greatest growth comes through rivalry, not mentorship
-- **Experience financial volatility** — money comes and goes because Rob Wealth literally competes for it
-- **Take bold action** — where the Friend deliberates, the Rob Wealth acts
-- **Attract ambitious people** — their social circle is filled with driven, competitive personalities
-
-In career, Rob Wealth people gravitate toward: competitive sales, trading, entrepreneurship in crowded markets, sports management, and any field where outperforming peers determines success.
+In career, Rob Wealth people gravitate toward competitive sales, trading, entrepreneurship in crowded markets, sports management, and any field where outperforming peers determines success.
 
 ### The Danger: Rob Wealth and Financial Loss
 
-The name "Rob Wealth" is literal. When Rob Wealth energy is strong in the chart or arrives through fortune cycles, financial losses through competition, partnership disputes, or impulsive spending are common. The person may:
+The name "Rob Wealth" is literal. When Rob Wealth energy is strong in the chart or arrives through fortune cycles, financial losses through competition, partnership disputes, or impulsive spending are common. The person may invest in ventures that a competitor also targets, splitting the return. Money can be lost through generous but unwise partnerships. Impulsive spending follows the urge to match or outdo peers. Betrayal from business partners who share the same ambitions is another risk.
 
-- Invest in ventures that a competitor also targets — splitting the return
-- Lose money through generous but unwise partnerships
-- Spend impulsively to match or outdo peers
-- Experience betrayal from business partners who share the same ambitions
-
-The antidote is Output Stars (식상). Output Stars redirect the competitive Companion energy into creation rather than rivalry. Instead of competing for existing resources, the Rob Wealth person *creates new resources* through talent and expression. This transforms destructive competition into productive innovation.
+The antidote is Output Stars (식상). Output Stars redirect the competitive Companion energy into creation rather than rivalry. Instead of competing for existing resources, the Rob Wealth person creates new resources through talent and expression. This transforms destructive competition into productive innovation.
 
 ## Friend vs. Rob Wealth: Side by Side
 
@@ -109,7 +82,7 @@ The antidote is Output Stars (식상). Output Stars redirect the competitive Com
 
 ## Case Study: Chart B — The Absence of Companions
 
-**Chart B** (born 1996, female, Yin Wood Day Master) is the primary example for understanding what happens when Companion Stars are completely absent:
+Chart B (born 1996, female, Yin Wood Day Master) is the primary example for understanding what happens when Companion Stars are completely absent.
 
 :::saju-chart Chart B (born 1996, female)
 [{"position":"Hour","stem":"丁","stemElement":"Yin Fire","stemGod":"Eating God","branch":"丑","branchAnimal":"Ox","branchGod":"Ind. Wealth"},{"position":"Day","stem":"乙","stemElement":"Yin Wood","stemGod":"Day Master","branch":"未","branchAnimal":"Goat","branchGod":"Ind. Wealth"},{"position":"Month","stem":"丙","stemElement":"Yang Fire","stemGod":"Hurting Officer","branch":"申","branchAnimal":"Monkey","branchGod":"Dir. Officer"},{"position":"Year","stem":"丙","stemElement":"Yang Fire","stemGod":"Hurting Officer","branch":"子","branchAnimal":"Rat","branchGod":"Ind. Seal"}]
@@ -117,14 +90,11 @@ The antidote is Output Stars (식상). Output Stars redirect the competitive Com
 
 **Companion Stars: 0** — No Friend (乙 appears only as Day Master), no Rob Wealth (甲 does not appear)
 
-This is what zero Companions looks like in lived experience:
+This is what zero Companions looks like in lived experience.
 
-- **No one who truly understands.** The chart owner can be surrounded by people — friends, family, colleagues — but feels fundamentally alone. No one shares her exact frequency. Explaining her perspective always requires translation.
-- **Self-reliance by necessity.** Without peer support, everything falls on the individual. Decisions are made alone. Burdens are carried alone. Success and failure are solo experiences.
-- **Weak Day Master with no reinforcement.** The Yin Wood Day Master is already extremely weak (극신약). The absence of Companions means there are no allies to absorb pressure. Every challenge hits directly, without any buffer.
-- **Seeking Companions externally.** The chart owner is likely drawn to people who share her element — other Wood-dominant people, creative and flexible individuals — because the chart lacks what it craves.
+The chart owner can be surrounded by people, including friends, family, and colleagues, but feels fundamentally alone. No one shares her exact frequency. Explaining her perspective always requires translation. Without peer support, everything falls on the individual. Decisions are made alone. Burdens are carried alone. Success and failure are solo experiences. The Yin Wood Day Master is already extremely weak (극신약), and the absence of Companions means there are no allies to absorb pressure. Every challenge hits directly, without any buffer. The chart owner is likely drawn to people who share her element, including other Wood-dominant people and creative, flexible individuals, because the chart lacks what it craves.
 
-Compare this to Chart A (born 1960, same Yin Wood Day Master):
+Compare this to Chart A (born 1960, same Yin Wood Day Master).
 
 | | Chart A (1960) | Chart B (1996) |
 |---|---|---|
@@ -134,40 +104,31 @@ Compare this to Chart A (born 1960, same Yin Wood Day Master):
 | **Identity strength** | Rooted, supported | Isolated, unsupported |
 | **DM classification** | Moderate | Extremely weak |
 
-Chart A has two Companions — 甲 (Yang Wood, Rob Wealth) in the Hour Stem and 卯 (Rabbit, pure Wood = Friend) in the Day Branch. These two allies give the Day Master roots and reinforcement. Even under heavy Metal pressure (two Officers), the Wood Day Master has fellow trees to lean against.
+Chart A has two Companions: 甲 (Yang Wood, Rob Wealth) in the Hour Stem and 卯 (Rabbit, pure Wood = Friend) in the Day Branch. These two allies give the Day Master roots and reinforcement. Even under heavy Metal pressure (two Officers), the Wood Day Master has fellow trees to lean against.
 
 Chart B has none. The vine stands alone in an open field, battered by wind from every direction.
 
-> The presence or absence of Companion Stars is often the single most impactful factor in a person's subjective experience of life. You can have talent (Output), money (Wealth), position (Authority), and knowledge (Resource) — but without Companions, success feels hollow. And with Companions, even struggle feels bearable.
+> The presence or absence of Companion Stars is often the single most impactful factor in a person's subjective experience of life. You can have talent (Output), money (Wealth), position (Authority), and knowledge (Resource), but without Companions, success feels hollow. With Companions, even struggle feels bearable.
 
 ## Case Study: Chart E — Minimal Companions
 
-**Chart E** (born 1990, male, Yang Earth Day Master) has a different Companion pattern:
+Chart E (born 1990, male, Yang Earth Day Master) has a different Companion pattern.
 
 From Chapter 5, we know Chart E's pillars: 시:庚/申, 일:戊/申, 월:戊/寅, 년:庚/午
 
-**Companion Stars:**
-- Month Stem: 戊 (Yang Earth) = **Friend** (same element, same polarity)
-- Total: **1 Friend, 0 Rob Wealth**
+The Month Stem 戊 (Yang Earth) is a Friend (same element, same polarity). Total: 1 Friend, 0 Rob Wealth.
 
-One Companion — the 戊 (Yang Earth) in the Month Stem. This is the Friend, standing shoulder to shoulder. It provides:
+One Companion, the 戊 (Yang Earth) in the Month Stem. This is the Friend, standing shoulder to shoulder. It provides the following.
 
-- A single ally in the Month Pillar (career domain) — one reliable colleague or partner
+- A single ally in the Month Pillar (career domain), meaning one reliable colleague or partner
 - Enough reinforcement to prevent total isolation, but not enough for comfort
 - The Day Master is still classified as extremely weak despite this Companion, because the four Eating God elements drain faster than one Friend can replenish
 
-The contrast with Chart B is instructive: even one Companion changes the experience. Chart E's owner has *someone* — one person, one ally, one mirror — while Chart B's owner has no one. In qualitative terms, one Friend is the difference between "struggling alone" and "struggling with a partner."
+The contrast with Chart B is instructive. Even one Companion changes the experience. Chart E's owner has someone, one person, one ally, one mirror, while Chart B's owner has no one. In qualitative terms, one Friend is the difference between "struggling alone" and "struggling with a partner."
 
 ## New Sample: Companion-Rich Chart
 
-From our new sample collection, consider a man born in 1997 with a Yin Wood (乙) Day Master:
-
-- Hour: — (unavailable)
-- Day: 乙/未 (Day Master / Indirect Wealth)
-- Month: — / —
-- Year: — / —
-
-Let us instead use a clearer example from the new samples — a woman born in 1993 with a Yin Wood (乙) Day Master (the chart we introduced in Chapter 9):
+For contrast, consider a woman born in 1993 with a Yin Wood (乙) Day Master (the chart we introduced in Chapter 9).
 
 - Hour: 丙/子 (Hurting Officer / Indirect Seal)
 - Day: 乙/丑 (Day Master / Indirect Wealth)
@@ -176,42 +137,37 @@ Let us instead use a clearer example from the new samples — a woman born in 19
 
 **Companion Stars:** Rob Wealth 2 (甲 Month Stem + 寅 Tiger contains 甲 as main element)
 
-Two Rob Wealth elements — both in the Month Pillar (career domain). This creates:
-
-- **Strong competitive drive in career** — the Month Pillar governs professional life, and two Rob Wealth elements there means peers and competitors define the career experience
-- **Financial volatility** — Rob Wealth in the career domain means income fluctuates based on competitive outcomes
-- **Growth through rivalry** — the chart owner's greatest professional development comes from being pushed by ambitious peers
-- **No Friends** — interestingly, despite having two Companions, they are both Rob Wealth (competitive), not Friend (supportive). The owner has rivals who drive growth but no equals who provide comfort
+Two Rob Wealth elements sit in the Month Pillar (career domain). The competitive drive in career is strong, since the Month Pillar governs professional life and two Rob Wealth elements there means peers and competitors define the career experience. Income fluctuates based on competitive outcomes. The chart owner's greatest professional development comes from being pushed by ambitious peers. Interestingly, despite having two Companions, both are Rob Wealth (competitive), not Friend (supportive). The owner has rivals who drive growth but no equals who provide comfort.
 
 This is a subtle but important distinction. Companions strengthen the Day Master either way, but the *type* of Companion shapes the experience: Friends create solidarity, Rob Wealth creates competition. Both strengthen. Neither is superior.
 
 ## Companion Stars and Other Gods
 
-**Companions + Wealth = Competition for Resources.** Multiple Companions competing for the same Wealth Stars dilute financial returns. This is the partnership that splits profits, the siblings who divide an inheritance, the market with too many similar players.
+Multiple Companions competing for the same Wealth Stars dilute financial returns. This is the partnership that splits profits, the siblings who divide an inheritance, the market with too many similar players.
 
-**Companions + Authority = Collective Discipline.** When Companions face Authority Stars together, the pressure is distributed. A team under a demanding boss shares the burden. This is healthier than facing Authority alone (as in Chart B).
+When Companions face Authority Stars together, the pressure is distributed. A team under a demanding boss shares the burden. This is healthier than facing Authority alone (as in Chart B).
 
-**Companions + Output = Collaborative Creation.** Companions feeding Output Stars create collaborative creative enterprises — bands, startups, research teams. The shared identity produces shared expression.
+Companions feeding Output Stars create collaborative creative enterprises such as bands, startups, and research teams. The shared identity produces shared expression.
 
-**Companions + Resource = Shared Learning.** Companions who share Resource Stars learn together — study groups, apprenticeships, mentoring circles. The knowledge multiplies through discussion.
+Companions who share Resource Stars learn together in study groups, apprenticeships, and mentoring circles. The knowledge multiplies through discussion.
 
-**Companions without any other gods = Island of Self.** A chart with only Companion Stars and little else creates a person who is strong in identity but disconnected from the world — powerful internally, impotent externally.
+A chart with only Companion Stars and little else creates a person who is strong in identity but disconnected from the world, powerful internally, impotent externally.
 
 ## When Companion Stars Are Absent
 
-Zero Companions is one of the most impactful absences in Saju:
+Zero Companions is one of the most impactful absences in Saju.
 
-- The person has no elemental allies — every relationship involves managing *different* energies
-- Self-identity must be constructed internally rather than validated externally
-- The experience of life feels fundamentally solitary, regardless of how many people surround them
-- Independence is the default mode — not by choice but by chart structure
-- When Companion Stars arrive through fortune cycles, the person experiences a profound sense of recognition — *finally, someone who understands*
+- The person has no elemental allies, and every relationship involves managing different energies.
+- Self-identity must be constructed internally rather than validated externally.
+- The experience of life feels fundamentally solitary, regardless of how many people surround them.
+- Independence is the default mode, not by choice but by chart structure.
+- When Companion Stars arrive through fortune cycles, the person experiences a profound sense of recognition, finally encountering someone who understands.
 
-Charts with zero Companions (like Chart B and Chart C from our sample collection) produce some of the most distinctive and self-reliant individuals — but also some of the loneliest.
+Charts with zero Companions (like Chart B and Chart C from our sample collection) produce some of the most distinctive and self-reliant individuals, but also some of the loneliest.
 
 ## The Complete Ten Gods Landscape
 
-With all five pairs now covered, here is the complete landscape:
+With all five pairs now covered, here is the complete landscape.
 
 | God Pair | Domain | Gives You | Costs You |
 |---|---|---|---|
@@ -221,6 +177,6 @@ With all five pairs now covered, here is the complete landscape:
 | **Authority** (관성) | Career, discipline | Structure, advancement, power | Freedom, autonomy |
 | **Resource** (인성) | Knowledge, support | Wisdom, mentorship, inner strength | Independence (over-reliance risk) |
 
-Every god gives something and costs something. No chart has everything — and no chart has nothing. The specific combination of presences and absences creates the unique texture of each person's life.
+Every god gives something and costs something. No chart has everything, and no chart has nothing. The specific combination of presences and absences creates the unique texture of each person's life.
 
 In the next chapter, we bring all ten gods together and examine how they interact in combination — the powerful patterns that emerge when multiple gods work together or against each other.

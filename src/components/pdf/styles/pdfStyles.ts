@@ -25,12 +25,12 @@ try {
   });
 
   // NotoSansKR — 한자(漢字) 지원 폰트 (메인)
-  // subset 버전: PDF에 사용되는 CJK 문자만 포함 (6MB → 116KB)
+  // 풀폰트 사용: eBook에 모든 CJK 문자 정상 렌더링 보장
   Font.register({
     family: 'NotoSansKR',
     fonts: [
-      { src: `${base}/fonts/NotoSansKR-Regular-subset.ttf`, fontWeight: 'normal' },
-      { src: `${base}/fonts/NotoSansKR-Bold-subset.ttf`, fontWeight: 'bold' },
+      { src: `${base}/fonts/NotoSansKR-Regular.ttf`, fontWeight: 'normal' },
+      { src: `${base}/fonts/NotoSansKR-Bold.ttf`, fontWeight: 'bold' },
     ],
   });
 } catch {
@@ -60,7 +60,8 @@ export const ANTI_LIGATURE = 0.15;
  */
 export function fixLigatures(text: string): string {
   // f + i, f + l, f + f 조합에 zero-width space (U+200B) 삽입
-  return text.replace(/f([ilf])/g, 'f\u200B$1');
+  // ASCII 영문 내의 fi/fl/ff만 대상 — CJK 문자 손상 방지
+  return text.replace(/(?<=[a-zA-Z])f([ilf])/g, 'f\u200B$1');
 }
 
 // ─── 공통 PDF 스타일 ───

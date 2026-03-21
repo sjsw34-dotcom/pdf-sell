@@ -16,7 +16,7 @@ Every system of traditional medicine in East Asia begins with the same foundatio
 
 Saju does not diagnose disease. Let that be clear from the very first paragraph. What Saju *can* do is highlight which elemental systems in your chart are well-supported and which are under-resourced — offering a lens for awareness that has guided preventive wellness practices across East Asia for centuries. In this chapter, you will learn how to read health tendencies from a natal chart, understand how fortune cycles affect vitality over time, and apply these insights to a full case study.
 
-**Important disclaimer:** The health associations described in this chapter come from traditional East Asian philosophy and should be treated as cultural wellness insight. They are not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for any health concerns.
+Important disclaimer: The health associations described in this chapter come from traditional East Asian philosophy and should be treated as cultural wellness insight. They are not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for any health concerns.
 
 ## 25.1 Five Elements and Health
 
@@ -30,23 +30,21 @@ Each of the Five Elements governs a pair of organs — one Yin organ and one Yan
 |---|---|---|---|---|---|
 | Wood | Liver | Gallbladder | Eyes, tendons, nails | Eyes | Tendons, ligaments |
 | Fire | Heart | Small Intestine | Tongue, blood vessels | Tongue | Blood vessels |
-| Earth | Spleen/Stomach | Stomach | Mouth, muscles, flesh | Mouth | Muscles, flesh |
+| Earth | Spleen | Stomach | Mouth, muscles, flesh | Mouth | Muscles, flesh |
 | Metal | Lungs | Large Intestine | Nose, skin, body hair | Nose | Skin, body hair |
 | Water | Kidneys | Bladder | Ears, bones, reproductive system | Ears | Bones, marrow |
+
+:::diagram health-element-map
 
 This is not an arbitrary list. The associations follow the logic of the productive and controlling cycles you learned in Chapter 6. Wood feeds Fire (the liver stores blood that the heart pumps). Fire produces Earth (the heart's warmth supports digestion). Earth generates Metal (nutrients from food build the body's protective systems). Metal produces Water (minerals support kidney function). Water nourishes Wood (hydration keeps tendons and ligaments flexible).
 
 ### How to Read Health From a Chart
 
-The principle is straightforward: **the elements present in your chart indicate which organ systems are well-resourced; the elements missing or deficient indicate which systems may be vulnerable.**
+The principle is straightforward. The elements present in your chart indicate which organ systems are well-resourced, and the elements missing or deficient indicate which systems may be vulnerable.
 
 This does not mean a missing element guarantees illness. Many people with absent Wood in their charts never develop liver problems. But in traditional Saju interpretation, a missing element is like a garden bed that receives less water than the others. It may do fine in gentle weather. But when stress arrives — through challenging fortune cycles, overwork, poor diet, or aging — it is the under-resourced system that tends to show strain first.
 
-There are three key factors to assess:
-
-1. **Element count** — How many times does each element appear across your eight characters (four stems + four branches)?
-2. **Day Master strength** — Is the element of your Day Master well-supported or weak?
-3. **Excess elements** — Are any elements disproportionately dominant, potentially over-stimulating their associated systems?
+There are three key factors to assess. First, element count: how many times does each element appear across your eight characters (four stems + four branches)? Second, Day Master strength: is the element of your Day Master well-supported or weak? Third, excess elements: are any elements disproportionately dominant, potentially over-stimulating their associated systems?
 
 Let us look at each factor in detail.
 
@@ -54,9 +52,9 @@ Let us look at each factor in detail.
 
 ### Missing Elements: The Empty Garden Bed
 
-When an element is completely absent from your natal chart — zero appearances across all eight characters — traditional Saju interpretation considers the associated organ systems to be structurally under-supported. This is the strongest signal in health reading.
+When an element is completely absent from your natal chart, with zero appearances across all eight characters, traditional Saju interpretation considers the associated organ systems to be structurally under-supported. This is the strongest signal in health reading.
 
-Here is what each missing element traditionally suggests:
+Here is what each missing element traditionally suggests.
 
 **No Wood (0 Wood)**
 - Liver and gallbladder may be more sensitive to toxins, alcohol, and fatty foods
@@ -103,15 +101,15 @@ This is where Saju health reading becomes genuinely useful. Awareness of a const
 
 While deficiency creates vulnerability, excess creates over-stimulation. When one element dominates a chart — appearing four or more times — traditional interpretation suggests that the associated organ system may run "too hot."
 
-**Excess Fire** — Heart system may be over-stimulated. Traditional associations include inflammation, high blood pressure, restlessness, insomnia, or anxiety. The person may run hot physically and emotionally.
+Excess Fire means the heart system may be over-stimulated. Traditional associations include inflammation, high blood pressure, restlessness, insomnia, or anxiety. The person may run hot physically and emotionally.
 
-**Excess Earth** — Digestive system may be overloaded. Traditional associations include dampness, heaviness, sluggish metabolism, excessive worry, or a tendency to accumulate rather than release.
+Excess Earth means the digestive system may be overloaded. Traditional associations include dampness, heaviness, sluggish metabolism, excessive worry, or a tendency to accumulate rather than release.
 
-**Excess Wood** — Liver system may be hyperactive. Traditional associations include tension headaches, irritability, muscle spasms, or an overly rigid temperament that resists relaxation.
+Excess Wood means the liver system may be hyperactive. Traditional associations include tension headaches, irritability, muscle spasms, or an overly rigid temperament that resists relaxation.
 
-**Excess Metal** — Respiratory and skin systems may be hypersensitive. Traditional associations include dry skin conditions, respiratory reactivity, or an overly rigid approach to life that creates tension.
+Excess Metal means the respiratory and skin systems may be hypersensitive. Traditional associations include dry skin conditions, respiratory reactivity, or an overly rigid approach to life that creates tension.
 
-**Excess Water** — Kidney and fluid systems may be in overdrive. Traditional associations include fluid retention, lower back issues, fearfulness, or difficulty with boundaries.
+Excess Water means the kidney and fluid systems may be in overdrive. Traditional associations include fluid retention, lower back issues, fearfulness, or difficulty with boundaries.
 
 The key insight is that health reading in Saju is about *balance*. Neither too much nor too little is ideal. The chart shows you where your natural balance point sits, and awareness of that balance allows you to make informed lifestyle choices.
 
@@ -125,7 +123,7 @@ Grand Fortune (Daeun) cycles last approximately ten years each. When a Grand For
 
 This is not destiny. It is tendency. And tendency is something you can work with.
 
-Here is how to read Grand Fortune for health:
+Here is how to read Grand Fortune for health.
 
 | Fortune Element | Chart Relationship | Traditional Health Interpretation |
 |---|---|---|
@@ -139,19 +137,15 @@ Here is how to read Grand Fortune for health:
 
 Within each decade, individual years can create temporary spikes of elemental imbalance. A year that brings the Hostile element to an already imbalanced chart may coincide with a health event — not because the stars *cause* illness, but because the elemental environment is at its most challenging.
 
-Korean Saju masters often advise clients to be especially mindful of health during years when:
-
-1. The annual element clashes with the Day Master's element
-2. The annual element adds to an already excessive element in the chart
-3. The annual element is classified as Hostile, and the Day Master is already weak
+Korean Saju masters often advise clients to be especially mindful of health during years when the annual element clashes with the Day Master's element, the annual element adds to an already excessive element in the chart, or the annual element is classified as Hostile while the Day Master is already weak.
 
 These are not predictions of illness. They are timing signals for when preventive care, medical checkups, and healthy habits matter most.
 
 ### The Arrival of Supportive Elements
 
-The reverse is equally important — and far more empowering. When a Grand Fortune decade or Annual Fortune year brings your Useful God element, traditional interpretation suggests that your body receives exactly the elemental support it has been lacking. People often report feeling more energetic, resilient, and physically balanced during these periods.
+The reverse is equally important and far more empowering. When a Grand Fortune decade or Annual Fortune year brings your Useful God element, traditional interpretation suggests that your body receives exactly the elemental support it has been lacking. People often report feeling more energetic, resilient, and physically balanced during these periods.
 
-This is one of the most practical applications of Saju timing. If you know that a decade of strong elemental support is arriving, you can use that period to build health reserves — establishing exercise habits, addressing chronic issues, and investing in long-term wellness. If you know a challenging decade follows, you enter it from a position of strength rather than depletion.
+This is one of the most practical applications of Saju timing. If you know that a decade of strong elemental support is arriving, you can use that period to build health reserves by establishing exercise habits, addressing chronic issues, and investing in long-term wellness. If you know a challenging decade follows, you enter it from a position of strength rather than depletion.
 
 ## 25.4 Full Case Study: Chart C — Health Analysis
 
@@ -179,7 +173,7 @@ Chart C belongs to a woman born in 1989. Her Day Master is **Yin Water** (癸 *G
 
 ### Step 1: Count the Elements
 
-Let us tally every element that appears across her eight characters:
+Let us tally every element that appears across her eight characters.
 
 | Element | Count | Assessment |
 |---|---|---|
@@ -193,66 +187,41 @@ This is a striking chart. Two elements are completely absent. Two elements are i
 
 ### Step 2: Assess Day Master Strength
 
-Her Day Master, Yin Water (癸), is classified as **extremely weak**. Here is why:
+Her Day Master, Yin Water (癸), is classified as extremely weak. Here is why.
 
-- Water appears only once (the Day Master itself — it cannot support itself)
-- Metal, which produces Water in the productive cycle, is completely absent (zero support from the "parent" element)
-- Earth, which controls Water, appears three times (heavy pressure from the controlling element)
-- Fire, which Water should control, appears four times (the element she must manage is overwhelming)
+Water appears only once (the Day Master itself, which cannot support itself). Metal, which produces Water in the productive cycle, is completely absent, offering zero support from the "parent" element. Earth, which controls Water, appears three times, creating heavy pressure from the controlling element. Fire, which Water should control, appears four times, meaning the element she must manage is overwhelming.
 
 Imagine a single raindrop trying to quench a bonfire while being buried under piles of earth. That is the energetic picture of this Day Master.
 
-Her Useful God is **Water** (what she needs most), with **Metal** as her Favorable element (Metal produces Water). Her Unfavorable element is **Earth** (which dams and controls her Water), and her Hostile element is **Fire** (which evaporates her already scarce Water).
+Her Useful God is Water (what she needs most), with Metal as her Favorable element (Metal produces Water). Her Unfavorable element is Earth (which dams and controls her Water), and her Hostile element is Fire (which evaporates her already scarce Water).
 
 ### Step 3: Map Health Vulnerabilities
 
-Now we apply the Five Elements health framework:
+Now we apply the Five Elements health framework.
 
-**Primary vulnerability — Water system (Day Master element, extremely weak):**
-Traditional Saju interpretation suggests that Chart C's most fundamental health concern is the Water system. The kidneys, bladder, reproductive organs, bones, and ears are the areas where her body is most under-resourced. With only a single Water character in her entire chart and no Metal to generate more Water, her elemental constitution provides minimal baseline support for these systems.
+The primary vulnerability is the Water system (Day Master element, extremely weak). Traditional Saju interpretation suggests that Chart C's most fundamental health concern is the Water system. The kidneys, bladder, reproductive organs, bones, and ears are the areas where her body is most under-resourced. With only a single Water character in her entire chart and no Metal to generate more Water, her elemental constitution provides minimal baseline support for these systems.
 
-In practical terms, this might manifest as:
-- Lower energy reserves and stamina compared to peers
-- Need for extra attention to hydration and kidney health
-- Bone density as a long-term wellness focus
-- Reproductive health requiring more proactive care
-- Greater sensitivity to cold environments (Water people with weak Water often feel cold easily)
+In practical terms, this might manifest as lower energy reserves and stamina compared to peers, a need for extra attention to hydration and kidney health, bone density as a long-term wellness focus, reproductive health requiring more proactive care, and greater sensitivity to cold environments (Water people with weak Water often feel cold easily).
 
-**Secondary vulnerability — Wood system (completely absent):**
-With zero Wood in her chart, the liver, gallbladder, eyes, tendons, and nails receive no direct elemental support. Traditional interpretation suggests:
-- Liver may be more sensitive to alcohol, medications, and environmental toxins
-- Eyes may tire easily, especially with prolonged screen use
-- Tendons and ligaments may be prone to stiffness or strain
-- The emotional processing of anger or frustration (Wood's emotion) may be challenging
+The secondary vulnerability is the Wood system (completely absent). With zero Wood in her chart, the liver, gallbladder, eyes, tendons, and nails receive no direct elemental support. Traditional interpretation suggests that the liver may be more sensitive to alcohol, medications, and environmental toxins. Eyes may tire easily, especially with prolonged screen use. Tendons and ligaments may be prone to stiffness or strain. The emotional processing of anger or frustration (Wood's emotion) may be challenging.
 
-**Tertiary vulnerability — Metal system (completely absent):**
-Zero Metal means the lungs, large intestine, skin, and nose have no elemental support. Traditional interpretation suggests:
-- Respiratory sensitivity — susceptibility to colds, allergies, or air quality issues
-- Skin may be reactive or sensitive
-- The emotional processing of grief or letting go (Metal's emotion) may require conscious effort
+The tertiary vulnerability is the Metal system (completely absent). Zero Metal means the lungs, large intestine, skin, and nose have no elemental support. Traditional interpretation suggests respiratory sensitivity with susceptibility to colds, allergies, or air quality issues. Skin may be reactive or sensitive. The emotional processing of grief or letting go (Metal's emotion) may require conscious effort.
 
-**Over-stimulated systems — Fire and Earth:**
-With Fire at 4 and Earth at 3, these systems are not deficient — they are potentially over-active.
+The over-stimulated systems are Fire and Earth. With Fire at 4 and Earth at 3, these systems are not deficient but potentially over-active.
 
-*Excess Fire (Heart system):*
-- Heart and circulatory system may run "hot" — traditional associations include restlessness, inflammation, or blood pressure tendencies
-- Blood vessels and the tongue (Fire's associated areas) may show signs of heat
-- Sleep quality may be affected, as excess Fire can create mental restlessness
+Excess Fire in the heart system means the heart and circulatory system may run "hot," with traditional associations including restlessness, inflammation, or blood pressure tendencies. Blood vessels and the tongue (Fire's associated areas) may show signs of heat. Sleep quality may be affected, as excess Fire can create mental restlessness.
 
-*Excess Earth (Digestive system):*
-- Stomach and spleen may be overloaded — traditional associations include feelings of heaviness, dampness, or sluggish digestion
-- Muscles and flesh (Earth's tissue) may tend toward heaviness rather than tone
-- Worry and overthinking (Earth's emotion) may be a recurring pattern
+Excess Earth in the digestive system means the stomach and spleen may be overloaded, with traditional associations including feelings of heaviness, dampness, or sluggish digestion. Muscles and flesh (Earth's tissue) may tend toward heaviness rather than tone. Worry and overthinking (Earth's emotion) may be a recurring pattern.
 
 ### Step 4: Summarize the Health Profile
 
-Putting it all together, here is Chart C's health profile from a traditional Saju perspective:
+Putting it all together, here is Chart C's health profile from a traditional Saju perspective.
 
-> **Chart C Health Summary:** An extremely weak Water Day Master with no Wood or Metal support, surrounded by excess Fire and Earth. The primary health focus is the Water system (kidneys, bones, reproductive health, energy levels). Secondary concerns include liver sensitivity (no Wood) and respiratory vulnerability (no Metal). The excess Fire and Earth suggest that heart-related inflammation and digestive heaviness may be areas to monitor. Overall, this chart benefits most from lifestyle choices that support Water and Metal — hydration, rest, cooling foods, respiratory care, and bone-strengthening exercise.
+> Chart C Health Summary: An extremely weak Water Day Master with no Wood or Metal support, surrounded by excess Fire and Earth. The primary health focus is the Water system (kidneys, bones, reproductive health, energy levels). Secondary concerns include liver sensitivity (no Wood) and respiratory vulnerability (no Metal). The excess Fire and Earth suggest that heart-related inflammation and digestive heaviness may be areas to monitor. Overall, this chart benefits most from lifestyle choices that support Water and Metal: hydration, rest, cooling foods, respiratory care, and bone-strengthening exercise.
 
 ### Step 5: Read the Fortune Cycles for Health Timing
 
-Chart C's Grand Fortune (Daeun) cycle reveals dramatic shifts in her health landscape over time. Let us walk through the key decades:
+Chart C's Grand Fortune (Daeun) cycle reveals dramatic shifts in her health landscape over time. Let us walk through the key decades.
 
 | Age Range | Grand Fortune | Elements Arriving | Health Interpretation |
 |---|---|---|---|
@@ -264,45 +233,30 @@ Chart C's Grand Fortune (Daeun) cycle reveals dramatic shifts in her health land
 | 51-60 | 乙亥 | Wood + Water | Another supportive shift. Water returns in the branch, and Wood provides an outlet without excessive drain. A recovery period after the challenging 40s |
 | 61-70 | 丙子 | Fire + Water | Fire (Hostile) returns in the stem, but Water arrives in the branch. Mixed signals — the heart system may need attention, but kidney support continues |
 
-The most important insight from this timeline: **Chart C's best health window is ages 21 through 40**, when Water and Metal arrive to support her extremely weak Day Master for two consecutive decades. If she uses these twenty years to build strong health habits, establish regular checkups, and invest in her physical foundation, she enters the more challenging decade of her 40s from a position of accumulated strength.
+The most important insight from this timeline is that Chart C's best health window is ages 21 through 40, when Water and Metal arrive to support her extremely weak Day Master for two consecutive decades. If she uses these twenty years to build strong health habits, establish regular checkups, and invest in her physical foundation, she enters the more challenging decade of her 40s from a position of accumulated strength.
 
 This is the practical power of Saju health timing. It does not tell you *what* will happen. It tells you *when* your body will have the most support and when it will need the most care.
 
 ### A Note on Chart C's Emotional Health
 
-Traditional Saju health reading does not separate physical and emotional wellness. Each element governs both. For Chart C:
+Traditional Saju health reading does not separate physical and emotional wellness. Each element governs both. For Chart C, excess Fire may manifest as restlessness, difficulty calming the mind, or a tendency to burn through emotional energy quickly. Excess Earth may manifest as chronic worry, overthinking, or difficulty letting go of problems. Absent Wood may create difficulty processing anger in healthy ways, with the tendency to suppress rather than express it. Absent Metal may make it harder to grieve, release, or set firm emotional boundaries. Weak Water may manifest as underlying anxiety or fearfulness, especially when fatigued.
 
-- **Excess Fire** may manifest as restlessness, difficulty calming the mind, or a tendency to burn through emotional energy quickly
-- **Excess Earth** may manifest as chronic worry, overthinking, or difficulty letting go of problems
-- **Absent Wood** may create difficulty processing anger in healthy ways — it may be suppressed rather than expressed
-- **Absent Metal** may make it harder to grieve, release, or set firm emotional boundaries
-- **Weak Water** may manifest as underlying anxiety or fearfulness, especially when fatigued
-
-None of these are certainties. They are tendencies that traditional interpretation associates with this particular elemental balance. Awareness of these patterns can support better emotional self-care — knowing, for instance, that a tendency toward worry (excess Earth) is part of your elemental makeup allows you to proactively cultivate practices that counterbalance it, such as physical movement (which channels Earth energy through the muscles) or creative expression (which activates the absent Wood energy).
+None of these are certainties. They are tendencies that traditional interpretation associates with this particular elemental balance. Awareness of these patterns can support better emotional self-care. Knowing, for instance, that a tendency toward worry (excess Earth) is part of your elemental makeup allows you to proactively cultivate practices that counterbalance it, such as physical movement (which channels Earth energy through the muscles) or creative expression (which activates the absent Wood energy).
 
 ## Using Health Reading Wisely
 
-Before we close this chapter, let us return to the most important point: **Saju health reading is a tool for awareness, not a tool for diagnosis.**
+Before we close this chapter, let us return to the most important point. Saju health reading is a tool for awareness, not a tool for diagnosis.
 
-Traditional East Asian medicine and Saju share a common philosophical foundation, but they serve different purposes. A Saju reading can highlight which systems may benefit from extra attention. A medical professional can assess, diagnose, and treat. These two approaches complement each other — they do not compete.
+Traditional East Asian medicine and Saju share a common philosophical foundation, but they serve different purposes. A Saju reading can highlight which systems may benefit from extra attention. A medical professional can assess, diagnose, and treat. These two approaches complement each other and do not compete.
 
-Here are guidelines for using Saju health insights responsibly:
+Here are guidelines for using Saju health insights responsibly.
 
-**Do:**
-- Use element analysis to increase body awareness
-- Pay attention to organ systems associated with your weakest elements
-- Use fortune cycle timing to prioritize preventive checkups during challenging periods
-- Share health insights with your healthcare provider as conversation starters, not conclusions
-- Focus on lifestyle choices that support your deficient elements (diet, exercise, stress management)
+You should use element analysis to increase body awareness, pay attention to organ systems associated with your weakest elements, use fortune cycle timing to prioritize preventive checkups during challenging periods, share health insights with your healthcare provider as conversation starters rather than conclusions, and focus on lifestyle choices that support your deficient elements (diet, exercise, stress management).
 
-**Do not:**
-- Diagnose yourself or others based on a chart
-- Skip medical treatment because a fortune cycle looks favorable
-- Panic about missing elements — millions of people with missing elements live long, healthy lives
-- Use Saju health reading to create fear or anxiety (the purpose is empowerment, not prediction)
+You should not diagnose yourself or others based on a chart, skip medical treatment because a fortune cycle looks favorable, panic about missing elements (millions of people with missing elements live long, healthy lives), or use Saju health reading to create fear or anxiety. The purpose is empowerment, not prediction.
 
-The best way to think about Saju health reading is as a *personalized wellness compass*. It points you toward the areas of your body and mind that may benefit most from conscious care. Where you go from there — the doctors you consult, the habits you build, the choices you make — is entirely in your hands.
+The best way to think about Saju health reading is as a personalized wellness compass. It points you toward the areas of your body and mind that may benefit most from conscious care. Where you go from there — the doctors you consult, the habits you build, the choices you make — is entirely in your hands.
 
 In traditional Korea, the connection between Saju and health has always been understood this way. Korean Saju masters do not prescribe medicine. They offer awareness. "Your Water is weak," they might say. "Take care of your kidneys. Drink warm water. Rest more in winter." This folk wisdom, rooted in centuries of observation, is the spirit in which this chapter is written.
 
-**Remember:** Saju is for awareness. Medicine is for treatment. Together, they offer a more complete picture of wellness than either provides alone.
+Saju is for awareness. Medicine is for treatment. Together, they offer a more complete picture of wellness than either provides alone.

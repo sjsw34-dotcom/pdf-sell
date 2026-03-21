@@ -22,13 +22,13 @@ This chapter is especially practical because the years we will analyze — 2026 
 
 ## 20.1 What Is Annual Fortune?
 
-**Annual Fortune** (年運 *Nyeonun*) is the elemental energy of a specific calendar year, expressed as a Heavenly Stem and Earthly Branch pair. Every year in the East Asian calendar carries one of sixty possible Stem-Branch combinations (the same Sexagenary Cycle we met in Chapter 3). That combination interacts with your natal chart — creating new Ten God relationships, element clashes, combinations, and energy shifts that color the entire year.
+Annual Fortune (年運 *Yeonun*) is the elemental energy of a specific calendar year, expressed as a Heavenly Stem and Earthly Branch pair. Every year in the East Asian calendar carries one of sixty possible Stem-Branch combinations (the same Sexagenary Cycle we met in Chapter 3). That combination interacts with your natal chart, creating new Ten God relationships, element clashes, combinations, and energy shifts that color the entire year.
 
 You already encountered Annual Fortune briefly in Chapter 7 when we discussed how the Useful God framework applies to timing. Here, we go deeper.
 
-The key principle is simple:
+The key principle is simple.
 
-> **Each year's Stem and Branch create Ten God relationships with your Day Master. Those relationships tell you what kind of energy the year brings.**
+> Each year's Stem and Branch create Ten God relationships with your Day Master. Those relationships tell you what kind of energy the year brings.
 
 For example, if your Day Master is Wood and the year's Stem is Fire, that Fire is your Output star (Wood produces Fire). The year carries Output energy — creativity, expression, but also potential exhaustion. If the year's Stem is Metal, that Metal is your Authority star (Metal controls Wood). The year carries Authority energy — pressure, discipline, external demands.
 
@@ -44,28 +44,22 @@ A year where the Stem and Branch reinforce each other (both Fire, for instance) 
 
 ## 20.2 How Annual Fortune Works
 
-Reading Annual Fortune follows the same method you have been practicing throughout this book:
+Reading Annual Fortune follows the same method you have been practicing throughout this book.
 
-**Step 1: Identify the Year's Stem and Branch**
+The first step is to identify the year's Stem and Branch.
 
 | Year | Heavenly Stem | Earthly Branch | Element Summary |
 |------|--------------|----------------|-----------------|
 | 2026 | 丙 Yang Fire | 午 Horse (Fire) | Heavy Fire — both Stem and Branch are Fire |
 | 2027 | 丁 Yin Fire | 未 Goat (Earth) | Fire Stem + Earth Branch — Fire producing Earth |
 
-**Step 2: Determine the Ten Gods**
-
-Take each year's Stem and Branch and ask: *What Ten God does this element create relative to my Day Master?*
+The second step is to determine the Ten Gods. Take each year's Stem and Branch and ask: *What Ten God does this element create relative to my Day Master?*
 
 This depends entirely on your chart. A Wood Day Master sees Fire as Output. A Metal Day Master sees Fire as Authority. A Fire Day Master sees Fire as a Companion. Same year, completely different relationship.
 
-**Step 3: Check Against Your Useful God**
+The third step is to check against your Useful God. Once you know the Ten Gods the year brings, compare them against your Useful God and Unfavorable God. If the year's elements align with your Useful God or Favorable element, the year supports you. If they align with your Unfavorable God, the year creates friction.
 
-Once you know the Ten Gods the year brings, compare them against your Useful God and Unfavorable God. If the year's elements align with your Useful God or Favorable element — the year supports you. If they align with your Unfavorable God — the year creates friction.
-
-**Step 4: Factor in the Grand Fortune**
-
-This is the step most beginners skip, and it matters enormously. The Annual Fortune does not operate in isolation. It operates *within* whatever Grand Fortune decade you are currently in. We will cover this interaction in the next section.
+The fourth step is to factor in the Grand Fortune. This is the step most beginners skip, and it matters enormously. The Annual Fortune does not operate in isolation. It operates *within* whatever Grand Fortune decade you are currently in. We will cover this interaction in the next section.
 
 ### A Practical Analogy
 
@@ -80,23 +74,15 @@ This layered reading is what separates beginner Saju from intermediate Saju.
 
 ## 20.3 Annual Fortune Meets Grand Fortune
 
-The relationship between Annual Fortune and Grand Fortune is one of the most important principles in timing analysis. Let us state the rules clearly:
+The relationship between Annual Fortune and Grand Fortune is one of the most important principles in timing analysis. Let us state the rules clearly.
 
-### Rule 1: Grand Fortune Sets the Stage
+The first rule is that Grand Fortune sets the stage. Grand Fortune provides the *baseline* energy for a ten-year period. If your current Grand Fortune brings favorable elements (aligned with your Useful God), you are operating from a position of support. If it brings unfavorable elements, the decade has an underlying tension.
 
-Grand Fortune provides the *baseline* energy for a ten-year period. If your current Grand Fortune brings favorable elements (aligned with your Useful God), you are operating from a position of support. If it brings unfavorable elements, the decade has an underlying tension.
+The second rule is that Annual Fortune modifies the stage. Annual Fortune adjusts the experience *within* that baseline. A favorable Annual Fortune in a favorable Grand Fortune amplifies the good. An unfavorable Annual Fortune in a favorable Grand Fortune creates a speed bump, noticeable but not devastating.
 
-### Rule 2: Annual Fortune Modifies the Stage
+The third rule is that the hardest years are unfavorable annuals in unfavorable decades. When both the Grand Fortune and the Annual Fortune bring elements that clash with your Useful God, the year can feel genuinely difficult. This is when people experience the kind of pressure that demands real resilience.
 
-Annual Fortune adjusts the experience *within* that baseline. A favorable Annual Fortune in a favorable Grand Fortune amplifies the good. An unfavorable Annual Fortune in a favorable Grand Fortune creates a speed bump — noticeable, but not devastating.
-
-### Rule 3: The Hardest Years Are Unfavorable Annuals in Unfavorable Decades
-
-When both the Grand Fortune and the Annual Fortune bring elements that clash with your Useful God, the year can feel genuinely difficult. This is when people experience the kind of pressure that demands real resilience.
-
-### Rule 4: Temporary Relief Is Real but Temporary
-
-A favorable Annual Fortune in an unfavorable Grand Fortune brings genuine relief — but it is a one-year window. The underlying decade energy returns once the year passes. Smart practitioners use these "relief years" strategically: to rest, recharge, or make moves that set up a better position for the years ahead.
+The fourth rule is that temporary relief is real but temporary. A favorable Annual Fortune in an unfavorable Grand Fortune brings genuine relief, but it is a one-year window. The underlying decade energy returns once the year passes. Smart practitioners use these "relief years" strategically to rest, recharge, or make moves that set up a better position for the years ahead.
 
 | Grand Fortune | Annual Fortune | Experience |
 |--------------|----------------|------------|
@@ -113,15 +99,11 @@ Now let us apply this method to real charts. We will analyze 2026 and 2027 for t
 
 ### The Years at a Glance
 
-Before we look at individual charts, let us understand what 2026 and 2027 bring to the table:
+Before we look at individual charts, let us understand what 2026 and 2027 bring to the table.
 
-**2026 — 丙午 (Yang Fire + Horse)**
+In 2026 (丙午, Yang Fire + Horse), both the Stem (丙 Yang Fire) and the Branch (午 Horse = Fire) are Fire. This is a *concentrated* Fire year. Whatever Fire means for your chart, 2026 delivers it with intensity. There is no mixed signal here. The year is unambiguously about Fire energy.
 
-Both the Stem (丙 Yang Fire) and the Branch (午 Horse = Fire) are Fire. This is a *concentrated* Fire year. Whatever Fire means for your chart, 2026 delivers it with intensity. There is no mixed signal here — the year is unambiguously about Fire energy.
-
-**2027 — 丁未 (Yin Fire + Goat)**
-
-The Stem (丁 Yin Fire) is still Fire, but the Branch (未 Goat = Earth) shifts to Earth. The surface energy remains Fire, but the underlying current has moved to Earth. This makes 2027 a *transitional* year — Fire is fading, Earth is rising. The experience is more nuanced than 2026's direct blast.
+In 2027 (丁未, Yin Fire + Goat), the Stem (丁 Yin Fire) is still Fire, but the Branch (未 Goat = Earth) shifts to Earth. The surface energy remains Fire, but the underlying current has moved to Earth. This makes 2027 a *transitional* year. Fire is fading and Earth is rising. The experience is more nuanced than 2026's direct blast.
 
 | | 2026 丙午 | 2027 丁未 |
 |---|---|---|
@@ -140,14 +122,9 @@ Now, let us see what this means for two specific charts.
 [{"position":"Hour","stem":"丁","stemElement":"Yin Fire","stemGod":"Eating God","branch":"丑","branchAnimal":"Ox","branchGod":"Ind. Wealth"},{"position":"Day","stem":"乙","stemElement":"Yin Wood","stemGod":"Day Master","branch":"未","branchAnimal":"Goat","branchGod":"Ind. Wealth"},{"position":"Month","stem":"丙","stemElement":"Yang Fire","stemGod":"Hurting Officer","branch":"申","branchAnimal":"Monkey","branchGod":"Dir. Officer"},{"position":"Year","stem":"丙","stemElement":"Yang Fire","stemGod":"Hurting Officer","branch":"子","branchAnimal":"Rat","branchGod":"Ind. Seal"}]
 :::
 
-**Chart B's profile:**
-- Day Master: 乙 Yin Wood
-- Useful God: Wood
-- Favorable: Water (produces Wood)
-- Unfavorable: Metal (controls Wood)
-- Current Grand Fortune (age 26-35): 편인 癸巳 — Indirect Seal (Yin Water Stem) with Snake Branch (Fire). The decade's Stem is Water, which is Chart B's Favorable element, but the Branch is Fire, which drains.
+Chart B's profile is as follows. The Day Master is 乙 Yin Wood. The Useful God is Wood. Water (which produces Wood) is the Favorable element. Metal (which controls Wood) is the Unfavorable element. The current Grand Fortune (age 26-35) is 편인 癸巳, with an Indirect Seal (Yin Water Stem) and Snake Branch (Fire). The decade's Stem is Water, which is Chart B's Favorable element, but the Branch is Fire, which drains.
 
-**Chart B's natal pattern:** Notice that Chart B already has significant Fire in the natal chart — two 丙 Yang Fire Stems (Hurting Officer) in the Month and Year pillars, plus 丁 Yin Fire (Eating God) in the Hour Stem. This chart is already Fire-heavy. Wood (the Day Master) is producing a lot of Fire, which means the Day Master is already spending considerable energy on Output.
+Chart B's natal pattern is notable because Chart B already has significant Fire in the natal chart: two 丙 Yang Fire Stems (Hurting Officer) in the Month and Year pillars, plus 丁 Yin Fire (Eating God) in the Hour Stem. This chart is already Fire-heavy. Wood (the Day Master) is producing a lot of Fire, which means the Day Master is already spending considerable energy on Output.
 
 #### Chart B in 2026 (丙午 — Age 31)
 
@@ -162,15 +139,15 @@ Now, let us see what this means for two specific charts.
 |------|-----|----------|------|--------|------------|-------------------|---------------------|
 | 2026 | 31 | Hurting Officer | 丙 | 午 | Eating God | Birth | (Peak) |
 
-**What this means:** 2026 piles Fire onto a chart that is already Fire-heavy. The Day Master (Yin Wood) is a slender tree being asked to fuel an even larger bonfire. Both the Hurting Officer and Eating God are Output stars — they represent the energy flowing *out* of the Day Master.
+This means 2026 piles Fire onto a chart that is already Fire-heavy. The Day Master (Yin Wood) is a slender tree being asked to fuel an even larger bonfire. Both the Hurting Officer and Eating God are Output stars, representing the energy flowing *out* of the Day Master.
 
 In practical terms, this is a year of intense creative output, expression, and visibility. Chart B may find herself producing more than ever — writing, speaking, creating, putting herself out there. The Hurting Officer in particular brings an unfiltered, bold quality to self-expression.
 
 But Output drains the Day Master. For a Yin Wood person whose Useful God is Wood itself, all this Fire exhausts the very element she needs most. 2026 is the kind of year that can be externally impressive but internally depleting. She may look successful while feeling burned out.
 
-**Grand Fortune context:** Chart B's current Grand Fortune (癸巳) has a Water Stem (癸 Yin Water = Indirect Seal), which feeds the Wood Day Master. This is helpful — it means there is some resource support in the decade even while the year drains. The Grand Fortune provides a partial safety net. Without it, 2026 would be far more exhausting.
+For Grand Fortune context, Chart B's current Grand Fortune (癸巳) has a Water Stem (癸 Yin Water = Indirect Seal), which feeds the Wood Day Master. This is helpful. It means there is some resource support in the decade even while the year drains. The Grand Fortune provides a partial safety net. Without it, 2026 would be far more exhausting.
 
-**Advice for this year:** Pace yourself. The creative energy is real and worth using, but deliberate rest and replenishment are essential. Seek out Water-associated activities and environments. Do not let the Hurting Officer's boldness lead to burning bridges — Output energy combined with exhaustion can make a person sharp-tongued.
+The advice for this year is to pace yourself. The creative energy is real and worth using, but deliberate rest and replenishment are essential. Seek out Water-associated activities and environments. Do not let the Hurting Officer's boldness lead to burning bridges. Output energy combined with exhaustion can make a person sharp-tongued.
 
 #### Chart B in 2027 (丁未 — Age 32)
 
@@ -185,13 +162,13 @@ But Output drains the Day Master. For a Yin Wood person whose Useful God is Wood
 |------|-----|----------|------|--------|------------|-------------------|---------------------|
 | 2027 | 32 | Eating God | 丁 | 未 | Indirect Wealth | Nurture | (Crown) |
 
-**What this means:** 2027 is still a Fire year on the surface (丁 Yin Fire = Eating God), but the Branch shifts to Earth (未 Goat = Indirect Wealth). The Output drain continues but at a lower intensity — Eating God is gentler than Hurting Officer. It refines rather than explodes.
+The year 2027 is still a Fire year on the surface (丁 Yin Fire = Eating God), but the Branch shifts to Earth (未 Goat = Indirect Wealth). The Output drain continues but at a lower intensity. Eating God is gentler than Hurting Officer. It refines rather than explodes.
 
 The Earth Branch introduces a Wealth element. For Wood Day Masters, Earth is Wealth (Wood controls Earth). This suggests material opportunities — income, property, tangible results from the creative output of 2026. The work she poured out last year may start generating returns.
 
 However, Wealth also costs energy. Wood must exert itself to control Earth. Combined with the ongoing Fire drain from the Stem, 2027 is not a rest year either. It is a year where the fruits of effort begin to appear, but harvesting them still requires stamina.
 
-**Comparing 2026 and 2027 for Chart B:**
+Comparing 2026 and 2027 for Chart B.
 
 | | 2026 丙午 | 2027 丁未 |
 |---|---|---|
@@ -202,7 +179,7 @@ However, Wealth also costs energy. Wood must exert itself to control Earth. Comb
 | Risk | Burnout, sharp words | Overextension trying to capitalize |
 | Overall | Exciting but exhausting | Productive but still demanding |
 
-The arc across these two years is clear: 2026 is the year of pouring out, 2027 is the year of beginning to collect. Neither is a rest year, but 2027 is more sustainable.
+The arc across these two years is clear. 2026 is the year of pouring out, 2027 is the year of beginning to collect. Neither is a rest year, but 2027 is more sustainable.
 
 ---
 
@@ -212,14 +189,9 @@ The arc across these two years is clear: 2026 is the year of pouring out, 2027 i
 [{"position":"Hour","stem":"丁","stemElement":"Yin Fire","stemGod":"Dir. Officer","branch":"亥","branchAnimal":"Pig","branchGod":"Eating God"},{"position":"Day","stem":"庚","stemElement":"Yang Metal","stemGod":"Day Master","branch":"寅","branchAnimal":"Tiger","branchGod":"Ind. Wealth"},{"position":"Month","stem":"癸","stemElement":"Yin Water","stemGod":"Hurting Officer","branch":"巳","branchAnimal":"Snake","branchGod":"Ind. Officer"},{"position":"Year","stem":"辛","stemElement":"Yin Metal","stemGod":"Rob Wealth","branch":"巳","branchAnimal":"Snake","branchGod":"Ind. Officer"}]
 :::
 
-**Chart F's profile:**
-- Day Master: 庚 Yang Metal
-- Useful God: Metal
-- Favorable: Earth (produces Metal)
-- Unfavorable: Fire (controls Metal)
-- Current Grand Fortune (age 17-26): 겁재 辛卯 — Rob Wealth (Yin Metal Stem) with Rabbit Branch (Wood). The decade's Stem is Metal (Companion — supportive), but the Branch is Wood (Wealth — draining).
+Chart F's profile is as follows. The Day Master is 庚 Yang Metal. The Useful God is Metal. Earth (which produces Metal) is the Favorable element. Fire (which controls Metal) is the Unfavorable element. The current Grand Fortune (age 17-26) is 겁재 辛卯, with Rob Wealth (Yin Metal Stem) and Rabbit Branch (Wood). The decade's Stem is Metal (Companion, supportive), but the Branch is Wood (Wealth, draining).
 
-**Chart F's natal pattern:** Chart F already has Fire pressure in the natal chart — 丁 Yin Fire (Direct Officer) in the Hour Stem, and two 巳 Snake Branches (Indirect Officer) in the Month and Year. Authority stars are already present. The chart knows what external pressure feels like.
+Chart F's natal pattern already has Fire pressure in the natal chart: 丁 Yin Fire (Direct Officer) in the Hour Stem, and two 巳 Snake Branches (Indirect Officer) in the Month and Year. Authority stars are already present. The chart knows what external pressure feels like.
 
 #### Chart F in 2026 (丙午 — Age 26)
 
@@ -234,17 +206,17 @@ The arc across these two years is clear: 2026 is the year of pouring out, 2027 i
 |------|-----|----------|------|--------|------------|-------------------|---------------------|
 | 2026 | 26 | Ind. Officer | 丙 | 午 | Dir. Officer | Bathing | (Peak) |
 
-**What this means:** 2026 brings double Authority to a chart that already has Authority in its natal structure. For a Metal Day Master, Fire is the controlling element — it melts, reshapes, and disciplines Metal. The Indirect Officer (丙 Yang Fire) is the harsher form of Authority — unexpected rules, power dynamics, pressure from systems or superiors that feels impersonal. The Direct Officer (午 Fire) is more structured — legitimate authority, formal responsibilities, societal expectations.
+The year 2026 brings double Authority to a chart that already has Authority in its natal structure. For a Metal Day Master, Fire is the controlling element. It melts, reshapes, and disciplines Metal. The Indirect Officer (丙 Yang Fire) is the harsher form of Authority, involving unexpected rules, power dynamics, and pressure from systems or superiors that feels impersonal. The Direct Officer (午 Fire) is more structured, involving legitimate authority, formal responsibilities, and societal expectations.
 
 Together, this is a year of significant external pressure. Chart F may face demanding bosses, institutional requirements, legal or regulatory matters, or simply the weight of expectations. At 26, this could manifest as intense workplace pressure, a demanding educational program, military service obligations, or a relationship with authority figures that feels inescapable.
 
 This is especially notable because Fire is Chart F's *Unfavorable God*. The very element the chart least needs is arriving in concentrated form.
 
-**Grand Fortune context:** Chart F's Grand Fortune (辛卯) has a Metal Stem (辛 Yin Metal = Rob Wealth), which provides Companion support — the decade gives some strength to the Metal Day Master. This is the safety net. The decade says "you have some Metal reinforcement," even as 2026 says "but Fire is coming hard."
+For Grand Fortune context, Chart F's Grand Fortune (辛卯) has a Metal Stem (辛 Yin Metal = Rob Wealth), which provides Companion support. The decade gives some strength to the Metal Day Master. This is the safety net. The decade provides Metal reinforcement, even as 2026 brings Fire hard.
 
 The Grand Fortune Stem (Metal) partially shields Chart F from the Annual Fortune's Fire assault. Without that decade-level Metal support, 2026 would be considerably more difficult.
 
-**Advice for this year:** Do not fight the Authority energy — work with it. Accept structure, meet obligations, respect hierarchy. The Indirect Officer rewards those who demonstrate competence under pressure, not those who rebel against it. This is a year for discipline, not defiance.
+The advice for this year is to work with the Authority energy rather than fight it. Accept structure, meet obligations, respect hierarchy. The Indirect Officer rewards those who demonstrate competence under pressure, not those who rebel against it. This is a year for discipline, not defiance.
 
 #### Chart F in 2027 (丁未 — Age 27)
 
@@ -259,15 +231,15 @@ The Grand Fortune Stem (Metal) partially shields Chart F from the Annual Fortune
 |------|-----|----------|------|--------|------------|-------------------|---------------------|
 | 2027 | 27 | Dir. Officer | 丁 | 未 | Ind. Seal | Crown | (Crown) |
 
-**What this means:** 2027 is a significant shift. The Stem is still Fire (丁 Yin Fire = Direct Officer), so Authority energy continues — but it is the *gentler* form. Direct Officer is structured, fair, and legitimate. It asks for responsibility rather than imposing arbitrary pressure. The harsh Indirect Officer energy of 2026 softens into something more workable.
+The year 2027 is a significant shift. The Stem is still Fire (丁 Yin Fire = Direct Officer), so Authority energy continues, but it is the *gentler* form. Direct Officer is structured, fair, and legitimate. It asks for responsibility rather than imposing arbitrary pressure. The harsh Indirect Officer energy of 2026 softens into something more workable.
 
-More importantly, the Branch shifts to Earth (未 Goat = Indirect Seal). For a Metal Day Master, Earth is the *Favorable* element — it produces Metal. The Indirect Seal represents resources flowing *to* Chart F: mentorship, education, institutional support, wisdom from elders or the system itself. The Branch's underlying current is now nourishing rather than attacking.
+More importantly, the Branch shifts to Earth (未 Goat = Indirect Seal). For a Metal Day Master, Earth is the *Favorable* element, as it produces Metal. The Indirect Seal represents resources flowing *to* Chart F through mentorship, education, institutional support, and wisdom from elders or the system itself. The Branch's underlying current is now nourishing rather than attacking.
 
-This combination — Direct Officer (Stem) with Indirect Seal (Branch) — is one of the more constructive pairings in Annual Fortune. It describes a year where legitimate authority figures actually *support* your growth. A demanding but fair boss. A tough but rewarding educational program. Structure that builds you up rather than tearing you down.
+This combination of Direct Officer (Stem) with Indirect Seal (Branch) is one of the more constructive pairings in Annual Fortune. It describes a year where legitimate authority figures actually *support* your growth. A demanding but fair boss. A tough but rewarding educational program. Structure that builds you up rather than tearing you down.
 
-**Grand Fortune context:** Chart F transitions to a new Grand Fortune at age 27: 비견 庚寅 — Friend (Yang Metal Stem) with Tiger Branch (Wood). The new decade brings strong Metal support at the Stem level. Combined with 2027's Earth Branch, Chart F enters 2027 with both Metal reinforcement (from the Grand Fortune) and Earth nourishment (from the Annual Fortune). The Fire pressure remains at the surface but now has genuine support underneath it.
+For Grand Fortune context, Chart F transitions to a new Grand Fortune at age 27: 비견 庚寅, Friend (Yang Metal Stem) with Tiger Branch (Wood). The new decade brings strong Metal support at the Stem level. Combined with 2027's Earth Branch, Chart F enters 2027 with both Metal reinforcement (from the Grand Fortune) and Earth nourishment (from the Annual Fortune). The Fire pressure remains at the surface but now has genuine support underneath it.
 
-**Comparing 2026 and 2027 for Chart F:**
+Comparing 2026 and 2027 for Chart F.
 
 | | 2026 丙午 | 2027 丁未 |
 |---|---|---|
@@ -280,7 +252,7 @@ This combination — Direct Officer (Stem) with Indirect Seal (Branch) — is on
 
 The shift from 2026 to 2027 is dramatic for Chart F. 2026 is the peak of Authority pressure. 2027 begins the transition toward a more supported, constructive experience. If 2026 feels like being forged in fire, 2027 feels like the forged metal being polished and put to use.
 
-## 20.6 Two Charts, Same Year — Different Outcomes
+## 20.6 Two Charts, Same Year, Different Outcomes
 
 Let us put both charts side by side for the same year — 2026 — to see one of Saju's most important lessons in action.
 
@@ -294,7 +266,7 @@ Let us put both charts side by side for the same year — 2026 — to see one of
 | Risk | Burnout from over-expression | Conflict with authority |
 | Opportunity | Creative breakthroughs, public recognition | Building resilience, earning respect |
 
-Notice something striking: **2026 is challenging for both charts**, but for completely different reasons. Chart B is drained by Output energy — she gives too much of herself. Chart F is pressured by Authority energy — external forces demand too much of him. Same Fire, same year, entirely different mechanisms.
+Notice something striking. 2026 is challenging for both charts, but for completely different reasons. Chart B is drained by Output energy, giving too much of herself. Chart F is pressured by Authority energy, with external forces demanding too much of him. Same Fire, same year, entirely different mechanisms.
 
 This is why generic horoscopes that say "2026 is a Fire year, so it will be passionate and energetic" miss the mark entirely. Fire means something specific to *your* Day Master. For Wood, it is what you produce. For Metal, it is what controls you. For Fire, it is a companion. For Water, it is what you control. For Earth, it is what produces you.
 
@@ -302,7 +274,7 @@ The same element. Five completely different experiences.
 
 ### The Lesson
 
-Annual Fortune is never abstract. It is always personal. The year 2026 does not have a universal meaning — it has a meaning *for you*, determined by the relationship between that year's elements and your natal chart.
+Annual Fortune is never abstract. It is always personal. The year 2026 does not have a universal meaning. It has a meaning *for you*, determined by the relationship between that year's elements and your natal chart.
 
 This is why learning to read Annual Fortune is one of the most practically useful skills in Saju. You stop reacting to years as random good luck or bad luck, and start understanding them as specific elemental dynamics that you can anticipate, prepare for, and work with.
 
@@ -314,4 +286,4 @@ As you move through 2026 and into 2027, pay attention to whether the themes desc
 
 And if your Day Master is something else entirely — Earth, Water, or Fire — use the method in this chapter to determine what 2026 and 2027 mean specifically for you. The exercise below will walk you through it step by step.
 
-The ability to read Annual Fortune transforms Saju from an interesting personality system into a genuine timing tool. You are no longer just reading *who you are*. You are reading *what is happening to you* — and *when*.
+The ability to read Annual Fortune transforms Saju from an interesting personality system into a genuine timing tool. You are no longer just reading *who you are*. You are reading *what is happening to you*, and *when*.

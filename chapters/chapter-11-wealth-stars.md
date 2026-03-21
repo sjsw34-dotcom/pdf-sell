@@ -12,7 +12,7 @@ cta: Want to understand YOUR wealth potential and timing? → Get your personali
 
 In the previous chapter, you learned about the Output Stars — what you *create*. Now we turn to what you *acquire*. The Wealth Stars represent your relationship with money, material achievement, and the practical results of effort.
 
-In Saju, wealth is not simply "having money." It is the *act of controlling* — your Day Master exerting influence over another element. This is why Wealth Stars drain energy: acquiring and holding wealth requires effort, vigilance, and sustained control. A person with strong Wealth Stars is not guaranteed to be rich — they are guaranteed to be *oriented toward* wealth. Whether they achieve it depends on whether their Day Master is strong enough to handle the load.
+In Saju, wealth is not simply "having money." It is the act of controlling, your Day Master exerting influence over another element. This is why Wealth Stars drain energy: acquiring and holding wealth requires effort, vigilance, and sustained control. A person with strong Wealth Stars is not guaranteed to be rich. They are guaranteed to be oriented toward wealth. Whether they achieve it depends on whether their Day Master is strong enough to handle the load.
 
 ## The Two Faces of Wealth
 
@@ -27,27 +27,17 @@ The **Indirect Wealth** — *Pyeonjae* (편재 偏財) — is wealth that moves.
 
 ### Core Nature
 
-The Indirect Wealth shares polarity with the Day Master, creating a natural but intense connection. The control is instinctive but not disciplined — like a hunter who catches prey by instinct rather than by trap. This produces large gains and large losses, often in the same lifetime.
+The Indirect Wealth shares polarity with the Day Master, creating a natural but intense connection. The control is instinctive but not disciplined, like a hunter who catches prey by instinct rather than by trap. This produces large gains and large losses, often in the same lifetime.
 
-**Key characteristics:**
-- **Speculative income** — investments, ventures, commissions, bonuses, windfalls
-- **Generous spending** — money comes and money goes; saving is not the priority
-- **Social wealth** — networking, connections, and relationships as financial instruments
-- **Father figure** — traditionally, the Indirect Wealth represents the father in Saju reading
-- **Multiple income streams** — rarely relies on a single source; diversification is instinctive
+Income tends to be speculative, flowing from investments, ventures, commissions, bonuses, and windfalls. Spending is generous because money comes and money goes, and saving is not the priority. Networking, connections, and relationships serve as financial instruments. Traditionally, the Indirect Wealth represents the father in Saju reading. Multiple income streams are instinctive, and the person rarely relies on a single source.
 
 ### The Indirect Wealth in Life
 
-A person with strong Indirect Wealth tends to be:
+A person with strong Indirect Wealth tends to be the entrepreneur who sees opportunities others miss, comfortable with risk. Their relationships generate financial returns through natural networking ability. They spend freely on others as generous hosts, sometimes too freely. They thrive on negotiation and transaction as natural deal-makers.
 
-- **The entrepreneur** who sees opportunities others miss — comfortable with risk
-- **The networker** whose relationships generate financial returns
-- **The generous host** who spends freely on others — sometimes too freely
-- **The deal-maker** who thrives on negotiation and transaction
+In career, Indirect Wealth people gravitate toward business ownership, sales, investing, real estate development, international trade, and any field where income is variable and opportunity-dependent.
 
-In career, Indirect Wealth people gravitate toward: business ownership, sales, investing, real estate development, international trade, and any field where income is variable and opportunity-dependent.
-
-**The risk:** Indirect Wealth without discipline can create a cycle of boom and bust. The speculator wins big, spends big, and starts over. Financial stability requires deliberately developing Direct Wealth habits — budgeting, saving, planning — that do not come naturally.
+Indirect Wealth without discipline can create a cycle of boom and bust. The speculator wins big, spends big, and starts over. Financial stability requires deliberately developing Direct Wealth habits such as budgeting, saving, and planning, which do not come naturally.
 
 ## Direct Wealth (정재) — The Accumulator
 
@@ -55,27 +45,17 @@ The **Direct Wealth** — *Jeongjae* (정재 正財) — is wealth that stays. I
 
 ### Core Nature
 
-The Direct Wealth has different polarity from the Day Master, creating a controlled, structured relationship. The control is deliberate and disciplined — like a farmer who cultivates land season after season, harvesting reliably rather than hunting for windfall.
+The Direct Wealth has different polarity from the Day Master, creating a controlled, structured relationship. The control is deliberate and disciplined, like a farmer who cultivates land season after season, harvesting reliably rather than hunting for windfall.
 
-**Key characteristics:**
-- **Stable income** — salary, rental income, dividends, pensions
-- **Conservative management** — saving, budgeting, careful spending
-- **Tangible assets** — preference for real estate, physical assets, things you can touch
-- **Conventional success** — follows established paths to financial security
-- **Spousal relationship** — traditionally, the Direct Wealth represents the wife in a man's chart
+Income is stable, coming through salary, rental income, dividends, and pensions. Management style is conservative, emphasizing saving, budgeting, and careful spending. There is a preference for tangible assets such as real estate and physical holdings. The path to financial security follows established, conventional routes. Traditionally, the Direct Wealth represents the wife in a man's chart.
 
 ### The Direct Wealth in Life
 
-A person with strong Direct Wealth tends to be:
+A person with strong Direct Wealth tends to be the steady earner who builds wealth over decades through consistent work. They know exactly where every dollar goes, investing in land, buildings, and tangible assets. As reliable providers, their families never worry about financial security.
 
-- **The steady earner** who builds wealth over decades through consistent work
-- **The planner** who knows exactly where every dollar goes
-- **The property owner** who invests in land, buildings, and tangible assets
-- **The reliable provider** whose family never worries about financial security
+In career, Direct Wealth people gravitate toward accounting, banking, civil service, corporate management, real estate management, and any field where steady performance produces predictable rewards.
 
-In career, Direct Wealth people gravitate toward: accounting, banking, civil service, corporate management, real estate management, and any field where steady performance produces predictable rewards.
-
-**The risk:** Direct Wealth without flexibility can create financial rigidity. The accumulator misses opportunities because they require risk. They hold onto depreciating assets because selling feels like loss. Growth requires occasionally stepping into Indirect Wealth territory — taking calculated risks.
+Direct Wealth without flexibility can create financial rigidity. The accumulator misses opportunities because they require risk. They hold onto depreciating assets because selling feels like loss. Growth requires occasionally stepping into Indirect Wealth territory and taking calculated risks.
 
 ## Indirect Wealth vs. Direct Wealth: Side by Side
 
@@ -91,7 +71,7 @@ In career, Direct Wealth people gravitate toward: accounting, banking, civil ser
 
 ## Case Study: Chart C — Wealth-Dominant Chart
 
-**Chart C** (born 1989, female, Yin Water Day Master) presents one of the most striking Wealth-dominant charts in our sample collection:
+Chart C (born 1989, female, Yin Water Day Master) presents one of the most striking Wealth-dominant charts in our sample collection.
 
 :::saju-chart Chart C (born 1989, female)
 [{"position":"Hour","stem":"丙","stemElement":"Yang Fire","stemGod":"Dir. Wealth","branch":"辰","branchAnimal":"Dragon","branchGod":"Dir. Officer"},{"position":"Day","stem":"癸","stemElement":"Yin Water","stemGod":"Day Master","branch":"巳","branchAnimal":"Snake","branchGod":"Dir. Wealth"},{"position":"Month","stem":"己","stemElement":"Yin Earth","stemGod":"Ind. Officer","branch":"巳","branchAnimal":"Snake","branchGod":"Dir. Wealth"},{"position":"Year","stem":"己","stemElement":"Yin Earth","stemGod":"Ind. Officer","branch":"巳","branchAnimal":"Snake","branchGod":"Dir. Wealth"}]
@@ -105,31 +85,27 @@ In career, Direct Wealth people gravitate toward: accounting, banking, civil ser
 | Indirect Wealth (편재) | — | 0 |
 | **Total Wealth Stars** | | **4** |
 
-Four Direct Wealth elements — half the entire chart — all of the same type (정재). This is an extreme concentration.
+Four Direct Wealth elements fill half the entire chart, all of the same type (정재). This is an extreme concentration.
 
 ### What This Means
 
-In Chapter 6, we analyzed Chart C through the lens of element interactions — the overwhelming Earth controlling Water, the Fire that Water cannot control. Now let us read the same chart through the Ten Gods lens:
+In Chapter 6, we analyzed Chart C through the lens of element interactions, examining the overwhelming Earth controlling Water and the Fire that Water cannot control. Now let us read the same chart through the Ten Gods lens.
 
-**The wealth is everywhere.** Four Direct Wealth Stars means financial opportunity, material ambition, and practical achievement saturate the chart. Money, career advancement, and tangible results are the dominant life theme.
+The wealth is everywhere. Four Direct Wealth Stars means financial opportunity, material ambition, and practical achievement saturate the chart. Money, career advancement, and tangible results are the dominant life theme.
 
-**But the Day Master cannot carry it.** Remember from Chapter 7: the Yin Water Day Master stands alone — no companions, no resources (Metal is absent). Controlling four Fire/Wealth elements requires enormous energy. A single drop of Water trying to contain four flames is not accumulating wealth — it is evaporating in the attempt.
+But the Day Master cannot carry it. Remember from Chapter 7 that the Yin Water Day Master stands alone with no companions and no resources, since Metal is absent. Controlling four Fire/Wealth elements requires enormous energy. A single drop of Water trying to contain four flames is not accumulating wealth. It is evaporating in the attempt.
 
-**The result is a paradox:** Wealth-dominant charts do not automatically create wealthy people. They create people who are *obsessed with* or *surrounded by* wealth themes — money is always present in their awareness, whether they have it or not. When the Day Master is strong enough to control, prosperity follows. When it is too weak, the Wealth Stars become a source of stress — always chasing, never holding.
+The result is a paradox. Wealth-dominant charts do not automatically create wealthy people. They create people who are obsessed with or surrounded by wealth themes. Money is always present in their awareness, whether they have it or not. When the Day Master is strong enough to control, prosperity follows. When it is too weak, the Wealth Stars become a source of stress, always chasing, never holding.
 
-**The timing matters:** When fortune cycles bring Water (용신) or Metal (희신) to strengthen the Day Master, Chart C's owner suddenly gains the capacity to control the Wealth. These periods feel like breakthroughs — promotions, windfalls, or deals that finally materialize. When fortune cycles bring more Fire or Earth, the gap between desire and capacity widens.
+Timing matters. When fortune cycles bring Water (용신) or Metal (희신) to strengthen the Day Master, Chart C's owner suddenly gains the capacity to control the Wealth. These periods feel like breakthroughs, bringing promotions, windfalls, or deals that finally materialize. When fortune cycles bring more Fire or Earth, the gap between desire and capacity widens.
 
 ### The Direct Wealth Concentration
 
-Notice that all four Wealth Stars are Direct Wealth (정재), not Indirect Wealth (편재). This means:
-- The wealth orientation is *conventional* — steady income, tangible assets, structured accumulation
-- The owner seeks financial security through established paths — not speculation
-- The relationship with money is disciplined in intention, even if the capacity to execute is strained
-- In traditional reading, the abundance of Direct Wealth in a woman's chart can indicate strong focus on practical self-sufficiency
+Notice that all four Wealth Stars are Direct Wealth (정재), not Indirect Wealth (편재). The wealth orientation is conventional, favoring steady income, tangible assets, and structured accumulation. The owner seeks financial security through established paths rather than speculation. The relationship with money is disciplined in intention, even if the capacity to execute is strained. In traditional reading, the abundance of Direct Wealth in a woman's chart can indicate strong focus on practical self-sufficiency.
 
 ## Wealth Stars and Day Master Strength
 
-The most important principle for interpreting Wealth Stars is their relationship to Day Master strength:
+The most important principle for interpreting Wealth Stars is their relationship to Day Master strength.
 
 | Day Master | Wealth Stars | Result |
 |---|---|---|
@@ -138,50 +114,45 @@ The most important principle for interpreting Wealth Stars is their relationship
 | **Weak** Day Master | **Strong** Wealth | Desire exceeds capacity — financial stress, overwork, chasing |
 | **Weak** Day Master | **Weak** Wealth | Money is not a dominant life theme in either direction |
 
-This is why the Useful God matters so much for financial interpretation. In Chart C, the Useful God (Water) does not directly represent money — it represents the *capacity to handle* money. Strengthening the Day Master is the path to financial success, not adding more Wealth Stars.
+This is why the Useful God matters so much for financial interpretation. In Chart C, the Useful God (Water) does not directly represent money. It represents the capacity to handle money. Strengthening the Day Master is the path to financial success, not adding more Wealth Stars.
 
-> A common mistake in Saju reading: assuming that more Wealth Stars means more money. It does not. More Wealth Stars means more *financial energy*. Whether that energy becomes prosperity or stress depends entirely on the Day Master's ability to manage it.
+> A common mistake in Saju reading is assuming that more Wealth Stars means more money. It does not. More Wealth Stars means more financial energy. Whether that energy becomes prosperity or stress depends entirely on the Day Master's ability to manage it.
 
 ## Wealth Stars and Other Gods
 
-**Wealth + Output = The Earning Chain.** Output Stars produce Wealth Stars. A strong Eating God or Hurting Officer feeding into Wealth Stars creates a talent-to-money pipeline. This is the chart of the successful creative professional — the designer whose taste translates into premium fees, the chef whose food fills a restaurant.
+Output Stars produce Wealth Stars. A strong Eating God or Hurting Officer feeding into Wealth Stars creates a talent-to-money pipeline. This is the chart of the successful creative professional, the designer whose taste translates into premium fees, the chef whose food fills a restaurant.
 
-**Wealth vs. Resource = Tension.** Wealth Stars control Resource Stars (the element you control is the element that controls your Resource). A chart with strong Wealth but weak Resource creates a person who earns but does not learn — all execution, no reflection. Conversely, strong Resource and weak Wealth creates a lifelong student who struggles to monetize knowledge.
+Wealth Stars control Resource Stars (the element you control is the element that controls your Resource). A chart with strong Wealth but weak Resource creates a person who earns but does not learn, all execution and no reflection. Conversely, strong Resource and weak Wealth creates a lifelong student who struggles to monetize knowledge.
 
-**Wealth + Authority = Power.** Wealth Stars produce Authority Stars. In practical terms, money creates structure and influence. A person with both Wealth and Authority Stars present often rises to positions of organizational power — they have both the resources and the institutional backing.
+Wealth Stars also produce Authority Stars. In practical terms, money creates structure and influence. A person with both Wealth and Authority Stars present often rises to positions of organizational power, combining resources with institutional backing.
 
-**Wealth without Companions = Self-made.** When Wealth Stars are present but Companion Stars are absent, the person builds alone. There are no partners to share the load — and no competitors to share the spoils. This can create remarkable self-made success or crushing isolation, depending on the Day Master's resilience.
+When Wealth Stars are present but Companion Stars are absent, the person builds alone. There are no partners to share the load and no competitors to share the spoils. This can create remarkable self-made success or crushing isolation, depending on the Day Master's resilience.
 
 ## When Wealth Stars Are Absent
 
-A chart with no Indirect Wealth and no Direct Wealth does not mean poverty. It means:
+A chart with no Indirect Wealth and no Direct Wealth does not mean poverty. It means the following.
 
-- Money is not the primary life driver — other themes (creativity, knowledge, authority) take precedence
-- Financial success comes *through* other gods rather than directly — through talent (Output), through career advancement (Authority), or through knowledge (Resource)
-- The person may be genuinely unconcerned with material accumulation — not from inability, but from disinterest
-- When Wealth Stars arrive through fortune cycles, they may feel unfamiliar — sudden financial opportunities that the person does not know how to handle
+- Money is not the primary life driver. Other themes such as creativity, knowledge, or authority take precedence.
+- Financial success comes through other gods rather than directly, whether through talent (Output), career advancement (Authority), or knowledge (Resource).
+- The person may be genuinely unconcerned with material accumulation, not from inability, but from disinterest.
+- When Wealth Stars arrive through fortune cycles, they may feel unfamiliar, presenting sudden financial opportunities that the person does not know how to handle.
 
 Some of the most fulfilled people have no Wealth Stars. They have found meaning in creation, learning, or service rather than accumulation. The Ten Gods system does not judge — it maps.
 
 ## New Sample: Wealth in a Balanced Chart
 
-For contrast with Chart C's extreme, consider a chart from our new sample collection — a woman born in 1980 with a Yin Water (癸) Day Master:
+For contrast with Chart C's extreme, consider a chart from our new sample collection, a woman born in 1980 with a Yin Water (癸) Day Master.
 
 - Hour: 癸/亥 — Indirect Seal / Friend
 - Day: 癸/丑 — Day Master / Indirect Wealth
-- Month: 庚/午 — Direct Seal / Direct Wealth
-- Year: 庚/申 — Direct Seal / Eating God
+- Month: 庚/午 — Direct Seal / Indirect Wealth
+- Year: 庚/申 — Direct Seal / Direct Seal
 
-**Wealth count:** Indirect Wealth 1 (丑) + Direct Wealth 1 (午) = 2 Wealth Stars
+**Wealth count:** Indirect Wealth 2 (丑 + 午) = 2 Wealth Stars
 **Resource count:** Direct Seal 2 (庚 × 2) + Indirect Seal 1 (癸 hidden) = strong Resource
 
-This is a fundamentally different pattern from Chart C. The Day Master has strong Resource support (Metal producing Water), and the Wealth Stars are moderate — two, not four. The result:
+This is a fundamentally different pattern from Chart C. The Day Master has strong Resource support (Metal producing Water), and the Wealth Stars are moderate at two rather than four. The Day Master can comfortably control the Wealth, meaning capacity matches or exceeds desire. The strong Resource base ensures decisions are informed, methodical, and well-researched. Financial success is built on knowledge and mentorship (Resource produces Day Master, Day Master controls Wealth). The balance creates sustainable prosperity rather than stressful pursuit.
 
-- The Day Master can comfortably control the Wealth — capacity matches or exceeds desire
-- The strong Resource base means decisions are informed, methodical, and well-researched
-- Financial success is built on knowledge and mentorship (Resource → Day Master → Wealth)
-- The balance creates sustainable prosperity rather than stressful pursuit
-
-This is the difference between a Wealth-burdened chart and a Wealth-supported chart — not the amount of Wealth Stars, but the ratio of Wealth to Day Master strength.
+This is the difference between a Wealth-burdened chart and a Wealth-supported chart. What matters is not the amount of Wealth Stars, but the ratio of Wealth to Day Master strength.
 
 In the next chapter, we move from what you acquire to what governs you — the Authority Stars.

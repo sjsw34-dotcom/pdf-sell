@@ -28,9 +28,9 @@ In Chapter 15, you learned the Career Selection Guide based on god-pair dominanc
 
 **Output-Dominant Charts (Eating God / Hurting Officer)**
 
-When Output Stars dominate, the chart points toward careers built on *creation and production*. The person's natural energy flows outward — making things, expressing ideas, generating tangible results.
+When Output Stars dominate, the chart points toward careers built on creation and production. The person's natural energy flows outward, making things, expressing ideas, and generating tangible results.
 
-Saju suggests these individuals thrive in roles where their output is visible and measurable:
+Saju suggests these individuals thrive in roles where their output is visible and measurable.
 
 | Output Type | Career Alignment |
 |---|---|
@@ -38,11 +38,11 @@ Saju suggests these individuals thrive in roles where their output is visible an
 | Hurting Officer dominant | Innovative expression — art, entrepreneurship, consulting, disruptive technology, performance, unconventional problem-solving |
 | Both present | Versatile creator — can both produce consistently and innovate when needed |
 
-The key diagnostic question for an Output-dominant chart is: *Does this career let me make things?* If the answer is no — if the role is primarily administrative, supervisory, or political — the person will feel perpetually restless.
+The key diagnostic question for an Output-dominant chart is whether the career allows the person to make things. If the answer is no, if the role is primarily administrative, supervisory, or political, the person will feel perpetually restless.
 
 **Wealth-Dominant Charts (Indirect Wealth / Direct Wealth)**
 
-When Wealth Stars dominate, the chart gravitates toward careers involving *money, resources, and exchange*. These individuals have an intuitive sense for value — where it exists, how to capture it, and how to multiply it.
+When Wealth Stars dominate, the chart gravitates toward careers involving money, resources, and exchange. These individuals have an intuitive sense for value — where it exists, how to capture it, and how to multiply it.
 
 | Wealth Type | Career Alignment |
 |---|---|
@@ -54,7 +54,7 @@ The key question: *Does this career involve managing or growing resources?*
 
 **Authority-Dominant Charts (Indirect Officer / Direct Officer)**
 
-Authority Stars point toward careers in *structure, governance, and institutional power*. These individuals naturally orient toward hierarchies — either climbing them or building them.
+Authority Stars point toward careers in structure, governance, and institutional power. These individuals naturally orient toward hierarchies, either climbing them or building them.
 
 | Authority Type | Career Alignment |
 |---|---|
@@ -66,7 +66,7 @@ The key question: *Does this career give me a position within a recognized struc
 
 **Resource-Dominant Charts (Indirect Seal / Direct Seal)**
 
-Resource Stars favor careers in *knowledge, mentorship, and intellectual authority*. These individuals absorb information naturally and feel most alive when learning or teaching.
+Resource Stars favor careers in knowledge, mentorship, and intellectual authority. These individuals absorb information naturally and feel most alive when learning or teaching.
 
 | Resource Type | Career Alignment |
 |---|---|
@@ -78,7 +78,7 @@ The key question: *Does this career let me learn and share knowledge?*
 
 **Companion-Dominant Charts (Friend / Rob Wealth)**
 
-Companion Stars indicate careers where *peer networks, teamwork, and personal identity* drive success. These individuals perform best when surrounded by equals or competitors who sharpen their edge.
+Companion Stars indicate careers where peer networks, teamwork, and personal identity drive success. These individuals perform best when surrounded by equals or competitors who sharpen their edge.
 
 | Companion Type | Career Alignment |
 |---|---|
@@ -90,18 +90,15 @@ The key question: *Does this career put me among peers I respect and compete wit
 
 ### The Pillar Position Matters
 
-Beyond the overall god distribution, *where* career-relevant gods appear in the four pillars adds nuance:
+Beyond the overall god distribution, *where* career-relevant gods appear in the four pillars adds nuance.
 
-- **Month Pillar** — the career pillar. Gods in this position directly influence professional life. An Authority Star in the Month Pillar suggests a career defined by institutional roles. An Output Star here suggests a career defined by creative production.
-- **Day Branch** — the inner world. Gods here reflect what the person truly wants from work, regardless of what they do externally.
-- **Hour Pillar** — the output pillar. Gods here suggest how the person's work manifests in the world and what their professional legacy looks like.
-- **Year Pillar** — the social pillar. Gods here reflect the public perception of the person's career and their relationship with broader industry or society.
+The Month Pillar is the career pillar. Gods in this position directly influence professional life. An Authority Star in the Month Pillar suggests a career defined by institutional roles, while an Output Star here suggests a career defined by creative production. The Day Branch represents the inner world, and gods here reflect what the person truly wants from work, regardless of what they do externally. The Hour Pillar is the output pillar, where gods suggest how the person's work manifests in the world and what their professional legacy looks like. The Year Pillar is the social pillar, and gods here reflect the public perception of the person's career and their relationship with broader industry or society.
 
 A chart where the Month Pillar shows Authority but the Day Branch shows Output suggests someone who works within institutions but secretly wishes they were creating independently. Understanding this tension is essential for honest career guidance.
 
 ### Missing Gods and Career Gaps
 
-Equally important is what is *absent*. A chart with zero Wealth Stars does not mean the person is destined for poverty. It means that wealth does not come naturally through direct accumulation — it must arrive through other channels, typically through the Output-to-Wealth chain when Wealth Stars appear in fortune cycles.
+Equally important is what is absent. A chart with zero Wealth Stars does not mean the person is destined for poverty. It means that wealth does not come naturally through direct accumulation. It must arrive through other channels, typically through the Output-to-Wealth chain when Wealth Stars appear in fortune cycles.
 
 Similarly, a chart with zero Authority Stars suggests the person will struggle in highly hierarchical environments. They are not built for corporate ladder-climbing. They may thrive, however, as independent professionals or entrepreneurs where the absence of authority pressure is a feature, not a bug.
 
@@ -109,98 +106,70 @@ Similarly, a chart with zero Authority Stars suggests the person will struggle i
 
 ### Three Types of Wealth Patterns
 
-Korean Saju masters traditionally identify three distinct wealth patterns based on how a chart generates money:
+Korean Saju masters traditionally identify three distinct wealth patterns based on how a chart generates money.
 
-**Pattern 1: Direct Wealth Accumulation (정재격)**
+In the first pattern, Direct Wealth Accumulation (정재격), the chart contains natal Wealth Stars, especially Direct Wealth. Money comes through steady, predictable channels: a reliable salary, consistent business revenue, and systematic saving. This person builds wealth slowly but securely.
 
-The chart contains natal Wealth Stars, especially Direct Wealth. Money comes through *steady, predictable channels* — a reliable salary, consistent business revenue, systematic saving. This person builds wealth slowly but securely.
+In the second pattern, the Earning Chain (식상생재), the chart has strong Output Stars that feed into Wealth Stars, either natally or through fortune cycles. Money comes through talent and production. The person creates something valuable, and the market rewards it. This is the pattern of the successful artist, engineer, or consultant whose expertise commands premium fees.
 
-**Pattern 2: The Earning Chain (식상생재)**
-
-The chart has strong Output Stars that feed into Wealth Stars, either natally or through fortune cycles. Money comes through *talent and production*. The person creates something valuable, and the market rewards it. This is the pattern of the successful artist, engineer, or consultant whose expertise commands premium fees.
-
-**Pattern 3: Indirect Wealth Speculation (편재격)**
-
-The chart features Indirect Wealth prominently, often with Companion Stars that fuel risk-taking. Money comes through *opportunistic, variable-income channels* — investments, deals, commissions, entrepreneurial ventures. Income is uneven but potentially high.
+In the third pattern, Indirect Wealth Speculation (편재격), the chart features Indirect Wealth prominently, often with Companion Stars that fuel risk-taking. Money comes through opportunistic, variable-income channels such as investments, deals, commissions, and entrepreneurial ventures. Income is uneven but potentially high.
 
 Most charts blend these patterns, but one usually dominates. Identifying the primary wealth pattern helps a person stop fighting their natural money-making style and lean into it.
 
 ### When Wealth Arrives: The Fortune Cycle Connection
 
-The most powerful insight in Saju career reading is this: **natal potential is activated by fortune cycles.**
+The most powerful insight in Saju career reading is that natal potential is activated by fortune cycles.
 
 A chart may contain every ingredient for wealth — strong Output, favorable element balance, a capable Day Master — but if Wealth Stars never appear in the Grand Fortune or Annual Fortune, the potential remains dormant. Conversely, a chart with modest natal indicators can experience significant wealth when the fortune cycles deliver exactly what was missing.
 
-Here is how to read wealth timing through the fortune cycles:
+Here is how to read wealth timing through the fortune cycles.
 
-**Grand Fortune (Decade Level)**
+At the Grand Fortune (Decade Level), this cycle is the primary wealth timer. When a Wealth Star appears in the Grand Fortune stem, that entire decade carries wealth-activation energy. The person enters a phase where financial opportunities become visible and accessible.
 
-The Grand Fortune is the primary wealth timer. When a Wealth Star appears in the Grand Fortune stem, that entire decade carries wealth-activation energy. The person enters a phase where financial opportunities become visible and accessible.
+Look for Wealth Stars appearing in the stem (most direct activation), the Useful God appearing in the branch (environmental support), and Output Stars in previous decades that built skills now ready to monetize.
 
-Look for:
-- Wealth Stars appearing in the stem (most direct activation)
-- The Useful God appearing in the branch (environmental support)
-- Output Stars in previous decades that built skills now ready to monetize
+At the Annual Fortune (Year Level), specific years amplify the signal within a wealth-favorable decade.
 
-**Annual Fortune (Year Level)**
+An Annual Fortune that carries a Wealth Star on top of a Grand Fortune Wealth Star creates a concentrated window of financial opportunity.
 
-Within a wealth-favorable decade, specific years amplify the signal. An Annual Fortune that carries a Wealth Star on top of a Grand Fortune Wealth Star creates a concentrated window of financial opportunity.
-
-But also watch for:
+Also watch for the following.
 - Years when the Unfavorable element undermines the decade's wealth energy
 - Years when Authority Stars arrive and redirect energy from earning to managing or complying
 - Years when Resource Stars arrive and redirect energy from earning to learning
 
-**The Activation Sequence**
+The most reliable wealth timing follows a predictable activation sequence across decades. First, a Resource decade where the person learns, studies, and builds credentials. Second, a Companion decade where the person builds networks and establishes identity. Third, an Output decade where the person creates, produces, and builds a body of work. Fourth, a Wealth decade where the market rewards the accumulated output.
 
-The most reliable wealth timing follows a predictable sequence across decades:
-
-1. **Resource decade** — the person learns, studies, builds credentials
-2. **Companion decade** — the person builds networks, establishes identity
-3. **Output decade** — the person creates, produces, builds a body of work
-4. **Wealth decade** — the market rewards the accumulated output
-
-When this sequence flows naturally through the Grand Fortune progression, wealth accumulation feels almost effortless. When the sequence is disrupted — say, a Wealth decade arrives before an Output decade — the person may encounter money without the skills to manage it, or they may chase money before they have something valuable to offer.
+When this sequence flows naturally through the Grand Fortune progression, wealth accumulation feels almost effortless. When the sequence is disrupted, say a Wealth decade arrives before an Output decade, the person may encounter money without the skills to manage it, or they may chase money before they have something valuable to offer.
 
 ### The Zero-Wealth Natal Chart
 
-A special case deserves attention: charts with no natal Wealth Stars at all. This pattern appears more often than you might expect, and it does not indicate a life without money.
+A special case deserves attention. Charts with no natal Wealth Stars at all appear more often than expected. This pattern does not indicate a life without money.
 
-What it indicates is that wealth is not the chart's *native language*. The person does not think about money naturally, does not prioritize accumulation instinctively, and may feel awkward or uncomfortable in purely financial roles.
+What it indicates is that wealth is not the chart's native language. The person does not think about money naturally, does not prioritize accumulation instinctively, and may feel awkward or uncomfortable in purely financial roles.
 
-For these charts, wealth arrives through one of two mechanisms:
+For these charts, wealth arrives through one of two mechanisms.
 
-1. **The Output-to-Wealth chain activates when Wealth appears in fortune cycles.** If the chart has strong Output Stars, those stars have been building productive capacity for years. When a Wealth decade finally arrives, all that accumulated output suddenly becomes monetizable. Think of the artist who creates for decades in relative obscurity, then experiences a breakthrough when the market finally catches up to their work.
+The first is the Output-to-Wealth chain, which activates when Wealth appears in fortune cycles. If the chart has strong Output Stars, those stars have been building productive capacity for years. When a Wealth decade finally arrives, all that accumulated output suddenly becomes monetizable. The artist who creates for decades in relative obscurity and then experiences a breakthrough when the market catches up to their work illustrates this pattern.
 
-2. **Environmental wealth.** The person may not accumulate personal wealth in the traditional sense but may operate in wealthy environments — working for rich companies, managing other people's money, or benefiting from a partner's financial strength. The wealth is *around* them even if it is not *theirs* in the direct sense.
+The second is environmental wealth. The person may not accumulate personal wealth in the traditional sense but may operate in wealthy environments, working for rich companies, managing other people's money, or benefiting from a partner's financial strength. The wealth is around them even if it is not theirs in the direct sense.
 
 ## 24.3 Entrepreneurship vs. Employment
 
-One of the most practical applications of Saju career reading is the entrepreneurship-vs-employment question. Korean business culture takes this question seriously — many Korean entrepreneurs consult Saju masters before launching ventures, looking not just for *whether* to start a business but *when*.
+One of the most practical applications of Saju career reading is the entrepreneurship-vs-employment question. Korean business culture takes this question seriously. Many Korean entrepreneurs consult Saju masters before launching ventures, looking not just for whether to start a business but when.
 
 ### The Entrepreneurship Indicators
 
-Saju suggests that certain chart patterns favor entrepreneurship:
+Saju suggests that certain chart patterns favor entrepreneurship.
 
-**Strong Indicators:**
-- **High Output Stars (3+)** — the person generates ideas and products relentlessly. They are natural creators who need autonomy to produce.
-- **Hurting Officer presence** — the rebel god resists institutional constraints. Working *within* someone else's structure creates friction.
-- **Indirect Wealth** — comfort with variable income, risk tolerance, opportunistic thinking.
-- **Strong Day Master** — entrepreneurship drains energy relentlessly. A weak Day Master may lack the stamina.
+Strong indicators include high Output Stars (3+), where the person generates ideas and products relentlessly and needs autonomy to produce. A Hurting Officer presence signals that the rebel god resists institutional constraints, making work within someone else's structure a source of friction. Indirect Wealth suggests comfort with variable income, risk tolerance, and opportunistic thinking. A strong Day Master provides the stamina that entrepreneurship demands.
 
-**Moderate Indicators:**
-- **Rob Wealth presence** — competitive drive, willingness to fight for market share. But also a warning: Rob Wealth can attract partners who take more than they give.
-- **Indirect Seal** — unconventional thinking, ability to see opportunities others miss. But can also indicate scattered focus.
+Moderate indicators include a Rob Wealth presence, which brings competitive drive and willingness to fight for market share, though Rob Wealth can also attract partners who take more than they give. An Indirect Seal suggests unconventional thinking and the ability to see opportunities others miss, though it can also indicate scattered focus.
 
-**Counter-Indicators (favoring employment):**
-- **High Authority Stars** — the person thrives in structures with clear rules and hierarchies. They are natural executives, not founders.
-- **Direct Wealth dominant** — preference for stable, predictable income. The volatility of entrepreneurship creates anxiety rather than excitement.
-- **Direct Seal dominant** — preference for established institutions with mentorship structures. They learn best within systems, not by building them.
-- **Weak Day Master without Useful God support** — insufficient energy to sustain the demands of business ownership.
+Counter-indicators favoring employment include high Authority Stars, where the person thrives in structures with clear rules and hierarchies as natural executives rather than founders. Direct Wealth dominance indicates a preference for stable, predictable income, making the volatility of entrepreneurship a source of anxiety. Direct Seal dominance signals a preference for established institutions with mentorship structures. A weak Day Master without Useful God support means insufficient energy to sustain business ownership demands.
 
 ### The Hybrid Path
 
-Most real careers do not fall neatly into "entrepreneur" or "employee." Saju recognizes a range of hybrid positions that may suit charts with mixed indicators:
+Most real careers do not fall neatly into "entrepreneur" or "employee." Saju recognizes a range of hybrid positions that may suit charts with mixed indicators.
 
 | Chart Pattern | Hybrid Career Path |
 |---|---|
@@ -213,74 +182,61 @@ The key insight is that entrepreneurship does not require *every* indicator to b
 
 ### Timing the Launch
 
-For charts that do favor entrepreneurship, Saju offers timing guidance:
+For charts that do favor entrepreneurship, Saju offers timing guidance.
 
-**Favorable launch windows:**
-- Grand Fortune decade where the Useful God is strong
-- Annual Fortune year where Output or Wealth Stars appear
-- Months where the Life Stage is Crown, Prime, or Peak — maximum energy and momentum
+Favorable launch windows include a Grand Fortune decade where the Useful God is strong, an Annual Fortune year where Output or Wealth Stars appear, and months where the Life Stage is Crown, Prime, or Peak for maximum energy and momentum.
 
-**Unfavorable windows:**
-- Grand Fortune decade where the Hostile element dominates
-- Annual Fortune years where Authority Stars clash with Output Stars (institutional pressure on creative freedom)
-- Months where the Life Stage is Extinction or Death — energy at its lowest
+Unfavorable windows include a Grand Fortune decade where the Hostile element dominates, Annual Fortune years where Authority Stars clash with Output Stars (institutional pressure on creative freedom), and months where the Life Stage is Extinction or Death when energy is at its lowest.
 
-Korean Saju masters often observe that the *second* business attempt succeeds more often than the first — especially for Hurting Officer entrepreneurs whose first venture was too rebellious to survive market reality. The chart does not change, but the person's experience adds a layer of practical wisdom that the chart alone cannot provide.
+Korean Saju masters often observe that the second business attempt succeeds more often than the first, especially for Hurting Officer entrepreneurs whose first venture was too rebellious to survive market reality. The chart does not change, but the person's experience adds a layer of practical wisdom that the chart alone cannot provide.
 
 ## 24.4 Career Transitions and Timing
 
 ### Grand Fortune Shifts as Career Pivots
 
-The most significant career transitions in Saju correlate with Grand Fortune shifts — the moment when one decade's dominant energy gives way to the next. These transitions happen roughly every ten years, and each one reshapes the professional landscape.
+The most significant career transitions in Saju correlate with Grand Fortune shifts, the moment when one decade's dominant energy gives way to the next. These transitions happen roughly every ten years, and each one reshapes the professional landscape.
 
-A career transition is most likely when:
+A career transition is most likely in three scenarios.
 
-1. **A new Ten God appears that was previously absent.** If your natal chart has zero Authority Stars and your new Grand Fortune brings an Authority decade, expect institutional forces to suddenly matter — promotions, regulations, management responsibilities, or organizational politics.
+First, a new Ten God appears that was previously absent. If your natal chart has zero Authority Stars and your new Grand Fortune brings an Authority decade, expect institutional forces to suddenly matter: promotions, regulations, management responsibilities, or organizational politics.
 
-2. **The Useful God arrives or departs.** When the Useful God enters the Grand Fortune, everything gets easier — energy flows, opportunities align, doors open. When it departs, the person must work harder for the same results. Both transitions demand career adjustment.
+Second, the Useful God arrives or departs. When the Useful God enters the Grand Fortune, everything gets easier as energy flows, opportunities align, and doors open. When it departs, the person must work harder for the same results. Both transitions demand career adjustment.
 
-3. **The dominant element shifts polarity.** Moving from a Yang-element decade to a Yin-element decade (or vice versa) changes the *style* of career engagement even if the element itself remains the same. Yang decades favor bold, public, expansive moves. Yin decades favor careful, behind-the-scenes, consolidating work.
+Third, the dominant element shifts polarity. Moving from a Yang-element decade to a Yin-element decade (or vice versa) changes the style of career engagement even if the element itself remains the same. Yang decades favor bold, public, expansive moves. Yin decades favor careful, behind-the-scenes, consolidating work.
 
 ### Reading the Transition Window
 
-Career transitions do not happen overnight. They unfold across a two-to-three-year window centered on the Grand Fortune shift point. Here is the typical pattern:
+Career transitions do not happen overnight. They unfold across a two-to-three-year window centered on the Grand Fortune shift point. Here is the typical pattern.
 
-**Years -2 to -1 (before the shift):** Restlessness and dissatisfaction with the current path. The outgoing decade's energy is waning. The person feels increasingly misaligned with their work but may not understand why.
+In the years before the shift (-2 to -1), restlessness and dissatisfaction with the current path emerge. The outgoing decade's energy is waning. The person feels increasingly misaligned with their work but may not understand why.
 
-**Year 0 (the shift):** The new decade's energy arrives. This can feel disorienting — sudden changes in the work environment, unexpected opportunities or setbacks, a strong pull toward something different. The person may quit a job, get laid off, receive an unexpected offer, or simply wake up one morning knowing that the old path no longer fits.
+At the shift point (Year 0), the new decade's energy arrives. This can feel disorienting, with sudden changes in the work environment, unexpected opportunities or setbacks, and a strong pull toward something different. The person may quit a job, get laid off, receive an unexpected offer, or simply wake up one morning knowing that the old path no longer fits.
 
-**Years +1 to +2 (after the shift):** Adjustment and recalibration. The person begins to find their footing in the new energy. Early experiments may fail as they learn the new decade's rules. By year two or three, the new direction typically becomes clear.
+In the years after the shift (+1 to +2), adjustment and recalibration begin. The person starts to find their footing in the new energy. Early experiments may fail as they learn the new decade's rules. By year two or three, the new direction typically becomes clear.
 
 ### The Five Career Transition Archetypes
 
-Based on which Ten God arrives in the new Grand Fortune, career transitions follow one of five patterns:
+Based on which Ten God arrives in the new Grand Fortune, career transitions follow one of five patterns.
 
-**1. The Output Transition (Eating God / Hurting Officer arrives)**
-Previous career felt constrained or uncreative. New decade demands creative production. The person may leave a stable job to pursue passion projects, freelance work, or creative entrepreneurship.
+In the Output Transition (Eating God / Hurting Officer arrives), the previous career felt constrained or uncreative and the new decade demands creative production. The person may leave a stable job to pursue passion projects, freelance work, or creative entrepreneurship.
 
-**2. The Wealth Transition (Indirect / Direct Wealth arrives)**
-Previous career focused on learning or creating without financial reward. New decade brings money into focus. The person may monetize existing skills, negotiate higher compensation, or shift to a more lucrative field.
+In the Wealth Transition (Indirect / Direct Wealth arrives), the previous career focused on learning or creating without financial reward, and the new decade brings money into focus. The person may monetize existing skills, negotiate higher compensation, or shift to a more lucrative field.
 
-**3. The Authority Transition (Indirect / Direct Officer arrives)**
-Previous career lacked structure or recognition. New decade brings institutional involvement. The person may accept a management role, start working with regulations, enter government service, or seek professional credentials.
+In the Authority Transition (Indirect / Direct Officer arrives), the previous career lacked structure or recognition, and the new decade brings institutional involvement. The person may accept a management role, start working with regulations, enter government service, or seek professional credentials.
 
-**4. The Resource Transition (Indirect / Direct Seal arrives)**
-Previous career was action-heavy but knowledge-light. New decade demands learning. The person may return to school, seek mentorship, obtain certifications, or shift from doing to teaching.
+In the Resource Transition (Indirect / Direct Seal arrives), the previous career was action-heavy but knowledge-light, and the new decade demands learning. The person may return to school, seek mentorship, obtain certifications, or shift from doing to teaching.
 
-**5. The Companion Transition (Friend / Rob Wealth arrives)**
-Previous career was solitary or hierarchical. New decade brings peer energy. The person may join partnerships, enter competitive markets, build teams, or shift to network-dependent industries.
+In the Companion Transition (Friend / Rob Wealth arrives), the previous career was solitary or hierarchical, and the new decade brings peer energy. The person may join partnerships, enter competitive markets, build teams, or shift to network-dependent industries.
 
 ### When NOT to Transition
 
-Saju also indicates when career transitions are inadvisable — even when the person *wants* to change:
+Saju also indicates when career transitions are inadvisable, even when the person wants to change.
 
-- **During an Extinction or Death Life Stage year:** Energy is at its lowest. Major moves made during these phases tend to be driven by frustration rather than strategy.
-- **When the Hostile element dominates both Grand and Annual Fortune:** The environment is actively working against the Day Master. This is a time for defensive positioning, not aggressive pivots.
-- **When Authority Stars are clashing with Hurting Officer:** This combination creates conflict with institutions. Leaving one structure only to clash with the next is not a transition — it is a pattern. The chart is saying: resolve the inner tension first.
+During an Extinction or Death Life Stage year, energy is at its lowest. Major moves made during these phases tend to be driven by frustration rather than strategy. When the Hostile element dominates both Grand and Annual Fortune, the environment is actively working against the Day Master, making this a time for defensive positioning rather than aggressive pivots. When Authority Stars are clashing with Hurting Officer, this combination creates conflict with institutions. Leaving one structure only to clash with the next is not a transition but a pattern, and the chart is signaling that the inner tension must be resolved first.
 
 ## 24.5 Full Case Study: Chart E — Career and Wealth Analysis
 
-Now let us put everything together. We will perform a complete career and wealth reading for Chart E — a male born in 1990 with a Yang Earth Day Master.
+Now let us put everything together. We will perform a complete career and wealth reading for Chart E, a male born in 1990 with a Yang Earth Day Master.
 
 ### The Natal Chart
 
@@ -309,56 +265,43 @@ Now let us put everything together. We will perform a complete career and wealth
 
 ### Step 1: Identify the Dominant Career Energy
 
-The chart screams one thing: **Output**.
+The chart points unmistakably to Output.
 
-Four Eating Gods out of seven non-Day-Master positions is an extraordinary concentration. This is not a chart with some creative tendencies. This is a chart that is *built to produce*. The Eating God is the steady, disciplined creator — not the rebellious innovator (that would be the Hurting Officer), but the relentless producer who generates tangible, measurable results day after day.
+Four Eating Gods out of seven non-Day-Master positions is an extraordinary concentration. This is not a chart with some creative tendencies. This is a chart that is built to produce. The Eating God is the steady, disciplined creator — not the rebellious innovator (that would be the Hurting Officer), but the relentless producer who generates tangible, measurable results day after day.
 
 Yang Earth as the Day Master reinforces this. Think of Yang Earth as a mountain — massive, stable, enduring. It provides the raw material that Metal (the Eating God element for Earth Day Masters) carves into useful form. Earth produces Metal in the productive cycle. This chart's entire energy flows in one direction: from the mountain (Day Master) into crafted metal products (Output).
 
-The career implication is clear: Chart E must work in a field that channels this relentless productive energy. Any role that suppresses output — purely managerial positions, passive observation roles, or jobs where the person is told to wait rather than create — will feel suffocating.
+The career implication is clear. Chart E must work in a field that channels this relentless productive energy. Any role that suppresses output, whether purely managerial positions, passive observation roles, or jobs where the person is told to wait rather than create, will feel suffocating.
 
-**Ideal career domains:** Engineering, technology, manufacturing, content production, technical consulting, data analysis, systems architecture — any field where sustained, visible output is the measure of success.
+Ideal career domains include engineering, technology, manufacturing, content production, technical consulting, data analysis, and systems architecture. Any field where sustained, visible output is the measure of success will suit this chart.
 
 ### Step 2: Assess the Wealth Pattern
 
-Here is where Chart E's reading becomes nuanced. The chart has **zero natal Wealth Stars**. Not a single one.
+Here is where Chart E's reading becomes nuanced. The chart has zero natal Wealth Stars. Not a single one.
 
-On the surface, this looks concerning. No Wealth Stars — does this mean financial struggle?
+On the surface, this looks concerning, but zero Wealth Stars does not mean financial struggle.
 
-No. What it means is that wealth is not Chart E's native language. Money does not come through direct accumulation, financial instinct, or resource management. Instead, wealth must arrive through the **Output-to-Wealth chain**: the Eating God produces, and when Wealth Stars appear in the fortune cycles, that production becomes monetizable.
+What it means is that wealth is not Chart E's native language. Money does not come through direct accumulation, financial instinct, or resource management. Instead, wealth must arrive through the Output-to-Wealth chain. The Eating God produces, and when Wealth Stars appear in the fortune cycles, that production becomes monetizable.
 
-Think of it this way. Chart E is like a factory with extraordinary production capacity but no sales department. The factory runs at full power — machines humming, products stacking up on the loading dock. But until someone arrives to sell those products (the Wealth Star), all that output sits unmonetized.
+Chart E is like a factory with extraordinary production capacity but no sales department. The factory runs at full power — machines humming, products stacking up on the loading dock. But until someone arrives to sell those products (the Wealth Star), all that output sits unmonetized.
 
-This has practical implications:
-
-1. **Chart E should not pursue careers where financial acumen is the primary skill** — investment banking, pure sales, or speculative trading. The chart does not support these roles.
-2. **Chart E should focus on building output capacity** during the early career, trusting that the wealth mechanism will activate when the fortune cycles deliver Wealth Stars.
-3. **Chart E may benefit from partnering with Wealth-dominant individuals** — business partners, financial advisors, or spouses who handle the money side while Chart E handles the production side.
+This has practical implications. Chart E should not pursue careers where financial acumen is the primary skill, such as investment banking, pure sales, or speculative trading, because the chart does not support these roles. Chart E should focus on building output capacity during the early career, trusting that the wealth mechanism will activate when the fortune cycles deliver Wealth Stars. Chart E may also benefit from partnering with Wealth-dominant individuals, whether business partners, financial advisors, or spouses who handle the money side while Chart E handles the production side.
 
 ### Step 3: Read the Pure Yang Signature
 
-Eight Yang, zero Yin. This is one of the most extreme Yin-Yang imbalances possible. It shapes every aspect of career expression:
+Eight Yang, zero Yin. This is one of the most extreme Yin-Yang imbalances possible. It shapes every aspect of career expression.
 
-**Strengths of pure Yang:**
-- Direct and assertive communication
-- Action-oriented — prefers doing to planning
-- High visibility — naturally gravitates toward front-line, high-intensity roles
-- Decisive under pressure
-- Physical and mental stamina
+The strengths of pure Yang include direct and assertive communication, an action-oriented preference for doing over planning, high visibility with a natural gravitation toward front-line high-intensity roles, decisiveness under pressure, and strong physical and mental stamina.
 
-**Challenges of pure Yang:**
-- Difficulty with subtlety, nuance, and patience
-- May bulldoze through situations that require diplomatic finesse
-- Blind spots in reading emotional undercurrents — both in the workplace and in client relationships
-- Burnout risk from relentless forward motion without Yin rest periods
+The challenges of pure Yang include difficulty with subtlety, nuance, and patience. The person may bulldoze through situations that require diplomatic finesse, carry blind spots in reading emotional undercurrents in both the workplace and client relationships, and face burnout risk from relentless forward motion without Yin rest periods.
 
-**Career impact:** Chart E is best suited for **high-intensity, visible roles** where directness is an asset rather than a liability. Tech startup culture, engineering leadership, competitive sales environments, or any field where bold action is rewarded over cautious deliberation.
+In terms of career impact, Chart E is best suited for high-intensity, visible roles where directness is an asset rather than a liability. Tech startup culture, engineering leadership, competitive sales environments, or any field where bold action is rewarded over cautious deliberation.
 
 The pure Yang signature also suggests that Chart E may struggle in environments that demand extensive consensus-building, subtle political maneuvering, or long periods of quiet patience. Government bureaucracy, academic publishing timelines, or diplomatic service would likely feel painfully slow.
 
 ### Step 4: Map the Wealth and Career Timeline
 
-Now we trace Chart E's career and wealth trajectory through the Grand Fortune decades:
+Now we trace Chart E's career and wealth trajectory through the Grand Fortune decades.
 
 **Age 7-16: 己卯 (Rob Wealth + Direct Officer)**
 
@@ -368,90 +311,83 @@ Career relevance: Foundation years. The competitive instinct and institutional d
 
 **Age 17-26: 庚辰 (Eating God + Friend)**
 
-The Eating God decade — and it lands on top of a chart already saturated with Eating Gods. This is output squared. During this decade, Chart E's productive capacity reached extraordinary levels.
+The Eating God decade lands on top of a chart already saturated with Eating Gods. This is output squared. During this decade, Chart E's productive capacity reached extraordinary levels.
 
 The Dragon branch (Earth = Companion) provides a stable foundation. The Day Master is supported by familiar energy. This is a decade where Chart E likely excelled in school, mastered technical skills, or threw enormous energy into early career output.
 
-But notice what is *not* here: no Wealth. No Authority. During this decade, Chart E was building productive capacity without financial reward or institutional recognition. In traditional Saju terms, the factory was running at maximum, but there was still no sales department.
+But notice what is not here. No Wealth. No Authority. During this decade, Chart E was building productive capacity without financial reward or institutional recognition. In traditional Saju terms, the factory was running at maximum, but there was still no sales department.
 
 **Wealth status:** Dormant. The Output-to-Wealth chain has no Wealth Star to activate it. This decade is about building, not earning.
 
 **Age 27-36: 辛巳 (Hurting Officer + Indirect Seal)**
 
-This decade introduces something new: the **Hurting Officer** in the stem. For the first time, Chart E's output energy includes not just steady production (Eating God) but *innovative, unconventional production* (Hurting Officer).
+This decade introduces something new. The Hurting Officer appears in the stem. For the first time, Chart E's output energy includes not just steady production (Eating God) but innovative, unconventional production (Hurting Officer).
 
 The Hurting Officer is the rebel among the Output Stars. It challenges conventions, disrupts established methods, and creates through breaking rules rather than following them. For a chart already overloaded with Eating God energy, the addition of the Hurting Officer is like adding a turbocharger to an already powerful engine.
 
-The Snake branch (巳) carries Fire — Chart E's **Useful God**. This is critical. The environmental energy of this decade actively supports the Day Master. Earth receives Fire's nourishment. The Day Master grows stronger precisely when it needs to be strong — because the Hurting Officer demands enormous energy to sustain.
+The Snake branch (巳) carries Fire, Chart E's Useful God. This is critical. The environmental energy of this decade actively supports the Day Master. Earth receives Fire's nourishment. The Day Master grows stronger precisely when it needs to be strong — because the Hurting Officer demands enormous energy to sustain.
 
-**Career interpretation:** This is the decade where Chart E's career takes off through an *unconventional approach*. The combination of Hurting Officer innovation and Useful God support suggests a breakthrough that comes not from following the expected path but from finding a novel angle.
+This is the decade where Chart E's career takes off through an unconventional approach. The combination of Hurting Officer innovation and Useful God support suggests a breakthrough that comes not from following the expected path but from finding a novel angle.
 
-However, there is a tension. The Hurting Officer clashes with institutions. If Chart E is working within a traditional corporate structure, this decade may bring conflict with managers, frustration with bureaucracy, or a growing urge to break free. The Indirect Seal in the branch provides intellectual support — new ideas, alternative frameworks, non-traditional mentors — but not institutional acceptance.
+However, there is a tension. The Hurting Officer clashes with institutions. If Chart E is working within a traditional corporate structure, this decade may bring conflict with managers, frustration with bureaucracy, or a growing urge to break free. The Indirect Seal in the branch provides intellectual support through new ideas, alternative frameworks, and non-traditional mentors, but not institutional acceptance.
 
 Saju suggests this is the decade where Chart E either launches an independent venture or finds a role within an organization that gives exceptional autonomy. Pure corporate employment, with its meetings and approvals and chains of command, is a poor fit for Hurting Officer energy backed by pure Yang.
 
-**Wealth status:** Still no Wealth Star in the decade stem or branch. The chain remains unactivated. Output capacity continues to grow, but direct financial reward may lag behind the effort invested. This can be frustrating but is not permanent.
+The wealth status remains dormant. Still no Wealth Star in the decade stem or branch, and the chain remains unactivated. Output capacity continues to grow, but direct financial reward may lag behind the effort invested. This can be frustrating but is not permanent.
 
 **Age 37-46: 壬午 (Indirect Wealth + Direct Seal)**
 
 This is the decade that changes everything.
 
-**For the first time in Chart E's life, a Wealth Star appears.** Indirect Wealth (壬 Yang Water) enters the decade stem. The sales department finally opens.
+For the first time in Chart E's life, a Wealth Star appears. Indirect Wealth (壬 Yang Water) enters the decade stem. The sales department finally opens.
 
-But look carefully. 壬 Water is Chart E's **Unfavorable element**. The Wealth Star arrives, but it arrives wearing the wrong colors. This creates a profound tension at the heart of the decade:
+But look carefully. 壬 Water is Chart E's Unfavorable element. The Wealth Star arrives, but it arrives wearing the wrong colors. This creates a profound tension at the heart of the decade.
 
-- **The stem (Water = Unfavorable):** Financial opportunities present themselves in challenging ways. The money is there, but it comes through uncomfortable channels — unfamiliar industries, risky ventures, partnerships with people Chart E does not naturally trust, or business models that feel foreign to the production-oriented mindset.
+The stem (Water = Unfavorable) means financial opportunities present themselves in challenging ways. The money is there, but it comes through uncomfortable channels: unfamiliar industries, risky ventures, partnerships with people Chart E does not naturally trust, or business models that feel foreign to the production-oriented mindset.
 
-- **The branch (午 Horse = Fire = Useful God):** The foundation of the decade is deeply supportive. The Useful God powers the Day Master from below. Energy, vitality, and environmental alignment are strong.
+The branch (午 Horse = Fire = Useful God) provides a deeply supportive foundation for the decade. The Useful God powers the Day Master from below. Energy, vitality, and environmental alignment are strong.
 
 This stem-branch split means that the *internal experience* of the decade is contradictory. Chart E feels strong and capable (Fire branch supporting Earth Day Master) but anxious and uncertain about money (Water stem challenging the comfort zone).
 
-**Career interpretation:** This decade activates the Output-to-Wealth chain. All the productive capacity built during ages 17-36 — the technical skills, the innovative approaches, the relentless work ethic — now encounters a market willing to pay. But because the Wealth Star is Indirect Wealth (not Direct Wealth), the money comes through **speculative, variable, non-traditional channels**.
+This decade activates the Output-to-Wealth chain. All the productive capacity built during ages 17-36, the technical skills, the innovative approaches, the relentless work ethic, now encounters a market willing to pay. But because the Wealth Star is Indirect Wealth (not Direct Wealth), the money comes through **speculative, variable, non-traditional channels**.
 
 This is not the decade where Chart E gets a big raise at a stable company. This is the decade where Chart E monetizes output through entrepreneurial ventures, consulting, intellectual property, or business ownership. The Indirect Wealth Star rewards those who create value in the market, not those who follow a salary ladder.
 
-**Critical timing insight:** Within this decade, the best years will be those when Annual Fortune reinforces the Fire branch (supporting the Day Master) while adding Wood (Favorable element that feeds Fire). The worst years will be those when Annual Fortune adds more Water to the stem's already-unfavorable Water energy.
+Within this decade, the best years will be those when Annual Fortune reinforces the Fire branch (supporting the Day Master) while adding Wood (Favorable element that feeds Fire). The worst years will be those when Annual Fortune adds more Water to the stem's already-unfavorable Water energy.
 
-**Wealth status:** Active but volatile. Money flows in, but not in a steady stream. Chart E must learn to manage variable income — a skill that does not come naturally to someone with zero natal Wealth Stars. Financial partners or advisors become especially important during this decade.
+The wealth status becomes active but volatile. Money flows in, but not in a steady stream. Chart E must learn to manage variable income, a skill that does not come naturally to someone with zero natal Wealth Stars. Financial partners or advisors become especially important during this decade.
 
 **Age 47-56: 癸未 (Direct Wealth + Rob Wealth)**
 
 The second consecutive Wealth decade. Direct Wealth (癸 Yin Water) in the stem suggests a shift from speculative income to more stable, predictable wealth accumulation.
 
-But 癸 is still Water — still Chart E's Unfavorable element. And the Rob Wealth in the branch (Goat = Earth = Companion) introduces competition for those financial resources. Rob Wealth literally means "someone takes your money." During this decade, Chart E may face business competitors, financial drains from partners or dependents, or situations where accumulated wealth is eroded by external forces.
+But 癸 is still Water, still Chart E's Unfavorable element. And the Rob Wealth in the branch (Goat = Earth = Companion) introduces competition for those financial resources. Rob Wealth literally means "someone takes your money." During this decade, Chart E may face business competitors, financial drains from partners or dependents, or situations where accumulated wealth is eroded by external forces.
 
-The Life Stage indicator is 쇠 (Decline) — energy is descending from its peak. The Day Master's raw vitality is decreasing. This is not the decade for launching bold new ventures. It is the decade for *consolidating and protecting* what was built during ages 37-46.
+The Life Stage indicator is 쇠 (Decline), meaning energy is descending from its peak. The Day Master's raw vitality is decreasing. This is not the decade for launching bold new ventures. It is the decade for *consolidating and protecting* what was built during ages 37-46.
 
-**Career interpretation:** Transition from aggressive growth to defensive management. Chart E should be shifting from front-line production to strategic oversight, from building new things to optimizing existing ones. The Rob Wealth energy means that delegation becomes critical — but also risky, since Rob Wealth partners may not have Chart E's best interests at heart.
+This decade marks the transition from aggressive growth to defensive management. Chart E should be shifting from front-line production to strategic oversight, from building new things to optimizing existing ones. The Rob Wealth energy means that delegation becomes critical but also risky, since Rob Wealth partners may not have Chart E's best interests at heart.
 
-**Wealth status:** Accumulating but threatened. Active wealth management — contracts, legal protections, diversified assets — is more important than ever.
+The wealth status is accumulating but threatened. Active wealth management through contracts, legal protections, and diversified assets is more important than ever.
 
 ### Step 5: Entrepreneurship Assessment
 
-Let us apply the entrepreneurship framework to Chart E:
+Let us apply the entrepreneurship framework to Chart E.
 
-**Strong Entrepreneurship Indicators Present:**
-- Four Eating Gods — extreme output capacity, natural product-maker
-- Pure Yang — decisive, action-oriented, high-intensity tolerance
-- Hurting Officer arriving in age 27-36 — innovative, convention-breaking energy
-- Single Authority Star — low institutional attachment
+The strong entrepreneurship indicators present include four Eating Gods demonstrating extreme output capacity and natural product-making ability, a pure Yang temperament that is decisive, action-oriented, and tolerant of high intensity, the Hurting Officer arriving in ages 27-36 with innovative, convention-breaking energy, and a single Authority Star showing low institutional attachment.
 
-**Missing Pieces for Entrepreneurship:**
-- Zero natal Wealth Stars — no natural financial instinct for pricing, deal-making, or cash flow management
-- Zero natal Wealth awareness — may undervalue output or give away work too cheaply
-- Pure Yang blind spot — may push too hard, miss diplomatic nuances in business relationships
+The missing pieces for entrepreneurship include zero natal Wealth Stars, meaning no natural financial instinct for pricing, deal-making, or cash flow management. Zero natal Wealth awareness may cause Chart E to undervalue output or give away work too cheaply. The pure Yang blind spot may lead to pushing too hard and missing diplomatic nuances in business relationships.
 
-**Entrepreneurship Verdict:** Saju strongly suggests Chart E is an entrepreneur, not an employee. The chart's entire energy structure — output-dominant, authority-light, innovation-capable — points toward independent venture creation.
+Saju strongly suggests Chart E is an entrepreneur, not an employee. The chart's entire energy structure — output-dominant, authority-light, innovation-capable — points toward independent venture creation.
 
-But there is a critical caveat: **Chart E should not try to be a solo entrepreneur.** The zero-Wealth, zero-Authority pattern means the chart produces brilliantly but cannot sell or manage alone. The optimal structure is a partnership where Chart E handles production and innovation while a Wealth-dominant or Authority-dominant partner handles sales, finance, and organizational management.
+But there is a critical caveat. Chart E should not try to be a solo entrepreneur. The zero-Wealth, zero-Authority pattern means the chart produces brilliantly but cannot sell or manage alone. The optimal structure is a partnership where Chart E handles production and innovation while a Wealth-dominant or Authority-dominant partner handles sales, finance, and organizational management.
 
-Think of it as the classic co-founder dynamic: the technical founder (Chart E) paired with the business founder (Wealth-dominant chart). Neither succeeds alone. Together, the Earning Chain completes.
+This is the classic co-founder dynamic. The technical founder (Chart E) pairs with the business founder (Wealth-dominant chart). Neither succeeds alone. Together, the Earning Chain completes.
 
-**Timing the launch:** The Hurting Officer decade (age 27-36) provides the innovative energy and Useful God support for a startup attempt. But without Wealth Stars, the venture may struggle to generate revenue even if the product is excellent. The ideal timing is near the transition into the Wealth decade (age 35-38), when the productive capacity of the Hurting Officer decade meets the incoming financial activation of the Indirect Wealth decade.
+Regarding timing the launch, the Hurting Officer decade (age 27-36) provides the innovative energy and Useful God support for a startup attempt. But without Wealth Stars, the venture may struggle to generate revenue even if the product is excellent. The ideal timing is near the transition into the Wealth decade (age 35-38), when the productive capacity of the Hurting Officer decade meets the incoming financial activation of the Indirect Wealth decade.
 
 ### Step 6: Synthesis — The Career and Wealth Narrative
 
-Putting the complete picture together, Chart E's career and wealth story follows a clear arc:
+Putting the complete picture together, Chart E's career and wealth story follows a clear arc.
 
 **Phase 1: The Builder (Age 17-26)**
 Build skills. Master the craft. Produce relentlessly. Do not worry about money yet — the Wealth mechanism is not active. Focus entirely on becoming exceptionally good at making things.
@@ -467,20 +403,20 @@ Protect and stabilize. Shift from growth to management. Guard against wealth ero
 
 ### Practical Recommendations
 
-Based on this complete analysis, here are the actionable career and wealth guidelines for Chart E:
+Based on this complete analysis, here are the actionable career and wealth guidelines for Chart E.
 
-1. **Career alignment:** Choose fields that reward sustained, visible output — technology, engineering, content production, technical consulting, or manufacturing. Avoid purely administrative or political roles.
+1. For career alignment, choose fields that reward sustained, visible output: technology, engineering, content production, technical consulting, or manufacturing. Avoid purely administrative or political roles.
 
-2. **Wealth strategy:** Accept that wealth will arrive late (first Wealth Star at age 37) and arrive in volatile form (Indirect Wealth). Build output capacity aggressively in the 20s and early 30s, then monetize that capacity when the Wealth decade opens.
+2. For wealth strategy, accept that wealth will arrive late (first Wealth Star at age 37) and in volatile form (Indirect Wealth). Build output capacity aggressively in the 20s and early 30s, then monetize that capacity when the Wealth decade opens.
 
-3. **Partnership structure:** Find a business partner or financial advisor with strong Wealth Stars. Chart E produces; the partner sells and manages. This is not a weakness — it is intelligent division of labor based on chart architecture.
+3. For partnership structure, find a business partner or financial advisor with strong Wealth Stars. Chart E produces while the partner sells and manages. This is not a weakness but intelligent division of labor based on chart architecture.
 
-4. **Timing awareness:** The age 35-38 window, where the Hurting Officer decade transitions to the Indirect Wealth decade, is the critical career inflection point. Major career moves — launching a business, changing industries, seeking major financial commitments — should be concentrated in this window.
+4. For timing awareness, the age 35-38 window where the Hurting Officer decade transitions to the Indirect Wealth decade is the critical career inflection point. Major career moves such as launching a business, changing industries, or seeking major financial commitments should be concentrated in this window.
 
-5. **Yang management:** Develop deliberate Yin practices — patience, listening, rest, reflection — to counterbalance the pure Yang tendency toward relentless action. Burnout is the greatest threat to a chart that does not know how to stop producing.
+5. For Yang management, develop deliberate Yin practices such as patience, listening, rest, and reflection to counterbalance the pure Yang tendency toward relentless action. Burnout is the greatest threat to a chart that does not know how to stop producing.
 
-6. **The big picture:** Chart E's life is the story of a mountain (Yang Earth) that produces metal endlessly (four Eating Gods) and eventually learns to sell what it makes (Wealth decades arriving in late 30s). The production was never the problem. The monetization was always the challenge. And the fortune cycles, in their own time, deliver exactly what the natal chart lacks.
+6. The big picture is that Chart E's life is the story of a mountain (Yang Earth) that produces metal endlessly (four Eating Gods) and eventually learns to sell what it makes (Wealth decades arriving in late 30s). The production was never the problem. The monetization was always the challenge. And the fortune cycles, in their own time, deliver exactly what the natal chart lacks.
 
 ---
 
-This is the power of career and wealth reading in Saju. It does not tell a person *what* to do — it reveals the natural energy structure that makes certain paths feel effortless and others feel like swimming upstream. The chart does not determine destiny. It illuminates the terrain, so the person can choose their route with eyes wide open.
+This is the power of career and wealth reading in Saju. It does not tell a person what to do. It reveals the natural energy structure that makes certain paths feel effortless and others feel like swimming upstream. The chart does not determine destiny. It illuminates the terrain, so the person can choose their route with eyes wide open.

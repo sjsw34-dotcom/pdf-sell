@@ -28,7 +28,7 @@ The **Twelve Life Stages** — known as *Sibi Unseong* (십이운성 十二運�
 
 Here is a critical point before we go further: these stages are *not* literal predictions. A "Death" stage in your chart does not mean death. A "Sickness" stage does not mean illness. These are descriptions of how *strong or active* the Day Master's energy is within a particular pillar. "Death" means the energy has fully withdrawn — like a battery that has discharged and is ready to be recharged. Nothing more.
 
-The twelve stages, in order:
+The twelve stages, in order.
 
 | Stage | Romanization | Korean + Hanja | Energy State |
 |---|---|---|---|
@@ -47,6 +47,8 @@ The twelve stages, in order:
 
 After Nurture, the cycle returns to Birth, and the loop continues forever.
 
+:::diagram life-stages-wheel
+
 ### Not Good or Bad — Just Strong or Quiet
 
 One of the most common mistakes beginners make is treating the early stages (Birth through Peak) as "good" and the later stages (Decline through Extinction) as "bad." This misses the point entirely.
@@ -57,13 +59,13 @@ The Life Stages are a description of energy phase, not energy quality.
 
 ## 16.2 The Complete Cycle: Birth to Rebirth
 
-Let us see how this works in an actual chart. Here is Chart D, a female born in 1975 with a Yang Water Day Master:
+Let us see how this works in an actual chart. Here is Chart D, a female born in 1975 with a Yang Water Day Master.
 
 :::saju-chart Chart D (born 1975, female)
 [{"position":"Hour","stem":"辛","stemElement":"Yin Metal","stemGod":"Ind. Seal","branch":"丑","branchAnimal":"Ox","branchGod":"Dir. Officer"},{"position":"Day","stem":"壬","stemElement":"Yang Water","stemGod":"Day Master","branch":"寅","branchAnimal":"Tiger","branchGod":"Eating God"},{"position":"Month","stem":"壬","stemElement":"Yang Water","stemGod":"Friend","branch":"午","branchAnimal":"Horse","branchGod":"Dir. Wealth"},{"position":"Year","stem":"乙","stemElement":"Yin Wood","stemGod":"Hurting Officer","branch":"卯","branchAnimal":"Rabbit","branchGod":"Hurting Officer"}]
 :::
 
-Chart D's Day Master is 壬 Yang Water. To determine the Life Stage for each pillar, we look at how the Day Master's energy behaves in each Earthly Branch. The traditional method assigns a stage based on the relationship between the Day Master element and the branch:
+Chart D's Day Master is 壬 Yang Water. To determine the Life Stage for each pillar, we look at how the Day Master's energy behaves in each Earthly Branch. The traditional method assigns a stage based on the relationship between the Day Master element and the branch.
 
 | Pillar | Branch | Life Stage | Energy Reading |
 |---|---|---|---|
@@ -78,7 +80,7 @@ What does this combination tell us? Chart D does not carry a single Birth, Crown
 
 Does this mean Chart D is destined for a weak or difficult life? Not at all. It means her energy operates differently from someone whose chart is loaded with Peak and Prime stages. Her power is *internal*. It is the power of depth, patience, and regeneration.
 
-Consider the Month Pillar — the pillar governing career and social life — which carries the Conception stage. This Saju suggests that Chart D's professional life does not arrive fully formed. It is conceived slowly, nurtured over time, and eventually born into something real. People with Conception in the Month Pillar often feel like late bloomers professionally, but what they build tends to be deeply rooted because it grew organically rather than being forced.
+The Month Pillar governs career and social life, and it carries the Conception stage. This placement suggests that Chart D's professional life does not arrive fully formed. It is conceived slowly, nurtured over time, and eventually born into something real. People with Conception in the Month Pillar often feel like late bloomers professionally, but what they build tends to be deeply rooted because it grew organically rather than being forced.
 
 The Year Pillar carries Death — which, remember, is not literal. It describes the energy of her early life environment and ancestral influence as being in a "fully spent" phase. This can manifest as a childhood that felt quiet, contained, or disconnected from external support. The energy was resting, not absent. It was preparing for the next cycle.
 
@@ -100,4 +102,4 @@ This layering — Ten Gods for *what*, Life Stages for *how actively* — is wha
 
 The Twelve Life Stages are a twelve-phase cycle describing how energy is born, strengthens, peaks, declines, rests, and is reborn. Every pillar in your chart carries a Life Stage assignment that reveals how actively your Day Master's energy operates in that life domain. The stages are not judgments — they are descriptions of phase. Decline is not failure. Death is not ending. Tomb is not burial. They are simply the quieter half of an endless cycle, the winter that makes the next spring possible.
 
-In the next chapter, we will zoom out from the birth chart and look at the ten-year Grand Fortune cycles — the large-scale timing mechanism that explains why the same person can experience dramatically different decades.
+In the next chapter, we will explore each of the twelve stages in detail — their metaphors, their energy levels, and how they manifest in real life when they appear in different pillars of a chart.

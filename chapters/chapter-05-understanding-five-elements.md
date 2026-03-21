@@ -32,7 +32,7 @@ Think of them as the five acts of a universal cycle: something is born (Wood), r
 
 ### Why Five?
 
-Ancient Chinese philosophers observed that every transformation in nature could be described through five fundamental dynamics. This is not arbitrary — it emerges from watching the world:
+Ancient Chinese philosophers observed that every transformation in nature could be described through five fundamental dynamics. This is not arbitrary. It emerges from watching the world.
 
 - A seed pushes through soil and grows upward → **Wood**
 - Heat rises, flames spread, light illuminates → **Fire**
@@ -120,7 +120,7 @@ In Chart B, Chart B's owner has 子 (Rat, Water) in her Year Branch — a source
 
 ## The Element Correspondence System
 
-The Five Elements do not exist in isolation — they map to virtually every aspect of human experience. Korean Saju masters use these correspondences as interpretive tools:
+The Five Elements do not exist in isolation. They map to virtually every aspect of human experience, and Korean Saju masters use these correspondences as interpretive tools.
 
 | Category | Wood | Fire | Earth | Metal | Water |
 |---|---|---|---|---|---|
@@ -131,7 +131,9 @@ The Five Elements do not exist in isolation — they map to virtually every aspe
 | **Organ (Yang)** | Gallbladder | Small Intestine | Stomach | Large Intestine | Bladder |
 | **Emotion** | Anger | Joy | Worry | Grief | Fear |
 | **Taste** | Sour | Bitter | Sweet | Spicy | Salty |
-| **Sense** | Sight | Touch | Taste | Smell | Hearing |
+| **Sense** | Sight | Taste | Touch | Smell | Hearing |
+
+:::diagram element-correspondence
 
 These correspondences are not arbitrary — they are derived from centuries of observation in traditional Korean and Chinese medicine. When a Saju master says "you have too much Fire," they mean more than just personality traits. It can suggest tendencies toward heart-related health issues, a predisposition to excessive joy that becomes mania, or a life pattern oriented toward the South.
 
@@ -139,19 +141,19 @@ We will explore the health implications in detail in Chapter 25 (Health Reading)
 
 ## Reading Element Balance in a Chart
 
-The distribution of elements in your chart is one of the first things a Saju master examines. A balanced chart — with reasonable representation of all five elements — suggests a versatile person who can adapt to various situations. An imbalanced chart — with heavy concentrations or total absences — creates both distinctive strengths and specific vulnerabilities.
+The distribution of elements in your chart is one of the first things a Saju master examines. A balanced chart, with reasonable representation of all five elements, suggests a versatile person who can adapt to various situations. An imbalanced chart, with heavy concentrations or total absences, creates both distinctive strengths and specific vulnerabilities.
 
 ### How to Count Elements
 
-To assess your element balance, count the elements in both the Heavenly Stems and the main elements of the Earthly Branches:
+To assess your element balance, count the elements in both the Heavenly Stems and the main elements of the Earthly Branches.
 
-Using **Chart B** (Chart B's owner, 1996) as an example:
+Using Chart B (Chart B's owner, 1996) as an example.
 
-**Heavenly Stems:** 丁 (Fire) + 乙 (Wood) + 丙 (Fire) + 丙 (Fire) = Wood 1, Fire 3
+The Heavenly Stems are 丁 (Fire) + 乙 (Wood) + 丙 (Fire) + 丙 (Fire) = Wood 1, Fire 3.
 
-**Earthly Branches (main element):** 丑 (Earth) + 未 (Earth) + 申 (Metal) + 子 (Water) = Earth 2, Metal 1, Water 1
+The Earthly Branches (main element) are 丑 (Earth) + 未 (Earth) + 申 (Metal) + 子 (Water) = Earth 2, Metal 1, Water 1.
 
-**Combined count:**
+The combined count looks like this.
 
 | Element | Count | Percentage |
 |---|---|---|
@@ -161,45 +163,41 @@ Using **Chart B** (Chart B's owner, 1996) as an example:
 | Metal | 1 | 12.5% |
 | Water | 1 | 12.5% |
 
-This confirms what we observed in Chapter 4: Chart B's owner's chart is Fire-dominant with Wood as the weakest visible element — a creative, expressive person whose own identity (Wood) is overshadowed by the energy she produces (Fire).
+This confirms what we observed in Chapter 4. Chart B's owner's chart is Fire-dominant with Wood as the weakest visible element, making her a creative, expressive person whose own identity (Wood) is overshadowed by the energy she produces (Fire).
 
 ### What Extreme Imbalances Mean
 
-When an element is completely absent or overwhelmingly dominant, it creates a distinctive life pattern:
+When an element is completely absent or overwhelmingly dominant, it creates a distinctive life pattern.
 
-**Missing elements** do not mean you lack that quality entirely. Instead, you tend to seek it externally — through relationships, career choices, and environments. A chart with no Water (like Chart E, which we will meet shortly) often produces someone who is drawn to Water-associated qualities: wisdom, flexibility, depth. The absence creates a longing.
+A missing element does not mean you lack that quality entirely. Instead, you tend to seek it externally, through relationships, career choices, and environments. A chart with no Water (like Chart E, which we will meet shortly) often produces someone who is drawn to Water-associated qualities such as wisdom, flexibility, and depth. The absence creates a longing.
 
-**Dominant elements** define your primary mode of operating. A chart dominated by Fire produces someone who leads with expression, visibility, and transformation. The challenge is managing excess — too much Fire can mean burnout, impulsiveness, or an inability to sit still.
+A dominant element defines your primary mode of operating. A chart dominated by Fire produces someone who leads with expression, visibility, and transformation. The challenge is managing excess. Too much Fire can mean burnout, impulsiveness, or an inability to sit still.
 
 ### Case Study: Chart E — Extreme Element Imbalance
 
-To illustrate extreme imbalance, let us examine **Chart E** — a man born in 1990. His Day Master is Yang Earth (戊), and his chart is one of the most extreme distributions you will encounter:
+To illustrate extreme imbalance, let us examine Chart E, a man born in 1990. His Day Master is Yang Earth (戊), and his chart is one of the most extreme distributions you will encounter.
 
 :::saju-chart Chart E (born 1990)
 [{"position":"Hour","stem":"庚","stemElement":"Yang Metal","stemGod":"Eating God","branch":"申","branchAnimal":"Monkey","branchGod":"Eating God"},{"position":"Day","stem":"戊","stemElement":"Yang Earth","stemGod":"Day Master","branch":"申","branchAnimal":"Monkey","branchGod":"Eating God"},{"position":"Month","stem":"戊","stemElement":"Yang Earth","stemGod":"Friend","branch":"寅","branchAnimal":"Tiger","branchGod":"Ind. Officer"},{"position":"Year","stem":"庚","stemElement":"Yang Metal","stemGod":"Eating God","branch":"午","branchAnimal":"Horse","branchGod":"Ind. Seal"}]
 :::
 
-**Element count:**
+The element count tells the story.
 
 | Element | Count | Notes |
 |---|---|---|
-| Wood | 1 | 寅 (Tiger) only — minimal presence |
-| Fire | 1 | 午 (Horse) only — minimal presence |
+| Wood | 1 | 寅 (Tiger) only, minimal presence |
+| Fire | 1 | 午 (Horse) only, minimal presence |
 | Earth | 2 | 戊 × 2 in stems |
-| Metal | 4 | 庚 × 2 + 申 × 2 — overwhelmingly dominant |
+| Metal | 4 | 庚 × 2 + 申 × 2, overwhelmingly dominant |
 | Water | 0 | Completely absent |
 
-**Yin-Yang:** Yang 8, Yin 0 — every single element in this chart is Yang.
+The Yin-Yang balance is equally extreme: Yang 8, Yin 0. Every single element in this chart is Yang.
 
-This is extraordinary. Chart E has:
-- **No Water at all** — the element of wisdom, adaptability, and emotional depth is entirely absent
-- **Pure Yang energy** — no Yin balance whatsoever, making him extremely direct, forceful, and action-oriented
-- **Metal dominance (4 out of 8)** — half the chart is Metal, creating massive output energy (Earth produces Metal = Eating God)
-- **Minimal Wood and Fire** — only one each, tucked away in branches
+This is extraordinary. Chart E has no Water at all, meaning the element of wisdom, adaptability, and emotional depth is entirely absent. It has pure Yang energy with no Yin balance whatsoever, making him extremely direct, forceful, and action-oriented. Metal dominates at four out of eight positions, creating massive output energy since Earth produces Metal (the Eating God relationship). Wood and Fire are minimal, with only one each tucked away in branches.
 
-A person with this chart is a force of nature — powerful, productive, and relentlessly outward-directed. The Metal dominance means he channels his Earth energy into constant output — ideas, projects, productivity. But the absence of Water creates a significant blind spot: difficulty with emotional depth, struggles with flexibility, and a tendency to push forward without pausing to reflect.
+A person with this chart is a force of nature, powerful, productive, and relentlessly outward-directed. The Metal dominance means he channels his Earth energy into constant output: ideas, projects, productivity. But the absence of Water creates a significant blind spot. He struggles with emotional depth and flexibility, and tends to push forward without pausing to reflect.
 
-His Useful God is **Fire** — because Fire produces Earth (strengthening the Day Master) and also controls the excessive Metal (keeping it in check). Fire is the balancing force this chart desperately needs.
+His Useful God is Fire, because Fire produces Earth (strengthening the Day Master) and also controls the excessive Metal (keeping it in check). Fire is the balancing force this chart desperately needs.
 
 > A chart with extreme imbalance is not a curse — it is a specialization. Chart E is not designed to be well-rounded. He is designed to be a mountain with a forge: immovable and endlessly productive.
 
@@ -207,7 +205,7 @@ His Useful God is **Fire** — because Fire produces Earth (strengthening the Da
 
 Understanding the Five Elements prepares you for the most important concept in all of Saju: the *relationship* between each element and your Day Master. In the next chapter, we will explore the Productive Cycle (how elements feed each other) and the Controlling Cycle (how elements restrain each other). These two cycles are the engine that drives every interpretation in this book.
 
-But before we move on, here is a preview of what those relationships mean for your Day Master:
+But before we move on, here is a preview of what those relationships mean for your Day Master.
 
 | If your Day Master is... | Same element = Companions | Produces = Output | Controls = Wealth | Controlled by = Authority | Produced by = Resources |
 |---|---|---|---|---|---|

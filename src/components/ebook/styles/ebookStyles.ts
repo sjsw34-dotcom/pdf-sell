@@ -33,7 +33,7 @@ export const ebookStyles = StyleSheet.create({
   },
   h2: {
     fontFamily: FONT_TITLE,
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: 'bold',
     marginBottom: 8,
     marginTop: 16,
@@ -55,7 +55,7 @@ export const ebookStyles = StyleSheet.create({
   // ─── 본문 ───
   body: {
     fontFamily: FONT_BODY,
-    fontSize: 10.5,
+    fontSize: 11,
     lineHeight: 1.7,
     marginBottom: 8,
     letterSpacing: ANTI_LIGATURE,
@@ -63,7 +63,7 @@ export const ebookStyles = StyleSheet.create({
   },
   bodySmall: {
     fontFamily: FONT_BODY,
-    fontSize: 9.5,
+    fontSize: 10,
     lineHeight: 1.6,
     marginBottom: 6,
     letterSpacing: ANTI_LIGATURE,
@@ -82,7 +82,7 @@ export const ebookStyles = StyleSheet.create({
   },
   calloutText: {
     fontFamily: FONT_BODY,
-    fontSize: 10,
+    fontSize: 10.5,
     lineHeight: 1.6,
     color: '#4A4A6A',
     letterSpacing: ANTI_LIGATURE,
@@ -115,7 +115,7 @@ export const ebookStyles = StyleSheet.create({
   },
   cjkInline: {
     fontFamily: FONT_CJK,
-    fontSize: 10.5,
+    fontSize: 11,
     color: '#555555',
   },
 
