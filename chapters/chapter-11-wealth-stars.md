@@ -97,7 +97,7 @@ But the Day Master cannot carry it. Remember from Chapter 7 that the Yin Water D
 
 The result is a paradox. Wealth-dominant charts do not automatically create wealthy people. They create people who are obsessed with or surrounded by wealth themes. Money is always present in their awareness, whether they have it or not. When the Day Master is strong enough to control, prosperity follows. When it is too weak, the Wealth Stars become a source of stress, always chasing, never holding.
 
-Timing matters. When fortune cycles bring Water (용신) or Metal (희신) to strengthen the Day Master, Chart C's owner suddenly gains the capacity to control the Wealth. These periods feel like breakthroughs, bringing promotions, windfalls, or deals that finally materialize. When fortune cycles bring more Fire or Earth, the gap between desire and capacity widens.
+Timing matters. When fortune cycles bring Water (용신) or Metal (희신) to strengthen the Day Master, Chart C's Day Master suddenly gains the capacity to control the Wealth. These periods feel like breakthroughs, bringing promotions, windfalls, or deals that finally materialize. When fortune cycles bring more Fire or Earth, the gap between desire and capacity widens.
 
 ### The Direct Wealth Concentration
 

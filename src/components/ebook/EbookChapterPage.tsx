@@ -2,15 +2,8 @@ import React from 'react';
 import { Page, View, Text, StyleSheet } from '@react-pdf/renderer';
 import { ebookStyles, FONT_BODY, FONT_TITLE, FONT_CJK, ANTI_LIGATURE, EBOOK_PAGE_SIZE, fixLigatures } from './styles/ebookStyles';
 import { EbookPageFooter } from './EbookPageFooter';
-import { EbookFiveElementsCycle } from './diagrams/EbookFiveElementsCycle';
-import { EbookLifeStagesWheel } from './diagrams/EbookLifeStagesWheel';
-import { EbookTenGodsFlowchart } from './diagrams/EbookTenGodsFlowchart';
-import { EbookGrandFortuneTimeline } from './diagrams/EbookGrandFortuneTimeline';
-import { EbookSevenStepFramework } from './diagrams/EbookSevenStepFramework';
-import { EbookElementCorrespondence } from './diagrams/EbookElementCorrespondence';
-import { EbookTenGodsDistribution } from './diagrams/EbookTenGodsDistribution';
-import { EbookHealthElementMap } from './diagrams/EbookHealthElementMap';
-import { EbookCompatibilityMatrix } from './diagrams/EbookCompatibilityMatrix';
+// 다이어그램 컴포넌트 — react-pdf SVG/절대위치 렌더링 한계로 비활성화
+// 향후 이미지 기반 다이어그램으로 교체 시 다시 활성화
 
 interface EbookChapterPageProps {
   chapterNumber: number;
@@ -47,6 +40,13 @@ function parseContent(text: string): ContentBlock[] {
 
     // 빈 줄 → 단락 구분
     if (trimmed === '') {
+      flushParagraph();
+      i++;
+      continue;
+    }
+
+    // 수평선 (---) → 스킵
+    if (trimmed === '---' || trimmed === '***' || trimmed === '___') {
       flushParagraph();
       i++;
       continue;
@@ -160,30 +160,9 @@ type ContentBlock =
   | { type: 'table'; headers: string[]; rows: string[][] }
   | { type: 'code'; text: string };
 
-/** 다이어그램 렌더링 */
-function renderDiagram(type: string, key: number) {
-  switch (type) {
-    case 'five-elements-cycle':
-      return <EbookFiveElementsCycle key={key} />;
-    case 'life-stages-wheel':
-      return <EbookLifeStagesWheel key={key} />;
-    case 'ten-gods-flowchart':
-      return <EbookTenGodsFlowchart key={key} />;
-    case 'grand-fortune-timeline':
-      return <EbookGrandFortuneTimeline key={key} />;
-    case 'seven-step-framework':
-      return <EbookSevenStepFramework key={key} />;
-    case 'element-correspondence':
-      return <EbookElementCorrespondence key={key} />;
-    case 'ten-gods-distribution':
-      return <EbookTenGodsDistribution key={key} />;
-    case 'health-element-map':
-      return <EbookHealthElementMap key={key} />;
-    case 'compatibility-matrix':
-      return <EbookCompatibilityMatrix key={key} />;
-    default:
-      return null;
-  }
+/** 다이어그램 렌더링 — react-pdf SVG/절대위치 렌더링 한계로 비활성화 */
+function renderDiagram(_type: string, _key: number) {
+  return null;
 }
 
 /** 마크다운 서식 제거 (bold/italic) */
@@ -192,6 +171,7 @@ function stripInline(text: string): string {
     text
       .replace(/\*\*(.*?)\*\*/g, '$1')
       .replace(/\*(.*?)\*/g, '$1')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
   );
 }
 
@@ -238,34 +218,59 @@ export function EbookChapterPage({
               );
             case 'bullet':
               return (
-                <View key={idx} style={s.bulletRow}>
+                <View key={idx} style={s.bulletRow} wrap={false}>
                   <Text style={s.bulletDot}>•</Text>
                   <Text style={[ebookStyles.body, s.bulletText]}>{stripInline(block.text)}</Text>
                 </View>
               );
-            case 'table':
+            case 'table': {
+              // 컬럼 수에 따라 폰트/패딩 자동 스케일링
+              const colCount = block.headers.length;
+              const cellFs = colCount <= 4 ? 8 : colCount <= 5 ? 7 : colCount <= 7 ? 6.5 : 6;
+              const headerFs = colCount <= 4 ? 8 : colCount <= 5 ? 7.5 : colCount <= 7 ? 7 : 6.5;
+              const padH = colCount <= 4 ? 4 : colCount <= 5 ? 3 : colCount <= 7 ? 2 : 1.5;
+              const padV = colCount <= 4 ? 4 : colCount <= 5 ? 3 : 2.5;
+              const lh = colCount <= 4 ? 1.3 : 1.2;
+              const allowWrap = block.rows.length >= 7;
+
+              // 컬럼별 평균 텍스트 길이 계산 → flex 비율 & 정렬 결정
+              const colAvgLen = block.headers.map((h, ci) => {
+                const lengths = block.rows.map(r => (r[ci] || '').length);
+                return lengths.reduce((a, b) => a + b, 0) / (lengths.length || 1);
+              });
+              const colMaxLen = block.headers.map((h, ci) => {
+                const lengths = block.rows.map(r => (r[ci] || '').length);
+                return Math.max(h.length, ...lengths);
+              });
+              // flex 비율: maxLen 기반, 최소 1 최대 4
+              const totalMax = colMaxLen.reduce((a, b) => a + b, 0) || 1;
+              const colFlex = colMaxLen.map(m => Math.max(1, Math.min(4, (m / totalMax) * colCount * 1.5)));
+              // 정렬: 평균 길이 20자 이하면 center, 그 이상이면 left
+              const colAlign = colAvgLen.map(avg => avg <= 20 ? 'center' as const : 'left' as const);
+
               return (
-                <View key={idx} style={s.tableWrap} wrap={false}>
+                <View key={idx} style={s.tableWrap} wrap={allowWrap}>
                   {/* 헤더 행 */}
-                  <View style={s.tableHeaderRow}>
+                  <View style={[s.tableHeaderRow, { paddingHorizontal: padH }]}>
                     {block.headers.map((h, hi) => (
-                      <View key={hi} style={[s.tableHeaderCell, { flex: 1 }]}>
-                        <Text style={s.tableHeaderText}>{stripInline(h)}</Text>
+                      <View key={hi} style={[s.tableHeaderCell, { flex: colFlex[hi], paddingHorizontal: padH }]}>
+                        <Text style={[s.tableHeaderText, { fontSize: headerFs }]}>{stripInline(h)}</Text>
                       </View>
                     ))}
                   </View>
                   {/* 데이터 행 */}
                   {block.rows.map((row, ri) => (
-                    <View key={ri} style={[s.tableRow, ri % 2 === 1 ? s.tableRowAlt : {}]}>
+                    <View key={ri} style={[s.tableRow, ri % 2 === 1 ? s.tableRowAlt : {}, { paddingVertical: padV, paddingHorizontal: padH }]}>
                       {row.map((cell, ci) => (
-                        <View key={ci} style={[s.tableCell, { flex: 1 }]}>
-                          <Text style={s.tableCellText}>{stripInline(cell)}</Text>
+                        <View key={ci} style={[s.tableCell, { flex: colFlex[ci], paddingHorizontal: padH, overflow: 'hidden' }]}>
+                          <Text style={[s.tableCellText, { fontSize: cellFs, lineHeight: lh, textAlign: colAlign[ci] }]}>{stripInline(cell)}</Text>
                         </View>
                       ))}
                     </View>
                   ))}
                 </View>
               );
+            }
             case 'code':
               return (
                 <View key={idx} style={s.codeBlock} wrap={false}>

@@ -124,7 +124,7 @@ One Companion, the 戊 (Yang Earth) in the Month Stem. This is the Friend, stand
 - Enough reinforcement to prevent total isolation, but not enough for comfort
 - The Day Master is still classified as extremely weak despite this Companion, because the four Eating God elements drain faster than one Friend can replenish
 
-The contrast with Chart B is instructive. Even one Companion changes the experience. Chart E's owner has someone, one person, one ally, one mirror, while Chart B's owner has no one. In qualitative terms, one Friend is the difference between "struggling alone" and "struggling with a partner."
+The contrast with Chart B is instructive. Even one Companion changes the experience. Chart E has someone — one person, one ally, one mirror — while Chart B has no one. In qualitative terms, one Friend is the difference between "struggling alone" and "struggling with a partner."
 
 ## New Sample: Companion-Rich Chart
 

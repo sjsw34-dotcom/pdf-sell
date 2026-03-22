@@ -243,4 +243,4 @@ The Four Pillars were set at the moment of your birth. But what you build on the
 
 ---
 
-Your journey into Korean Saju starts here. Want a certified master to read YOUR chart? Get your personalized 60+ page Premium Report at [sajumuse.com/order](https://sajumuse.com/order).
+Your journey into Korean Saju starts here. Want a certified master to read YOUR chart? Get your personalized 60+ page Premium Report at sajumuse.com/order.

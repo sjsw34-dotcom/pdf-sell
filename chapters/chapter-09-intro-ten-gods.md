@@ -112,7 +112,7 @@ Summary count.
 | Indirect Officer | 0 | No unconventional authority |
 | Direct Seal | 0 | No formal mentorship |
 
-This distribution tells us three things immediately. The chart is output-dominant (Eating God + Hurting Officer = 3), meaning Chart B's owner is a natural creator whose ideas, expression, and talent flow outward constantly. There are no companions (Friend + Rob Wealth = 0), which translates to a feeling of standing alone and lacking peer support. Wealth is present but only in its indirect form, so money comes through unconventional or speculative paths rather than steady accumulation.
+This distribution tells us three things immediately. The chart is output-dominant (Eating God + Hurting Officer = 3), meaning she is a natural creator whose ideas, expression, and talent flow outward constantly. There are no companions (Friend + Rob Wealth = 0), which translates to a feeling of standing alone and lacking peer support. Wealth is present but only in its indirect form, so money comes through unconventional or speculative paths rather than steady accumulation.
 
 This is the power of the Ten Gods. It translates abstract elemental counts into specific life themes.
 

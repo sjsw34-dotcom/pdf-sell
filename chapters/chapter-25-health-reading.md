@@ -155,18 +155,6 @@ Now let us apply everything from this chapter to a complete health reading. We w
 
 Chart C belongs to a woman born in 1989. Her Day Master is **Yin Water** (癸 *Gye*) — the gentle, persistent energy of mist, dew, and rain. Let us begin by looking at her natal chart.
 
-```
-┌──────────┬──────────┬──────────┬──────────┐
-│  Hour    │   Day    │  Month   │   Year   │
-├──────────┼──────────┼──────────┼──────────┤
-│ 丙 Yang Fire│ 癸 Yin Water│ 己 Yin Earth│ 己 Yin Earth│
-│(Dir.Wealth)│(Day Master)│(Ind.Officer)│(Ind.Officer)│
-├──────────┼──────────┼──────────┼──────────┤
-│ 辰 Dragon │ 巳 Snake  │ 巳 Snake  │ 巳 Snake  │
-│(Dir.Officer)│(Dir.Wealth)│(Dir.Wealth)│(Dir.Wealth)│
-└──────────┴──────────┴──────────┴──────────┘
-```
-
 :::saju-chart Chart C (born 1989, female)
 [{"position":"Hour","stem":"丙","stemElement":"Yang Fire","stemGod":"Dir. Wealth","branch":"辰","branchAnimal":"Dragon","branchGod":"Dir. Officer"},{"position":"Day","stem":"癸","stemElement":"Yin Water","stemGod":"Day Master","branch":"巳","branchAnimal":"Snake","branchGod":"Dir. Wealth"},{"position":"Month","stem":"己","stemElement":"Yin Earth","stemGod":"Ind. Officer","branch":"巳","branchAnimal":"Snake","branchGod":"Dir. Wealth"},{"position":"Year","stem":"己","stemElement":"Yin Earth","stemGod":"Ind. Officer","branch":"巳","branchAnimal":"Snake","branchGod":"Dir. Wealth"}]
 :::

@@ -60,7 +60,7 @@ Yin Wood grows sideways, wrapping around whatever is available. It is the force 
 
 Yin Wood is weaker individually but nearly impossible to kill. Cut a vine and it grows back from the roots. People with prominent Yin Wood energy are survivors — they find a way through obstacles rather than trying to break them.
 
-As we saw in Chapter 4, both Chart A (Chart A's owner) and Chart B (Chart B's owner) have Yin Wood Day Masters — but their surrounding elements create vastly different life experiences.
+As we saw in Chapter 4, both Chart A and Chart B have Yin Wood Day Masters — but their surrounding elements create vastly different life experiences.
 
 ### Fire: Transformation Energy
 
@@ -74,7 +74,7 @@ The sun does not choose who to warm — it gives to everyone. This makes Yang Fi
 
 Yin Fire is focused and intimate. It lights only what is close — the page of a book, the face of a loved one, the detail that everyone else missed. In a person, Yin Fire manifests as perception, intensity, and emotional depth.
 
-In Chart B, Chart B's owner has 丁 (Yin Fire) in her Hour Pillar — the candle flame that represents her creative focus and her intimate aspirations for the future. Combined with the 丙 (Yang Fire) in her Month and Year Pillars, it creates someone with both broad warmth and focused intensity.
+In Chart B, the Day Master's owner has 丁 (Yin Fire) in her Hour Pillar — the candle flame that represents her creative focus and her intimate aspirations for the future. Combined with the 丙 (Yang Fire) in her Month and Year Pillars, it creates someone with both broad warmth and focused intensity.
 
 ### Earth: Stabilizing Energy
 
@@ -96,7 +96,7 @@ Garden soil is humble but essential. Nothing grows without it. Yin Earth people 
 
 Yang Metal is the force that cuts, separates, and decides. It is the axe that fells the tree, the blade that divides right from wrong, the chisel that sculpts raw stone into form. In a person, Yang Metal manifests as decisiveness, courage, and a sharp sense of justice.
 
-Remember from Chapter 4 that Metal controls Wood — the axe chops the tree. In Chart A, Chart A's owner's chart contains both 庚 (Yang Metal) and 辛 (Yin Metal) pressing down on her Yin Wood Day Master. This Metal pressure shaped her life as constant authority and external demands.
+Remember from Chapter 4 that Metal controls Wood — the axe chops the tree. In Chart A, the chart contains both 庚 (Yang Metal) and 辛 (Yin Metal) pressing down on her Yin Wood Day Master. This Metal pressure shaped her life as constant authority and external demands.
 
 **Yin Metal 辛 (Sin) — The Jewel**
 
@@ -116,7 +116,7 @@ Yang Water people operate on a grand scale. They are strategists, philosophers, 
 
 Yin Water nourishes quietly. It is the morning dew that feeds the roots, the gentle rain that makes the garden bloom, the underground spring that sustains life invisibly. In a person, Yin Water manifests as intuition, empathy, and a profound inner life.
 
-In Chart B, Chart B's owner has 子 (Rat, Water) in her Year Branch — a source of Yin Water nourishment for her Wood Day Master. This single Water element is her lifeline, the resource that keeps her from being entirely consumed by the Fire that dominates her chart.
+In Chart B, the chart has 子 (Rat, Water) in her Year Branch — a source of Yin Water nourishment for her Wood Day Master. This single Water element is her lifeline, the resource that keeps her from being entirely consumed by the Fire that dominates her chart.
 
 ## The Element Correspondence System
 
@@ -147,7 +147,7 @@ The distribution of elements in your chart is one of the first things a Saju mas
 
 To assess your element balance, count the elements in both the Heavenly Stems and the main elements of the Earthly Branches.
 
-Using Chart B (Chart B's owner, 1996) as an example.
+Using Chart B (female, born 1996) as an example.
 
 The Heavenly Stems are 丁 (Fire) + 乙 (Wood) + 丙 (Fire) + 丙 (Fire) = Wood 1, Fire 3.
 
@@ -163,7 +163,7 @@ The combined count looks like this.
 | Metal | 1 | 12.5% |
 | Water | 1 | 12.5% |
 
-This confirms what we observed in Chapter 4. Chart B's owner's chart is Fire-dominant with Wood as the weakest visible element, making her a creative, expressive person whose own identity (Wood) is overshadowed by the energy she produces (Fire).
+This confirms what we observed in Chapter 4. Chart B is Fire-dominant with Wood as the weakest visible element, making her a creative, expressive person whose own identity (Wood) is overshadowed by the energy she produces (Fire).
 
 ### What Extreme Imbalances Mean
 

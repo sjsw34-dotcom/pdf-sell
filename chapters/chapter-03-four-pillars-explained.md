@@ -49,7 +49,7 @@ However, the interpretation always centers on the Day Pillar and radiates outwar
 
 The **Heavenly Stems**, known as *Cheongan* (천간 天干), are the ten characters that sit on top of each pillar. They represent the pure, visible expression of the Five Elements, each split into Yang and Yin.
 
-| # | Hanja | Romanization | Element | Polarity | Image |
+| No. | Hanja | Romanization | Element | Polarity | Image |
 |---|---|---|---|---|---|
 | 1 | 甲 | Gap | Wood | Yang | The tall tree — upright, ambitious, pioneering |
 | 2 | 乙 | Eul | Wood | Yin | The vine — flexible, diplomatic, adaptive |
@@ -72,7 +72,7 @@ Looking at Chart B, we can see four Heavenly Stems: 丁 (Yin Fire), 乙 (Yin Woo
 
 The **Earthly Branches**, known as *Jiji* (지지 地支), are the twelve characters that sit on the bottom of each pillar. While the Heavenly Stems are pure and singular, the Earthly Branches are complex. Each one is associated with an animal, an element, and a set of **Hidden Stems**, known as *Jijangang* (지장간 地藏干), tucked away inside.
 
-| # | Hanja | Romanization | Animal | Main Element | Polarity |
+| No. | Hanja | Romanization | Animal | Main Element | Polarity |
 |---|---|---|---|---|---|
 | 1 | 子 | Ja | Rat | Water | Yang |
 | 2 | 丑 | Chuk | Ox | Earth | Yin |

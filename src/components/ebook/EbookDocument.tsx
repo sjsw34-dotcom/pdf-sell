@@ -7,6 +7,7 @@ import { EbookTocPage } from './EbookTocPage';
 import { EbookPartHeader } from './EbookPartHeader';
 import { EbookChapterPage } from './EbookChapterPage';
 import { EbookEndingPage } from './EbookEndingPage';
+import { EbookAppendixA, EbookAppendixB, EbookAppendixC } from './EbookAppendixPages';
 
 /**
  * 챕터별 콘텐츠 데이터
@@ -87,7 +88,12 @@ export function EbookDocument({ edition, chapters }: EbookDocumentProps) {
         return pages;
       })}
 
-      {/* 4. 엔딩 */}
+      {/* 4. 부록 */}
+      <EbookAppendixA />
+      <EbookAppendixB />
+      <EbookAppendixC />
+
+      {/* 5. 엔딩 */}
       <EbookEndingPage edition={edition} />
     </Document>
   );

@@ -114,6 +114,7 @@ function parseMarkdown(text: string): Block[] {
   for (let i = 0; i < lines.length; i++) {
     const t = lines[i].trim();
     if (t === '') { flush(); continue; }
+    if (t === '---' || t === '***' || t === '___') { flush(); continue; }
     if (t.startsWith('### ')) { flush(); blocks.push({ type: 'h3', text: t.slice(4) }); continue; }
     if (t.startsWith('## ')) { flush(); blocks.push({ type: 'h2', text: t.slice(3) }); continue; }
     if (t.startsWith('> ')) { flush(); blocks.push({ type: 'quote', text: t.slice(2) }); continue; }

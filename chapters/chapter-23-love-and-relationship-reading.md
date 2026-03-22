@@ -329,14 +329,4 @@ This reading illustrates several principles that apply to all compatibility anal
 
 ---
 
-Key Takeaways.
-
-- Gunghap examines multiple layers of two charts. Never reduce compatibility to a single factor.
-- Day Master compatibility sets the foundational dynamic, but other layers can transform it entirely.
-- Heavenly Stem Harmony (천간합) is the most powerful attraction signal. The six special stem pairs create a magnetic bond.
-- Earthly Branch clashes show where practical friction will appear, while harmonies show where the couple flows naturally.
-- True compatibility is about awareness, not perfection. Every pairing has strengths and challenges, and understanding them is the most valuable outcome of any reading.
-
----
-
 *In the next chapter, we turn from relationships to another area where Saju provides profound guidance: career and wealth. Chapter 24 will show you how to read a chart for professional aptitude, timing, and financial patterns.*

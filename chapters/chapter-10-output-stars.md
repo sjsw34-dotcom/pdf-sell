@@ -58,7 +58,7 @@ Four Eating Gods is extreme. The Yang Earth Day Master is producing Metal at max
 - Producing drains the producer, and with four output channels, the Day Master is constantly being drained
 - Fire serves as the Useful God because it produces Earth (replenishing the Day Master) and controls Metal (slowing the output drain)
 
-The Eating God at this concentration is no longer gentle. It becomes a defining force. Chart E's owner is likely a prolific creator or producer, but one who needs deliberate rest and replenishment to avoid burnout.
+The Eating God at this concentration is no longer gentle. It becomes a defining force. Chart E's Day Master is likely a prolific creator or producer, but one who needs deliberate rest and replenishment to avoid burnout.
 
 ## Hurting Officer (상관) — The Rebel
 

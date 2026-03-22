@@ -171,7 +171,7 @@ The Day Master is 乙 (Yin Wood). The chart landscape shows Wood support from �
 
 This is a moderately strong Day Master. The vine has deep roots (卯) and a fellow tree (甲) for support, plus Water nourishment from below. But it faces constant Metal pressure, with authority, rules, and external demands pressing from two directions. The Useful God is Wood, providing more support to withstand the Metal.
 
-Chart A's owner started life with considerable strength. The Wood support gave her confidence and independence. But the Metal pressure meant she always operated under significant authority, whether from family expectations, institutional roles, or social obligations. Her Grand Fortune cycles shifted from supportive Wood periods in her youth to challenging Metal/Earth periods in her later years, hence the description "started strong, became weak."
+The man behind Chart A started life with considerable strength. The Wood support gave her confidence and independence. But the Metal pressure meant she always operated under significant authority, whether from family expectations, institutional roles, or social obligations. Her Grand Fortune cycles shifted from supportive Wood periods in her youth to challenging Metal/Earth periods in her later years, hence the description "started strong, became weak."
 
 ### Chart B — Born 1996, Age 31
 
@@ -183,7 +183,7 @@ The Day Master is again 乙 (Yin Wood), but the chart landscape is starkly diffe
 
 This is an extremely weak Day Master (*geuksinnyak*, 극신약). The vine has no roots, no allies, and is being drained from every direction. Fire is consuming it, Earth is demanding it, and Metal is cutting it. The only support is a single Water source in the Year Branch. The Useful God is also Wood, representing desperately needed support.
 
-Chart B's owner is a profoundly creative person (three Fire elements produce massive output energy), but she burns through her resources quickly. Without companions or support systems, she can feel isolated and overwhelmed. Her chart suggests someone who gives far more than she receives, talented and expressive, but at risk of exhaustion unless she consciously builds support structures.
+The woman behind Chart B is a profoundly creative person (three Fire elements produce massive output energy), but she burns through her resources quickly. Without companions or support systems, she can feel isolated and overwhelmed. Her chart suggests someone who gives far more than she receives, talented and expressive, but at risk of exhaustion unless she consciously builds support structures.
 
 ### The Lesson
 

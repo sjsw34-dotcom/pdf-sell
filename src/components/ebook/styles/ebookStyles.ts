@@ -279,6 +279,6 @@ export const ebookStyles = StyleSheet.create({
     fontSize: 7,
     fontFamily: FONT_BODY,
     color: '#BBBBBB',
-    letterSpacing: 1,
+    letterSpacing: ANTI_LIGATURE,
   },
 });

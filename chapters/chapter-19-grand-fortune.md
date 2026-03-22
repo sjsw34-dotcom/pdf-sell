@@ -125,7 +125,7 @@ The 4th Grand Fortune is 乙亥, Yin Wood over Pig (Water).
 
 The Heavenly Stem 乙 (Yin Wood) is the same element as the Day Master. The Ten God is Friend (비견). This brings self-confidence, independence, and peer-level connections. The Day Master is reinforced. The Earthly Branch 亥 (Pig, Water) carries a Water element with a Ten God of Direct Seal (정인). Water produces Wood, directly nourishing the Day Master. This brings education, mentorship, institutional support, and maternal energy. The Life Stage of the Day Master 乙 in 亥 is at the Death stage (사) in the forward method. However, this Life Stage should be interpreted within context, as the elemental support from Water feeding Wood overrides the nominal "Death" label. For Useful God alignment, Chart A's Useful God is Wood (木) and the Favorable God is Water (水). This Grand Fortune brings *both*, Wood in the stem and Water in the branch. This is traditionally interpreted as one of the most favorable decades in the entire timeline.
 
-In practical terms, during ages 31-40, Chart A's owner would traditionally be expected to experience a period of genuine personal strength. The reinforcement of the Day Master suggests increased confidence and autonomy. The Resource support from Water indicates that learning, mentorship, or institutional backing plays a key role in this decade's successes. Career advancement, educational achievement, or the arrival of a significant mentor figure are all consistent with this reading.
+In practical terms, during ages 31-40, the chart's owner would traditionally be expected to experience a period of genuine personal strength. The reinforcement of the Day Master suggests increased confidence and autonomy. The Resource support from Water indicates that learning, mentorship, or institutional backing plays a key role in this decade's successes. Career advancement, educational achievement, or the arrival of a significant mentor figure are all consistent with this reading.
 
 ## 19.4 Grand Fortune and the Useful God
 
@@ -159,7 +159,7 @@ Some Grand Fortune periods carry elements that neither strongly help nor strongl
 
 ### The Timing Insight
 
-This analysis reveals something profound. The same chart will experience dramatically different life conditions depending on which decade it is in. Chart A's owner is not destined for uniform difficulty or uniform success. She is destined for a specific sequence of favorable and unfavorable periods, and knowing this sequence in advance is the practical power of Saju.
+This analysis reveals something profound. The same chart will experience dramatically different life conditions depending on which decade it is in. she is not destined for uniform difficulty or uniform success. She is destined for a specific sequence of favorable and unfavorable periods, and knowing this sequence in advance is the practical power of Saju.
 
 The traditional interpretation suggests that her strongest years are in her thirties and early forties, when Wood and Water dominate. Her most challenging years come in her seventies and eighties, when Metal and Earth take over. Her youth (ages 1-20) is a mixed period, with Earth and Fire creating conditions that do not strongly support or strongly harm.
 

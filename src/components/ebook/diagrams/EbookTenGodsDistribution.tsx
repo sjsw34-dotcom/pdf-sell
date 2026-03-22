@@ -61,9 +61,9 @@ function cellTextColor(god: GodPair, count: number): string {
   return BRAND.textDark;
 }
 
-const COL_W = 72;
+const COL_W = 52;
 const ROW_H = 22;
-const LABEL_W = 52;
+const LABEL_W = 40;
 
 const s = StyleSheet.create({
   container: {
@@ -97,7 +97,7 @@ const s = StyleSheet.create({
   },
   headerText: {
     fontFamily: FONT_BODY,
-    fontSize: 7.5,
+    fontSize: 6.5,
     fontWeight: 'bold',
     letterSpacing: ANTI_LIGATURE,
   },
@@ -113,16 +113,16 @@ const s = StyleSheet.create({
   },
   rowLabelCode: {
     fontFamily: FONT_BODY,
-    fontSize: 8,
+    fontSize: 7,
     fontWeight: 'bold',
     color: BRAND.purple,
     letterSpacing: ANTI_LIGATURE,
   },
   rowLabelDm: {
     fontFamily: FONT_CJK,
-    fontSize: 8,
+    fontSize: 7,
     color: BRAND.textMedium,
-    marginLeft: 3,
+    marginLeft: 2,
   },
   cell: {
     width: COL_W,
@@ -134,7 +134,7 @@ const s = StyleSheet.create({
   },
   cellText: {
     fontFamily: FONT_BODY,
-    fontSize: 9,
+    fontSize: 8,
     fontWeight: 'bold',
     letterSpacing: ANTI_LIGATURE,
   },
