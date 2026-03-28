@@ -1,5 +1,5 @@
 import React from 'react';
-import { Document, Page, View, Text, StyleSheet } from '@react-pdf/renderer';
+import { Document, Page, View, Text, Image, StyleSheet } from '@react-pdf/renderer';
 import { FONT_BODY, FONT_TITLE, FONT_CJK, ANTI_LIGATURE, fixLigatures } from '../pdf/styles/pdfStyles';
 
 // ─── 오행별 커버 색상 ───
@@ -93,6 +93,7 @@ export interface KindleDocumentProps {
   element: string;
   seriesName: string;
   chapters: KindleChapter[];
+  coverImagePath?: string;
 }
 
 // ─── 페이지 설정 ───
@@ -222,9 +223,19 @@ function renderInlineText(text: string, style: Record<string, unknown>): React.R
 
 // ─── 커버 페이지 ───
 
-function CoverPage({ title, subtitle, seriesName, colors }: {
-  title: string; subtitle: string; seriesName: string; colors: KindleBookColors;
+function CoverPage({ title, subtitle, seriesName, colors, coverImagePath }: {
+  title: string; subtitle: string; seriesName: string; colors: KindleBookColors; coverImagePath?: string;
 }) {
+  // If cover image exists, use it as full-page image
+  if (coverImagePath) {
+    return (
+      <Page size={PAGE_SIZE} style={{ padding: 0 }}>
+        <Image src={coverImagePath} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      </Page>
+    );
+  }
+
+  // Fallback: text-based cover
   return (
     <Page size={PAGE_SIZE} style={{ padding: 0, backgroundColor: colors.coverBg }}>
       <View style={{ flex: 1, paddingTop: 60, paddingBottom: 40, paddingHorizontal: 40, justifyContent: 'space-between' }}>
@@ -595,12 +606,12 @@ function EndingPage({ colors }: { colors: KindleBookColors }) {
 
 // ─── 메인 Document ───
 
-export function KindleDocument({ title, subtitle, element, seriesName, chapters }: KindleDocumentProps) {
+export function KindleDocument({ title, subtitle, element, seriesName, chapters, coverImagePath }: KindleDocumentProps) {
   const colors = ELEMENT_COLORS[element] || ELEMENT_COLORS.wood;
 
   return (
     <Document title={`${title}: ${subtitle}`} author="Ksaju Kim">
-      <CoverPage title={title} subtitle={subtitle} seriesName={seriesName} colors={colors} />
+      <CoverPage title={title} subtitle={subtitle} seriesName={seriesName} colors={colors} coverImagePath={coverImagePath} />
       <CopyrightPage title={title} subtitle={subtitle} seriesName={seriesName} />
       <TocPage chapters={chapters} colors={colors} />
       {chapters.map(ch => (

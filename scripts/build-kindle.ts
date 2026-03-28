@@ -799,12 +799,22 @@ async function generatePdf(
     cta: ch.meta.cta?.replace(/^"|"$/g, ''),
   }));
 
+  // Check for cover image — read as data URI for @react-pdf/renderer compatibility
+  const coverImageFile = path.join(OUTPUT_DIR, `${book.element}-people-cover.jpg`);
+  let coverImageSrc: string | undefined;
+  if (fs.existsSync(coverImageFile)) {
+    const imgBuffer = fs.readFileSync(coverImageFile);
+    coverImageSrc = `data:image/jpeg;base64,${imgBuffer.toString('base64')}`;
+    console.log(`   🖼️ 커버 이미지 적용`);
+  }
+
   const element = React.createElement(KindleDocument, {
     title: book.title,
     subtitle: book.subtitle,
     element: book.element || 'wood',
     seriesName: BOOK_META.seriesName,
     chapters: kindleChapters,
+    coverImagePath: coverImageSrc,
   });
 
   const buffer = await renderToBuffer(
