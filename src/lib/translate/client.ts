@@ -2,6 +2,8 @@ import Anthropic from '@anthropic-ai/sdk';
 import type { TierCode } from '@/lib/types/tier';
 import type { SajuData, InfoData } from '@/lib/types/saju';
 import { getPartPrompt, THREE_LAYER_RULES, OUTPUT_RULES } from './prompts';
+import { computeChartHash, findCachedTranslation, saveTranslation } from '@/lib/db/translations';
+import { filterSajuDataForPart } from '@/lib/constants/partDataNeeds';
 
 // ─── 유틸리티 ───
 
@@ -191,7 +193,7 @@ Instructions:
 ${instruction}
 ${notesBlock}
 Chart Data (JSON):
-${JSON.stringify(sajuData, null, 2)}
+${JSON.stringify(filterSajuDataForPart(partKey, sajuData), null, 2)}
 
 Write only the analysis text. Do not include the section title — it will be added separately. Do not use markdown headers. Write in flowing paragraphs.`;
 }
@@ -204,6 +206,7 @@ interface TranslateParams {
   sajuData: SajuData;
   additionalRequest: string | null;
   clientName: string;
+  skipCache?: boolean;
 }
 
 // 서버 측 재시도: 1회만 (Vercel 120초 제한 내에서 안전하게)
@@ -212,24 +215,46 @@ const MAX_RETRIES = 1;
 const RETRY_DELAY_MS = 2000;
 const PER_CALL_TIMEOUT_MS = 50_000; // 50초 (2번 × 50초 + 대기 = ~102초 < 120초 Vercel 제한)
 
+const MODEL_ID = 'claude-sonnet-4-20250514';
+
 export async function translateAndAnalyze({
   tier,
   partKey,
   sajuData,
   additionalRequest,
   clientName,
+  skipCache,
 }: TranslateParams): Promise<string | null> {
-  const system = buildSystemPrompt(additionalRequest);
+  // ─── 1. 캐시 조회 ───
+  // additionalRequest가 있으면 캐시 사용하지 않음 (개인화된 요청이므로)
+  let chartHash: string | null = null;
+  if (!skipCache && !additionalRequest) {
+    try {
+      chartHash = await computeChartHash(sajuData.pillar, sajuData.info.gender);
+      const cached = await findCachedTranslation(chartHash, partKey, tier);
+      if (cached) {
+        console.log(`[translate] Cache HIT for partKey="${partKey}" chartHash="${chartHash.slice(0, 8)}..."`);
+        return cached.text;
+      }
+      console.log(`[translate] Cache MISS for partKey="${partKey}"`);
+    } catch (err) {
+      console.error('[translate] Cache lookup failed, proceeding with API call:', err);
+    }
+  }
+
+  // ─── 2. Claude API 호출 ───
+  const systemText = buildSystemPrompt(additionalRequest);
   const userMessage = buildUserPrompt(tier, partKey, sajuData, clientName);
 
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
     try {
       const response = await getClient().messages.create(
         {
-          model: 'claude-sonnet-4-20250514',
+          model: MODEL_ID,
           max_tokens: 4096,
           temperature: 0.7,
-          system,
+          // Prompt Caching: 시스템 프롬프트를 ephemeral로 마킹
+          system: [{ type: 'text', text: systemText, cache_control: { type: 'ephemeral' } }],
           messages: [{ role: 'user', content: userMessage }],
         },
         { timeout: PER_CALL_TIMEOUT_MS },
@@ -245,7 +270,27 @@ export async function translateAndAnalyze({
         return null;
       }
 
-      return textBlock.text;
+      const resultText = textBlock.text;
+
+      // ─── 3. 캐시 저장 ───
+      if (chartHash && !additionalRequest) {
+        saveTranslation(
+          {
+            chartHash,
+            dayMaster: sajuData.pillar.dayPillar.heavenlyStem,
+            strength: sajuData.pillar.strength,
+            yongsinEl: sajuData.yongsin.yongsin,
+            gender: sajuData.info.gender,
+            pillarJson: sajuData.pillar,
+          },
+          partKey,
+          tier,
+          resultText,
+          MODEL_ID,
+        ).catch(err => console.error('[translate] Background save failed:', err));
+      }
+
+      return resultText;
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Unknown error';
       console.error(`[translate] Failed partKey="${partKey}" (attempt ${attempt + 1}/${MAX_RETRIES + 1}): ${message}`);
