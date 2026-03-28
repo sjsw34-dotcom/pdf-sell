@@ -160,7 +160,7 @@ export function FileUploader() {
               </div>
               <div>
                 <span className="text-gray-500">나이</span>
-                <p className="text-white font-medium">{info.age}세</p>
+                <p className="text-white font-medium">만 {info.age}세</p>
               </div>
             </div>
           )}

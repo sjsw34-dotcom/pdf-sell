@@ -7,10 +7,30 @@ import { filterSajuDataForPart } from '@/lib/constants/partDataNeeds';
 
 // ─── 유틸리티 ───
 
-function extractBirthYear(info: InfoData): number | null {
-  // solarDate: "1973년 05월 18일 14:30" 형태
-  const match = info.solarDate.match(/(\d{4})년/);
-  return match ? parseInt(match[1], 10) : null;
+/**
+ * solarDate("1973년 05월 18일 14:30")에서 생년월일을 파싱한다.
+ */
+function parseBirthDate(info: InfoData): { year: number; month: number; day: number } | null {
+  const m = info.solarDate.match(/(\d{4})년\s*(\d{2})월\s*(\d{2})일/);
+  if (!m) return null;
+  return { year: +m[1], month: +m[2], day: +m[3] };
+}
+
+/**
+ * 국제 표준 만나이 계산 (생일 지났으면 year diff, 안 지났으면 -1)
+ */
+export function calcInternationalAge(info: InfoData): number | null {
+  const birth = parseBirthDate(info);
+  if (!birth) return null;
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = now.getMonth() + 1;
+  const d = now.getDate();
+  let age = y - birth.year;
+  if (m < birth.month || (m === birth.month && d < birth.day)) {
+    age--;
+  }
+  return age;
 }
 
 function getDecade(age: number): number {
@@ -153,14 +173,14 @@ ${JSON.stringify(sajuData, null, 2)}`;
     }
   }
 
-  // 나이 일관성 — 생년으로부터 서양식 만 나이 계산
+  // 나이 일관성 — 국제 표준 만나이 사용
   if (sajuData.info) {
-    const birthYear = extractBirthYear(sajuData.info);
-    if (birthYear) {
+    const intAge = calcInternationalAge(sajuData.info);
+    const birth = parseBirthDate(sajuData.info);
+    if (intAge !== null && birth) {
       const currentYear = new Date().getFullYear();
-      const westernAge = currentYear - birthYear;
       notes.push(
-        `CLIENT AGE: ${clientName} was born in ${birthYear}. In Western age calculation, they are ${westernAge - 1} or ${westernAge} years old in ${currentYear} (depending on whether their birthday has passed). ALWAYS use this age consistently — do NOT use Korean age (세) or any other calculation. If referencing age, say "at ${westernAge - 1}" or "in their ${getDecade(westernAge - 1)}s".`
+        `CLIENT AGE: ${clientName} is ${intAge} years old (born ${birth.year}, international/Western age as of ${currentYear}). ALWAYS use this age when referring to the client's current age or life stage — say "${intAge}" or "in their ${getDecade(intAge)}s". Do NOT use Korean age (세) which would be ${intAge + 1} or ${intAge + 2}.\n\nNOTE: Ages shown in Daeun (대운) and Nyunun (년운) tables follow the traditional Saju cycle system and may differ from the client's Western age by 1-2 years. When referencing these cycles in your text, use the cycle's own age labels (e.g., "the cycle starting at age 32") but clarify the client's current Western age separately.`
       );
     }
   }
