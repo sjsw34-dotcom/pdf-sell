@@ -200,6 +200,8 @@ function markdownToDocx(md: string): (Paragraph | Table)[] {
       elements.push(new Paragraph({
         heading: HeadingLevel.HEADING_2,
         spacing: { before: 400, after: 200 },
+        keepNext: true,
+        keepLines: true,
         children: [new TextRun({ text, font: 'Noto Sans KR', size: 28, bold: true, color: PURPLE })],
       }));
       i++;
@@ -212,6 +214,8 @@ function markdownToDocx(md: string): (Paragraph | Table)[] {
       elements.push(new Paragraph({
         heading: HeadingLevel.HEADING_3,
         spacing: { before: 300, after: 150 },
+        keepNext: true,
+        keepLines: true,
         children: [new TextRun({ text, font: 'Noto Sans KR', size: 24, bold: true, color: GOLD })],
       }));
       i++;
@@ -225,6 +229,12 @@ function markdownToDocx(md: string): (Paragraph | Table)[] {
         tableLines.push(lines[i]);
         i++;
       }
+      // Keep table on same page: add a keepNext spacer before table
+      elements.push(new Paragraph({
+        spacing: { before: 100 },
+        keepNext: true,
+        children: [],
+      }));
       elements.push(buildTable(tableLines));
       continue;
     }
@@ -310,6 +320,7 @@ function buildTable(lines: string[]): Table {
   // Header row
   rows.push(new TableRow({
     tableHeader: true,
+    cantSplit: true,
     children: headerCells.map(cell =>
       new TableCell({
         width: { size: colWidth, type: WidthType.DXA },
@@ -319,6 +330,8 @@ function buildTable(lines: string[]): Table {
         children: [new Paragraph({
           spacing: { before: 60, after: 60 },
           alignment: AlignmentType.CENTER,
+          keepNext: true,
+          keepLines: true,
           children: [new TextRun({ text: cell, bold: true, font: 'Noto Sans KR', size: 17, color: 'FFFFFF' })],
         })],
       }),
@@ -330,6 +343,7 @@ function buildTable(lines: string[]): Table {
     const row = dataRows[r];
     const bgColor = r % 2 === 1 ? TABLE_ALT_ROW : 'FFFFFF';
     rows.push(new TableRow({
+      cantSplit: true,
       children: row.map((cell, cIdx) =>
         new TableCell({
           width: { size: colWidth, type: WidthType.DXA },
@@ -339,6 +353,7 @@ function buildTable(lines: string[]): Table {
           children: [new Paragraph({
             spacing: { before: 50, after: 50 },
             alignment: cIdx === 0 ? AlignmentType.LEFT : AlignmentType.CENTER,
+            keepLines: true,
             children: parseInlineRuns(cell, 17),
           })],
         }),
@@ -483,30 +498,36 @@ function buildChapterContent(num: number, title: string, md: string, meta: Recor
   // Main content
   elements.push(...markdownToDocx(md));
 
-  // Takeaway box
+  // Takeaway box — keep together on one page
   if (meta.takeaway) {
-    elements.push(new Paragraph({ spacing: { before: 300 }, children: [] }));
+    elements.push(new Paragraph({ spacing: { before: 300 }, keepNext: true, children: [] }));
     elements.push(new Paragraph({
       spacing: { before: 100, after: 80 },
       border: { top: { style: BorderStyle.SINGLE, size: 2, color: PURPLE } },
+      keepNext: true,
+      keepLines: true,
       children: [new TextRun({ text: '✦ Key Takeaway', font: 'Noto Sans KR', size: 22, bold: true, color: PURPLE })],
     }));
     elements.push(new Paragraph({
       spacing: { after: 100 },
       indent: { left: convertInchesToTwip(0.2) },
+      keepLines: true,
       children: parseInlineRuns(meta.takeaway, 20, GRAY),
     }));
   }
 
-  // Exercise box
+  // Exercise box — keep together on one page
   if (meta.exercise) {
     elements.push(new Paragraph({
       spacing: { before: 200, after: 80 },
+      keepNext: true,
+      keepLines: true,
       children: [new TextRun({ text: '✎ Try This', font: 'Noto Sans KR', size: 22, bold: true, color: GOLD })],
     }));
     elements.push(new Paragraph({
       spacing: { after: 200 },
       indent: { left: convertInchesToTwip(0.2) },
+      keepLines: true,
       children: parseInlineRuns(meta.exercise, 20, GRAY),
     }));
   }
