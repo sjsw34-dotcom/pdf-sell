@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from '@react-pdf/renderer';
 import { FONT_BODY } from './styles/pdfStyles';
+import { useShowBrand } from './BrandContext';
 
 interface PageFooterProps {
   color?: string;
@@ -12,9 +13,10 @@ interface PageFooterProps {
  * "SajuMuse                              3"
  */
 export function PageFooter({ color = '#AAAAAA' }: PageFooterProps) {
+  const showBrand = useShowBrand();
   return (
     <View style={s.footer} fixed>
-      <Text style={[s.brand, { color }]}>SajuMuse</Text>
+      <Text style={[s.brand, { color }]}>{showBrand ? 'SajuMuse' : ' '}</Text>
       <Text
         style={[s.pageNum, { color }]}
         render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}

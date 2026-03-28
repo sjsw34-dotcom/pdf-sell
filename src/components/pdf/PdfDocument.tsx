@@ -21,6 +21,7 @@ import { PageFooter } from './PageFooter';
 import { EndingPage } from './EndingPage';
 import { PersonalQAPage } from './PersonalQAPage';
 import { fixLigatures } from './styles/pdfStyles';
+import { BrandContext } from './BrandContext';
 
 // ═══════════════════════════════════════════════════════════════
 // 더미 텍스트 — Claude API 연동 전 테스트용
@@ -373,6 +374,7 @@ interface PdfDocumentProps {
   birthInfo: string;
   personalQuestion?: string;
   personalAnswer?: string;
+  showBrand?: boolean;
 }
 
 export function PdfDocument({
@@ -385,6 +387,7 @@ export function PdfDocument({
   birthInfo,
   personalQuestion,
   personalAnswer,
+  showBrand = true,
 }: PdfDocumentProps) {
   const t = getThemeStyles(theme);
   const g = (key: string): string => {
@@ -397,9 +400,10 @@ export function PdfDocument({
   const tierContent = renderTierContent(tier, theme, g, sajuData, clientName);
 
   return (
+    <BrandContext.Provider value={showBrand}>
     <Document
       title={`${clientName || 'Guest'} — Saju Reading`}
-      author="SajuMuse"
+      author={showBrand ? 'SajuMuse' : 'Saju Destiny Analysis'}
       subject="Four Pillars Destiny Analysis"
     >
       <CoverPage
@@ -446,6 +450,7 @@ export function PdfDocument({
 
       <EndingPage theme={theme} name={clientName || 'Guest'} tier={tier} />
     </Document>
+    </BrandContext.Provider>
   );
 }
 

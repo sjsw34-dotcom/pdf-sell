@@ -4,6 +4,7 @@ import type { ThemeCode } from '@/lib/types/theme';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
 import type { TierCode } from '@/lib/types/tier';
+import { useShowBrand } from './BrandContext';
 
 const TIER_LABELS: Record<TierCode, string> = {
   basic: 'Basic',
@@ -23,6 +24,7 @@ interface CoverPageProps {
 export function CoverPage({ theme, tier, name, birthDate, coverImageBase64 }: CoverPageProps) {
   const colors = THEMES[theme].colors;
   const hasImage = coverImageBase64 && coverImageBase64.startsWith('data:');
+  const showBrand = useShowBrand();
 
   return (
     <Page size="A4" style={s.page}>
@@ -39,12 +41,12 @@ export function CoverPage({ theme, tier, name, birthDate, coverImageBase64 }: Co
 
         {/* 상단: 브랜드 */}
         <View style={s.topSection}>
-          <Text style={s.brandSmall}>SajuMuse</Text>
+          {showBrand && <Text style={s.brandSmall}>SajuMuse</Text>}
         </View>
 
         {/* 중앙: 메인 타이틀 */}
         <View style={s.centerSection}>
-          <Text style={s.brandLarge}>SajuMuse</Text>
+          {showBrand && <Text style={s.brandLarge}>SajuMuse</Text>}
 
           <View style={s.line} />
 
@@ -76,7 +78,7 @@ export function CoverPage({ theme, tier, name, birthDate, coverImageBase64 }: Co
           <View style={s.spacer24} />
 
           <View style={s.footerLine} />
-          <Text style={s.footerText}>SajuMuse · SajuMuse</Text>
+          {showBrand && <Text style={s.footerText}>SajuMuse · SajuMuse</Text>}
         </View>
       </View>
     </Page>

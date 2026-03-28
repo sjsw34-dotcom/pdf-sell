@@ -22,6 +22,7 @@ interface GeneratorState {
   additionalRequest: string;
   personalQuestion: string;
   personalAnswer: string;
+  showBrand: boolean;
   generatedTexts: Record<string, string>;
   progress: Progress;
   status: Status;
@@ -36,6 +37,7 @@ interface GeneratorActions {
   setCoverImage: (base64: string | null) => void;
   setTheme: (theme: ThemeCode) => void;
   setAdditionalRequest: (text: string) => void;
+  setShowBrand: (show: boolean) => void;
   setPersonalQuestion: (text: string) => void;
   setPersonalAnswer: (text: string) => void;
   setGeneratedText: (partKey: string, text: string) => void;
@@ -55,6 +57,7 @@ const initialState: GeneratorState = {
   coverImage: null,
   selectedTheme: 'classic',
   additionalRequest: '',
+  showBrand: true,
   personalQuestion: '',
   personalAnswer: '',
   generatedTexts: {},
@@ -91,6 +94,9 @@ export const useGeneratorStore = create<GeneratorState & GeneratorActions>()(
 
     setAdditionalRequest: (text) =>
       set({ additionalRequest: text.slice(0, MAX_ADDITIONAL_REQUEST) }),
+
+    setShowBrand: (show) =>
+      set({ showBrand: show }),
 
     setPersonalQuestion: (text) =>
       set({ personalQuestion: text.slice(0, 500) }),

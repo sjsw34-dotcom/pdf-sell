@@ -19,6 +19,7 @@ export default function HomePage() {
   const coverImage = useGeneratorStore((s) => s.coverImage);
   const selectedTheme = useGeneratorStore((s) => s.selectedTheme);
   const additionalRequest = useGeneratorStore((s) => s.additionalRequest);
+  const showBrand = useGeneratorStore((s) => s.showBrand);
   const status = useGeneratorStore((s) => s.status);
   const pdfBlobUrl = useGeneratorStore((s) => s.pdfBlobUrl);
 
@@ -47,6 +48,7 @@ export default function HomePage() {
       birthInfo,
       personalQuestion: store.personalQuestion || undefined,
       personalAnswer: store.personalAnswer || undefined,
+      showBrand: store.showBrand,
     });
 
     const url = URL.createObjectURL(blob);
@@ -205,13 +207,21 @@ export default function HomePage() {
         <header className="text-center mb-10">
           <h1 className="text-3xl font-bold text-white mb-2">SajuMuse PDF 생성기</h1>
           <p className="text-sm text-gray-400">사주명리 분석 데이터를 프리미엄 영문 PDF 리포트로 변환합니다</p>
-          <a
-            href="/mailer"
-            target="_blank"
-            className="inline-block mt-4 px-5 py-2 text-sm font-medium text-amber-400 border border-amber-700/50 rounded-lg hover:bg-amber-900/20 transition"
-          >
-            이메일 발송 도구 열기
-          </a>
+          <div className="flex justify-center gap-3 mt-4">
+            <a
+              href="/manual"
+              className="inline-block px-5 py-2 text-sm font-medium text-purple-400 border border-purple-700/50 rounded-lg hover:bg-purple-900/20 transition"
+            >
+              수동 텍스트 PDF 생성기
+            </a>
+            <a
+              href="/mailer"
+              target="_blank"
+              className="inline-block px-5 py-2 text-sm font-medium text-amber-400 border border-amber-700/50 rounded-lg hover:bg-amber-900/20 transition"
+            >
+              이메일 발송 도구 열기
+            </a>
+          </div>
         </header>
 
         <div className={isWorking ? 'pointer-events-none opacity-50' : ''}>
@@ -221,6 +231,21 @@ export default function HomePage() {
             <ImageUploader />
             <ThemeSelector />
             <AdditionalRequest />
+
+            {/* 브랜드 포함/미포함 토글 */}
+            <div className="flex items-center justify-between bg-[#1A1A2E] border border-[#2a2a45] rounded-xl px-5 py-4">
+              <div>
+                <p className="text-sm font-medium text-white">SajuMuse 브랜드 포함</p>
+                <p className="text-xs text-gray-500 mt-1">외부 플랫폼 주문 시 OFF로 설정하세요</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => useGeneratorStore.getState().setShowBrand(!showBrand)}
+                className={`relative w-12 h-6 rounded-full transition cursor-pointer ${showBrand ? 'bg-purple-600' : 'bg-gray-700'}`}
+              >
+                <span className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full transition-transform ${showBrand ? 'translate-x-6' : ''}`} />
+              </button>
+            </div>
           </div>
         </div>
 

@@ -4,6 +4,7 @@ import type { ThemeCode } from '@/lib/types/theme';
 import type { TierCode } from '@/lib/types/tier';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK, ANTI_LIGATURE } from './styles/pdfStyles';
+import { useShowBrand } from './BrandContext';
 
 interface EndingPageProps {
   theme: ThemeCode;
@@ -13,7 +14,8 @@ interface EndingPageProps {
 
 export function EndingPage({ theme, name, tier }: EndingPageProps) {
   const colors = THEMES[theme].colors;
-  const showUpsell = tier === 'basic' || tier === 'love';
+  const showBrand = useShowBrand();
+  const showUpsell = (tier === 'basic' || tier === 'love') && showBrand;
 
   return (
     <>
@@ -40,16 +42,16 @@ export function EndingPage({ theme, name, tier }: EndingPageProps) {
 
             <View style={[s.line, { backgroundColor: colors.border }]} />
 
-            <Text style={[s.closingBrand, { color: colors.primary }]}>SajuMuse</Text>
+            {showBrand && <Text style={[s.closingBrand, { color: colors.primary }]}>SajuMuse</Text>}
           </View>
         </View>
 
         <View style={[s.footer, { borderTopColor: colors.border }]}>
-          <Text style={[s.footerText, { color: colors.textSecondary }]}>SajuMuse</Text>
+          <Text style={[s.footerText, { color: colors.textSecondary }]}>{showBrand ? 'SajuMuse' : ' '}</Text>
         </View>
       </Page>
 
-      {/* ══════ 업셀 CTA 페이지 (Basic/Love 전용) ══════ */}
+      {/* ══════ 업셀 CTA 페이지 (Basic/Love 전용, 브랜드 ON일 때만) ══════ */}
       {showUpsell && (
         <Page size="A4" style={[s.page, { backgroundColor: colors.background }]}>
           <View style={s.upsellContent}>
@@ -106,7 +108,7 @@ export function EndingPage({ theme, name, tier }: EndingPageProps) {
       <Page size="A4" style={s.backCoverPage}>
         <View style={[s.backCover, { backgroundColor: colors.primary }]}>
           <View style={s.backCoverCenter}>
-            <Text style={s.backBrand}>SajuMuse</Text>
+            {showBrand && <Text style={s.backBrand}>SajuMuse</Text>}
 
             <View style={s.backLine} />
 
@@ -131,7 +133,7 @@ export function EndingPage({ theme, name, tier }: EndingPageProps) {
             <View style={s.spacer24} />
 
             <View style={s.backFooterLine} />
-            <Text style={s.backFooter}>SajuMuse</Text>
+            {showBrand && <Text style={s.backFooter}>SajuMuse</Text>}
           </View>
         </View>
       </Page>

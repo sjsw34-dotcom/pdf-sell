@@ -4,6 +4,7 @@ import type { ThemeCode } from '@/lib/types/theme';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK, ANTI_LIGATURE, fixLigatures } from './styles/pdfStyles';
 import { PageFooter } from './PageFooter';
+import { useShowBrand } from './BrandContext';
 
 interface WhatIsSajuPageProps {
   theme: ThemeCode;
@@ -12,6 +13,7 @@ interface WhatIsSajuPageProps {
 export function WhatIsSajuPage({ theme }: WhatIsSajuPageProps) {
   const colors = THEMES[theme].colors;
   const L = fixLigatures;
+  const showBrand = useShowBrand();
 
   return (
     <>
@@ -19,7 +21,7 @@ export function WhatIsSajuPage({ theme }: WhatIsSajuPageProps) {
       <Page size="A4" style={[s.page, { backgroundColor: colors.background }]}>
         <View style={s.content}>
           <Text style={s.tagline}>We study destiny.</Text>
-          <Text style={[s.author, { color: colors.textSecondary }]}>SajuMuse</Text>
+          {showBrand && <Text style={[s.author, { color: colors.textSecondary }]}>SajuMuse</Text>}
 
           <View style={[s.divider, { backgroundColor: colors.border }]} />
 
@@ -49,7 +51,9 @@ export function WhatIsSajuPage({ theme }: WhatIsSajuPageProps) {
       <Page size="A4" style={[s.page, { backgroundColor: colors.background }]}>
         <View style={s.content}>
           <Text style={[s.body, { color: colors.text }]}>
-            {L('At SajuMuse, we aim to help you discover your own unique story through Saju and empower you to make better choices. We will walk you through the path of your life in an approachable and friendly way.')}
+            {L(showBrand
+              ? 'At SajuMuse, we aim to help you discover your own unique story through Saju and empower you to make better choices. We will walk you through the path of your life in an approachable and friendly way.'
+              : 'We aim to help you discover your own unique story through Saju and empower you to make better choices. We will walk you through the path of your life in an approachable and friendly way.')}
           </Text>
 
           <View style={s.spacer} />

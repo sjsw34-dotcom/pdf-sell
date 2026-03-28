@@ -15,6 +15,7 @@ interface RenderParams {
   birthInfo: string;
   personalQuestion?: string;
   personalAnswer?: string;
+  showBrand?: boolean;
 }
 
 /**
@@ -32,6 +33,7 @@ export async function renderPdfOnClient(params: RenderParams): Promise<Blob> {
     birthInfo: params.birthInfo,
     personalQuestion: params.personalQuestion,
     personalAnswer: params.personalAnswer,
+    showBrand: params.showBrand,
   });
 
   const instance = pdf(

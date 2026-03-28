@@ -5,6 +5,7 @@ import type { TierCode } from '@/lib/types/tier';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK, ANTI_LIGATURE, fixLigatures } from './styles/pdfStyles';
 import { PageFooter } from './PageFooter';
+import { useShowBrand } from './BrandContext';
 
 // ─── 티어별 목차 ───
 
@@ -68,6 +69,7 @@ interface IntroPageProps {
 export function IntroPage({ theme, tier, name, hasPersonalQuestion }: IntroPageProps) {
   const colors = THEMES[theme].colors;
   const items = TOC[tier];
+  const showBrand = useShowBrand();
 
   return (
     <>
@@ -82,7 +84,7 @@ export function IntroPage({ theme, tier, name, hasPersonalQuestion }: IntroPageP
 
           {/* 이름 + 브랜드 */}
           <Text style={[s.clientName, { color: colors.primary }]}>{name || 'Valued Guest'}</Text>
-          <Text style={[s.brandLine, { color: colors.textSecondary }]}>SajuMuse — In-Depth Destiny Analysis</Text>
+          <Text style={[s.brandLine, { color: colors.textSecondary }]}>{showBrand ? 'SajuMuse — In-Depth Destiny Analysis' : 'In-Depth Destiny Analysis'}</Text>
 
           <View style={[s.dividerFull, { backgroundColor: colors.border }]} />
 
@@ -119,7 +121,7 @@ export function IntroPage({ theme, tier, name, hasPersonalQuestion }: IntroPageP
           <View style={s.spacer24} />
 
           <Text style={[s.signoff, { color: colors.text }]}>With warmth,</Text>
-          <Text style={[s.signoffBrand, { color: colors.primary }]}>SajuMuse</Text>
+          <Text style={[s.signoffBrand, { color: colors.primary }]}>{showBrand ? 'SajuMuse' : 'Your Saju Consultant'}</Text>
         </View>
 
         <PageFooter color={colors.textSecondary} />
