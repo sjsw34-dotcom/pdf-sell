@@ -66,10 +66,30 @@ const KINDLE_BOOKS: KindleBook[] = [
     chaptersDir: 'chapters-kindle-a/book-a2-fire',
     outputFile: 'fire-people',
   },
-  // 향후 추가:
-  // { id: 'a3-earth', series: 'a', element: 'earth', ... },
-  // { id: 'a4-metal', series: 'a', element: 'metal', ... },
-  // { id: 'a5-water', series: 'a', element: 'water', ... },
+  {
+    id: 'a3-earth', series: 'a', element: 'earth',
+    title: 'Earth People',
+    subtitle: 'The Steady Force Behind Every Foundation',
+    price: '$4.99',
+    chaptersDir: 'chapters-kindle-a/book-a3-earth',
+    outputFile: 'earth-people',
+  },
+  {
+    id: 'a4-metal', series: 'a', element: 'metal',
+    title: 'Metal People',
+    subtitle: 'The Sharp Edge of Clarity & Strength',
+    price: '$4.99',
+    chaptersDir: 'chapters-kindle-a/book-a4-metal',
+    outputFile: 'metal-people',
+  },
+  {
+    id: 'a5-water', series: 'a', element: 'water',
+    title: 'Water People',
+    subtitle: 'The Deep Current That Shapes the World',
+    price: '$4.99',
+    chaptersDir: 'chapters-kindle-a/book-a5-water',
+    outputFile: 'water-people',
+  },
 ];
 
 const BOOK_META = {
