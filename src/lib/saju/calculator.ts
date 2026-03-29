@@ -5,7 +5,8 @@
 // ═══════════════════════════════════════════════════════════════
 
 import { Solar, Lunar } from 'lunar-typescript';
-import type { RawSajuJson, RawSajuTab, HeavenlyStem, StrengthLevel } from '@/lib/types/saju';
+import type { RawSajuJson, RawSajuTab, HeavenlyStem, EarthlyBranch, StrengthLevel } from '@/lib/types/saju';
+import { STEM_INDEX } from './mappings';
 import { buildInfoTab } from './info-builder';
 import { buildPillarTab } from './pillar-builder';
 import { buildYongsinTab } from './yongsin-builder';
@@ -13,6 +14,21 @@ import { buildYinyangTab } from './yinyang-builder';
 import { buildShinsalTab } from './shinsal-builder';
 import { buildHyungchungTab } from './hyungchung-builder';
 import { buildDaeunTab, buildNyununTab, buildWolunTab } from './fortune-builder';
+
+const GAN_LIST: HeavenlyStem[] = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+
+/**
+ * 야자시(夜子時) 시주 천간 보정
+ * lunar-typescript는 23시에 일진은 맞게 주지만 시주 천간이 다음날 기준으로 나옴
+ * 正법: 일간 기준 子時 천간 = (일간인덱스 % 5) * 2
+ */
+function getCorrectTimeGan(dayGan: HeavenlyStem, adjustedHour: number): HeavenlyStem | undefined {
+  // 23시대(야자시)일 때만 보정 필요
+  if (adjustedHour < 23) return undefined;
+  const dayIdx = STEM_INDEX[dayGan];
+  const ziStemIdx = (dayIdx % 5) * 2;
+  return GAN_LIST[ziStemIdx];
+}
 
 /** 음양오행 탭에서 십신 그룹 카운트 추출 */
 function extractTenGodCounts(yinyangTab: RawSajuTab): Record<string, number> {
@@ -111,6 +127,12 @@ export function calculateSaju(input: SajuInput): RawSajuJson {
   // 2. 사주팔자 (EightChar) 생성
   const eightChar = lunar.getEightChar();
 
+  // 2-1. 야자시(23시대) 시주 천간 보정
+  const timeGanOverride = getCorrectTimeGan(
+    eightChar.getDayGan() as HeavenlyStem,
+    adjustedHour,
+  );
+
   // 3. 성별 코드 (lunar-typescript: 1=남, 0=여)
   const genderCode = gender === '남' ? 1 : 0;
 
@@ -132,7 +154,7 @@ export function calculateSaju(input: SajuInput): RawSajuJson {
     lunar,
   });
 
-  const pillarTab = buildPillarTab(eightChar);
+  const pillarTab = buildPillarTab(eightChar, timeGanOverride ? { timeGan: timeGanOverride } : undefined);
 
   // 강약 레벨 추출 (pillar 탭의 시주 row, index 10)
   const strengthLevel = pillarTab.data[0]?.[10] as StrengthLevel ?? '중화';

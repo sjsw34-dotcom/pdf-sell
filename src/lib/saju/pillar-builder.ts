@@ -14,11 +14,16 @@ import {
 import { getShiShenKorean, getKoreanHiddenStemStrings, getBranchShiShen } from './shishen';
 import { calculateStrength } from './strength';
 
-export function buildPillarTab(eightChar: EightChar): RawSajuTab {
+export interface PillarOverride {
+  timeGan?: HeavenlyStem;
+}
+
+export function buildPillarTab(eightChar: EightChar, override?: PillarOverride): RawSajuTab {
   const dayGan = eightChar.getDayGan() as HeavenlyStem;
+  const actualTimeGan = override?.timeGan ?? eightChar.getTimeGan();
 
   const pillars = [
-    { gan: eightChar.getTimeGan(), zhi: eightChar.getTimeZhi(), diShi: eightChar.getTimeDiShi(), nayin: eightChar.getTimeNaYin() },
+    { gan: actualTimeGan, zhi: eightChar.getTimeZhi(), diShi: eightChar.getTimeDiShi(), nayin: eightChar.getTimeNaYin() },
     { gan: eightChar.getDayGan(), zhi: eightChar.getDayZhi(), diShi: eightChar.getDayDiShi(), nayin: eightChar.getDayNaYin() },
     { gan: eightChar.getMonthGan(), zhi: eightChar.getMonthZhi(), diShi: eightChar.getMonthDiShi(), nayin: eightChar.getMonthNaYin() },
     { gan: eightChar.getYearGan(), zhi: eightChar.getYearZhi(), diShi: eightChar.getYearDiShi(), nayin: eightChar.getYearNaYin() },
@@ -30,7 +35,7 @@ export function buildPillarTab(eightChar: EightChar): RawSajuTab {
     eightChar.getMonthZhi() as EarthlyBranch,
     eightChar.getYearGan() as HeavenlyStem,
     eightChar.getYearZhi() as EarthlyBranch,
-    eightChar.getTimeGan() as HeavenlyStem,
+    actualTimeGan as HeavenlyStem,
     eightChar.getTimeZhi() as EarthlyBranch,
   );
 
