@@ -87,8 +87,9 @@ export function determineYongsin(
 
   let gisin: FiveElement;
   if (isStrong) {
-    // 강 계열: 기신 = 인성 (일간을 더 강하게 만듦)
-    gisin = groups.인성;
+    // 극신강: 비겁이 직접적 기신 (이미 극강인데 같은 오행이 오면 최악)
+    // 그 외 강 계열: 인성이 간접적 기신 (일간을 생해서 더 강하게)
+    gisin = strengthLevel === '극신강' ? groups.비겁 : groups.인성;
   } else {
     // 약 계열: 기신 = 용신을 극하는 오행 (용신 방해)
     gisin = ELEMENT_CONTROLLED_BY[yongsin];
