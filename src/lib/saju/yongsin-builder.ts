@@ -69,40 +69,35 @@ export function determineYongsin(
       yongsin = groups.식상;
     }
   } else {
-    // ── 약(弱) 계열 + 중화: 강화 필요 → 비겁(동일 오행) ──
-    yongsin = groups.비겁;
+    // ── 약(弱) 계열 + 중화: 강화 필요 ──
+    // 비겁이 원국에 있으면 비겁, 없으면 인성으로 생조
+    const biCount = tenGodCounts?.['비겁'] ?? 0;
+    if (biCount > 0) {
+      yongsin = groups.비겁;
+    } else {
+      yongsin = groups.인성;
+    }
   }
 
-  // ── 나머지 4신 도출 ──
-  let huisin: FiveElement;
+  // ── 나머지 4신 도출 (통일 공식) ──
+  // 희신 = 용신을 생하는 오행
+  // 구신 = 기신을 생하는 오행
+  // 한신 = 나머지
+  const huisin = ELEMENT_GENERATED_BY[yongsin];
+
   let gisin: FiveElement;
-  let gusin: FiveElement;
-  let hansin: FiveElement;
-
   if (isStrong) {
-    // 강 계열:
-    // 희신 = 용신을 생하는 오행
-    // 기신 = 인성 (일간을 더 강하게 만듦)
-    // 구신 = 기신을 생하는 오행
-    // 한신 = 나머지
-    huisin = ELEMENT_GENERATED_BY[yongsin];
+    // 강 계열: 기신 = 인성 (일간을 더 강하게 만듦)
     gisin = groups.인성;
-    gusin = ELEMENT_GENERATED_BY[gisin];
-
-    const used = new Set([yongsin, huisin, gisin, gusin]);
-    const all: FiveElement[] = ['木', '火', '土', '金', '水'];
-    hansin = all.find(e => !used.has(e)) ?? dayElement;
   } else {
-    // 약 계열:
-    // 희신 = 인성 (일간을 생해줌, 용신을 생해줌)
-    // 기신 = 관성 (일간을 극함 — 가장 해로움)
-    // 구신 = 재성 (관성을 생함)
-    // 한신 = 식상 (나머지)
-    huisin = groups.인성;
-    gisin = groups.관성;
-    gusin = groups.재성;
-    hansin = groups.식상;
+    // 약 계열: 기신 = 용신을 극하는 오행 (용신 방해)
+    gisin = ELEMENT_CONTROLLED_BY[yongsin];
   }
+
+  const gusin = ELEMENT_GENERATED_BY[gisin];
+  const all: FiveElement[] = ['木', '火', '土', '金', '水'];
+  const used = new Set([yongsin, huisin, gisin, gusin]);
+  const hansin = all.find(e => !used.has(e)) ?? dayElement;
 
   return { yongsin, huisin, gisin, gusin, hansin };
 }

@@ -99,7 +99,8 @@ export function buildDaeunTab(
     if (!ganZhi) continue;
 
     const { gan, zhi } = splitGanZhi(ganZhi);
-    const startAge = dy.getStartAge();
+    // lunar-typescript가 1세 많게 반환 → 보정
+    const startAge = dy.getStartAge() - 1;
 
     const row = buildFortuneRow(
       dayGan, gan, zhi,
