@@ -407,38 +407,47 @@ export function collectAuxiliaryShinsals(
 ): string[] {
   const shinsals: string[] = [];
 
-  if (isCheonEulGwiIn(dayStem, targetBranch)) shinsals.push('천을귀인');
-  if (isDoHwaSal(yearBranch, targetBranch) || isDoHwaSal(dayBranch, targetBranch)) shinsals.push('도화살');
+  // 1단계: 위치 관련 (건록/양인/협록/암록)
   if (isGeonRok(dayStem, targetBranch)) shinsals.push('건록');
   if (isYangIn(dayStem, targetBranch)) shinsals.push('양인살');
   if (isHyeopRok(dayStem, targetBranch)) shinsals.push('협록');
   if (isAmRok(dayStem, targetBranch)) shinsals.push('암록');
-  if (isHyunChimSal(targetStem, targetBranch)) shinsals.push('현침살');
-  if (isBaekHoSal(dayStem, targetBranch)) shinsals.push('백호살');
-  if (isMyungYeSal(dayStem, targetBranch)) shinsals.push('명예살');
-  if (isBokSeongGwiIn(dayStem, targetBranch)) shinsals.push('복성귀인');
-  if (isGeumYeo(dayStem, targetBranch)) shinsals.push('금여');
-  if (isHongYeomSal(dayStem, targetBranch)) shinsals.push('홍염살');
-  if (isGwaeGangSal(targetStem, targetBranch)) shinsals.push('괴강살');
-  if (isGoRanSal(targetStem, targetBranch)) shinsals.push('고란살');
-  if (isYeokMaSal(yearBranch, targetBranch) || isYeokMaSal(dayBranch, targetBranch)) shinsals.push('역마살');
-  if (isCheonMunSeong(targetBranch)) shinsals.push('천문성');
-  if (isGwanGwiHakGwan(dayStem, targetBranch)) shinsals.push('관귀학관');
-  if (isMunChangGwiIn(dayStem, targetBranch)) shinsals.push('문창귀인');
-  if (isTaeGeukGwiIn(dayStem, targetBranch)) shinsals.push('태극귀인');
-  if (isCheonJuGwiIn(dayStem, targetBranch)) shinsals.push('천주귀인');
-  if (isHakDangGwiIn(dayStem, targetBranch)) shinsals.push('학당귀인');
-  if (isCheonBokGwiIn(dayStem, targetBranch)) shinsals.push('천복귀인');
+
+  // 2단계: 원진살 (중요도 높음)
+  if (isWonJinSal(yearBranch, targetBranch)) shinsals.push('원진(年)');
+  if (isWonJinSal(dayBranch, targetBranch)) shinsals.push('원진(日)');
+
+  // 3단계: 귀인류 (천을/천덕/월덕/태극/문창/학당/천주/천복)
+  if (isCheonEulGwiIn(dayStem, targetBranch)) shinsals.push('천을귀인');
   if (isCheonDeokGwiIn(monthBranch, targetStem)) shinsals.push('천덕귀인');
   if (isWolDeokGwiIn(monthBranch, targetStem)) shinsals.push('월덕귀인');
+  if (isTaeGeukGwiIn(dayStem, targetBranch)) shinsals.push('태극귀인');
+  if (isMunChangGwiIn(dayStem, targetBranch)) shinsals.push('문창귀인');
+  if (isHakDangGwiIn(dayStem, targetBranch)) shinsals.push('학당귀인');
+  if (isCheonJuGwiIn(dayStem, targetBranch)) shinsals.push('천주귀인');
+  if (isCheonBokGwiIn(dayStem, targetBranch)) shinsals.push('천복귀인');
+  if (isBokSeongGwiIn(dayStem, targetBranch)) shinsals.push('복성귀인');
+  if (isMunGokGwiIn(dayStem, targetBranch)) shinsals.push('문곡귀인');
+
+  // 4단계: 살류 (홍염/도화/역마/현침/백호/괴강/고란/천문성/명예)
+  if (isHongYeomSal(dayStem, targetBranch)) shinsals.push('홍염살');
+  if (isDoHwaSal(yearBranch, targetBranch) || isDoHwaSal(dayBranch, targetBranch)) shinsals.push('도화살');
+  if (isYeokMaSal(yearBranch, targetBranch) || isYeokMaSal(dayBranch, targetBranch)) shinsals.push('역마살');
+  if (isHyunChimSal(targetStem, targetBranch)) shinsals.push('현침살');
+  if (isBaekHoSal(dayStem, targetBranch)) shinsals.push('백호살');
+  if (isGwaeGangSal(targetStem, targetBranch)) shinsals.push('괴강살');
+  if (isGoRanSal(targetStem, targetBranch)) shinsals.push('고란살');
+  if (isCheonMunSeong(targetBranch)) shinsals.push('천문성');
+  if (isMyungYeSal(dayStem, targetBranch)) shinsals.push('명예살');
+  if (isGeumYeo(dayStem, targetBranch)) shinsals.push('금여');
+
+  // 5단계: 기타
+  if (isGwanGwiHakGwan(dayStem, targetBranch) && !isMunChangGwiIn(dayStem, targetBranch)) {
+    shinsals.push('관귀학관'); // 문창귀인과 중복 방지
+  }
   if (isBiInSal(dayStem, targetBranch)) shinsals.push('비인살');
   if (isEumChakSal(dayStem, targetBranch)) shinsals.push('음착살');
   if (isNakJeongGwanSal(dayStem, targetBranch)) shinsals.push('낙정관살');
-  if (isMunGokGwiIn(dayStem, targetBranch)) shinsals.push('문곡귀인');
-
-  // 원진살 (년지/일지 기준)
-  if (isWonJinSal(yearBranch, targetBranch)) shinsals.push('원진(年)');
-  if (isWonJinSal(dayBranch, targetBranch)) shinsals.push('원진(日)');
 
   return shinsals;
 }
