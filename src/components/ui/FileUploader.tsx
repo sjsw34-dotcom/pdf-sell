@@ -4,13 +4,14 @@ import { useState, useCallback } from 'react';
 import { useGeneratorStore } from '@/store/useGeneratorStore';
 import { parseSajuJson } from '@/lib/utils/parseJson';
 import { extractInfo, type ExtractedInfo } from '@/lib/utils/extractInfo';
+import { BirthInput } from './BirthInput';
 
 export function FileUploader() {
   const sajuData = useGeneratorStore((s) => s.sajuData);
   const setSajuData = useGeneratorStore((s) => s.setSajuData);
   const [error, setError] = useState('');
   const [info, setInfo] = useState<ExtractedInfo | null>(null);
-  const [mode, setMode] = useState<'file' | 'paste'>('file');
+  const [mode, setMode] = useState<'file' | 'paste' | 'calculate'>('calculate');
   const [pasteText, setPasteText] = useState('');
 
   const processJson = useCallback(
@@ -92,9 +93,19 @@ export function FileUploader() {
         >
           직접 붙여넣기
         </button>
+        <button
+          onClick={() => setMode('calculate')}
+          className={`px-3 py-1 text-xs rounded-md transition ${
+            mode === 'calculate' ? 'bg-purple-600 text-white' : 'bg-gray-800 text-gray-400'
+          }`}
+        >
+          생년월일 계산
+        </button>
       </div>
 
-      {!sajuData ? (
+      {mode === 'calculate' ? (
+        <BirthInput />
+      ) : !sajuData ? (
         <>
           {mode === 'file' ? (
             <div
