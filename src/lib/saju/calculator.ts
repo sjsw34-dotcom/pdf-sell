@@ -5,7 +5,7 @@
 // ═══════════════════════════════════════════════════════════════
 
 import { Solar, Lunar } from 'lunar-typescript';
-import type { RawSajuJson, HeavenlyStem, StrengthLevel } from '@/lib/types/saju';
+import type { RawSajuJson, RawSajuTab, HeavenlyStem, StrengthLevel } from '@/lib/types/saju';
 import { buildInfoTab } from './info-builder';
 import { buildPillarTab } from './pillar-builder';
 import { buildYongsinTab } from './yongsin-builder';
@@ -13,6 +13,20 @@ import { buildYinyangTab } from './yinyang-builder';
 import { buildShinsalTab } from './shinsal-builder';
 import { buildHyungchungTab } from './hyungchung-builder';
 import { buildDaeunTab, buildNyununTab, buildWolunTab } from './fortune-builder';
+
+/** 음양오행 탭에서 십신 그룹 카운트 추출 */
+function extractTenGodCounts(yinyangTab: RawSajuTab): Record<string, number> {
+  const counts: Record<string, number> = {};
+  const row = yinyangTab.data[0] ?? [];
+  // "비겁 : 2", "식상 : 1" 등에서 추출
+  for (const cell of row) {
+    const match = cell.match(/^(비겁|식상|재성|관성|인성)\s*:\s*(\d+)$/);
+    if (match) {
+      counts[match[1]] = parseInt(match[2], 10);
+    }
+  }
+  return counts;
+}
 
 export interface SajuInput {
   name: string;
@@ -123,12 +137,15 @@ export function calculateSaju(input: SajuInput): RawSajuJson {
   // 강약 레벨 추출 (pillar 탭의 시주 row, index 10)
   const strengthLevel = pillarTab.data[0]?.[10] as StrengthLevel ?? '중화';
 
+  // 음양오행 먼저 빌드 → 십신 그룹 카운트 추출
+  const yinyangTab = buildYinyangTab(eightChar);
+  const tenGodCounts = extractTenGodCounts(yinyangTab);
+
   const yongsinTab = buildYongsinTab(
     eightChar.getDayGan() as HeavenlyStem,
     strengthLevel,
+    tenGodCounts,
   );
-
-  const yinyangTab = buildYinyangTab(eightChar);
   const shinsalTab = buildShinsalTab(eightChar);
   const hyungchungTab = buildHyungchungTab();
   const daeunTab = buildDaeunTab(eightChar, genderCode);

@@ -144,8 +144,8 @@ export function buildNyununTab(
   const dayXunKong = eightChar.getDayXunKong();
 
   const baseYear = currentYear ?? new Date().getFullYear();
-  const startYear = baseYear - 5;
-  const endYear = baseYear + 5;
+  const startYear = baseYear - 1;
+  const endYear = baseYear + 9;
 
   const GAN: HeavenlyStem[] = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
   const ZHI: EarthlyBranch[] = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];

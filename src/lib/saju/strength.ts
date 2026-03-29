@@ -1,83 +1,108 @@
 // ═══════════════════════════════════════════════════════════════
-// 일간 강약 판단 (극신약 ~ 극신강)
+// 일간 강약 판단 — 가중치 기반 9단계
+// 극신약 < 신약 < 중신약 < 강변약 < 중화 < 약변강 < 신강 < 중신강 < 극신강
 // ═══════════════════════════════════════════════════════════════
 
 import type { HeavenlyStem, EarthlyBranch, StrengthLevel, StrengthDetail, FiveElement } from '@/lib/types/saju';
 import { STEM_TO_ELEMENT, BRANCH_TO_ELEMENT } from './mappings';
 
-/**
- * 월지(월주 지지)가 일간의 오행을 돕는지 판단 (득령/실령)
- * 득령: 월지 오행이 일간 오행을 생하거나 같은 오행
- */
-function checkDeukryeong(dayElement: FiveElement, monthBranch: EarthlyBranch): StrengthDetail {
-  const monthElement = BRANCH_TO_ELEMENT[monthBranch];
-  // 득령: 같은 오행이거나 월지가 일간을 생함
-  if (monthElement === dayElement) return '득령';
-  // 생하는 관계: 水→木, 木→火, 火→土, 土→金, 金→水
-  const generates: Record<FiveElement, FiveElement> = {
-    '水': '木', '木': '火', '火': '土', '土': '金', '金': '水',
-  };
-  if (generates[monthElement] === dayElement) return '득령';
-  return '실령';
+/** 오행 상생 관계: A가 B를 생함 */
+const GENERATES: Record<FiveElement, FiveElement> = {
+  '木': '火', '火': '土', '土': '金', '金': '水', '水': '木',
+};
+
+/** 주어진 오행이 target을 돕는지 (같거나 생하는 관계) */
+function supports(element: FiveElement, target: FiveElement): boolean {
+  return element === target || GENERATES[element] === target;
 }
 
-/**
- * 일지(일주 지지)가 일간을 돕는지 판단 (득지/실지)
- */
+// ─── 득지 / 실지 ───
+
 function checkDeukji(dayElement: FiveElement, dayBranch: EarthlyBranch): StrengthDetail {
-  const branchElement = BRANCH_TO_ELEMENT[dayBranch];
-  if (branchElement === dayElement) return '득지';
-  const generates: Record<FiveElement, FiveElement> = {
-    '水': '木', '木': '火', '火': '土', '土': '金', '金': '水',
-  };
-  if (generates[branchElement] === dayElement) return '득지';
-  return '실지';
+  return supports(BRANCH_TO_ELEMENT[dayBranch], dayElement) ? '득지' : '실지';
 }
+
+// ─── 득령 / 실령 ───
+
+function checkDeukryeong(dayElement: FiveElement, monthBranch: EarthlyBranch): StrengthDetail {
+  return supports(BRANCH_TO_ELEMENT[monthBranch], dayElement) ? '득령' : '실령';
+}
+
+// ─── 득세 / 실세 (세력 지원 개수 반환) ───
+
+function countSupport(
+  dayElement: FiveElement,
+  yearStem: HeavenlyStem,
+  yearBranch: EarthlyBranch,
+  hourStem: HeavenlyStem,
+  hourBranch: EarthlyBranch,
+): number {
+  let count = 0;
+  if (supports(STEM_TO_ELEMENT[yearStem], dayElement)) count++;
+  if (supports(BRANCH_TO_ELEMENT[yearBranch], dayElement)) count++;
+  if (supports(STEM_TO_ELEMENT[hourStem], dayElement)) count++;
+  if (supports(BRANCH_TO_ELEMENT[hourBranch], dayElement)) count++;
+  return count;
+}
+
+function checkDeukse(count: number): StrengthDetail {
+  return count >= 2 ? '득세' : '실세';
+}
+
+// ─── 가중치 기반 점수 계산 ───
 
 /**
- * 년지+시지가 일간을 돕는지 판단 (득세/실세)
+ * 점수 체계:
+ * - 월령(득령): +35점 (가장 중요)
+ * - 일지(득지): +20점
+ * - 세력 지원: 개당 +10점 (최대 4개 = 40점)
+ * 총점 범위: 0 ~ 95
+ *
+ * 월령이 기본 영역을 결정:
+ * - 득령 → 강(强) 영역 (35+)
+ * - 실령 → 약(弱) 영역 (0~59)
+ *
+ * 약(弱) 영역 (실령, 0-59):
+ *   0-16  → 극신약
+ *   17-24 → 신약
+ *   25-34 → 중신약
+ *   35-44 → 약변강  (득지+득세가 월령 부재를 보완)
+ *
+ * 강(强) 영역 (득령, 35-95):
+ *   35-44 → 강변약
+ *   45-54 → 신강
+ *   55-64 → 중신강
+ *   65+   → 극신강
+ *
+ * 중화: 득령 + 실지 + 실세(0~1) 일 때 (35~45 부근)
  */
-function checkDeukse(
-  dayElement: FiveElement,
-  yearBranch: EarthlyBranch,
-  hourBranch: EarthlyBranch,
-  yearStem: HeavenlyStem,
-  hourStem: HeavenlyStem,
-): StrengthDetail {
-  let support = 0;
-  const generates: Record<FiveElement, FiveElement> = {
-    '水': '木', '木': '火', '火': '土', '土': '金', '金': '水',
-  };
-
-  // 년지 체크
-  const yearBrElement = BRANCH_TO_ELEMENT[yearBranch];
-  if (yearBrElement === dayElement || generates[yearBrElement] === dayElement) support++;
-
-  // 시지 체크
-  const hourBrElement = BRANCH_TO_ELEMENT[hourBranch];
-  if (hourBrElement === dayElement || generates[hourBrElement] === dayElement) support++;
-
-  // 년간 체크
-  const yearStElement = STEM_TO_ELEMENT[yearStem];
-  if (yearStElement === dayElement || generates[yearStElement] === dayElement) support++;
-
-  // 시간 체크
-  const hourStElement = STEM_TO_ELEMENT[hourStem];
-  if (hourStElement === dayElement || generates[hourStElement] === dayElement) support++;
-
-  return support >= 2 ? '득세' : '실세';
+function scoreToLevel(score: number, hasDeukryeong: boolean): StrengthLevel {
+  if (hasDeukryeong) {
+    // 강 영역
+    if (score >= 65) return '극신강';
+    if (score >= 55) return '중신강';
+    if (score >= 45) return '신강';
+    if (score >= 40) return '중화';
+    return '강변약';
+  } else {
+    // 약 영역
+    if (score >= 35) return '약변강';
+    if (score >= 25) return '중신약';
+    if (score >= 17) return '신약';
+    return '극신약';
+  }
 }
+
+// ─── 공개 인터페이스 ───
 
 export interface StrengthResult {
   level: StrengthLevel;
   deukji: StrengthDetail;
   deukryeong: StrengthDetail;
   deukse: StrengthDetail;
+  score: number;
 }
 
-/**
- * 일간 강약 종합 판단
- */
 export function calculateStrength(
   dayStem: HeavenlyStem,
   dayBranch: EarthlyBranch,
@@ -91,23 +116,16 @@ export function calculateStrength(
 
   const deukji = checkDeukji(dayElement, dayBranch);
   const deukryeong = checkDeukryeong(dayElement, monthBranch);
-  const deukse = checkDeukse(dayElement, yearBranch, hourBranch, yearStem, hourStem);
+  const supportCount = countSupport(dayElement, yearStem, yearBranch, hourStem, hourBranch);
+  const deukse = checkDeukse(supportCount);
 
-  // 득점 계산: 각 요소별 1점
+  // 점수 계산
   let score = 0;
-  if (deukji === '득지') score++;
-  if (deukryeong === '득령') score++;
-  if (deukse === '득세') score++;
+  if (deukryeong === '득령') score += 35;
+  if (deukji === '득지') score += 20;
+  score += supportCount * 10;
 
-  let level: StrengthLevel;
-  if (score === 0) level = '극신약';
-  else if (score === 1) level = '신약';
-  else if (score === 2) level = '신강';
-  else level = '극신강';
+  const level = scoreToLevel(score, deukryeong === '득령');
 
-  // 중화 판단: 득령 + 하나만 더 있으면서 세력이 균형일 때
-  // (간단한 휴리스틱 — 정확한 판단은 지장간 분석이 필요하지만 기본 3요소로 판단)
-  if (score === 1 && deukryeong === '득령') level = '중화';
-
-  return { level, deukji, deukryeong, deukse };
+  return { level, deukji, deukryeong, deukse, score };
 }

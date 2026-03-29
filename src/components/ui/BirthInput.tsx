@@ -5,7 +5,6 @@ import { useGeneratorStore } from '@/store/useGeneratorStore';
 import { parseSajuJson } from '@/lib/utils/parseJson';
 import { extractInfo, type ExtractedInfo } from '@/lib/utils/extractInfo';
 import { calculateSaju, type SajuInput } from '@/lib/saju/calculator';
-import type { RawSajuJson } from '@/lib/types/saju';
 
 // ─── 12지신 시간표 ───
 const JIJIN_HOURS = [
@@ -48,7 +47,6 @@ export function BirthInput() {
   const [exactHour, setExactHour] = useState(12);
   const [exactMinute, setExactMinute] = useState(0);
   const [ampm, setAmpm] = useState<'오전' | '오후'>('오후');
-  const [calcMode, setCalcMode] = useState<'local' | 'ai'>('ai');
 
   // 결과 상태
   const [rawJsonString, setRawJsonString] = useState('');
@@ -57,7 +55,7 @@ export function BirthInput() {
   const [copied, setCopied] = useState(false);
   const [jsonView, setJsonView] = useState<'all' | 'part1' | 'part2'>('all');
 
-  const handleCalculate = useCallback(async () => {
+  const handleCalculate = useCallback(() => {
     setError('');
     setLoading(true);
 
@@ -80,7 +78,7 @@ export function BirthInput() {
         birthMinute = exactMinute;
       }
 
-      const inputBase = {
+      const input: SajuInput = {
         name: name.trim() || 'Valued Guest',
         gender,
         birthYear: year,
@@ -92,28 +90,7 @@ export function BirthInput() {
         isLeapMonth: calendarType === 'leapLunar',
       };
 
-      let rawJson: RawSajuJson;
-
-      if (calcMode === 'ai') {
-        // AI (Claude API) 기반 만세력 계산
-        const res = await fetch('/api/calculate-saju', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(inputBase),
-        });
-
-        if (!res.ok) {
-          const err = await res.json().catch(() => ({ error: 'AI 계산 실패' }));
-          throw new Error(err.error || `HTTP ${res.status}`);
-        }
-
-        rawJson = await res.json() as RawSajuJson;
-      } else {
-        // 로컬 결정론적 계산 (기존 방식)
-        const input: SajuInput = inputBase;
-        rawJson = calculateSaju(input);
-      }
-
+      const rawJson = calculateSaju(input);
       const jsonStr = JSON.stringify(rawJson, null, 2);
       setRawJsonString(jsonStr);
 
@@ -132,7 +109,7 @@ export function BirthInput() {
     } finally {
       setLoading(false);
     }
-  }, [name, gender, calendarType, year, month, day, timeIdx, timeMode, exactHour, exactMinute, ampm, calcMode, setSajuData]);
+  }, [name, gender, calendarType, year, month, day, timeIdx, timeMode, exactHour, exactMinute, ampm, setSajuData]);
 
   const handleCopy = useCallback(async () => {
     const text = getJsonViewText();
@@ -415,48 +392,13 @@ export function BirthInput() {
         )}
       </div>
 
-      {/* 계산 모드 선택 */}
-      <div>
-        <label className="block text-xs text-gray-500 mb-1">계산 방식</label>
-        <div className="flex gap-1">
-          <button
-            onClick={() => setCalcMode('ai')}
-            className={`flex-1 px-3 py-2 text-xs rounded-md transition ${
-              calcMode === 'ai'
-                ? 'bg-purple-600 text-white'
-                : 'bg-gray-800 text-gray-400 hover:text-gray-300'
-            }`}
-          >
-            AI 만세력 (Claude)
-          </button>
-          <button
-            onClick={() => setCalcMode('local')}
-            className={`flex-1 px-3 py-2 text-xs rounded-md transition ${
-              calcMode === 'local'
-                ? 'bg-purple-600 text-white'
-                : 'bg-gray-800 text-gray-400 hover:text-gray-300'
-            }`}
-          >
-            로컬 계산
-          </button>
-        </div>
-        {calcMode === 'ai' && (
-          <p className="text-[10px] text-yellow-500/70 mt-1">
-            Claude API로 만세력 생성 (30초~1분 소요, 더 정확)
-          </p>
-        )}
-      </div>
-
       {/* 계산 버튼 */}
       <button
         onClick={handleCalculate}
         disabled={loading}
         className="w-full py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-medium rounded-lg disabled:opacity-40 hover:from-purple-500 hover:to-indigo-500 transition"
       >
-        {loading
-          ? (calcMode === 'ai' ? 'AI 만세력 생성 중... (30초~1분)' : '계산 중...')
-          : (calcMode === 'ai' ? 'AI 사주 계산 (Claude API)' : '사주 계산 (로컬)')
-        }
+        {loading ? '계산 중...' : '사주 계산 (Calculate)'}
       </button>
 
       {error && (
