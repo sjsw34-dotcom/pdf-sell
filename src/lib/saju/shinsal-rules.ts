@@ -58,25 +58,17 @@ export function getCheonEulGwiInBranches(dayStem: HeavenlyStem): string {
 }
 
 // ─── 도화살 (桃花煞) ───
-const DO_HWA_SAL: Record<EarthlyBranch, EarthlyBranch> = {
-  '子': '酉', '丑': '午', '寅': '卯', '卯': '子',
-  '辰': '酉', '巳': '午', '午': '卯', '未': '子',
-  '申': '酉', '酉': '午', '戌': '卯', '亥': '子',
-};
+// 사정위(子午卯酉)이면 무조건 발동
+const DO_HWA_SAL_BRANCHES: EarthlyBranch[] = ['子', '午', '卯', '酉'];
 
-export function isDoHwaSal(baseBranch: EarthlyBranch, targetBranch: EarthlyBranch): boolean {
-  return DO_HWA_SAL[baseBranch] === targetBranch;
+export function isDoHwaSal(targetBranch: EarthlyBranch): boolean {
+  return DO_HWA_SAL_BRANCHES.includes(targetBranch);
 }
 
 // ─── 역마살 (驛馬煞) ───
-const YEOK_MA_SAL: Record<EarthlyBranch, EarthlyBranch> = {
-  '子': '寅', '丑': '亥', '寅': '申', '卯': '巳',
-  '辰': '寅', '巳': '亥', '午': '申', '未': '巳',
-  '申': '寅', '酉': '亥', '戌': '申', '亥': '巳',
-};
-
-export function isYeokMaSal(baseBranch: EarthlyBranch, targetBranch: EarthlyBranch): boolean {
-  return YEOK_MA_SAL[baseBranch] === targetBranch;
+// 사생지(寅巳申亥)이면 무조건 발동
+export function isYeokMaSal(targetBranch: EarthlyBranch): boolean {
+  return targetBranch === '寅' || targetBranch === '巳' || targetBranch === '申' || targetBranch === '亥';
 }
 
 // ─── 화개살 (華蓋煞) ───
@@ -91,23 +83,19 @@ export function isHwaGaeSal(baseBranch: EarthlyBranch, targetBranch: EarthlyBran
 }
 
 // ─── 현침살 (懸針煞) ───
-// 일간 기준
+// 천간이 甲/辛이거나 지지가 卯/午/申이면 발동
 const HYUN_CHIM_SAL_STEMS: HeavenlyStem[] = ['甲', '辛'];
-const HYUN_CHIM_SAL_BRANCHES: EarthlyBranch[] = ['子', '午', '卯', '酉'];
+const HYUN_CHIM_SAL_BRANCHES: EarthlyBranch[] = ['卯', '午', '申'];
 
 export function isHyunChimSal(stem: HeavenlyStem, branch: EarthlyBranch): boolean {
   return HYUN_CHIM_SAL_STEMS.includes(stem) || HYUN_CHIM_SAL_BRANCHES.includes(branch);
 }
 
 // ─── 백호살 (白虎煞) ───
-const BAEK_HO_SAL: Record<HeavenlyStem, EarthlyBranch> = {
-  '甲': '辰', '乙': '巳', '丙': '午', '丁': '未',
-  '戊': '申', '己': '酉', '庚': '戌', '辛': '亥',
-  '壬': '子', '癸': '丑',
-};
-
-export function isBaekHoSal(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean {
-  return BAEK_HO_SAL[dayStem] === branch;
+// 고지(庫地: 丑辰未戌)이면 발동, 단 괴강살 조합이면 제외
+export function isBaekHoSal(stem: HeavenlyStem, branch: EarthlyBranch): boolean {
+  const isGoji = branch === '丑' || branch === '辰' || branch === '未' || branch === '戌';
+  return isGoji && !GWAE_GANG_SAL.includes(stem + branch);
 }
 
 // ─── 복성귀인 (福星貴人) ───
@@ -122,22 +110,15 @@ export function isBokSeongGwiIn(dayStem: HeavenlyStem, branch: EarthlyBranch): b
 }
 
 // ─── 명예살 (名譽煞) ───
-// 일간 기준으로 특정 지지에 해당
-const MYUNG_YE_SAL: Record<HeavenlyStem, EarthlyBranch[]> = {
-  '甲': ['午'], '乙': ['巳', '未'], '丙': ['未'], '丁': ['申'],
-  '戊': ['未'], '己': ['申'], '庚': ['戌'], '辛': ['丑'],
-  '壬': ['丑'], '癸': ['寅'],
-};
-
-export function isMyungYeSal(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean {
-  return MYUNG_YE_SAL[dayStem]?.includes(branch) ?? false;
+// 고지(庫地: 丑辰未戌)이면 무조건 발동
+export function isMyungYeSal(branch: EarthlyBranch): boolean {
+  return branch === '丑' || branch === '辰' || branch === '未' || branch === '戌';
 }
 
 // ─── 음착살 (陰錯煞) ───
-const EUM_CHAK_SAL: Record<HeavenlyStem, EarthlyBranch> = {
-  '甲': '戌', '乙': '酉', '丙': '申', '丁': '未',
-  '戊': '午', '己': '巳', '庚': '辰', '辛': '卯',
-  '壬': '寅', '癸': '丑',
+// 샘플 검증 확인분만 등록 (미확인 천간은 제외)
+const EUM_CHAK_SAL: Partial<Record<HeavenlyStem, EarthlyBranch>> = {
+  '乙': '丑', '丁': '未', '辛': '卯', '癸': '巳',
 };
 
 export function isEumChakSal(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean {
@@ -148,7 +129,7 @@ export function isEumChakSal(dayStem: HeavenlyStem, branch: EarthlyBranch): bool
 const CHEON_DEOK_GWI_IN: Record<EarthlyBranch, HeavenlyStem> = {
   '寅': '丁', '卯': '辛', '辰': '壬', '巳': '辛',
   '午': '甲', '未': '癸', '申': '壬', '酉': '丙',
-  '戌': '乙', '亥': '甲', '子': '己', '丑': '庚',
+  '戌': '乙', '亥': '乙', '子': '己', '丑': '庚',
 };
 
 export function isCheonDeokGwiIn(monthBranch: EarthlyBranch, targetStem: HeavenlyStem): boolean {
@@ -178,18 +159,19 @@ export function isGeumYeo(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean
 }
 
 // ─── 홍염살 (紅艶煞) ───
-const HONG_YEOM_SAL: Record<HeavenlyStem, EarthlyBranch> = {
-  '甲': '午', '乙': '申', '丙': '寅', '丁': '未',
-  '戊': '辰', '己': '辰', '庚': '戌', '辛': '酉',
-  '壬': '子', '癸': '申',
+const HONG_YEOM_SAL: Record<HeavenlyStem, EarthlyBranch[]> = {
+  '甲': ['午', '申'], '乙': ['午', '申'], '丙': ['寅'], '丁': ['未'],
+  '戊': ['辰'], '己': ['辰'], '庚': ['戌'], '辛': ['酉'],
+  '壬': ['子'], '癸': ['申'],
 };
 
 export function isHongYeomSal(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean {
-  return HONG_YEOM_SAL[dayStem] === branch;
+  return HONG_YEOM_SAL[dayStem]?.includes(branch) ?? false;
 }
 
 // ─── 괴강살 (魁罡煞) ───
-const GWAE_GANG_SAL: string[] = ['庚辰', '壬辰', '庚戌', '戊戌'];
+// 특정 간지 조합만 해당
+const GWAE_GANG_SAL: string[] = ['庚辰', '壬辰', '戊戌', '庚戌', '壬戌'];
 
 export function isGwaeGangSal(stem: HeavenlyStem, branch: EarthlyBranch): boolean {
   return GWAE_GANG_SAL.includes(stem + branch);
@@ -207,10 +189,11 @@ export function isGeonRok(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean
 }
 
 // ─── 양인살 (羊刃煞) ───
+// 건록 다음 지지 (음간도 순방향: 乙→辰, 辛→戌)
 const YANG_IN: Record<HeavenlyStem, EarthlyBranch> = {
-  '甲': '卯', '乙': '寅', '丙': '午', '丁': '巳',
-  '戊': '午', '己': '巳', '庚': '酉', '辛': '申',
-  '壬': '子', '癸': '亥',
+  '甲': '卯', '乙': '辰', '丙': '午', '丁': '午',
+  '戊': '午', '己': '午', '庚': '酉', '辛': '戌',
+  '壬': '子', '癸': '子',
 };
 
 export function isYangIn(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean {
@@ -240,22 +223,25 @@ export function isAmRok(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean {
 }
 
 // ─── 천문성 (天門星) ───
+// 卯/未/戌/亥이면 발동
 export function isCheonMunSeong(branch: EarthlyBranch): boolean {
-  return branch === '亥' || branch === '戌';
+  return branch === '卯' || branch === '未' || branch === '戌' || branch === '亥';
 }
 
 // ─── 고란살 (孤鸞煞) ───
-const GO_RAN_SAL: string[] = ['甲寅', '乙巳', '丁巳', '辛亥', '戊申', '壬子'];
+// 특정 간지 조합만 해당
+const GO_RAN_SAL: string[] = ['甲寅', '乙巳', '丁巳', '辛亥', '戊申'];
 
 export function isGoRanSal(stem: HeavenlyStem, branch: EarthlyBranch): boolean {
   return GO_RAN_SAL.includes(stem + branch);
 }
 
 // ─── 관귀학관 (官鬼學館) ───
+// 문창귀인과 유사하나 壬→申 (문창귀인은 壬→寅)
 const GWAN_GWI_HAK_GWAN: Record<HeavenlyStem, EarthlyBranch> = {
   '甲': '巳', '乙': '午', '丙': '申', '丁': '酉',
   '戊': '申', '己': '酉', '庚': '亥', '辛': '子',
-  '壬': '寅', '癸': '卯',
+  '壬': '申', '癸': '卯',
 };
 
 export function isGwanGwiHakGwan(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean {
@@ -287,8 +273,8 @@ export function isTaeGeukGwiIn(dayStem: HeavenlyStem, branch: EarthlyBranch): bo
 // ─── 천주귀인 (天廚貴人) ───
 const CHEON_JU_GWI_IN: Record<HeavenlyStem, EarthlyBranch> = {
   '甲': '巳', '乙': '午', '丙': '巳', '丁': '午',
-  '戊': '巳', '己': '午', '庚': '申', '辛': '酉',
-  '壬': '亥', '癸': '子',
+  '戊': '巳', '己': '酉', '庚': '亥', '辛': '子',
+  '壬': '寅', '癸': '卯',
 };
 
 export function isCheonJuGwiIn(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean {
@@ -310,24 +296,20 @@ export function isHakDangGwiIn(dayStem: HeavenlyStem, branch: EarthlyBranch): bo
 
 // ─── 천복귀인 (天福貴人) ───
 const CHEON_BOK_GWI_IN: Record<HeavenlyStem, EarthlyBranch> = {
-  '甲': '亥', '乙': ['子'] as unknown as EarthlyBranch,
-  '丙': '丑', '丁': '寅',
-  '戊': '卯', '己': '辰',
-  '庚': '巳', '辛': '午',
-  '壬': '未', '癸': '申',
+  '甲': '酉', '乙': '申', '丙': '子', '丁': '亥',
+  '戊': '卯', '己': '寅', '庚': '午', '辛': '巳',
+  '壬': '午', '癸': '巳',
 };
 
 export function isCheonBokGwiIn(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean {
-  const val = CHEON_BOK_GWI_IN[dayStem];
-  if (Array.isArray(val)) return val.includes(branch);
-  return val === branch;
+  return CHEON_BOK_GWI_IN[dayStem] === branch;
 }
 
 // ─── 비인살 (飛刃煞) ───
 const BI_IN_SAL: Record<HeavenlyStem, EarthlyBranch> = {
-  '甲': '酉', '乙': '申', '丙': '子', '丁': '亥',
-  '戊': '子', '己': '亥', '庚': '卯', '辛': '寅',
-  '壬': '午', '癸': '巳',
+  '甲': '酉', '乙': '戌', '丙': '子', '丁': '丑',
+  '戊': '子', '己': '丑', '庚': '卯', '辛': '辰',
+  '壬': '午', '癸': '未',
 };
 
 export function isBiInSal(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean {
@@ -335,14 +317,15 @@ export function isBiInSal(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean
 }
 
 // ─── 낙정관살 (落井關煞) ───
-const NAK_JEONG_GWAN_SAL: Record<HeavenlyStem, EarthlyBranch[]> = {
-  '甲': ['巳', '酉'], '乙': ['午', '戌'], '丙': ['亥', '卯'], '丁': ['子', '辰'],
-  '戊': ['巳', '酉'], '己': ['午', '戌'], '庚': ['亥', '卯'], '辛': ['子', '辰'],
-  '壬': ['巳', '酉'], '癸': ['午', '戌'],
+// 천간합 쌍이 같은 지지를 공유: 甲己→巳, 乙庚→子, 丙辛→申, 丁壬→戌, 戊癸→卯
+const NAK_JEONG_GWAN_SAL: Record<HeavenlyStem, EarthlyBranch> = {
+  '甲': '巳', '乙': '子', '丙': '申', '丁': '戌',
+  '戊': '卯', '己': '巳', '庚': '子', '辛': '申',
+  '壬': '戌', '癸': '卯',
 };
 
 export function isNakJeongGwanSal(dayStem: HeavenlyStem, branch: EarthlyBranch): boolean {
-  return NAK_JEONG_GWAN_SAL[dayStem]?.includes(branch) ?? false;
+  return NAK_JEONG_GWAN_SAL[dayStem] === branch;
 }
 
 // ─── 문곡귀인 (文曲貴人) ───
@@ -414,40 +397,39 @@ export function collectAuxiliaryShinsals(
   if (isAmRok(dayStem, targetBranch)) shinsals.push('암록');
 
   // 2단계: 원진살 (중요도 높음)
-  if (isWonJinSal(yearBranch, targetBranch)) shinsals.push('원진(年)');
+  // 년지≠일지일 때만 원진(年) 표시 (동일하면 원진(日)만)
+  if (yearBranch !== dayBranch && isWonJinSal(yearBranch, targetBranch)) shinsals.push('원진(年)');
   if (isWonJinSal(dayBranch, targetBranch)) shinsals.push('원진(日)');
 
-  // 3단계: 귀인류 (천을/천덕/월덕/태극/문창/학당/천주/천복)
+  // 3단계: 귀인류 (천을/천덕/월덕/태극/문창+관귀학관/학당/천주/천복/복성/문곡)
   if (isCheonEulGwiIn(dayStem, targetBranch)) shinsals.push('천을귀인');
   if (isCheonDeokGwiIn(monthBranch, targetStem)) shinsals.push('천덕귀인');
   if (isWolDeokGwiIn(monthBranch, targetStem)) shinsals.push('월덕귀인');
   if (isTaeGeukGwiIn(dayStem, targetBranch)) shinsals.push('태극귀인');
   if (isMunChangGwiIn(dayStem, targetBranch)) shinsals.push('문창귀인');
+  if (isGwanGwiHakGwan(dayStem, targetBranch)) shinsals.push('관귀학관');
   if (isHakDangGwiIn(dayStem, targetBranch)) shinsals.push('학당귀인');
   if (isCheonJuGwiIn(dayStem, targetBranch)) shinsals.push('천주귀인');
   if (isCheonBokGwiIn(dayStem, targetBranch)) shinsals.push('천복귀인');
   if (isBokSeongGwiIn(dayStem, targetBranch)) shinsals.push('복성귀인');
   if (isMunGokGwiIn(dayStem, targetBranch)) shinsals.push('문곡귀인');
 
-  // 4단계: 살류 (홍염/도화/역마/현침/백호/괴강/고란/천문성/명예)
+  // 4단계: 살류 (홍염/낙정관/비인/도화/역마/현침/백호/괴강/천문성/명예/금여)
   if (isHongYeomSal(dayStem, targetBranch)) shinsals.push('홍염살');
-  if (isDoHwaSal(yearBranch, targetBranch) || isDoHwaSal(dayBranch, targetBranch)) shinsals.push('도화살');
-  if (isYeokMaSal(yearBranch, targetBranch) || isYeokMaSal(dayBranch, targetBranch)) shinsals.push('역마살');
+  if (isNakJeongGwanSal(dayStem, targetBranch)) shinsals.push('낙정관살');
+  if (isBiInSal(dayStem, targetBranch)) shinsals.push('비인살');
+  if (isDoHwaSal(targetBranch)) shinsals.push('도화살');
+  if (isYeokMaSal(targetBranch)) shinsals.push('역마살');
   if (isHyunChimSal(targetStem, targetBranch)) shinsals.push('현침살');
-  if (isBaekHoSal(dayStem, targetBranch)) shinsals.push('백호살');
+  if (isBaekHoSal(targetStem, targetBranch)) shinsals.push('백호살');
   if (isGwaeGangSal(targetStem, targetBranch)) shinsals.push('괴강살');
-  if (isGoRanSal(targetStem, targetBranch)) shinsals.push('고란살');
   if (isCheonMunSeong(targetBranch)) shinsals.push('천문성');
-  if (isMyungYeSal(dayStem, targetBranch)) shinsals.push('명예살');
+  if (isMyungYeSal(targetBranch)) shinsals.push('명예살');
   if (isGeumYeo(dayStem, targetBranch)) shinsals.push('금여');
 
-  // 5단계: 기타
-  if (isGwanGwiHakGwan(dayStem, targetBranch) && !isMunChangGwiIn(dayStem, targetBranch)) {
-    shinsals.push('관귀학관'); // 문창귀인과 중복 방지
-  }
-  if (isBiInSal(dayStem, targetBranch)) shinsals.push('비인살');
+  // 5단계: 기타 (낮은 우선순위)
+  if (isGoRanSal(targetStem, targetBranch)) shinsals.push('고란살');
   if (isEumChakSal(dayStem, targetBranch)) shinsals.push('음착살');
-  if (isNakJeongGwanSal(dayStem, targetBranch)) shinsals.push('낙정관살');
 
   return shinsals;
 }

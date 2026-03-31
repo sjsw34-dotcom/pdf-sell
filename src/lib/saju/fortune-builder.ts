@@ -32,8 +32,9 @@ function splitGanZhi(ganZhi: string): { gan: HeavenlyStem; zhi: EarthlyBranch } 
 }
 
 /** 공망 판정 */
-function isGongmang(targetBranch: EarthlyBranch, yearXunKong: string, dayXunKong: string): boolean {
-  return yearXunKong.includes(targetBranch) || dayXunKong.includes(targetBranch);
+function isGongmang(targetBranch: EarthlyBranch, dayXunKong: string): boolean {
+  // 대운/년운/월운에서는 일공망만 적용 (년공망 제외)
+  return dayXunKong.includes(targetBranch);
 }
 
 /** 공통: 운세 항목 한 행 생성 */
@@ -59,7 +60,7 @@ function buildFortuneRow(
   const auxiliaries = collectAuxiliaryShinsals(
     dayGan, monthBranch, yearBranch, dayBranch, gan, zhi,
   );
-  if (isGongmang(zhi, yearXunKong, dayXunKong)) {
+  if (isGongmang(zhi, dayXunKong)) {
     auxiliaries.unshift('공망');
   }
 
@@ -91,6 +92,11 @@ export function buildDaeunTab(
   const yun = eightChar.getYun(gender, 1);
   const daYuns = yun.getDaYun(11);
 
+  // 대운 시작 나이: Yun의 시작년+월 기반 반올림
+  const yunStartYear = yun.getStartYear();
+  const yunStartMonth = yun.getStartMonth();
+  const firstDaeunAge = yunStartYear + (yunStartMonth >= 6 ? 1 : 0);
+
   const entries: string[][] = [];
 
   for (let i = 1; i < daYuns.length && entries.length < 10; i++) {
@@ -99,8 +105,7 @@ export function buildDaeunTab(
     if (!ganZhi) continue;
 
     const { gan, zhi } = splitGanZhi(ganZhi);
-    // lunar-typescript가 1세 많게 반환 → 보정
-    const startAge = dy.getStartAge() - 1;
+    const startAge = firstDaeunAge + (i - 1) * 10;
 
     const row = buildFortuneRow(
       dayGan, gan, zhi,
@@ -158,7 +163,7 @@ export function buildNyununTab(
     const zhiIdx = ((yr - 4) % 12 + 12) % 12;
     const gan = GAN[ganIdx];
     const zhi = ZHI[zhiIdx];
-    const age = yr - birthYear;
+    const age = yr - birthYear + 1;
 
     const row = buildFortuneRow(
       dayGan, gan, zhi,
@@ -219,10 +224,10 @@ export function buildWolunTab(
 
   const entries: string[][] = [];
 
-  // 1월~12월 순서로 생성
+  // 1월(丑月)~12월(子月) 양력 기준 매핑
   for (let m = 1; m <= 12; m++) {
-    const monthZhiIdx = (m + 1) % 12;
-    const monthGanIdxCalc = (monthGanOffset + m - 1) % 10;
+    const monthZhiIdx = m % 12;
+    const monthGanIdxCalc = (monthGanOffset + m - 2 + 10) % 10;
     const gan = GAN[monthGanIdxCalc];
     const zhi = ZHI[monthZhiIdx];
 

@@ -88,11 +88,11 @@ export function buildShinsalTab(eightChar: EightChar): RawSajuTab {
   function collectDetailedShinsals(p: PillarInfo): string[] {
     const shinsals: string[] = [];
     if (isCheonEulGwiIn(dayStem, p.branch)) shinsals.push('천을귀인');
-    if (isDoHwaSal(yearBranch, p.branch) || isDoHwaSal(dayBranch, p.branch)) shinsals.push('도화살');
+    if (isDoHwaSal(p.branch)) shinsals.push('도화살');
     if (isBokSeongGwiIn(dayStem, p.branch)) shinsals.push('복성귀인');
     if (isHyunChimSal(p.stem, p.branch)) shinsals.push('현침살');
-    if (isBaekHoSal(dayStem, p.branch)) shinsals.push('백호살');
-    if (isMyungYeSal(dayStem, p.branch)) shinsals.push('명예살');
+    if (isBaekHoSal(p.stem, p.branch)) shinsals.push('백호살');
+    if (isMyungYeSal(p.branch)) shinsals.push('명예살');
     if (isEumChakSal(dayStem, p.branch)) shinsals.push('음착살');
     if (isCheonMunSeong(p.branch)) shinsals.push('천문성');
     if (isGeumYeo(dayStem, p.branch)) shinsals.push('금여');
