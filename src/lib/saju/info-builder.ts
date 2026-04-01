@@ -10,6 +10,7 @@ export interface InfoInput {
   gender: '남' | '여';
   solar: Solar;
   lunar: ReturnType<Solar['getLunar']>;
+  birthHour: number;
 }
 
 /**
@@ -55,7 +56,7 @@ export function buildInfoTab(input: InfoInput): RawSajuTab {
   const currentYear = new Date().getFullYear();
   const age = calculateAge(solar.getYear(), currentYear);
   const genderChar = gender === '남' ? '男' : '女';
-  const shi = getShiName(solar.getHour());
+  const shi = getShiName(input.birthHour);
 
   // 음력 윤달 여부
   const isLeapMonth = lunar.getMonth() < 0;

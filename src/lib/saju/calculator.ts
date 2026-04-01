@@ -155,6 +155,7 @@ export function calculateSaju(input: SajuInput): RawSajuJson {
     gender,
     solar: originalSolar,
     lunar: originalLunar,
+    birthHour,
   });
 
   const pillarTab = buildPillarTab(eightChar, timeGanOverride ? { timeGan: timeGanOverride } : undefined);

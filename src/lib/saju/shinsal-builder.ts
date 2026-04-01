@@ -69,9 +69,8 @@ export function buildShinsalTab(eightChar: EightChar): RawSajuTab {
   // 천을귀인 지지
   const cheonEulGwiInStr = getCheonEulGwiInBranches(dayStem);
 
-  // 월령 (한국식: 월주 지지의 본기 천간)
-  const koreanMonthHideGan = KOREAN_HIDDEN_STEMS[monthBranch];
-  const wolryeong = koreanMonthHideGan[2]; // 본기
+  // 월령 (월주 천간)
+  const wolryeong = eightChar.getMonthGan();
 
   // 첫 행 헤더 문자열
   const headerStr = `空亡:[年]${yearXunKong} [日]${dayXunKong} , 天乙貴人:${cheonEulGwiInStr}, 월령:${wolryeong}`;

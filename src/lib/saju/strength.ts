@@ -74,18 +74,18 @@ function checkDeukse(count: number): StrengthDetail {
  *
  * 강(强) 영역 (득령, 35-95):
  *   35-44 → 강변약  (득령만으로는 강변약, 2개 이상 지원 필요)
- *   45-54 → 신강
- *   55-64 → 중신강
- *   65+   → 극신강
+ *   55-69 → 신강
+ *   70-79 → 중신강
+ *   80+   → 극신강
  *
  * 중화: 득령 + 실지 + 실세(0~1) 일 때 (35~45 부근)
  */
 function scoreToLevel(score: number, hasDeukryeong: boolean): StrengthLevel {
   if (hasDeukryeong) {
     // 강 영역
-    if (score >= 65) return '극신강';
-    if (score >= 55) return '중신강';
-    if (score >= 45) return '신강';
+    if (score >= 80) return '극신강';
+    if (score >= 70) return '중신강';
+    if (score >= 55) return '신강';
     if (score >= 45) return '중화';
     return '강변약';
   } else {
