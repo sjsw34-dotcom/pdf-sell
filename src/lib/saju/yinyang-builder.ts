@@ -8,9 +8,9 @@ import type { RawSajuTab, HeavenlyStem, EarthlyBranch, FiveElement } from '@/lib
 import { STEM_TO_ELEMENT, BRANCH_TO_ELEMENT, STEM_YIN_YANG, BRANCH_YIN_YANG, KOREAN_HIDDEN_STEMS, TENGOD_TO_GROUP } from './mappings';
 import { getShiShenKorean } from './shishen';
 
-export function buildYinyangTab(eightChar: EightChar): RawSajuTab {
+export function buildYinyangTab(eightChar: EightChar, timeGanOverride?: HeavenlyStem): RawSajuTab {
   const stems: HeavenlyStem[] = [
-    eightChar.getTimeGan() as HeavenlyStem,
+    (timeGanOverride ?? eightChar.getTimeGan()) as HeavenlyStem,
     eightChar.getDayGan() as HeavenlyStem,
     eightChar.getMonthGan() as HeavenlyStem,
     eightChar.getYearGan() as HeavenlyStem,

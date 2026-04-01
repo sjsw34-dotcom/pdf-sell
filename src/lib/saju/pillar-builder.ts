@@ -32,6 +32,7 @@ export function buildPillarTab(eightChar: EightChar, override?: PillarOverride):
   const strength = calculateStrength(
     dayGan,
     eightChar.getDayZhi() as EarthlyBranch,
+    eightChar.getMonthGan() as HeavenlyStem,
     eightChar.getMonthZhi() as EarthlyBranch,
     eightChar.getYearGan() as HeavenlyStem,
     eightChar.getYearZhi() as EarthlyBranch,

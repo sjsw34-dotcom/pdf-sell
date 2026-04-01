@@ -166,8 +166,8 @@ export function buildNyununTab(
     const zhi = ZHI[zhiIdx];
     const age = yr - birthYear + 1;
 
-    // 삼재 체크 (일지 기준) — buildFortuneRow에 전달하여 우선순위 내 배치
-    const samJae = getSamJae(dayBranch, zhi);
+    // 삼재 체크 (년지 기준) — buildFortuneRow에 전달하여 우선순위 내 배치
+    const samJae = getSamJae(yearBranch, zhi);
 
     const row = buildFortuneRow(
       dayGan, gan, zhi,

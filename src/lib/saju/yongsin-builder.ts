@@ -85,15 +85,8 @@ export function determineYongsin(
   // 한신 = 나머지
   const huisin = ELEMENT_GENERATED_BY[yongsin];
 
-  let gisin: FiveElement;
-  if (isStrong) {
-    // 극신강: 용신을 극하는 오행이 기신 (용신 효과를 직접 방해)
-    // 그 외 강 계열: 인성이 기신 (일간을 생해서 더 강하게)
-    gisin = strengthLevel === '극신강' ? ELEMENT_CONTROLLED_BY[yongsin] : groups.인성;
-  } else {
-    // 약 계열: 기신 = 용신을 극하는 오행 (용신 방해)
-    gisin = ELEMENT_CONTROLLED_BY[yongsin];
-  }
+  // 기신 = 용신을 극하는 오행 (용신 효과를 직접 방해)
+  const gisin: FiveElement = ELEMENT_CONTROLLED_BY[yongsin];
 
   const gusin = ELEMENT_GENERATED_BY[gisin];
   const all: FiveElement[] = ['木', '火', '土', '金', '水'];

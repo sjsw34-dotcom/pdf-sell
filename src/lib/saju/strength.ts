@@ -11,7 +11,7 @@ const GENERATES: Record<FiveElement, FiveElement> = {
   '木': '火', '火': '土', '土': '金', '金': '水', '水': '木',
 };
 
-/** 주어진 오행이 target을 돕는지 (같거나 생하는 관계) */
+/** 비겁+인성: 같거나 생하는 관계 (득지/득령용) */
 function supports(element: FiveElement, target: FiveElement): boolean {
   return element === target || GENERATES[element] === target;
 }
@@ -29,24 +29,28 @@ function checkDeukryeong(dayElement: FiveElement, monthBranch: EarthlyBranch): S
 }
 
 // ─── 득세 / 실세 (세력 지원 개수 반환) ───
+// 5개 위치(시간/시지/월간/년간/년지)에서 비겁+인성 카운트
+// 과반수(≥3) 지지하면 득세
 
 function countSupport(
   dayElement: FiveElement,
   yearStem: HeavenlyStem,
   yearBranch: EarthlyBranch,
+  monthStem: HeavenlyStem,
   hourStem: HeavenlyStem,
   hourBranch: EarthlyBranch,
 ): number {
   let count = 0;
   if (supports(STEM_TO_ELEMENT[yearStem], dayElement)) count++;
   if (supports(BRANCH_TO_ELEMENT[yearBranch], dayElement)) count++;
+  if (supports(STEM_TO_ELEMENT[monthStem], dayElement)) count++;
   if (supports(STEM_TO_ELEMENT[hourStem], dayElement)) count++;
   if (supports(BRANCH_TO_ELEMENT[hourBranch], dayElement)) count++;
   return count;
 }
 
 function checkDeukse(count: number): StrengthDetail {
-  return count >= 2 ? '득세' : '실세';
+  return count >= 3 ? '득세' : '실세';
 }
 
 // ─── 가중치 기반 점수 계산 ───
@@ -69,7 +73,7 @@ function checkDeukse(count: number): StrengthDetail {
  *   35-44 → 약변강  (득지+득세가 월령 부재를 보완)
  *
  * 강(强) 영역 (득령, 35-95):
- *   35-44 → 강변약
+ *   35-44 → 강변약  (득령만으로는 강변약, 2개 이상 지원 필요)
  *   45-54 → 신강
  *   55-64 → 중신강
  *   65+   → 극신강
@@ -82,7 +86,7 @@ function scoreToLevel(score: number, hasDeukryeong: boolean): StrengthLevel {
     if (score >= 65) return '극신강';
     if (score >= 55) return '중신강';
     if (score >= 45) return '신강';
-    if (score >= 40) return '중화';
+    if (score >= 45) return '중화';
     return '강변약';
   } else {
     // 약 영역
@@ -106,6 +110,7 @@ export interface StrengthResult {
 export function calculateStrength(
   dayStem: HeavenlyStem,
   dayBranch: EarthlyBranch,
+  monthStem: HeavenlyStem,
   monthBranch: EarthlyBranch,
   yearStem: HeavenlyStem,
   yearBranch: EarthlyBranch,
@@ -116,14 +121,14 @@ export function calculateStrength(
 
   const deukji = checkDeukji(dayElement, dayBranch);
   const deukryeong = checkDeukryeong(dayElement, monthBranch);
-  const supportCount = countSupport(dayElement, yearStem, yearBranch, hourStem, hourBranch);
+  const supportCount = countSupport(dayElement, yearStem, yearBranch, monthStem, hourStem, hourBranch);
   const deukse = checkDeukse(supportCount);
 
-  // 점수 계산
+  // 점수 계산 (5개 위치 × 7점)
   let score = 0;
   if (deukryeong === '득령') score += 35;
   if (deukji === '득지') score += 20;
-  score += supportCount * 10;
+  score += supportCount * 7;
 
   const level = scoreToLevel(score, deukryeong === '득령');
 

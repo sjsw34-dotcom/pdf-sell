@@ -92,8 +92,14 @@ export function isHyunChimSal(stem: HeavenlyStem, branch: EarthlyBranch): boolea
 }
 
 // ─── 백호살 (白虎煞) ───
-// 전문가 검증 기반: 괴강과 독립 (壬戌은 괴강+백호 동시 발동)
-const BAEK_HO_SAL: string[] = ['丙戌', '戊辰', '壬戌', '癸丑'];
+// 전문가 교차검증 기반 (이인구+박주미+진위표 일치 항목만)
+// 己丑/戊戌/丁未는 진위표↔신규전문가 간 충돌로 제외
+const BAEK_HO_SAL: string[] = [
+  '甲辰', '戊辰',           // 辰
+  '癸丑',                   // 丑
+  '乙未',                   // 未
+  '丙戌', '壬戌',           // 戌
+];
 
 export function isBaekHoSal(stem: HeavenlyStem, branch: EarthlyBranch): boolean {
   return BAEK_HO_SAL.includes(stem + branch);

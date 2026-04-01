@@ -72,7 +72,7 @@ export function calculateSaju(input: SajuInput): RawSajuJson {
   let solar: Solar;
   let lunar: Lunar;
 
-  // 경도 보정: 한국 표준시 -30분 적용
+  // 경도 보정: 한국 표준시 -30분 적용 (시주 판정용)
   const correctedMinute = birthMinute - 30;
   let adjustedHour = birthHour;
   let adjustedMinute = correctedMinute;
@@ -86,48 +86,48 @@ export function calculateSaju(input: SajuInput): RawSajuJson {
     adjustedHour += 1;
   }
 
-  // 시간 조정으로 날짜가 변경될 수 있음
-  let adjustedDay = birthDay;
-  let adjustedMonth = birthMonth;
-  let adjustedYear = birthYear;
-
+  // 경도 보정으로 자정을 넘어가는 경우 (예: 00:17→23:47)
   if (adjustedHour < 0) {
     adjustedHour += 24;
-    adjustedDay -= 1;
-    if (adjustedDay < 1) {
-      adjustedMonth -= 1;
-      if (adjustedMonth < 1) {
-        adjustedMonth = 12;
-        adjustedYear -= 1;
-      }
-      // 간단한 월말 일수 계산
-      const daysInMonth = new Date(adjustedYear, adjustedMonth, 0).getDate();
-      adjustedDay = daysInMonth;
-    }
   }
 
+  // ── 子時(23시대) 처리 ──
+  // 조자시파: 23시대 출생 → 다음날 일주 사용 (전문가 기준)
+  // 경도보정 야자시: 보정으로 23시가 된 경우(원래 0시대) → 당일 일주 유지
+  const isJojasi = birthHour >= 23;                              // 원래 23시대 출생
+  const isYajasiFromCorrection = !isJojasi && adjustedHour >= 23; // 보정으로 인한 야자시
+
+  // 1단계: 양력 날짜 결정 (시간 무관)
+  let solarY: number, solarM: number, solarD: number;
   if (isLunar) {
-    // 음력 입력 → 음력으로 Lunar 생성 → Solar 변환
     const lunarMonth = isLeapMonth ? -birthMonth : birthMonth;
-    const lunarObj = Lunar.fromYmdHms(
-      adjustedYear, lunarMonth, adjustedDay,
-      adjustedHour, adjustedMinute, 0,
-    );
-    solar = lunarObj.getSolar();
-    lunar = lunarObj;
+    const tempSolar = Lunar.fromYmdHms(birthYear, lunarMonth, birthDay, 12, 0, 0).getSolar();
+    solarY = tempSolar.getYear(); solarM = tempSolar.getMonth(); solarD = tempSolar.getDay();
   } else {
-    // 양력 입력
-    solar = Solar.fromYmdHms(
-      adjustedYear, adjustedMonth, adjustedDay,
-      adjustedHour, adjustedMinute, 0,
-    );
-    lunar = solar.getLunar();
+    solarY = birthYear; solarM = birthMonth; solarD = birthDay;
   }
+
+  // 2단계: 조자시면 양력 +1일
+  if (isJojasi) {
+    const nextDate = new Date(solarY, solarM - 1, solarD + 1);
+    solarY = nextDate.getFullYear();
+    solarM = nextDate.getMonth() + 1;
+    solarD = nextDate.getDate();
+  }
+
+  // 3단계: Solar 생성 (子時는 hour=0, 일반은 보정된 시간)
+  if (isJojasi || isYajasiFromCorrection) {
+    // 子時: hour=0 → 일주/시주 천간 정확도 보장
+    solar = Solar.fromYmdHms(solarY, solarM, solarD, 0, 0, 0);
+  } else {
+    solar = Solar.fromYmdHms(solarY, solarM, solarD, adjustedHour, adjustedMinute, 0);
+  }
+  lunar = solar.getLunar();
 
   // 2. 사주팔자 (EightChar) 생성
   const eightChar = lunar.getEightChar();
 
-  // 2-1. 야자시(23시대) 시주 천간 보정
+  // 子時 안전장치: hour=0 전달 시 이미 정확하지만 명시적 보정
   const timeGanOverride = getCorrectTimeGan(
     eightChar.getDayGan() as HeavenlyStem,
     adjustedHour,
@@ -136,14 +136,17 @@ export function calculateSaju(input: SajuInput): RawSajuJson {
   // 3. 성별 코드 (lunar-typescript: 1=남, 0=여)
   const genderCode = gender === '남' ? 1 : 0;
 
-  // 4. 원본 Solar (보정 전) — info 탭용
+  // 4. 원본 Solar + Lunar (보정 전) — info 탭용
+  //    표시 날짜는 항상 입력된 원래 생년월일 사용
   let originalSolar: Solar;
+  let originalLunar: Lunar;
   if (isLunar) {
     const lunarMonth = isLeapMonth ? -birthMonth : birthMonth;
-    const origLunar = Lunar.fromYmdHms(birthYear, lunarMonth, birthDay, birthHour, birthMinute, 0);
-    originalSolar = origLunar.getSolar();
+    originalLunar = Lunar.fromYmdHms(birthYear, lunarMonth, birthDay, 12, 0, 0);
+    originalSolar = originalLunar.getSolar();
   } else {
-    originalSolar = Solar.fromYmdHms(birthYear, birthMonth, birthDay, birthHour, birthMinute, 0);
+    originalSolar = Solar.fromYmdHms(birthYear, birthMonth, birthDay, 12, 0, 0);
+    originalLunar = originalSolar.getLunar();
   }
 
   // 5. 각 탭 빌드
@@ -151,7 +154,7 @@ export function calculateSaju(input: SajuInput): RawSajuJson {
     name,
     gender,
     solar: originalSolar,
-    lunar,
+    lunar: originalLunar,
   });
 
   const pillarTab = buildPillarTab(eightChar, timeGanOverride ? { timeGan: timeGanOverride } : undefined);
@@ -160,7 +163,7 @@ export function calculateSaju(input: SajuInput): RawSajuJson {
   const strengthLevel = pillarTab.data[0]?.[10] as StrengthLevel ?? '중화';
 
   // 음양오행 먼저 빌드 → 십신 그룹 카운트 추출
-  const yinyangTab = buildYinyangTab(eightChar);
+  const yinyangTab = buildYinyangTab(eightChar, timeGanOverride);
   const tenGodCounts = extractTenGodCounts(yinyangTab);
 
   const yongsinTab = buildYongsinTab(
@@ -170,10 +173,11 @@ export function calculateSaju(input: SajuInput): RawSajuJson {
   );
   const shinsalTab = buildShinsalTab(eightChar);
   const hyungchungTab = buildHyungchungTab();
+
   const daeunTab = buildDaeunTab(eightChar, genderCode);
 
   const currentYear = new Date().getFullYear();
-  const nyununTab = buildNyununTab(eightChar, genderCode, birthYear, currentYear);
+  const nyununTab = buildNyununTab(eightChar, genderCode, solarY, currentYear);
 
   const wolunTab = buildWolunTab(eightChar, currentYear, birthYear);
   const wolun2Tab = buildWolunTab(eightChar, currentYear + 1, birthYear);

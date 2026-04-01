@@ -26,10 +26,10 @@ function getShiName(hour: number): string {
 }
 
 /**
- * 한국 만나이 계산 (2026년 기준)
+ * 세는나이 계산 (사주 전통 기준)
  */
 function calculateAge(birthYear: number, currentYear: number): number {
-  return currentYear - birthYear;
+  return currentYear - birthYear + 1;
 }
 
 /**
