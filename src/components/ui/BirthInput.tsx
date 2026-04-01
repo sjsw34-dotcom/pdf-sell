@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { useGeneratorStore } from '@/store/useGeneratorStore';
 import { parseSajuJson } from '@/lib/utils/parseJson';
 import { extractInfo, type ExtractedInfo } from '@/lib/utils/extractInfo';
@@ -30,6 +30,20 @@ const years = Array.from({ length: 130 }, (_, i) => currentYear - i);
 const months = Array.from({ length: 12 }, (_, i) => i + 1);
 const days = Array.from({ length: 31 }, (_, i) => i + 1);
 
+interface ClientItem {
+  id: string;
+  name: string;
+  gender: '남' | '여';
+  birth_year: number;
+  birth_month: number;
+  birth_day: number;
+  birth_hour: number;
+  birth_minute: number;
+  calendar_type: string;
+  time_mode: string;
+  time_idx: number;
+}
+
 export function BirthInput() {
   const setSajuData = useGeneratorStore((s) => s.setSajuData);
   const [error, setError] = useState('');
@@ -54,6 +68,106 @@ export function BirthInput() {
   const [showJson, setShowJson] = useState(false);
   const [copied, setCopied] = useState(false);
   const [jsonView, setJsonView] = useState<'all' | 'part1' | 'part2'>('all');
+
+  // 고객 저장 상태
+  const [clients, setClients] = useState<ClientItem[]>([]);
+  const [selectedClientId, setSelectedClientId] = useState('');
+  const [saving, setSaving] = useState(false);
+
+  // 고객 목록 로드
+  const fetchClients = useCallback(async () => {
+    try {
+      const res = await fetch('/api/clients');
+      if (res.ok) {
+        const { clients: list } = await res.json();
+        setClients(list ?? []);
+      }
+    } catch { /* ignore */ }
+  }, []);
+
+  useEffect(() => { fetchClients(); }, [fetchClients]);
+
+  // 고객 선택 시 폼에 로드
+  const handleSelectClient = useCallback(async (id: string) => {
+    setSelectedClientId(id);
+    if (!id) return;
+    try {
+      const res = await fetch(`/api/clients/${id}`);
+      if (!res.ok) return;
+      const { client: c } = await res.json();
+      setName(c.name);
+      setGender(c.gender);
+      setCalendarType(c.calendar_type as 'solar' | 'lunar' | 'leapLunar');
+      setYear(c.birth_year);
+      setMonth(c.birth_month);
+      setDay(c.birth_day);
+      setTimeMode(c.time_mode as 'jijin' | 'exact');
+      setTimeIdx(c.time_idx ?? 0);
+      if (c.time_mode === 'exact') {
+        const h24 = c.birth_hour;
+        setAmpm(h24 < 12 ? '오전' : '오후');
+        setExactHour(h24 % 12 || 12);
+        setExactMinute(c.birth_minute);
+      }
+      // 결과 초기화 → 재생성 유도
+      handleReset();
+    } catch { /* ignore */ }
+  }, []);
+
+  // 고객 저장
+  const handleSaveClient = useCallback(async () => {
+    setSaving(true);
+    try {
+      let birthHour: number, birthMinute: number;
+      if (timeMode === 'jijin') {
+        birthHour = JIJIN_HOURS[timeIdx].hour;
+        birthMinute = JIJIN_HOURS[timeIdx].minute;
+      } else {
+        let h = exactHour;
+        if (ampm === '오전') { if (h === 12) h = 0; }
+        else { if (h !== 12) h += 12; }
+        birthHour = h;
+        birthMinute = exactMinute;
+      }
+
+      const rawJson = rawJsonString ? JSON.parse(rawJsonString) : null;
+
+      // 같은 이름이 이미 있으면 업데이트 (rawJson만)
+      const existing = clients.find(c => c.name === (name.trim() || 'Valued Guest'));
+      if (existing) {
+        await fetch(`/api/clients/${existing.id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ rawJson }),
+        });
+      } else {
+        await fetch('/api/clients', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name.trim() || 'Valued Guest',
+            gender, birthYear: year, birthMonth: month, birthDay: day,
+            birthHour, birthMinute,
+            calendarType, timeMode, timeIdx,
+            rawJson,
+          }),
+        });
+      }
+      await fetchClients();
+    } catch { setError('고객 저장 실패'); }
+    finally { setSaving(false); }
+  }, [name, gender, year, month, day, timeMode, timeIdx, exactHour, exactMinute, ampm, rawJsonString, clients, fetchClients]);
+
+  // 고객 삭제
+  const handleDeleteClient = useCallback(async () => {
+    if (!selectedClientId || !confirm('이 고객을 삭제하시겠습니까?')) return;
+    try {
+      await fetch(`/api/clients/${selectedClientId}`, { method: 'DELETE' });
+      setSelectedClientId('');
+      await fetchClients();
+      handleReset();
+    } catch { /* ignore */ }
+  }, [selectedClientId, fetchClients]);
 
   const handleCalculate = useCallback(() => {
     setError('');
@@ -161,9 +275,24 @@ export function BirthInput() {
               <span className="w-2 h-2 bg-green-500 rounded-full" />
               <span className="text-sm text-green-400 font-medium">사주 계산 완료</span>
             </div>
-            <button onClick={handleReset} className="text-xs text-gray-500 hover:text-red-400 transition">
-              초기화
-            </button>
+            <div className="flex gap-2">
+              <button
+                onClick={handleSaveClient}
+                disabled={saving}
+                className="px-3 py-1 text-xs rounded-md bg-green-800 text-green-300 hover:bg-green-700 transition disabled:opacity-40"
+              >
+                {saving ? '저장 중...' : '고객 저장'}
+              </button>
+              <button
+                onClick={handleCalculate}
+                className="px-3 py-1 text-xs rounded-md bg-blue-800 text-blue-300 hover:bg-blue-700 transition"
+              >
+                재생성
+              </button>
+              <button onClick={handleReset} className="text-xs text-gray-500 hover:text-red-400 transition">
+                초기화
+              </button>
+            </div>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
             <div>
@@ -253,6 +382,35 @@ export function BirthInput() {
   // 입력 폼
   return (
     <div className="space-y-3">
+      {/* 저장된 고객 선택 */}
+      {clients.length > 0 && (
+        <div>
+          <label className="block text-xs text-gray-500 mb-1">저장된 고객</label>
+          <div className="flex gap-2">
+            <select
+              value={selectedClientId}
+              onChange={(e) => handleSelectClient(e.target.value)}
+              className={`flex-1 ${selectClass}`}
+            >
+              <option value="">-- 고객 선택 --</option>
+              {clients.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name} ({c.birth_year}.{c.birth_month}.{c.birth_day} {c.gender === '남' ? '남' : '여'})
+                </option>
+              ))}
+            </select>
+            {selectedClientId && (
+              <button
+                onClick={handleDeleteClient}
+                className="px-3 py-2 text-xs rounded-lg bg-red-900/50 text-red-400 hover:bg-red-800 transition"
+              >
+                삭제
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* 이름 */}
       <div>
         <label className="block text-xs text-gray-500 mb-1">이름</label>
