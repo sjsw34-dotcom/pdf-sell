@@ -8,7 +8,7 @@ import { calculateSaju, type SajuInput } from '@/lib/saju/calculator';
 
 // ─── 12지신 시간표 ───
 const JIJIN_HOURS = [
-  { label: '자시 子時 (23:30~01:30)', hour: 23, minute: 30 },
+  { label: '자시 子時 (23:30~01:30)', hour: 0, minute: 30 },
   { label: '축시 丑時 (01:30~03:30)', hour: 2, minute: 30 },
   { label: '인시 寅時 (03:30~05:30)', hour: 4, minute: 30 },
   { label: '묘시 卯時 (05:30~07:30)', hour: 6, minute: 30 },
