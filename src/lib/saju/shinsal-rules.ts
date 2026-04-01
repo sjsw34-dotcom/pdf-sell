@@ -92,12 +92,11 @@ export function isHyunChimSal(stem: HeavenlyStem, branch: EarthlyBranch): boolea
 }
 
 // ─── 백호살 (白虎煞) ───
-// 특정 간지 조합만 해당, 괴강살 조합이면 괴강 우선
-const BAEK_HO_SAL: string[] = ['甲辰', '丙戌', '戊辰', '庚戌', '壬辰', '癸丑'];
+// 전문가 검증 기반: 괴강과 독립 (壬戌은 괴강+백호 동시 발동)
+const BAEK_HO_SAL: string[] = ['丙戌', '戊辰', '壬戌', '癸丑'];
 
 export function isBaekHoSal(stem: HeavenlyStem, branch: EarthlyBranch): boolean {
-  const combo = stem + branch;
-  return BAEK_HO_SAL.includes(combo) && !GWAE_GANG_SAL.includes(combo);
+  return BAEK_HO_SAL.includes(stem + branch);
 }
 
 // ─── 복성귀인 (福星貴人) ───
@@ -250,10 +249,10 @@ export function isGoRanSal(stem: HeavenlyStem, branch: EarthlyBranch): boolean {
 }
 
 // ─── 관귀학관 (官鬼學館) ───
-// 전문가 진위표 기반 교정: 乙→巳, 庚→寅, 辛→寅
+// 전문가 진위표+김미영/박주미 기반 교정
 const GWAN_GWI_HAK_GWAN: Record<HeavenlyStem, EarthlyBranch> = {
   '甲': '巳', '乙': '巳', '丙': '申', '丁': '酉',
-  '戊': '申', '己': '亥', '庚': '寅', '辛': '寅',
+  '戊': '亥', '己': '亥', '庚': '寅', '辛': '寅',
   '壬': '申', '癸': '卯',
 };
 
@@ -284,9 +283,10 @@ export function isTaeGeukGwiIn(dayStem: HeavenlyStem, branch: EarthlyBranch): bo
 }
 
 // ─── 천주귀인 (天廚貴人) ───
+// 戊→申 교정 (김미영 戊일간 검증)
 const CHEON_JU_GWI_IN: Record<HeavenlyStem, EarthlyBranch> = {
   '甲': '巳', '乙': '午', '丙': '巳', '丁': '午',
-  '戊': '巳', '己': '酉', '庚': '亥', '辛': '子',
+  '戊': '申', '己': '酉', '庚': '亥', '辛': '子',
   '壬': '寅', '癸': '卯',
 };
 
