@@ -96,7 +96,7 @@ export function buildDaeunTab(
   // 대운 시작 나이: Yun의 시작년+월 기반 반올림
   const yunStartYear = yun.getStartYear();
   const yunStartMonth = yun.getStartMonth();
-  const firstDaeunAge = yunStartYear + (yunStartMonth >= 6 ? 1 : 0);
+  const firstDaeunAge = Math.max(1, yunStartYear + (yunStartMonth >= 6 ? 1 : 0));
 
   const entries: string[][] = [];
 
