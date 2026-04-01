@@ -95,6 +95,7 @@ export function buildShinsalTab(eightChar: EightChar): RawSajuTab {
     if (isMyungYeSal(p.branch)) shinsals.push('명예살');
     if (isEumChakSal(dayStem, p.branch)) shinsals.push('음착살');
     if (isCheonMunSeong(p.branch)) shinsals.push('천문성');
+    if (isYeokMaSal(p.branch)) shinsals.push('역마살');
     if (isGeumYeo(dayStem, p.branch)) shinsals.push('금여');
     if (isHongYeomSal(dayStem, p.branch)) shinsals.push('홍염살');
     if (isGwaeGangSal(p.stem, p.branch)) shinsals.push('괴강살');
@@ -109,7 +110,7 @@ export function buildShinsalTab(eightChar: EightChar): RawSajuTab {
     if (isCheonJuGwiIn(dayStem, p.branch)) shinsals.push('천주귀인');
     if (isHakDangGwiIn(dayStem, p.branch)) shinsals.push('학당귀인');
     if (isCheonBokGwiIn(dayStem, p.branch)) shinsals.push('천복귀인');
-    if (isCheonDeokGwiIn(monthBranch, p.stem)) shinsals.push('천덕귀인');
+    if (isCheonDeokGwiIn(monthBranch, p.stem, p.branch)) shinsals.push('천덕귀인');
     if (isWolDeokGwiIn(monthBranch, p.stem)) shinsals.push('월덕귀인');
     if (isBiInSal(dayStem, p.branch)) shinsals.push('비인살');
     return shinsals;

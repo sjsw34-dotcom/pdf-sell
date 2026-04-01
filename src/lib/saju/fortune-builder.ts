@@ -47,6 +47,7 @@ function buildFortuneRow(
   monthBranch: EarthlyBranch,
   yearXunKong: string,
   dayXunKong: string,
+  samjae?: string | null,
 ): string[] {
   const stemShiShen = getShiShenKorean(dayGan, gan);
   const branchShiShen = getBranchShiShen(dayGan, zhi);
@@ -58,7 +59,7 @@ function buildFortuneRow(
   const shinsalByDay = getTwelveShinsal(dayBranch, zhi);
 
   const auxiliaries = collectAuxiliaryShinsals(
-    dayGan, monthBranch, yearBranch, dayBranch, gan, zhi,
+    dayGan, monthBranch, yearBranch, dayBranch, gan, zhi, samjae,
   );
   if (isGongmang(zhi, dayXunKong)) {
     auxiliaries.unshift('공망');
@@ -165,24 +166,15 @@ export function buildNyununTab(
     const zhi = ZHI[zhiIdx];
     const age = yr - birthYear + 1;
 
+    // 삼재 체크 (일지 기준) — buildFortuneRow에 전달하여 우선순위 내 배치
+    const samJae = getSamJae(dayBranch, zhi);
+
     const row = buildFortuneRow(
       dayGan, gan, zhi,
       yearBranch, dayBranch, monthBranch,
       yearXunKong, dayXunKong,
+      samJae,
     );
-
-    // 삼재 체크
-    const samJae = getSamJae(yearBranch, zhi);
-    if (samJae) {
-      // 보조신살에 삼재 추가
-      const auxStart = 10; // row에서 보조신살1 시작 인덱스
-      for (let j = auxStart; j < auxStart + 6; j++) {
-        if (row[j] === '') {
-          row[j] = samJae;
-          break;
-        }
-      }
-    }
 
     entries.push([String(yr), `${age} 세`, ...row]);
   }
