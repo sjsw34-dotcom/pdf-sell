@@ -130,7 +130,7 @@ export function isEumChakSal(dayStem: HeavenlyStem, branch: EarthlyBranch): bool
 // 전통 천덕: 8개월은 천간 기준, 4개월(卯/午/酉/子)은 사정방(坤/乾/艮/巽) = 지지 기준
 const CHEON_DEOK_GWI_IN_STEM: Partial<Record<EarthlyBranch, HeavenlyStem>> = {
   '寅': '丁', '辰': '壬', '巳': '辛',
-  '未': '癸', '申': '壬',
+  '未': '甲', '申': '壬',
   '戌': '乙', '亥': '乙', '丑': '庚',
   // 卯(坤=申), 午(乾=亥), 酉(艮=寅), 子(巽=巳) → 지지 기준이므로 여기선 제외
 };
