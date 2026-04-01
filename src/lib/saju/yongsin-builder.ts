@@ -70,13 +70,8 @@ export function determineYongsin(
     }
   } else {
     // ── 약(弱) 계열 + 중화: 강화 필요 ──
-    // 비겁이 원국에 있으면 비겁, 없으면 인성으로 생조
-    const biCount = tenGodCounts?.['비겁'] ?? 0;
-    if (biCount > 0) {
-      yongsin = groups.비겁;
-    } else {
-      yongsin = groups.인성;
-    }
+    // 용신 = 비겁(자기 오행) — 약한 일간을 직접 강화
+    yongsin = groups.비겁;
   }
 
   // ── 나머지 4신 도출 (통일 공식) ──
