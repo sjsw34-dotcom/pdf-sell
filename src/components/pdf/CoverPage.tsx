@@ -5,12 +5,14 @@ import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
 import type { TierCode } from '@/lib/types/tier';
 import { useShowBrand } from './BrandContext';
+import { useLang } from './LanguageContext';
+import { t } from '@/lib/i18n/pdf-strings';
 
-const TIER_LABELS: Record<TierCode, string> = {
-  basic: 'Basic',
-  love: 'Love Edition',
-  full: 'Full Analysis',
-  premium: 'Premium',
+const TIER_KEY: Record<TierCode, string> = {
+  basic: 'cover.tierBasic',
+  love: 'cover.tierLove',
+  full: 'cover.tierFull',
+  premium: 'cover.tierPremium',
 };
 
 interface CoverPageProps {
@@ -25,6 +27,7 @@ export function CoverPage({ theme, tier, name, birthDate, coverImageBase64 }: Co
   const colors = THEMES[theme].colors;
   const hasImage = coverImageBase64 && coverImageBase64.startsWith('data:');
   const showBrand = useShowBrand();
+  const lang = useLang();
 
   return (
     <Page size="A4" style={s.page}>
@@ -50,29 +53,29 @@ export function CoverPage({ theme, tier, name, birthDate, coverImageBase64 }: Co
 
           <View style={s.line} />
 
-          <Text style={s.subtitleKo}>사주팔자 · Four Pillars of Destiny</Text>
+          <Text style={s.subtitleKo}>{t('cover.subtitle', lang)}</Text>
 
           <View style={s.spacer24} />
 
-          <Text style={s.mainTitle}>DESTINY ANALYSIS</Text>
-          <Text style={s.mainTitle}>REPORT</Text>
+          <Text style={s.mainTitle}>{t('cover.mainTitle1', lang)}</Text>
+          <Text style={s.mainTitle}>{t('cover.mainTitle2', lang)}</Text>
 
           <View style={s.spacer12} />
 
-          <Text style={s.subtitleKo2}>운명 분석서</Text>
+          <Text style={s.subtitleKo2}>{t('cover.subtitleKo', lang)}</Text>
 
           <View style={s.line} />
         </View>
 
         {/* 하단: Prepared for + 이름 */}
         <View style={s.bottomSection}>
-          <Text style={s.preparedFor}>Prepared for</Text>
-          <Text style={s.clientName}>{name || 'Valued Guest'}</Text>
+          <Text style={s.preparedFor}>{t('cover.preparedFor', lang)}</Text>
+          <Text style={s.clientName}>{name || t('cover.valuedGuest', lang)}</Text>
 
           <View style={s.spacer16} />
 
           <Text style={[s.tierLabel, { color: hasImage ? '#CCCCCC' : colors.secondary }]}>
-            {TIER_LABELS[tier]} Report
+            {t(TIER_KEY[tier], lang)} Report
           </Text>
 
           <View style={s.spacer24} />

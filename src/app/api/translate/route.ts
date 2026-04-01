@@ -72,6 +72,7 @@ export async function POST(request: NextRequest) {
   const partKey = b.partKey as string;
   const additionalRequest = (b.additionalRequest as string | null) ?? null;
   const skipCache = b.skipCache === true;
+  const language = (b.language === 'ko' ? 'ko' : 'en') as 'en' | 'ko';
 
   // 3. 티어별 데이터 필터링
   const filtered = filterByTier(tier, sajuData);
@@ -87,6 +88,7 @@ export async function POST(request: NextRequest) {
       additionalRequest,
       clientName,
       skipCache,
+      language,
     });
 
     if (text === null) {

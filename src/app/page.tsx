@@ -9,6 +9,7 @@ import { FileUploader } from '@/components/ui/FileUploader';
 import { ImageUploader } from '@/components/ui/ImageUploader';
 import { ThemeSelector } from '@/components/ui/ThemeSelector';
 import { AdditionalRequest } from '@/components/ui/AdditionalRequest';
+import { LanguageSelector } from '@/components/ui/LanguageSelector';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { EmailSender } from '@/components/ui/EmailSender';
 import { Toast } from '@/components/ui/Toast';
@@ -19,6 +20,7 @@ export default function HomePage() {
   const coverImage = useGeneratorStore((s) => s.coverImage);
   const selectedTheme = useGeneratorStore((s) => s.selectedTheme);
   const additionalRequest = useGeneratorStore((s) => s.additionalRequest);
+  const language = useGeneratorStore((s) => s.language);
   const showBrand = useGeneratorStore((s) => s.showBrand);
   const status = useGeneratorStore((s) => s.status);
   const pdfBlobUrl = useGeneratorStore((s) => s.pdfBlobUrl);
@@ -49,6 +51,7 @@ export default function HomePage() {
       personalQuestion: store.personalQuestion || undefined,
       personalAnswer: store.personalAnswer || undefined,
       showBrand: store.showBrand,
+      language: store.language,
     });
 
     const url = URL.createObjectURL(blob);
@@ -64,7 +67,7 @@ export default function HomePage() {
     const { setStatus, setProgress, setGeneratedText, addFailedPart, setPdfBlobUrl, setError, showToast } = store;
 
     const clientInfo = extractInfo(sajuData);
-    const clientName = clientInfo.name || 'Valued Guest';
+    const clientName = clientInfo.name || (language === 'ko' ? '소중한 고객' : 'Valued Guest');
     const partKeys = getPartKeysForTier(selectedTier);
 
     setStatus('generating');
@@ -88,6 +91,7 @@ export default function HomePage() {
           sajuData,
           additionalRequest: additionalRequest || null,
           clientName,
+          language,
         }),
       });
 
@@ -164,7 +168,7 @@ export default function HomePage() {
       setError(msg);
       showToast(msg);
     }
-  }, [selectedTier, sajuData, coverImage, selectedTheme, additionalRequest]);
+  }, [selectedTier, sajuData, coverImage, selectedTheme, additionalRequest, language]);
 
   // ─── 더미 테스트 (AI 없이) ───
   const handleQuickTest = useCallback(async () => {
@@ -174,7 +178,7 @@ export default function HomePage() {
     const { setStatus, setPdfBlobUrl, setError, showToast } = store;
 
     const clientInfo = extractInfo(sajuData);
-    const clientName = clientInfo.name || 'Valued Guest';
+    const clientName = clientInfo.name || (language === 'ko' ? '소중한 고객' : 'Valued Guest');
 
     setStatus('rendering');
     setPdfBlobUrl(null);
@@ -187,15 +191,15 @@ export default function HomePage() {
       setError(msg);
       showToast(msg);
     }
-  }, [selectedTier, sajuData, coverImage, selectedTheme]);
+  }, [selectedTier, sajuData, coverImage, selectedTheme, language]);
 
   // ─── 수동 다운로드 ───
   const handleDownload = useCallback(() => {
     if (!pdfBlobUrl || !selectedTier || !sajuData) return;
     const clientInfo = extractInfo(sajuData);
-    const clientName = clientInfo.name || 'Valued Guest';
+    const clientName = clientInfo.name || (language === 'ko' ? '소중한 고객' : 'Valued Guest');
     triggerDownload(pdfBlobUrl, `${clientName.replace(/\s+/g, '_')}_saju_${selectedTier}.pdf`);
-  }, [pdfBlobUrl, selectedTier, sajuData]);
+  }, [pdfBlobUrl, selectedTier, sajuData, language]);
 
   const handleReset = useCallback(() => {
     useGeneratorStore.getState().reset();
@@ -230,6 +234,7 @@ export default function HomePage() {
             <FileUploader />
             <ImageUploader />
             <ThemeSelector />
+            <LanguageSelector />
             <AdditionalRequest />
 
             {/* 브랜드 포함/미포함 토글 */}
@@ -285,7 +290,7 @@ export default function HomePage() {
             <div className="border-t border-[#2a2a45] pt-6">
               <EmailSender
                 pdfBlobUrl={pdfBlobUrl}
-                clientName={sajuData ? (extractInfo(sajuData).name || 'Valued Guest') : 'Valued Guest'}
+                clientName={sajuData ? (extractInfo(sajuData).name || (language === 'ko' ? '소중한 고객' : 'Valued Guest')) : (language === 'ko' ? '소중한 고객' : 'Valued Guest')}
                 tier={selectedTier || 'premium'}
               />
             </div>

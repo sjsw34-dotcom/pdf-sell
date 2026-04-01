@@ -1,7 +1,8 @@
 import Anthropic from '@anthropic-ai/sdk';
 import type { TierCode } from '@/lib/types/tier';
+import type { Language } from '@/lib/types/language';
 import type { SajuData, InfoData } from '@/lib/types/saju';
-import { getPartPrompt, THREE_LAYER_RULES, OUTPUT_RULES } from './prompts';
+import { getPartPrompt, THREE_LAYER_RULES, OUTPUT_RULES, THREE_LAYER_RULES_KO, OUTPUT_RULES_KO } from './prompts';
 import { computeChartHash, findCachedTranslation, saveTranslation } from '@/lib/db/translations';
 import { filterSajuDataForPart } from '@/lib/constants/partDataNeeds';
 
@@ -47,8 +48,39 @@ function getClient(): Anthropic {
 
 // ─── 시스템 프롬프트 ───
 
-function buildSystemPrompt(additionalRequest: string | null): string {
-  let system = `You are a master Saju consultant at SajuMuse, specializing in Korean Four Pillars of Destiny (사주명리학) analysis for an international English-speaking audience. You write professional, warm, and accessible analysis reports — like a trusted counselor having a personal conversation.
+function buildSystemPrompt(additionalRequest: string | null, language: Language = 'en'): string {
+  let system: string;
+
+  if (language === 'ko') {
+    system = `당신은 SajuMuse의 사주명리학 전문 상담사입니다. 한국 고객을 위한 사주팔자(四柱八字) 분석 보고서를 작성합니다. 전문적이면서 따뜻한 분석 보고서를 작성합니다 — 신뢰받는 상담사가 개인적인 대화를 나누는 것처럼.
+
+작성 스타일:
+- 전문적이면서 따뜻하고, 개인적이면서 권위 있는 톤
+- 한글(漢字) 형태로 첫 언급 시 한자 병기: "식신(食神)"
+- 천간: "경금(庚金) · 양금" 형태
+- 지지: "자수(子水) · 쥐" 형태
+- 깊이와 가독성의 균형 — 비전문가도 이해할 수 있도록 사주 개념 설명
+- 실제 차트 데이터에 기반한 구체적이고 실행 가능한 인사이트 제공
+- 어려움을 성장의 기회로 프레이밍, 불길하거나 두려운 표현 절대 금지
+- 각 문단은 고객 차트의 구체적 데이터를 참조
+- 각 챕터 끝에 독자가 즉시 적용할 수 있는 실용적 조언
+- 유려한 산문 형식으로 작성, 불릿 포인트나 번호 목록 금지
+- 존댓말(합쇼체) 사용
+
+중요 규칙:
+- 차트 데이터를 조작하지 마세요 — 제공된 JSON에 있는 내용만 참조
+- 의학적, 법률적, 재정적 조언 금지 — "에너지적 경향" "사주가 시사합니다" 등의 표현 사용
+- 이 분석은 자기 성찰과 참고를 위한 것 — 이 관점을 자연스럽게 포함
+- 고객의 지성을 존중 — 설명하되 가르치는 톤 금지
+- 정확성 필수: 천간의 음양을 정확히 표기. 甲(양목), 乙(음목), 丙(양화), 丁(음화), 戊(양토), 己(음토), 庚(양금), 辛(음금), 壬(양수), 癸(음수). 음양 오류는 신뢰를 심각하게 훼손합니다.
+- 주별 데이터 정확성: 특정 주(柱)의 데이터를 참조할 때 반드시 해당 주를 확인. 시주, 일주, 월주, 년주의 데이터를 혼동하지 마세요.
+- 십성 정밀성: 십성 그룹을 논할 때 실제 차트에 존재하는 십성만 언급. 차트에 편관 3개, 정관 0개이면 정관이 존재하는 것처럼 언급 금지.
+
+${THREE_LAYER_RULES_KO}
+
+${OUTPUT_RULES_KO}`;
+  } else {
+    system = `You are a master Saju consultant at SajuMuse, specializing in Korean Four Pillars of Destiny (사주명리학) analysis for an international English-speaking audience. You write professional, warm, and accessible analysis reports — like a trusted counselor having a personal conversation.
 
 Your writing style:
 - Write like the sample: professional yet warm, personal yet authoritative
@@ -74,6 +106,7 @@ Important rules:
 ${THREE_LAYER_RULES}
 
 ${OUTPUT_RULES}`;
+  }
 
   if (additionalRequest && additionalRequest.trim() !== '') {
     system += `
@@ -140,6 +173,7 @@ function buildUserPrompt(
   partKey: string,
   sajuData: SajuData,
   clientName: string,
+  language: Language = 'en',
 ): string {
   const prompt = getPartPrompt(tier, partKey);
 
@@ -205,6 +239,20 @@ ${JSON.stringify(sajuData, null, 2)}`;
     ? `\n\n[CRITICAL DATA NOTES — READ BEFORE WRITING]\n${notes.join('\n\n')}\n`
     : '';
 
+  if (language === 'ko') {
+    return `이 고객의 사주 보고서에서 "${prompt.title}" 섹션을 작성하세요.
+
+고객명: ${clientName}
+
+작성 지시:
+${instruction}
+${notesBlock}
+차트 데이터 (JSON):
+${JSON.stringify(filterSajuDataForPart(partKey, sajuData), null, 2)}
+
+분석 텍스트만 작성하세요. 섹션 제목은 포함하지 마세요 — 별도로 추가됩니다. 마크다운 헤더를 사용하지 마세요. 유려한 문단으로 작성하세요. 반드시 한국어로 작성하세요.`;
+  }
+
   return `Write the "${prompt.title}" section for this client's Saju report.
 
 Client Name: ${clientName}
@@ -227,6 +275,7 @@ interface TranslateParams {
   additionalRequest: string | null;
   clientName: string;
   skipCache?: boolean;
+  language?: Language;
 }
 
 // 서버 측 재시도: 1회만 (Vercel 120초 제한 내에서 안전하게)
@@ -244,27 +293,30 @@ export async function translateAndAnalyze({
   additionalRequest,
   clientName,
   skipCache,
+  language = 'en',
 }: TranslateParams): Promise<string | null> {
   // ─── 1. 캐시 조회 ───
   // additionalRequest가 있으면 캐시 사용하지 않음 (개인화된 요청이므로)
+  // 언어별로 캐시 키를 분리: 한국어는 partKey:ko
+  const cachePartKey = language === 'en' ? partKey : `${partKey}:${language}`;
   let chartHash: string | null = null;
   if (!skipCache && !additionalRequest) {
     try {
       chartHash = await computeChartHash(sajuData.pillar, sajuData.info.gender);
-      const cached = await findCachedTranslation(chartHash, partKey, tier);
+      const cached = await findCachedTranslation(chartHash, cachePartKey, tier);
       if (cached) {
-        console.log(`[translate] Cache HIT for partKey="${partKey}" chartHash="${chartHash.slice(0, 8)}..."`);
+        console.log(`[translate] Cache HIT for partKey="${cachePartKey}" chartHash="${chartHash.slice(0, 8)}..."`);
         return cached.text;
       }
-      console.log(`[translate] Cache MISS for partKey="${partKey}"`);
+      console.log(`[translate] Cache MISS for partKey="${cachePartKey}"`);
     } catch (err) {
       console.error('[translate] Cache lookup failed, proceeding with API call:', err);
     }
   }
 
   // ─── 2. Claude API 호출 ───
-  const systemText = buildSystemPrompt(additionalRequest);
-  const userMessage = buildUserPrompt(tier, partKey, sajuData, clientName);
+  const systemText = buildSystemPrompt(additionalRequest, language);
+  const userMessage = buildUserPrompt(tier, partKey, sajuData, clientName, language);
 
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
     try {
@@ -303,7 +355,7 @@ export async function translateAndAnalyze({
             gender: sajuData.info.gender,
             pillarJson: sajuData.pillar,
           },
-          partKey,
+          cachePartKey,
           tier,
           resultText,
           MODEL_ID,

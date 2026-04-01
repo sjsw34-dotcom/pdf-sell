@@ -4,6 +4,8 @@ import type { ThemeCode } from '@/lib/types/theme';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK, ANTI_LIGATURE, fixLigatures } from './styles/pdfStyles';
 import { PageFooter } from './PageFooter';
+import { useLang } from './LanguageContext';
+import { t } from '@/lib/i18n/pdf-strings';
 
 interface PersonalQAPageProps {
   theme: ThemeCode;
@@ -13,14 +15,15 @@ interface PersonalQAPageProps {
 
 export function PersonalQAPage({ theme, question, answer }: PersonalQAPageProps) {
   const colors = THEMES[theme].colors;
+  const lang = useLang();
   const paragraphs = fixLigatures(answer).split(/\n\n+/).filter((p) => p.trim() !== '');
 
   return (
     <Page size="A4" style={[s.page, { backgroundColor: colors.background }]} wrap>
       <View style={s.header}>
-        <Text style={[s.label, { color: colors.secondary }]}>YOUR PERSONAL QUESTION</Text>
-        <Text style={[s.title, { color: colors.primary }]}>Personal Q&A</Text>
-        <Text style={[s.subtitle, { color: colors.textSecondary }]}>개인 질문 답변</Text>
+        <Text style={[s.label, { color: colors.secondary }]}>{t('qa.label', lang)}</Text>
+        <Text style={[s.title, { color: colors.primary }]}>{t('qa.title', lang)}</Text>
+        <Text style={[s.subtitle, { color: colors.textSecondary }]}>{t('qa.subtitle', lang)}</Text>
         <View style={[s.divider, { borderBottomColor: colors.border }]} />
       </View>
 
@@ -35,7 +38,7 @@ export function PersonalQAPage({ theme, question, answer }: PersonalQAPageProps)
       {/* 답변 */}
       <View style={[s.answerHeader]}>
         <Text style={[s.answerLabel, { color: colors.primary }]}>A.</Text>
-        <Text style={[s.answerIntro, { color: colors.textSecondary }]}>Based on your Four Pillars chart analysis:</Text>
+        <Text style={[s.answerIntro, { color: colors.textSecondary }]}>{t('qa.answerIntro', lang)}</Text>
       </View>
 
       <View style={s.spacer12} />

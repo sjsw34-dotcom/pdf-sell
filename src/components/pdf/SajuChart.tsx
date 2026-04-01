@@ -1,9 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { ThemeCode } from '@/lib/types/theme';
+import type { Language } from '@/lib/types/language';
 import type { PillarData, InfoData } from '@/lib/types/saju';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
+import { useLang } from './LanguageContext';
+import { t } from '@/lib/i18n/pdf-strings';
 
 // ─── 용어 매핑 ───
 
@@ -79,15 +82,17 @@ function getHanjaColor(hanja: string): string {
 
 // ─── 헬퍼 ───
 
-function tenGodLabel(v: string): string {
+function tenGodLabel(v: string, lang: Language): string {
   const info = TEN_GOD_FULL[v];
   if (!info) return v || '—';
+  if (lang === 'ko') return `${info.ko}\n(${info.hanja})`;
   return `${info.en}\n(${info.ko} · ${info.hanja})`;
 }
 
-function stageLabel(v: string): string {
+function stageLabel(v: string, lang: Language): string {
   const info = STAGE_FULL[v];
   if (!info) return v || '—';
+  if (lang === 'ko') return `${info.ko}\n(${info.hanja})`;
   return `${info.en}\n(${info.ko} · ${info.hanja})`;
 }
 
@@ -101,36 +106,37 @@ interface SajuChartProps {
 
 export function SajuChart({ theme, pillar, info }: SajuChartProps) {
   const colors = THEMES[theme].colors;
-  const genderEn = info.gender === '남' ? 'Male' : 'Female';
+  const lang = useLang();
+  const genderEn = info.gender === '남' ? t('chart.male', lang) : t('chart.female', lang);
 
   const cols = [
-    { label: 'Hour Pillar', sub: '(시주 · 時柱)', data: pillar.hourPillar },
-    { label: 'Day Pillar', sub: '(일주 · 日柱)', data: pillar.dayPillar },
-    { label: 'Month Pillar', sub: '(월주 · 月柱)', data: pillar.monthPillar },
-    { label: 'Year Pillar', sub: '(년주 · 年柱)', data: pillar.yearPillar },
+    { label: t('chart.hourPillar', lang), sub: t('chart.hourPillarSub', lang), data: pillar.hourPillar },
+    { label: t('chart.dayPillar', lang), sub: t('chart.dayPillarSub', lang), data: pillar.dayPillar },
+    { label: t('chart.monthPillar', lang), sub: t('chart.monthPillarSub', lang), data: pillar.monthPillar },
+    { label: t('chart.yearPillar', lang), sub: t('chart.yearPillarSub', lang), data: pillar.yearPillar },
   ];
 
   return (
     <View style={s.container}>
-      {/* 타이틀 — 영어 우선 */}
-      <Text style={[s.mainTitle, { color: colors.text }]}>Four Pillars Birth Chart</Text>
-      <Text style={[s.mainTitleSub, { color: colors.textSecondary }]}>사주원국표 · 四柱原局表</Text>
-      <Text style={[s.subTitle, { color: colors.textSecondary }]}>THE DESTINY CHART</Text>
+      {/* 타이틀 */}
+      <Text style={[s.mainTitle, { color: colors.text }]}>{t('chart.title', lang)}</Text>
+      <Text style={[s.mainTitleSub, { color: colors.textSecondary }]}>{t('chart.subtitle', lang)}</Text>
+      <Text style={[s.subTitle, { color: colors.textSecondary }]}>{t('chart.destinyChart', lang)}</Text>
 
       {/* 인적 정보 */}
       <View style={[s.infoBar, { backgroundColor: colors.surface }]}>
         <Text style={[s.infoName, { color: colors.text }]}>
-          {info.name || 'Guest'} ({genderEn})
+          {info.name || t('chart.guest', lang)} ({genderEn})
         </Text>
         <View style={s.infoDetails}>
           {info.solarDate && (
             <Text style={[s.infoText, { color: colors.textSecondary }]}>
-              Solar: {info.solarDate}
+              {t('chart.solar', lang)} {info.solarDate}
             </Text>
           )}
           {info.lunarDate && (
             <Text style={[s.infoText, { color: colors.textSecondary }]}>
-              Lunar: {info.lunarDate}
+              {t('chart.lunar', lang)} {info.lunarDate}
             </Text>
           )}
         </View>
@@ -142,7 +148,7 @@ export function SajuChart({ theme, pillar, info }: SajuChartProps) {
         {/* 헤더 행 */}
         <View style={s.tableRow}>
           <View style={[s.catCell, { backgroundColor: colors.surface }]}>
-            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Category</Text>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>{t('chart.category', lang)}</Text>
           </View>
           {cols.map((col, i) => (
             <View key={i} style={[s.dataCell, { backgroundColor: colors.surface, borderLeftColor: colors.border }]}>
@@ -155,12 +161,12 @@ export function SajuChart({ theme, pillar, info }: SajuChartProps) {
         {/* Ten God — 십성 */}
         <View style={s.tableRow}>
           <View style={[s.catCell, { borderBottomColor: colors.border }]}>
-            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Ten God</Text>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>{t('chart.tenGod', lang)}</Text>
             <Text style={[s.catSub, { color: colors.textSecondary }]}>(십성 · 十星)</Text>
           </View>
           {cols.map((col, i) => (
             <View key={i} style={[s.dataCell, { borderBottomColor: colors.border, borderLeftColor: colors.border }]}>
-              <Text style={[s.cellText, { color: colors.text }]}>{tenGodLabel(col.data.stemTenGod)}</Text>
+              <Text style={[s.cellText, { color: colors.text }]}>{tenGodLabel(col.data.stemTenGod, lang)}</Text>
             </View>
           ))}
         </View>
@@ -168,7 +174,7 @@ export function SajuChart({ theme, pillar, info }: SajuChartProps) {
         {/* Heavenly Stem — 천간 (큰 한자) */}
         <View style={s.tableRow}>
           <View style={[s.catCell, { borderBottomColor: colors.border }]}>
-            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Heavenly Stem</Text>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>{t('chart.heavenlyStem', lang)}</Text>
             <Text style={[s.catSub, { color: colors.textSecondary }]}>(천간 · 天干)</Text>
           </View>
           {cols.map((col, i) => (
@@ -183,7 +189,7 @@ export function SajuChart({ theme, pillar, info }: SajuChartProps) {
         {/* Earthly Branch — 지지 (큰 한자) */}
         <View style={s.tableRow}>
           <View style={[s.catCell, { borderBottomColor: colors.border }]}>
-            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Earthly Branch</Text>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>{t('chart.earthlyBranch', lang)}</Text>
             <Text style={[s.catSub, { color: colors.textSecondary }]}>(지지 · 地支)</Text>
           </View>
           {cols.map((col, i) => (
@@ -198,12 +204,12 @@ export function SajuChart({ theme, pillar, info }: SajuChartProps) {
         {/* Ten God (Branch) — 십성(지지) */}
         <View style={s.tableRow}>
           <View style={[s.catCell, { borderBottomColor: colors.border }]}>
-            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Ten God</Text>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>{t('chart.tenGod', lang)}</Text>
             <Text style={[s.catSub, { color: colors.textSecondary }]}>(Branch)</Text>
           </View>
           {cols.map((col, i) => (
             <View key={i} style={[s.dataCell, { borderBottomColor: colors.border, borderLeftColor: colors.border }]}>
-              <Text style={[s.cellText, { color: colors.text }]}>{tenGodLabel(col.data.branchTenGod)}</Text>
+              <Text style={[s.cellText, { color: colors.text }]}>{tenGodLabel(col.data.branchTenGod, lang)}</Text>
             </View>
           ))}
         </View>
@@ -211,12 +217,12 @@ export function SajuChart({ theme, pillar, info }: SajuChartProps) {
         {/* Life Stage — 운성 */}
         <View style={s.tableRow}>
           <View style={[s.catCell, { borderBottomColor: colors.border }]}>
-            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Life Stage</Text>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>{t('chart.lifeStage', lang)}</Text>
             <Text style={[s.catSub, { color: colors.textSecondary }]}>(운성 · 運星)</Text>
           </View>
           {cols.map((col, i) => (
             <View key={i} style={[s.dataCell, { borderBottomColor: colors.border, borderLeftColor: colors.border }]}>
-              <Text style={[s.cellText, { color: colors.text }]}>{stageLabel(col.data.twelveStage)}</Text>
+              <Text style={[s.cellText, { color: colors.text }]}>{stageLabel(col.data.twelveStage, lang)}</Text>
             </View>
           ))}
         </View>
@@ -224,7 +230,7 @@ export function SajuChart({ theme, pillar, info }: SajuChartProps) {
         {/* Naeum — 납음오행 */}
         <View style={s.tableRow}>
           <View style={[s.catCell, { borderBottomColor: colors.border }]}>
-            <Text style={[s.catLabel, { color: colors.textSecondary }]}>Naeum</Text>
+            <Text style={[s.catLabel, { color: colors.textSecondary }]}>{t('chart.naeum', lang)}</Text>
             <Text style={[s.catSub, { color: colors.textSecondary }]}>(납음 · 納音)</Text>
           </View>
           {cols.map((col, i) => (

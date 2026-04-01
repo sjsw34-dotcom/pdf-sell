@@ -4,6 +4,8 @@ import type { ThemeCode } from '@/lib/types/theme';
 import type { YinyangData } from '@/lib/types/saju';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
+import { useLang } from './LanguageContext';
+import { t } from '@/lib/i18n/pdf-strings';
 
 const ELEMENT_COLORS: Record<string, string> = {
   '木': '#2D8B46', '火': '#D63031', '土': '#C49B1A', '金': '#7F8C8D', '水': '#2E86C1',
@@ -28,6 +30,9 @@ const GOD_GROUP_INFO: Record<string, { en: string; ko: string; sub: string; colo
   '인성': { en: 'Seal Group', ko: '인성', sub: 'Indirect · Direct Seal (편인 · 정인)', color: '#2ECC71',
     desc: 'Represents wisdom, academic achievement, and the capacity to absorb knowledge.' },
 };
+const GROUP_I18N: Record<string, string> = {
+  '비겁': 'bigeop', '식상': 'siksang', '재성': 'jaesung', '관성': 'gwansung', '인성': 'insung',
+};
 
 // ─── 음양 차트 ───
 
@@ -38,6 +43,7 @@ interface YinyangChartProps {
 
 export function YinyangChart({ theme, yinyang }: YinyangChartProps) {
   const colors = THEMES[theme].colors;
+  const lang = useLang();
   const total = yinyang.yin + yinyang.yang || 1;
   const yangPct = Math.round((yinyang.yang / total) * 100);
   const yinPct = 100 - yangPct;
@@ -45,16 +51,16 @@ export function YinyangChart({ theme, yinyang }: YinyangChartProps) {
 
   return (
     <View style={s.container}>
-      {/* ══════ 타이틀 — 영어 우선 ══════ */}
-      <Text style={[s.mainTitle, { color: colors.text }]}>Yin, Yang & Five Elements</Text>
-      <Text style={[s.mainTitleSub, { color: colors.textSecondary }]}>음양오행 · 陰陽五行</Text>
-      <Text style={[s.subText, { color: colors.textSecondary }]}>The Energy Balance Within You</Text>
+      {/* ══════ 타이틀 ══════ */}
+      <Text style={[s.mainTitle, { color: colors.text }]}>{t('yinyang.title', lang)}</Text>
+      <Text style={[s.mainTitleSub, { color: colors.textSecondary }]}>{t('yinyang.subtitle', lang)}</Text>
+      <Text style={[s.subText, { color: colors.textSecondary }]}>{t('yinyang.subText', lang)}</Text>
 
       <View style={s.spacer16} />
 
       {/* ══════ 음양의 조화 ══════ */}
       <View style={[s.card, { backgroundColor: colors.surface, borderColor: colors.border }]}>
-        <Text style={[s.sectionTitle, { color: colors.text }]}>Yin and Yang Harmony (음양의 조화 · 陰陽)</Text>
+        <Text style={[s.sectionTitle, { color: colors.text }]}>{t('yinyang.yinyangHarmony', lang)}</Text>
 
         <View style={s.yinyangBar}>
           {yinyang.yang > 0 && (
@@ -74,7 +80,7 @@ export function YinyangChart({ theme, yinyang }: YinyangChartProps) {
 
       {/* ══════ 오행 분포도 ══════ */}
       <View style={[s.card, { backgroundColor: colors.surface, borderColor: colors.border }]}>
-        <Text style={[s.sectionTitle, { color: colors.text }]}>Five Elements Distribution (오행 분포도 · 五行)</Text>
+        <Text style={[s.sectionTitle, { color: colors.text }]}>{t('yinyang.fiveElements', lang)}</Text>
 
         {yinyang.elements.map((el) => {
           const pct = maxCount > 0 ? Math.round((el.count / maxCount) * 100) : 0;
@@ -110,20 +116,20 @@ export function YinyangChart({ theme, yinyang }: YinyangChartProps) {
         <View style={[s.infoBox, { backgroundColor: colors.surface }]}>
           <View style={s.infoHeader}>
             <View style={[s.infoDot, { backgroundColor: '#E07C54' }]} />
-            <Text style={[s.infoTitle, { color: colors.text }]}>What is Yin and Yang (음양 · 陰陽)?</Text>
+            <Text style={[s.infoTitle, { color: colors.text }]}>{t('yinyang.whatIsYinyang', lang)}</Text>
           </View>
           <Text style={[s.infoBody, { color: colors.text }]}>
-            Yin and Yang are the two opposing forces that make up all things in the universe. Yang (陽) represents light, outward expression, and active energy, while Yin (陰) represents darkness, inward gathering, and calm energy.
+            {t('yinyang.yinyangDesc', lang)}
           </Text>
         </View>
         <View style={s.infoSpacer} />
         <View style={[s.infoBox, { backgroundColor: colors.surface }]}>
           <View style={s.infoHeader}>
             <View style={[s.infoDot, { backgroundColor: '#2D8B46' }]} />
-            <Text style={[s.infoTitle, { color: colors.text }]}>What are the Five Elements (오행 · 五行)?</Text>
+            <Text style={[s.infoTitle, { color: colors.text }]}>{t('yinyang.whatIsFiveEl', lang)}</Text>
           </View>
           <Text style={[s.infoBody, { color: colors.text }]}>
-            The Five Elements describe the distribution of Wood (木), Fire (火), Earth (土), Metal (金), and Water (水). Elements in greater strength reflect your core personality, while weaker elements point to areas for conscious development.
+            {t('yinyang.fiveElDesc', lang)}
           </Text>
         </View>
       </View>
@@ -140,20 +146,21 @@ interface TenGodsChartProps {
 
 export function TenGodsChart({ theme, yinyang }: TenGodsChartProps) {
   const colors = THEMES[theme].colors;
+  const lang = useLang();
 
   return (
     <View style={s.container}>
-      {/* 타이틀 — 영어 우선 */}
-      <Text style={[s.mainTitle, { color: colors.text }]}>Ten Gods Distribution</Text>
-      <Text style={[s.mainTitleSub, { color: colors.textSecondary }]}>십신(十神) 분포</Text>
-      <Text style={[s.subText, { color: colors.textSecondary }]}>TEN GODS DISTRIBUTION</Text>
+      {/* 타이틀 */}
+      <Text style={[s.mainTitle, { color: colors.text }]}>{t('tenGods.title', lang)}</Text>
+      <Text style={[s.mainTitleSub, { color: colors.textSecondary }]}>{t('tenGods.subtitle', lang)}</Text>
+      <Text style={[s.subText, { color: colors.textSecondary }]}>{t('tenGods.label', lang)}</Text>
 
       <View style={s.spacer12} />
 
       {/* 설명 박스 */}
       <View style={[s.noteBox, { backgroundColor: colors.surface }]}>
         <Text style={[s.noteText, { color: colors.text }]}>
-          This analysis reflects the Five Element energies in your birth chart. The data indicates the relative strength of each innate trait — the higher the count, the greater that energy's influence on your life.
+          {t('tenGods.noteText', lang)}
         </Text>
       </View>
 
@@ -164,6 +171,7 @@ export function TenGodsChart({ theme, yinyang }: TenGodsChartProps) {
         const info = GOD_GROUP_INFO[grp.group];
         if (!info) return null;
         const hanja = GOD_GROUP_HANJA[grp.group] || '';
+        const grpKey = GROUP_I18N[grp.group];
 
         return (
           <View key={grp.group} style={[s.godCard, { borderBottomColor: colors.border }]} wrap={false}>
@@ -174,13 +182,13 @@ export function TenGodsChart({ theme, yinyang }: TenGodsChartProps) {
               </View>
             </View>
 
-            {/* 중앙: 설명 — 영어 우선 */}
+            {/* 중앙: 설명 */}
             <View style={s.godCenter}>
               <Text style={[s.godName, { color: colors.text }]}>
-                {info.en} ({info.ko})
+                {grpKey ? t('godGroup.' + grpKey, lang) : `${info.en} (${info.ko})`}
               </Text>
-              <Text style={[s.godSub, { color: colors.textSecondary }]}>{info.sub}</Text>
-              <Text style={[s.godDesc, { color: colors.textSecondary }]}>{info.desc}</Text>
+              <Text style={[s.godSub, { color: colors.textSecondary }]}>{grpKey ? t('godGroup.' + grpKey + '.sub', lang) : info.sub}</Text>
+              <Text style={[s.godDesc, { color: colors.textSecondary }]}>{grpKey ? t('godGroup.' + grpKey + '.desc', lang) : info.desc}</Text>
             </View>
 
             {/* 오른쪽: 개수 */}

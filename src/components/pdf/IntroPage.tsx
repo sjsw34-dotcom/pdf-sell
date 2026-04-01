@@ -2,62 +2,71 @@ import React from 'react';
 import { Page, View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { ThemeCode } from '@/lib/types/theme';
 import type { TierCode } from '@/lib/types/tier';
+import type { Language } from '@/lib/types/language';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK, ANTI_LIGATURE, fixLigatures } from './styles/pdfStyles';
 import { PageFooter } from './PageFooter';
 import { useShowBrand } from './BrandContext';
+import { useLang } from './LanguageContext';
+import { t } from '@/lib/i18n/pdf-strings';
 
-// ─── 티어별 목차 ───
+// ─── 티어별 라벨 키 ───
 
-const TIER_LABELS: Record<TierCode, string> = {
-  basic: 'Basic Saju Analysis Report',
-  love: 'Love Edition Analysis Report',
-  full: 'Full Saju Analysis Report',
-  premium: 'Premium Saju Analysis Report',
+const TIER_KEY: Record<TierCode, string> = {
+  basic: 'intro.tierBasic',
+  love: 'intro.tierLove',
+  full: 'intro.tierFull',
+  premium: 'intro.tierPremium',
 };
 
-const TOC: Record<TierCode, { part: string; title: string }[]> = {
+// ─── 티어별 목차 빌더 ───
+
+const TOC_KEYS: Record<TierCode, { part: string; key: string }[]> = {
   basic: [
-    { part: '01', title: 'Your Destiny Chart — The Four Pillars' },
-    { part: '02', title: 'Your Elemental Balance (Yongsin)' },
-    { part: '03', title: 'Your Destiny Overview' },
-    { part: '04', title: 'Personality & Core Strengths' },
-    { part: '05', title: 'Fortune & Life Direction' },
+    { part: '01', key: 'toc.basic.01' },
+    { part: '02', key: 'toc.basic.02' },
+    { part: '03', key: 'toc.basic.03' },
+    { part: '04', key: 'toc.basic.04' },
+    { part: '05', key: 'toc.basic.05' },
   ],
   love: [
-    { part: 'Ch.1', title: 'Your Four Pillars & Love' },
-    { part: 'Ch.2', title: 'Day Master Romance Personality' },
-    { part: 'Ch.3', title: 'Elements & Your Love Language' },
-    { part: '01', title: 'Your Romance DNA' },
-    { part: '02', title: 'Love Strengths & Dating Style' },
-    { part: '03', title: 'Your Destined Match' },
-    { part: '04', title: 'Best Timing for Love' },
-    { part: '05', title: 'Deep Connection' },
-    { part: '06', title: 'Lucky Charms & Strategy' },
+    { part: 'Ch.1', key: 'toc.love.ch1' },
+    { part: 'Ch.2', key: 'toc.love.ch2' },
+    { part: 'Ch.3', key: 'toc.love.ch3' },
+    { part: '01', key: 'toc.love.01' },
+    { part: '02', key: 'toc.love.02' },
+    { part: '03', key: 'toc.love.03' },
+    { part: '04', key: 'toc.love.04' },
+    { part: '05', key: 'toc.love.05' },
+    { part: '06', key: 'toc.love.06' },
   ],
   full: [
-    { part: '01', title: 'Detailed Analysis of My Four Pillars' },
-    { part: '02', title: "The Golden Peaks of My Life" },
-    { part: '03', title: 'Romance Fortune and Partner Destiny' },
-    { part: '04', title: 'My Financial Fortune Analysis' },
-    { part: '05', title: 'Career and the Destiny of Success' },
-    { part: '06', title: 'Health and Constitution Through Saju' },
-    { part: '07', title: 'The Destined Benefactors Who Will Help You' },
-    { part: '08', title: 'How to Shape Your Destiny' },
+    { part: '01', key: 'toc.full.01' },
+    { part: '02', key: 'toc.full.02' },
+    { part: '03', key: 'toc.full.03' },
+    { part: '04', key: 'toc.full.04' },
+    { part: '05', key: 'toc.full.05' },
+    { part: '06', key: 'toc.full.06' },
+    { part: '07', key: 'toc.full.07' },
+    { part: '08', key: 'toc.full.08' },
   ],
   premium: [
-    { part: '01', title: 'Detailed Analysis of My Four Pillars' },
-    { part: '02', title: "The Golden Peaks of My Life" },
-    { part: '03', title: 'Romance Fortune and Partner Destiny' },
-    { part: '04', title: 'My Financial Fortune Analysis' },
-    { part: '05', title: 'Career and the Destiny of Success' },
-    { part: '06', title: 'Health and Constitution Through Saju' },
-    { part: '07', title: 'The Destined Benefactors Who Will Help You' },
-    { part: '08', title: 'How to Shape Your Destiny' },
-    { part: '09', title: 'Monthly Detailed Fortune' },
-    { part: '10', title: 'Destiny Analysis for the Next 10 Years' },
+    { part: '01', key: 'toc.full.01' },
+    { part: '02', key: 'toc.full.02' },
+    { part: '03', key: 'toc.full.03' },
+    { part: '04', key: 'toc.full.04' },
+    { part: '05', key: 'toc.full.05' },
+    { part: '06', key: 'toc.full.06' },
+    { part: '07', key: 'toc.full.07' },
+    { part: '08', key: 'toc.full.08' },
+    { part: '09', key: 'toc.premium.09' },
+    { part: '10', key: 'toc.premium.10' },
   ],
 };
+
+function getToc(tier: TierCode, lang: Language): { part: string; title: string }[] {
+  return TOC_KEYS[tier].map(({ part, key }) => ({ part, title: t(key, lang) }));
+}
 
 interface IntroPageProps {
   theme: ThemeCode;
@@ -68,7 +77,8 @@ interface IntroPageProps {
 
 export function IntroPage({ theme, tier, name, hasPersonalQuestion }: IntroPageProps) {
   const colors = THEMES[theme].colors;
-  const items = TOC[tier];
+  const lang = useLang();
+  const items = getToc(tier, lang);
   const showBrand = useShowBrand();
 
   return (
@@ -77,34 +87,34 @@ export function IntroPage({ theme, tier, name, hasPersonalQuestion }: IntroPageP
       <Page size="A4" style={[s.page, { backgroundColor: colors.background }]}>
         <View style={s.content}>
           {/* 상단 라벨 */}
-          <Text style={[s.overviewLabel, { color: colors.textSecondary }]}>Overview</Text>
-          <Text style={[s.tierLabel, { color: colors.primary }]}>{TIER_LABELS[tier]}</Text>
+          <Text style={[s.overviewLabel, { color: colors.textSecondary }]}>{t('intro.overview', lang)}</Text>
+          <Text style={[s.tierLabel, { color: colors.primary }]}>{t(TIER_KEY[tier], lang)}</Text>
 
           <View style={s.spacer16} />
 
           {/* 이름 + 브랜드 */}
-          <Text style={[s.clientName, { color: colors.primary }]}>{name || 'Valued Guest'}</Text>
-          <Text style={[s.brandLine, { color: colors.textSecondary }]}>{showBrand ? 'SajuMuse — In-Depth Destiny Analysis' : 'In-Depth Destiny Analysis'}</Text>
+          <Text style={[s.clientName, { color: colors.primary }]}>{name || t('cover.valuedGuest', lang)}</Text>
+          <Text style={[s.brandLine, { color: colors.textSecondary }]}>{showBrand ? 'SajuMuse — ' + t('intro.brandLine', lang) : t('intro.brandLine', lang)}</Text>
 
           <View style={[s.dividerFull, { backgroundColor: colors.border }]} />
 
           {/* 인사말 본문 */}
-          <Text style={[s.sectionTag, { color: colors.secondary }]}>{TIER_LABELS[tier]}</Text>
+          <Text style={[s.sectionTag, { color: colors.secondary }]}>{t(TIER_KEY[tier], lang)}</Text>
 
           <View style={s.spacer12} />
 
-          <Text style={[s.greeting, { color: colors.primary }]}>Dear {name || 'Valued Guest'},</Text>
+          <Text style={[s.greeting, { color: colors.primary }]}>{t('intro.greeting', lang, { name: name || t('cover.valuedGuest', lang) })}</Text>
 
           <Text style={[s.body, { color: colors.text }]}>
-            {fixLigatures('This report is a personalized destiny analysis prepared exclusively based on your 사주팔자 · Four Pillars of Destiny.')}
+            {fixLigatures(t('intro.body1', lang))}
           </Text>
 
           <Text style={[s.body, { color: colors.text }]}>
-            {fixLigatures('Saju (사주명리학) is a wisdom tradition with thousands of years of history rooted in Eastern philosophy. By interpreting the cosmic energies present at the moment of your birth, it offers deep insight into your innate nature and the natural flow of your life.')}
+            {fixLigatures(t('intro.body2', lang))}
           </Text>
 
           <Text style={[s.body, { color: colors.text }]}>
-            {fixLigatures('Drawing on years of experience reading the lives of countless individuals, this analysis has been crafted with great care — just for you. May this report serve as a guiding light as you navigate your path forward.')}
+            {fixLigatures(t('intro.body3', lang))}
           </Text>
 
           {hasPersonalQuestion && (
@@ -112,7 +122,7 @@ export function IntroPage({ theme, tier, name, hasPersonalQuestion }: IntroPageP
               <View style={s.spacer12} />
               <View style={[s.personalNote, { backgroundColor: colors.surface, borderLeftColor: colors.secondary }]}>
                 <Text style={[s.personalNoteText, { color: colors.text }]}>
-                  {fixLigatures('You also submitted a personal question. After the full analysis, you will find a dedicated section at the end of this report with a personalized answer crafted just for you.')}
+                  {fixLigatures(t('intro.personalNote', lang))}
                 </Text>
               </View>
             </>
@@ -120,8 +130,8 @@ export function IntroPage({ theme, tier, name, hasPersonalQuestion }: IntroPageP
 
           <View style={s.spacer24} />
 
-          <Text style={[s.signoff, { color: colors.text }]}>With warmth,</Text>
-          <Text style={[s.signoffBrand, { color: colors.primary }]}>{showBrand ? 'SajuMuse' : 'Your Saju Consultant'}</Text>
+          <Text style={[s.signoff, { color: colors.text }]}>{t('intro.signoff', lang)}</Text>
+          <Text style={[s.signoffBrand, { color: colors.primary }]}>{showBrand ? 'SajuMuse' : t('intro.signoffBrand', lang)}</Text>
         </View>
 
         <PageFooter color={colors.textSecondary} />
@@ -130,7 +140,7 @@ export function IntroPage({ theme, tier, name, hasPersonalQuestion }: IntroPageP
       {/* ══════ 페이지 2: Table of Contents ══════ */}
       <Page size="A4" style={[s.page, { backgroundColor: colors.background }]}>
         <View style={s.content}>
-          <Text style={[s.tocTitle, { color: colors.primary }]}>Table of Contents</Text>
+          <Text style={[s.tocTitle, { color: colors.primary }]}>{t('intro.tocTitle', lang)}</Text>
 
           <View style={[s.dividerFull, { backgroundColor: colors.border }]} />
 
@@ -138,8 +148,8 @@ export function IntroPage({ theme, tier, name, hasPersonalQuestion }: IntroPageP
           <View style={s.tocTable}>
             {/* 헤더 */}
             <View style={[s.tocHeaderRow, { borderBottomColor: colors.primary }]}>
-              <Text style={[s.tocHeaderNum, { color: colors.textSecondary }]}>#</Text>
-              <Text style={[s.tocHeaderSection, { color: colors.textSecondary }]}>Section</Text>
+              <Text style={[s.tocHeaderNum, { color: colors.textSecondary }]}>{t('intro.tocNum', lang)}</Text>
+              <Text style={[s.tocHeaderSection, { color: colors.textSecondary }]}>{t('intro.tocSection', lang)}</Text>
             </View>
 
             {/* 항목들 */}

@@ -3,6 +3,7 @@ import { pdf } from '@react-pdf/renderer';
 import type { TierCode } from '@/lib/types/tier';
 import type { ThemeCode } from '@/lib/types/theme';
 import type { SajuData } from '@/lib/types/saju';
+import type { Language } from '@/lib/types/language';
 import { PdfDocument } from '@/components/pdf/PdfDocument';
 
 interface RenderParams {
@@ -16,6 +17,7 @@ interface RenderParams {
   personalQuestion?: string;
   personalAnswer?: string;
   showBrand?: boolean;
+  language?: Language;
 }
 
 /**
@@ -34,6 +36,7 @@ export async function renderPdfOnClient(params: RenderParams): Promise<Blob> {
     personalQuestion: params.personalQuestion,
     personalAnswer: params.personalAnswer,
     showBrand: params.showBrand,
+    language: params.language,
   });
 
   const instance = pdf(

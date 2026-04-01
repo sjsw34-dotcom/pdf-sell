@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import type { SajuData } from '@/lib/types/saju';
 import type { TierCode } from '@/lib/types/tier';
 import type { ThemeCode } from '@/lib/types/theme';
+import type { Language } from '@/lib/types/language';
 
 const MAX_ADDITIONAL_REQUEST = 500;
 
@@ -22,6 +23,7 @@ interface GeneratorState {
   additionalRequest: string;
   personalQuestion: string;
   personalAnswer: string;
+  language: Language;
   showBrand: boolean;
   generatedTexts: Record<string, string>;
   progress: Progress;
@@ -37,6 +39,7 @@ interface GeneratorActions {
   setCoverImage: (base64: string | null) => void;
   setTheme: (theme: ThemeCode) => void;
   setAdditionalRequest: (text: string) => void;
+  setLanguage: (lang: Language) => void;
   setShowBrand: (show: boolean) => void;
   setPersonalQuestion: (text: string) => void;
   setPersonalAnswer: (text: string) => void;
@@ -57,6 +60,7 @@ const initialState: GeneratorState = {
   coverImage: null,
   selectedTheme: 'classic',
   additionalRequest: '',
+  language: 'en' as Language,
   showBrand: true,
   personalQuestion: '',
   personalAnswer: '',
@@ -94,6 +98,9 @@ export const useGeneratorStore = create<GeneratorState & GeneratorActions>()(
 
     setAdditionalRequest: (text) =>
       set({ additionalRequest: text.slice(0, MAX_ADDITIONAL_REQUEST) }),
+
+    setLanguage: (lang) =>
+      set({ language: lang }),
 
     setShowBrand: (show) =>
       set({ showBrand: show }),

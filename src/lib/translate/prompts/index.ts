@@ -6,7 +6,7 @@ import { LOVE_PROMPTS } from './love';
 import { FULL_PROMPTS } from './full';
 import { PREMIUM_PROMPTS } from './premium';
 
-export { THREE_LAYER_RULES, OUTPUT_RULES } from './common';
+export { THREE_LAYER_RULES, OUTPUT_RULES, THREE_LAYER_RULES_KO, OUTPUT_RULES_KO } from './common';
 export type { PartPrompt } from './common';
 
 const PROMPTS_BY_TIER: Record<TierCode, PartPrompt[]> = {

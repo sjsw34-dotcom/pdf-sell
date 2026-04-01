@@ -117,34 +117,47 @@ def build_charset() -> str:
     for i in range(0x3131, 0x3164):  # ㄱ ~ ㅣ
         chars.add(chr(i))
 
+    # 8) Full Hangul Syllables (한글 본문 텍스트용 — 한국어 PDF 지원)
+    for i in range(0xAC00, 0xD7B0):  # 11,172자
+        chars.add(chr(i))
+
     return "".join(sorted(chars))
 
 
 def run_subset(src_font: str, dst_font: str, charset: str) -> None:
     """pyftsubset으로 서브셋 생성."""
-    # 문자를 유니코드 코드포인트 목록으로 변환
+    import tempfile
+
+    # 문자를 유니코드 코드포인트 목록으로 변환 → 파일에 저장 (명령행 길이 초과 방지)
     unicodes = ",".join(f"U+{ord(c):04X}" for c in charset)
 
-    cmd = [
-        sys.executable, "-m", "fontTools.subset",
-        src_font,
-        f"--output-file={dst_font}",
-        f"--unicodes={unicodes}",
-        "--layout-features=*",
-        "--flavor=",  # TTF 유지 (react-pdf 호환)
-        "--no-hinting",
-        "--desubroutinize",
-    ]
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".txt", delete=False, encoding="utf-8") as f:
+        f.write(unicodes)
+        unicodes_file = f.name
 
-    print(f"  Subsetting: {os.path.basename(src_font)} → {os.path.basename(dst_font)}")
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    if result.returncode != 0:
-        print(f"  ERROR: {result.stderr}")
-        sys.exit(1)
+    try:
+        cmd = [
+            sys.executable, "-m", "fontTools.subset",
+            src_font,
+            f"--output-file={dst_font}",
+            f"--unicodes-file={unicodes_file}",
+            "--layout-features=*",
+            "--flavor=",  # TTF 유지 (react-pdf 호환)
+            "--no-hinting",
+            "--desubroutinize",
+        ]
 
-    src_size = os.path.getsize(src_font)
-    dst_size = os.path.getsize(dst_font)
-    print(f"  {src_size:,} bytes → {dst_size:,} bytes ({dst_size/src_size*100:.1f}%)")
+        print(f"  Subsetting: {os.path.basename(src_font)} → {os.path.basename(dst_font)}")
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"  ERROR: {result.stderr}")
+            sys.exit(1)
+
+        src_size = os.path.getsize(src_font)
+        dst_size = os.path.getsize(dst_font)
+        print(f"  {src_size:,} bytes → {dst_size:,} bytes ({dst_size/src_size*100:.1f}%)")
+    finally:
+        os.unlink(unicodes_file)
 
 
 def main() -> None:

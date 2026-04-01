@@ -3,6 +3,7 @@ import { Document, Page, View } from '@react-pdf/renderer';
 import type { ThemeCode } from '@/lib/types/theme';
 import type { TierCode } from '@/lib/types/tier';
 import type { SajuData } from '@/lib/types/saju';
+import type { Language } from '@/lib/types/language';
 import { getThemeStyles } from './styles/themes';
 import { CoverPage } from './CoverPage';
 import { IntroPage } from './IntroPage';
@@ -22,6 +23,8 @@ import { EndingPage } from './EndingPage';
 import { PersonalQAPage } from './PersonalQAPage';
 import { fixLigatures } from './styles/pdfStyles';
 import { BrandContext } from './BrandContext';
+import { LanguageContext } from './LanguageContext';
+import { t } from '@/lib/i18n/pdf-strings';
 
 // ═══════════════════════════════════════════════════════════════
 // 더미 텍스트 — Claude API 연동 전 테스트용
@@ -375,6 +378,7 @@ interface PdfDocumentProps {
   personalQuestion?: string;
   personalAnswer?: string;
   showBrand?: boolean;
+  language?: Language;
 }
 
 export function PdfDocument({
@@ -388,8 +392,10 @@ export function PdfDocument({
   personalQuestion,
   personalAnswer,
   showBrand = true,
+  language = 'en',
 }: PdfDocumentProps) {
-  const t = getThemeStyles(theme);
+  const ts = getThemeStyles(theme);
+  const lang = language;
   const g = (key: string): string => {
     const val = texts?.[key] || D[key];
     const raw = typeof val === 'string' && val.length > 0 ? val : ' ';
@@ -397,43 +403,44 @@ export function PdfDocument({
   };
 
   // 티어별 콘텐츠를 단일 배열로 구성 — null/undefined 절대 반환 안 함
-  const tierContent = renderTierContent(tier, theme, g, sajuData, clientName);
+  const tierContent = renderTierContent(tier, theme, g, sajuData, clientName, lang);
 
   return (
     <BrandContext.Provider value={showBrand}>
+    <LanguageContext.Provider value={lang}>
     <Document
-      title={`${clientName || 'Guest'} — Saju Reading`}
-      author={showBrand ? 'SajuMuse' : 'Saju Destiny Analysis'}
-      subject="Four Pillars Destiny Analysis"
+      title={t('doc.title', lang, { name: clientName || t('chart.guest', lang) })}
+      author={showBrand ? 'SajuMuse' : t('doc.subject', lang)}
+      subject={t('doc.subject', lang)}
     >
       <CoverPage
         theme={theme}
         tier={tier}
-        name={clientName || 'Guest'}
+        name={clientName || t('chart.guest', lang)}
         birthDate={birthInfo || ''}
         coverImageBase64={coverImage}
       />
 
       <WhatIsSajuPage theme={theme} />
 
-      <IntroPage theme={theme} tier={tier} name={clientName || 'Guest'} hasPersonalQuestion={!!(personalQuestion && personalAnswer)} />
+      <IntroPage theme={theme} tier={tier} name={clientName || t('chart.guest', lang)} hasPersonalQuestion={!!(personalQuestion && personalAnswer)} />
 
-      <Page size="A4" style={t.page}>
+      <Page size="A4" style={ts.page}>
         <SajuChart theme={theme} pillar={sajuData.pillar} info={sajuData.info} />
         <PageFooter />
       </Page>
 
-      <Page size="A4" style={t.page}>
+      <Page size="A4" style={ts.page}>
         <YongsinChart theme={theme} yongsin={sajuData.yongsin} />
         <PageFooter />
       </Page>
 
-      <Page size="A4" style={t.page} wrap>
+      <Page size="A4" style={ts.page} wrap>
         <YinyangChart theme={theme} yinyang={sajuData.yinyang} />
         <PageFooter />
       </Page>
 
-      <Page size="A4" style={t.page} wrap>
+      <Page size="A4" style={ts.page} wrap>
         <TenGodsChart theme={theme} yinyang={sajuData.yinyang} />
         <PageFooter />
       </Page>
@@ -448,8 +455,9 @@ export function PdfDocument({
         />
       )}
 
-      <EndingPage theme={theme} name={clientName || 'Guest'} tier={tier} />
+      <EndingPage theme={theme} name={clientName || t('chart.guest', lang)} tier={tier} />
     </Document>
+    </LanguageContext.Provider>
     </BrandContext.Provider>
   );
 }
@@ -461,13 +469,14 @@ function renderTierContent(
   g: (k: string) => string,
   data: SajuData,
   clientName: string,
+  lang: Language,
 ): React.ReactNode {
   switch (tier) {
-    case 'basic': return renderBasic(theme, g);
-    case 'love': return renderLove(theme, g, data, clientName);
-    case 'full': return renderFull(theme, g, data);
-    case 'premium': return renderPremium(theme, g, data);
-    default: return renderBasic(theme, g);
+    case 'basic': return renderBasic(theme, g, lang);
+    case 'love': return renderLove(theme, g, data, clientName, lang);
+    case 'full': return renderFull(theme, g, data, lang);
+    case 'premium': return renderPremium(theme, g, data, lang);
+    default: return renderBasic(theme, g, lang);
   }
 }
 
@@ -475,12 +484,12 @@ function renderTierContent(
 // Basic 티어
 // ═══════════════════════════════════════════════════════════════
 
-function renderBasic(theme: ThemeCode, g: (k: string) => string) {
+function renderBasic(theme: ThemeCode, g: (k: string) => string, lang: Language) {
   return (
     <>
-      <ChapterPage theme={theme} chapterNumber={1} title="Your Destiny Overview" content={g('overview')} />
-      <ChapterPage theme={theme} chapterNumber={2} title="Personality & Core Strengths" content={g('personality')} />
-      <ChapterPage theme={theme} chapterNumber={3} title="Fortune & Life Direction" content={g('fortune')} />
+      <ChapterPage theme={theme} chapterNumber={1} title={t('title.overview', lang)} content={g('overview')} />
+      <ChapterPage theme={theme} chapterNumber={2} title={t('title.personality', lang)} content={g('personality')} />
+      <ChapterPage theme={theme} chapterNumber={3} title={t('title.fortune', lang)} content={g('fortune')} />
     </>
   );
 }
@@ -489,61 +498,62 @@ function renderBasic(theme: ThemeCode, g: (k: string) => string) {
 // Full 티어 — Part 1~8
 // ═══════════════════════════════════════════════════════════════
 
-function renderFull(theme: ThemeCode, g: (k: string) => string, data: SajuData) {
-  const t = getThemeStyles(theme);
+function renderFull(theme: ThemeCode, g: (k: string) => string, data: SajuData, lang: Language) {
+  const ts = getThemeStyles(theme);
+  const chLabel = (n: string) => `${t('chapter.label', lang)} ${n}`;
   return (
     <>
       {/* Part 1: 사주 상세 분석 */}
-      <PartHeader theme={theme} partNumber={1} title="Detailed Analysis of My Four Pillars" subtitle="In-Depth Interpretation of the Birth Chart" />
-      <ChapterPage theme={theme} chapterLabel="Chapter 1-1" title="Exploring Your Four Pillars Composition" sectionTitle="My Four Pillars — Detailed Analysis" content={g('part1_ch1')} />
-      <ChapterPage theme={theme} chapterLabel="Chapter 1-2" title="What Your Four Pillars Reveal About Your Destiny" sectionTitle="My Four Pillars — Detailed Analysis" content={g('part1_ch2')} />
+      <PartHeader theme={theme} partNumber={1} title={t('title.part1', lang)} subtitle={t('title.part1.sub', lang)} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('1-1')} title={t('title.part1.ch1', lang)} sectionTitle={t('title.part1.section', lang)} content={g('part1_ch1')} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('1-2')} title={t('title.part1.ch2', lang)} sectionTitle={t('title.part1.section', lang)} content={g('part1_ch2')} />
 
       {/* Part 2: 황금기 */}
-      <PartHeader theme={theme} partNumber={2} title="The Golden Peaks of My Life" subtitle="Major Luck Cycle and Annual Fortune Analysis" />
-      <ChapterPage theme={theme} chapterLabel="Chapter 2-1" title="Analyzing the Golden Peaks of Your Life" sectionTitle="The Golden Peaks of My Life" content={g('part2_ch1')} />
-      <ChapterPage theme={theme} chapterLabel="Chapter 2-2" title="Seasonal and Daily Timing" sectionTitle="The Golden Peaks of My Life" content={g('part2_ch2')} />
+      <PartHeader theme={theme} partNumber={2} title={t('title.part2', lang)} subtitle={t('title.part2.sub', lang)} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('2-1')} title={t('title.part2.ch1', lang)} sectionTitle={t('title.part2.section', lang)} content={g('part2_ch1')} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('2-2')} title={t('title.part2.ch2', lang)} sectionTitle={t('title.part2.section', lang)} content={g('part2_ch2')} />
 
       {/* Part 3: 연애운 */}
-      <PartHeader theme={theme} partNumber={3} title="Romance Fortune and Partner Destiny" subtitle="Love and Marriage Analysis" />
-      <ChapterPage theme={theme} chapterLabel="Chapter 3-1" title="Romance Tendencies and Romance Fortune" sectionTitle="Romance Fortune and Partner Destiny" content={g('part3_ch1')} />
-      <ChapterPage theme={theme} chapterLabel="Chapter 3-2" title="Marriage Fortune and Timing" sectionTitle="Romance Fortune and Partner Destiny" content={g('part3_ch2')} />
+      <PartHeader theme={theme} partNumber={3} title={t('title.part3', lang)} subtitle={t('title.part3.sub', lang)} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('3-1')} title={t('title.part3.ch1', lang)} sectionTitle={t('title.part3.section', lang)} content={g('part3_ch1')} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('3-2')} title={t('title.part3.ch2', lang)} sectionTitle={t('title.part3.section', lang)} content={g('part3_ch2')} />
 
       {/* Part 4: 재물운 */}
-      <PartHeader theme={theme} partNumber={4} title="My Financial Fortune Analysis" subtitle="Wealth and Investment Analysis" />
-      <ChapterPage theme={theme} chapterLabel="Chapter 4-1" title="Innate Financial Fortune" sectionTitle="My Financial Fortune Analysis" content={g('part4_ch1')} />
-      <ChapterPage theme={theme} chapterLabel="Chapter 4-2" title="Wealth Accumulation Style and Investment Tendencies" sectionTitle="My Financial Fortune Analysis" content={g('part4_ch2')} />
+      <PartHeader theme={theme} partNumber={4} title={t('title.part4', lang)} subtitle={t('title.part4.sub', lang)} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('4-1')} title={t('title.part4.ch1', lang)} sectionTitle={t('title.part4.section', lang)} content={g('part4_ch1')} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('4-2')} title={t('title.part4.ch2', lang)} sectionTitle={t('title.part4.section', lang)} content={g('part4_ch2')} />
 
       {/* Part 5: 직업운 */}
-      <PartHeader theme={theme} partNumber={5} title="Career and the Destiny of Success" subtitle="Career Fortune Analysis" />
-      <ChapterPage theme={theme} chapterLabel="Chapter 5-1" title="Natural Aptitudes and Career Fields" sectionTitle="Career and the Destiny of Success" content={g('part5_ch1')} />
-      <ChapterPage theme={theme} chapterLabel="Chapter 5-2" title="Career Fortune and Business Fortune" sectionTitle="Career and the Destiny of Success" content={g('part5_ch2')} />
+      <PartHeader theme={theme} partNumber={5} title={t('title.part5', lang)} subtitle={t('title.part5.sub', lang)} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('5-1')} title={t('title.part5.ch1', lang)} sectionTitle={t('title.part5.section', lang)} content={g('part5_ch1')} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('5-2')} title={t('title.part5.ch2', lang)} sectionTitle={t('title.part5.section', lang)} content={g('part5_ch2')} />
 
       {/* Part 6: 건강 */}
-      <PartHeader theme={theme} partNumber={6} title="Health and Constitution Through Saju" subtitle="Health Fortune Analysis" />
-      <ChapterPage theme={theme} chapterLabel="Chapter 6-1" title="Innate Constitution and Health Characteristics" sectionTitle="Health and Constitution Through Saju" content={g('part6_ch1')} />
-      <ChapterPage theme={theme} chapterLabel="Chapter 6-2" title="Health Issues to Watch" sectionTitle="Health and Constitution Through Saju" content={g('part6_ch2')} />
+      <PartHeader theme={theme} partNumber={6} title={t('title.part6', lang)} subtitle={t('title.part6.sub', lang)} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('6-1')} title={t('title.part6.ch1', lang)} sectionTitle={t('title.part6.section', lang)} content={g('part6_ch1')} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('6-2')} title={t('title.part6.ch2', lang)} sectionTitle={t('title.part6.section', lang)} content={g('part6_ch2')} />
 
       {/* Part 7: 귀인/신살 */}
-      <PartHeader theme={theme} partNumber={7} title="The Destined Benefactors Who Will Help You" subtitle="Benefactor & Connection Analysis" />
+      <PartHeader theme={theme} partNumber={7} title={t('title.part7', lang)} subtitle={t('title.part7.sub', lang)} />
       {data.shinsal && (
-        <Page size="A4" style={t.page}>
+        <Page size="A4" style={ts.page}>
           <ShinsalTable theme={theme} shinsal={data.shinsal} />
           <PageFooter />
         </Page>
       )}
-      <ChapterPage theme={theme} chapterLabel="Chapter 7-1" title="Characteristics of Your Benefactors" sectionTitle="The Destined Benefactors Who Will Help You" content={g('part7_ch1')} />
-      <ChapterPage theme={theme} chapterLabel="Chapter 7-2" title="How to Meet Your Benefactors" sectionTitle="The Destined Benefactors Who Will Help You" content={g('part7_ch2')} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('7-1')} title={t('title.part7.ch1', lang)} sectionTitle={t('title.part7.section', lang)} content={g('part7_ch1')} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('7-2')} title={t('title.part7.ch2', lang)} sectionTitle={t('title.part7.section', lang)} content={g('part7_ch2')} />
 
       {/* Part 8: 대운/개운 */}
-      <PartHeader theme={theme} partNumber={8} title="How to Shape Your Destiny" subtitle="Fortune Improvement Guide" />
+      <PartHeader theme={theme} partNumber={8} title={t('title.part8', lang)} subtitle={t('title.part8.sub', lang)} />
       {data.daeun && (
-        <Page size="A4" style={t.page}>
+        <Page size="A4" style={ts.page}>
           <DaeunTimeline theme={theme} daeun={data.daeun} />
           <PageFooter />
         </Page>
       )}
-      <ChapterPage theme={theme} chapterLabel="Chapter 8-1" title="Advice for Improving Your Destiny" sectionTitle="How to Shape Your Destiny" content={g('part8_ch1')} />
-      <ChapterPage theme={theme} chapterLabel="Chapter 8-2" title="Habits That Invite Good Fortune" sectionTitle="How to Shape Your Destiny" content={g('part8_ch2')} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('8-1')} title={t('title.part8.ch1', lang)} sectionTitle={t('title.part8.section', lang)} content={g('part8_ch1')} />
+      <ChapterPage theme={theme} chapterLabel={chLabel('8-2')} title={t('title.part8.ch2', lang)} sectionTitle={t('title.part8.section', lang)} content={g('part8_ch2')} />
     </>
   );
 }
@@ -563,8 +573,9 @@ function renderFull(theme: ThemeCode, g: (k: string) => string, data: SajuData) 
 // ✦ 60+ page personalized PDF report
 // ═══════════════════════════════════════════════════════════════
 
-function renderPremium(theme: ThemeCode, g: (k: string) => string, data: SajuData) {
-  const t = getThemeStyles(theme);
+function renderPremium(theme: ThemeCode, g: (k: string) => string, data: SajuData, lang: Language) {
+  const ts = getThemeStyles(theme);
+  const currentYear = new Date().getFullYear();
 
   // 년운 데이터에서 년도 목록 추출
   const years = data.nyunun?.entries.map((e) => e.year).sort((a, b) => a - b) ?? [];
@@ -572,26 +583,26 @@ function renderPremium(theme: ThemeCode, g: (k: string) => string, data: SajuDat
   return (
     <>
       {/* Part 1~8: Full 내용 전체 */}
-      {renderFull(theme, g, data)}
+      {renderFull(theme, g, data, lang)}
 
       {/* ════════ Part 9: This Year's Fortune ════════ */}
       <PartHeader
         theme={theme}
         partNumber={9}
-        title="This Year's Fortune"
-        subtitle="Your Cosmic Weather for 2026"
+        title={t('title.part9', lang)}
+        subtitle={t('title.part9.sub', lang, { year: String(currentYear) })}
       />
 
       {/* 올해 운세 상세 분석 */}
       <ChapterPage
         theme={theme}
-        title="2026 — Your Year in Focus"
+        title={t('title.part9.forecast', lang, { year: String(currentYear) })}
         content={g('this_year_forecast')}
       />
 
       {/* 올해 월운 차트 */}
       {data.wolun && (
-        <Page size="A4" style={t.page}>
+        <Page size="A4" style={ts.page}>
           <WolunCard theme={theme} wolun={data.wolun} />
           <PageFooter />
         </Page>
@@ -601,19 +612,19 @@ function renderPremium(theme: ThemeCode, g: (k: string) => string, data: SajuDat
       <ChapterPage
         theme={theme}
         chapterNumber={1}
-        title="January – June: First Half Guide"
+        title={t('title.part9.month1', lang)}
         content={g('part10_ch1')}
       />
       <ChapterPage
         theme={theme}
         chapterNumber={2}
-        title="July – December: Second Half Guide"
+        title={t('title.part9.month2', lang)}
         content={g('part10_ch2')}
       />
 
       {/* 내년 월운 차트 (있는 경우) */}
       {data.wolun2 && (
-        <Page size="A4" style={t.page}>
+        <Page size="A4" style={ts.page}>
           <WolunCard theme={theme} wolun={data.wolun2} />
           <PageFooter />
         </Page>
@@ -623,20 +634,20 @@ function renderPremium(theme: ThemeCode, g: (k: string) => string, data: SajuDat
       <PartHeader
         theme={theme}
         partNumber={10}
-        title="10-Year Fortune Cycle"
-        subtitle={years.length > 0 ? `Year-by-Year Breakdown (${years[0]}–${years[years.length - 1]})` : 'Year-by-Year Breakdown'}
+        title={t('title.part10', lang)}
+        subtitle={years.length > 0 ? t('title.part10.sub', lang, { first: String(years[0]), last: String(years[years.length - 1]) }) : t('title.part10.subNoYear', lang)}
       />
 
       {/* 10년 개요 */}
       <ChapterPage
         theme={theme}
-        title="Decade Overview"
+        title={t('title.part10.overview', lang)}
         content={g('part9_intro')}
       />
 
       {/* 년운 차트 */}
       {data.nyunun && (
-        <Page size="A4" style={t.page}>
+        <Page size="A4" style={ts.page}>
           <NyununCard theme={theme} nyunun={data.nyunun} />
           <PageFooter />
         </Page>
@@ -649,7 +660,7 @@ function renderPremium(theme: ThemeCode, g: (k: string) => string, data: SajuDat
           <ChapterPage
             key={year}
             theme={theme}
-            title={`${year} — Annual Fortune`}
+            title={t('title.part10.yearTitle', lang, { year: String(year) })}
             content={g(`year_${year}`)}
           />
         ))}
@@ -666,98 +677,99 @@ function renderLove(
   g: (k: string) => string,
   data: SajuData,
   name: string,
+  lang: Language,
 ) {
-  const t = getThemeStyles(theme);
+  const ts = getThemeStyles(theme);
   return (
     <>
       {/* Ch.1~3: 사주 기본 + 일간 성향 + 오행 연애 해석 */}
-      <ChapterPage theme={theme} chapterNumber={1} title="Your Four Pillars & Love" content={g('love_ch1')} />
-      <ChapterPage theme={theme} chapterNumber={2} title="Your Day Master in Romance" content={g('love_ch2')} />
-      <ChapterPage theme={theme} chapterNumber={3} title="Elements & Your Love Language" content={g('love_ch3')} />
+      <ChapterPage theme={theme} chapterNumber={1} title={t('title.love.ch1', lang)} content={g('love_ch1')} />
+      <ChapterPage theme={theme} chapterNumber={2} title={t('title.love.ch2', lang)} content={g('love_ch2')} />
+      <ChapterPage theme={theme} chapterNumber={3} title={t('title.love.ch3', lang)} content={g('love_ch3')} />
 
       {/* Part 1: 연애 DNA + 첫인상 */}
-      <PartHeader theme={theme} partNumber={1} title="Your Romance DNA" subtitle="First Impressions & Attraction Style" />
-      <Page size="A4" style={t.page}>
+      <PartHeader theme={theme} partNumber={1} title={t('title.love.p1title', lang)} subtitle={t('title.love.p1sub', lang)} />
+      <Page size="A4" style={ts.page}>
         <CalloutBox
           theme={theme}
           variant="question"
-          label={`${name}'s Romance DNA in One Phrase`}
+          label={t('title.love.calloutDna', lang, { name })}
           text={g('love_callout_dna')}
         />
         <PageFooter />
       </Page>
-      <ChapterPage theme={theme} title="Your Romantic Blueprint" content={g('love_p1')} />
-      <Page size="A4" style={t.page}>
+      <ChapterPage theme={theme} title={t('title.love.p1chapter', lang)} content={g('love_p1')} />
+      <Page size="A4" style={ts.page}>
         <CalloutBox
           theme={theme}
           variant="highlight"
-          label="Your Secret First-Impression Weapon"
+          label={t('title.love.calloutFirst', lang)}
           text={g('love_callout_first')}
         />
         <PageFooter />
       </Page>
 
       {/* Part 2: 연애 강점 + 스타일 */}
-      <PartHeader theme={theme} partNumber={2} title="Your Love Strengths" subtitle="What Makes You Irresistible" />
-      <ChapterPage theme={theme} title="Strengths & Dating Style" content={g('love_p2')} />
+      <PartHeader theme={theme} partNumber={2} title={t('title.love.p2title', lang)} subtitle={t('title.love.p2sub', lang)} />
+      <ChapterPage theme={theme} title={t('title.love.p2chapter', lang)} content={g('love_p2')} />
 
       {/* Part 3: 운명의 짝 */}
-      <PartHeader theme={theme} partNumber={3} title="Your Destined Match" subtitle="Who Your Stars Are Calling" />
-      <Page size="A4" style={t.page}>
+      <PartHeader theme={theme} partNumber={3} title={t('title.love.p3title', lang)} subtitle={t('title.love.p3sub', lang)} />
+      <Page size="A4" style={ts.page}>
         <CalloutBox
           theme={theme}
           variant="question"
-          label="Your Cosmic Match Blueprint"
+          label={t('title.love.calloutMatch', lang)}
           text={g('love_callout_match')}
         />
         <PageFooter />
       </Page>
-      <ChapterPage theme={theme} title="Compatibility & Dealbreakers" content={g('love_p3')} />
+      <ChapterPage theme={theme} title={t('title.love.p3chapter', lang)} content={g('love_p3')} />
 
       {/* Part 4: 연애운 좋은 시기 + 장소 */}
-      <PartHeader theme={theme} partNumber={4} title="Best Timing for Love" subtitle="When & Where Cupid Strikes" />
-      <Page size="A4" style={t.page}>
+      <PartHeader theme={theme} partNumber={4} title={t('title.love.p4title', lang)} subtitle={t('title.love.p4sub', lang)} />
+      <Page size="A4" style={ts.page}>
         <CalloutBox
           theme={theme}
           variant="default"
-          label="Your Love Calendar"
+          label={t('title.love.calloutTiming', lang)}
           text={g('love_callout_timing')}
         />
         <PageFooter />
       </Page>
       {data.nyunun && (
-        <Page size="A4" style={t.page}>
+        <Page size="A4" style={ts.page}>
           <NyununCard theme={theme} nyunun={data.nyunun} />
           <PageFooter />
         </Page>
       )}
-      <ChapterPage theme={theme} title="Romantic Timing & Lucky Places" content={g('love_p4')} />
+      <ChapterPage theme={theme} title={t('title.love.p4chapter', lang)} content={g('love_p4')} />
 
       {/* Part 5: Adult Only */}
-      <PartHeader theme={theme} partNumber={5} title="Deep Connection" subtitle="Intimacy & Emotional Bond" />
-      <Page size="A4" style={t.page}>
+      <PartHeader theme={theme} partNumber={5} title={t('title.love.p5title', lang)} subtitle={t('title.love.p5sub', lang)} />
+      <Page size="A4" style={ts.page}>
         <CalloutBox
           theme={theme}
           variant="highlight"
-          label="Your Intimate Connection Style"
+          label={t('title.love.calloutAdult', lang)}
           text={g('love_callout_adult')}
         />
         <PageFooter />
       </Page>
-      <ChapterPage theme={theme} title="Physical & Emotional Intimacy" content={g('love_p5')} />
+      <ChapterPage theme={theme} title={t('title.love.p5chapter', lang)} content={g('love_p5')} />
 
       {/* Part 6: 행운 아이템 + 전략 */}
-      <PartHeader theme={theme} partNumber={6} title="Lucky Charms & Strategy" subtitle="Amplify Your Romantic Energy" />
-      <Page size="A4" style={t.page}>
+      <PartHeader theme={theme} partNumber={6} title={t('title.love.p6title', lang)} subtitle={t('title.love.p6sub', lang)} />
+      <Page size="A4" style={ts.page}>
         <CalloutBox
           theme={theme}
           variant="default"
-          label="Your Love Luck Amplifiers"
+          label={t('title.love.calloutLuck', lang)}
           text={g('love_callout_luck')}
         />
         <PageFooter />
       </Page>
-      <ChapterPage theme={theme} title="Colors, Numbers & Strategic Tips" content={g('love_p6')} />
+      <ChapterPage theme={theme} title={t('title.love.p6chapter', lang)} content={g('love_p6')} />
     </>
   );
 }

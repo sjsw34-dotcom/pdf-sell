@@ -5,6 +5,8 @@ import type { DaeunData } from '@/lib/types/saju';
 import { THEMES } from '@/lib/constants/themes';
 import { TEN_GOD_EN, TWELVE_STAGE_EN, getShinsalSentiment, SHINSAL_EN } from '@/lib/constants/terms';
 import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
+import { useLang } from './LanguageContext';
+import { t } from '@/lib/i18n/pdf-strings';
 
 interface DaeunTimelineProps {
   theme: ThemeCode;
@@ -13,6 +15,7 @@ interface DaeunTimelineProps {
 
 export function DaeunTimeline({ theme, daeun }: DaeunTimelineProps) {
   const colors = THEMES[theme].colors;
+  const lang = useLang();
 
   const sentimentColor: Record<string, string> = {
     positive: colors.positive,
@@ -24,8 +27,8 @@ export function DaeunTimeline({ theme, daeun }: DaeunTimelineProps) {
 
   return (
     <View style={s.container}>
-      <Text style={[s.chartTitle, { color: colors.text }]}>MAJOR LUCK CYCLES</Text>
-      <Text style={[s.chartSubtitle, { color: colors.textSecondary }]}>大運 · Daeun (10-Year Periods)</Text>
+      <Text style={[s.chartTitle, { color: colors.text }]}>{t('daeun.title', lang)}</Text>
+      <Text style={[s.chartSubtitle, { color: colors.textSecondary }]}>{t('daeun.subtitle', lang)}</Text>
 
       {sorted.map((entry, idx) => {
         const isEven = idx % 2 === 0;
