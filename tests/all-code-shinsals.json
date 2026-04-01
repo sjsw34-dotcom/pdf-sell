@@ -1,0 +1,5394 @@
+[
+  {
+    "caseId": "1971",
+    "tab": "daeun",
+    "label": "92",
+    "context": "丙戌일/子월/戌년",
+    "target": "戊戌",
+    "codeShinsals": [
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "daeun",
+    "label": "82",
+    "context": "丙戌일/子월/戌년",
+    "target": "丁酉",
+    "codeShinsals": [
+      "천을귀인",
+      "태극귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "daeun",
+    "label": "72",
+    "context": "丙戌일/子월/戌년",
+    "target": "丙申",
+    "codeShinsals": [
+      "암록",
+      "문창귀인",
+      "관귀학관",
+      "낙정관살",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "daeun",
+    "label": "62",
+    "context": "丙戌일/子월/戌년",
+    "target": "乙未",
+    "codeShinsals": [
+      "공망",
+      "백호살",
+      "천문성",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "daeun",
+    "label": "52",
+    "context": "丙戌일/子월/戌년",
+    "target": "甲午",
+    "codeShinsals": [
+      "공망",
+      "양인살",
+      "협록",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "daeun",
+    "label": "42",
+    "context": "丙戌일/子월/戌년",
+    "target": "癸巳",
+    "codeShinsals": [
+      "건록",
+      "원진(日)",
+      "천덕귀인",
+      "천주귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "daeun",
+    "label": "32",
+    "context": "丙戌일/子월/戌년",
+    "target": "壬辰",
+    "codeShinsals": [
+      "협록",
+      "월덕귀인",
+      "괴강살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "daeun",
+    "label": "22",
+    "context": "丙戌일/子월/戌년",
+    "target": "辛卯",
+    "codeShinsals": [
+      "태극귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "daeun",
+    "label": "12",
+    "context": "丙戌일/子월/戌년",
+    "target": "庚寅",
+    "codeShinsals": [
+      "학당귀인",
+      "문곡귀인",
+      "홍염살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "daeun",
+    "label": "2",
+    "context": "丙戌일/子월/戌년",
+    "target": "己丑",
+    "codeShinsals": [
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "nyunun",
+    "label": "2035",
+    "context": "丙戌일/子월/戌년",
+    "target": "乙卯",
+    "codeShinsals": [
+      "태극귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "nyunun",
+    "label": "2034",
+    "context": "丙戌일/子월/戌년",
+    "target": "甲寅",
+    "codeShinsals": [
+      "학당귀인",
+      "문곡귀인",
+      "홍염살",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "nyunun",
+    "label": "2033",
+    "context": "丙戌일/子월/戌년",
+    "target": "癸丑",
+    "codeShinsals": [
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "nyunun",
+    "label": "2032",
+    "context": "丙戌일/子월/戌년",
+    "target": "壬子",
+    "codeShinsals": [
+      "월덕귀인",
+      "천복귀인",
+      "복성귀인",
+      "비인살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "nyunun",
+    "label": "2031",
+    "context": "丙戌일/子월/戌년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "천을귀인",
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "nyunun",
+    "label": "2030",
+    "context": "丙戌일/子월/戌년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "날삼재",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "nyunun",
+    "label": "2029",
+    "context": "丙戌일/子월/戌년",
+    "target": "己酉",
+    "codeShinsals": [
+      "천을귀인",
+      "태극귀인",
+      "눌삼재",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "nyunun",
+    "label": "2028",
+    "context": "丙戌일/子월/戌년",
+    "target": "戊申",
+    "codeShinsals": [
+      "암록",
+      "문창귀인",
+      "관귀학관",
+      "낙정관살",
+      "들삼재",
+      "현침살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "nyunun",
+    "label": "2027",
+    "context": "丙戌일/子월/戌년",
+    "target": "丁未",
+    "codeShinsals": [
+      "공망",
+      "천문성",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "nyunun",
+    "label": "2026",
+    "context": "丙戌일/子월/戌년",
+    "target": "丙午",
+    "codeShinsals": [
+      "공망",
+      "양인살",
+      "협록",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "nyunun",
+    "label": "2025",
+    "context": "丙戌일/子월/戌년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "건록",
+      "원진(日)",
+      "천덕귀인",
+      "천주귀인",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun",
+    "label": "1월",
+    "context": "丙戌일/子월/戌년",
+    "target": "己丑",
+    "codeShinsals": [
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun",
+    "label": "2월",
+    "context": "丙戌일/子월/戌년",
+    "target": "庚寅",
+    "codeShinsals": [
+      "학당귀인",
+      "문곡귀인",
+      "홍염살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun",
+    "label": "3월",
+    "context": "丙戌일/子월/戌년",
+    "target": "辛卯",
+    "codeShinsals": [
+      "태극귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun",
+    "label": "4월",
+    "context": "丙戌일/子월/戌년",
+    "target": "壬辰",
+    "codeShinsals": [
+      "협록",
+      "월덕귀인",
+      "괴강살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun",
+    "label": "5월",
+    "context": "丙戌일/子월/戌년",
+    "target": "癸巳",
+    "codeShinsals": [
+      "건록",
+      "원진(日)",
+      "천덕귀인",
+      "천주귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun",
+    "label": "6월",
+    "context": "丙戌일/子월/戌년",
+    "target": "甲午",
+    "codeShinsals": [
+      "공망",
+      "양인살",
+      "협록",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun",
+    "label": "7월",
+    "context": "丙戌일/子월/戌년",
+    "target": "乙未",
+    "codeShinsals": [
+      "공망",
+      "백호살",
+      "천문성",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun",
+    "label": "8월",
+    "context": "丙戌일/子월/戌년",
+    "target": "丙申",
+    "codeShinsals": [
+      "암록",
+      "문창귀인",
+      "관귀학관",
+      "낙정관살",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun",
+    "label": "9월",
+    "context": "丙戌일/子월/戌년",
+    "target": "丁酉",
+    "codeShinsals": [
+      "천을귀인",
+      "태극귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun",
+    "label": "10월",
+    "context": "丙戌일/子월/戌년",
+    "target": "戊戌",
+    "codeShinsals": [
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun",
+    "label": "11월",
+    "context": "丙戌일/子월/戌년",
+    "target": "己亥",
+    "codeShinsals": [
+      "천을귀인",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun",
+    "label": "12월",
+    "context": "丙戌일/子월/戌년",
+    "target": "庚子",
+    "codeShinsals": [
+      "천복귀인",
+      "복성귀인",
+      "비인살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun2",
+    "label": "1월",
+    "context": "丙戌일/子월/戌년",
+    "target": "辛丑",
+    "codeShinsals": [
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun2",
+    "label": "2월",
+    "context": "丙戌일/子월/戌년",
+    "target": "壬寅",
+    "codeShinsals": [
+      "월덕귀인",
+      "학당귀인",
+      "문곡귀인",
+      "홍염살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun2",
+    "label": "3월",
+    "context": "丙戌일/子월/戌년",
+    "target": "癸卯",
+    "codeShinsals": [
+      "태극귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun2",
+    "label": "4월",
+    "context": "丙戌일/子월/戌년",
+    "target": "甲辰",
+    "codeShinsals": [
+      "협록",
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun2",
+    "label": "5월",
+    "context": "丙戌일/子월/戌년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "건록",
+      "원진(日)",
+      "천덕귀인",
+      "천주귀인",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun2",
+    "label": "6월",
+    "context": "丙戌일/子월/戌년",
+    "target": "丙午",
+    "codeShinsals": [
+      "공망",
+      "양인살",
+      "협록",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun2",
+    "label": "7월",
+    "context": "丙戌일/子월/戌년",
+    "target": "丁未",
+    "codeShinsals": [
+      "공망",
+      "천문성",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun2",
+    "label": "8월",
+    "context": "丙戌일/子월/戌년",
+    "target": "戊申",
+    "codeShinsals": [
+      "암록",
+      "문창귀인",
+      "관귀학관",
+      "낙정관살",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun2",
+    "label": "9월",
+    "context": "丙戌일/子월/戌년",
+    "target": "己酉",
+    "codeShinsals": [
+      "천을귀인",
+      "태극귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun2",
+    "label": "10월",
+    "context": "丙戌일/子월/戌년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun2",
+    "label": "11월",
+    "context": "丙戌일/子월/戌년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "천을귀인",
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "1971",
+    "tab": "wolun2",
+    "label": "12월",
+    "context": "丙戌일/子월/戌년",
+    "target": "壬子",
+    "codeShinsals": [
+      "월덕귀인",
+      "천복귀인",
+      "복성귀인",
+      "비인살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "daeun",
+    "label": "92",
+    "context": "乙卯일/戌월/卯년",
+    "target": "庚申",
+    "codeShinsals": [
+      "원진(日)",
+      "천을귀인",
+      "천복귀인",
+      "홍염살",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "daeun",
+    "label": "82",
+    "context": "乙卯일/戌월/卯년",
+    "target": "己未",
+    "codeShinsals": [
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "daeun",
+    "label": "72",
+    "context": "乙卯일/戌월/卯년",
+    "target": "戊午",
+    "codeShinsals": [
+      "태극귀인",
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "홍염살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "daeun",
+    "label": "62",
+    "context": "乙卯일/戌월/卯년",
+    "target": "丁巳",
+    "codeShinsals": [
+      "고란살",
+      "역마살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "daeun",
+    "label": "52",
+    "context": "乙卯일/戌월/卯년",
+    "target": "丙辰",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "월덕귀인",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "daeun",
+    "label": "42",
+    "context": "乙卯일/戌월/卯년",
+    "target": "乙卯",
+    "codeShinsals": [
+      "건록",
+      "천덕귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "daeun",
+    "label": "32",
+    "context": "乙卯일/戌월/卯년",
+    "target": "甲寅",
+    "codeShinsals": [
+      "협록",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "daeun",
+    "label": "22",
+    "context": "乙卯일/戌월/卯년",
+    "target": "癸丑",
+    "codeShinsals": [
+      "공망",
+      "복성귀인",
+      "백호살",
+      "명예살",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "daeun",
+    "label": "12",
+    "context": "乙卯일/戌월/卯년",
+    "target": "壬子",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "태극귀인",
+      "문곡귀인",
+      "낙정관살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "daeun",
+    "label": "2",
+    "context": "乙卯일/戌월/卯년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "nyunun",
+    "label": "2035",
+    "context": "乙卯일/戌월/卯년",
+    "target": "乙卯",
+    "codeShinsals": [
+      "건록",
+      "천덕귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "nyunun",
+    "label": "2034",
+    "context": "乙卯일/戌월/卯년",
+    "target": "甲寅",
+    "codeShinsals": [
+      "협록",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "nyunun",
+    "label": "2033",
+    "context": "乙卯일/戌월/卯년",
+    "target": "癸丑",
+    "codeShinsals": [
+      "공망",
+      "복성귀인",
+      "백호살",
+      "명예살",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "nyunun",
+    "label": "2032",
+    "context": "乙卯일/戌월/卯년",
+    "target": "壬子",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "태극귀인",
+      "문곡귀인",
+      "낙정관살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "nyunun",
+    "label": "2031",
+    "context": "乙卯일/戌월/卯년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "nyunun",
+    "label": "2030",
+    "context": "乙卯일/戌월/卯년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "암록",
+      "비인살",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "nyunun",
+    "label": "2029",
+    "context": "乙卯일/戌월/卯년",
+    "target": "己酉",
+    "codeShinsals": [
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "nyunun",
+    "label": "2028",
+    "context": "乙卯일/戌월/卯년",
+    "target": "戊申",
+    "codeShinsals": [
+      "원진(日)",
+      "천을귀인",
+      "천복귀인",
+      "홍염살",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "nyunun",
+    "label": "2027",
+    "context": "乙卯일/戌월/卯년",
+    "target": "丁未",
+    "codeShinsals": [
+      "날삼재",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "nyunun",
+    "label": "2026",
+    "context": "乙卯일/戌월/卯년",
+    "target": "丙午",
+    "codeShinsals": [
+      "월덕귀인",
+      "태극귀인",
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "nyunun",
+    "label": "2025",
+    "context": "乙卯일/戌월/卯년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "천덕귀인",
+      "들삼재",
+      "고란살",
+      "역마살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun",
+    "label": "1월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "己丑",
+    "codeShinsals": [
+      "공망",
+      "복성귀인",
+      "명예살",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun",
+    "label": "2월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "庚寅",
+    "codeShinsals": [
+      "협록",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun",
+    "label": "3월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "辛卯",
+    "codeShinsals": [
+      "건록",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun",
+    "label": "4월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "壬辰",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "괴강살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun",
+    "label": "5월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "癸巳",
+    "codeShinsals": [
+      "역마살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun",
+    "label": "6월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "甲午",
+    "codeShinsals": [
+      "태극귀인",
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "홍염살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun",
+    "label": "7월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "乙未",
+    "codeShinsals": [
+      "천덕귀인",
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun",
+    "label": "8월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "丙申",
+    "codeShinsals": [
+      "원진(日)",
+      "천을귀인",
+      "월덕귀인",
+      "천복귀인",
+      "홍염살",
+      "현침살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun",
+    "label": "9월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "丁酉",
+    "codeShinsals": [
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun",
+    "label": "10월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "戊戌",
+    "codeShinsals": [
+      "암록",
+      "비인살",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun",
+    "label": "11월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "己亥",
+    "codeShinsals": [
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun",
+    "label": "12월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "庚子",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "태극귀인",
+      "문곡귀인",
+      "낙정관살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun2",
+    "label": "1월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "辛丑",
+    "codeShinsals": [
+      "공망",
+      "복성귀인",
+      "현침살",
+      "백호살",
+      "명예살",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun2",
+    "label": "2월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "壬寅",
+    "codeShinsals": [
+      "협록",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun2",
+    "label": "3월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "癸卯",
+    "codeShinsals": [
+      "건록",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun2",
+    "label": "4월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "甲辰",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun2",
+    "label": "5월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "천덕귀인",
+      "고란살",
+      "역마살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun2",
+    "label": "6월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "丙午",
+    "codeShinsals": [
+      "월덕귀인",
+      "태극귀인",
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun2",
+    "label": "7월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "丁未",
+    "codeShinsals": [
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun2",
+    "label": "8월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "戊申",
+    "codeShinsals": [
+      "원진(日)",
+      "천을귀인",
+      "천복귀인",
+      "홍염살",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun2",
+    "label": "9월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "己酉",
+    "codeShinsals": [
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun2",
+    "label": "10월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "암록",
+      "비인살",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun2",
+    "label": "11월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "ahn",
+    "tab": "wolun2",
+    "label": "12월",
+    "context": "乙卯일/戌월/卯년",
+    "target": "壬子",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "태극귀인",
+      "문곡귀인",
+      "낙정관살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "daeun",
+    "label": "91",
+    "context": "辛卯일/卯월/戌년",
+    "target": "癸巳",
+    "codeShinsals": [
+      "원진(年)",
+      "천복귀인",
+      "복성귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "daeun",
+    "label": "81",
+    "context": "辛卯일/卯월/戌년",
+    "target": "甲午",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "월덕귀인",
+      "문곡귀인",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "daeun",
+    "label": "71",
+    "context": "辛卯일/卯월/戌년",
+    "target": "乙未",
+    "codeShinsals": [
+      "공망",
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "daeun",
+    "label": "61",
+    "context": "辛卯일/卯월/戌년",
+    "target": "丙申",
+    "codeShinsals": [
+      "협록",
+      "원진(日)",
+      "천덕귀인",
+      "낙정관살",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "daeun",
+    "label": "51",
+    "context": "辛卯일/卯월/戌년",
+    "target": "丁酉",
+    "codeShinsals": [
+      "건록",
+      "홍염살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "daeun",
+    "label": "41",
+    "context": "辛卯일/卯월/戌년",
+    "target": "戊戌",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "daeun",
+    "label": "31",
+    "context": "辛卯일/卯월/戌년",
+    "target": "己亥",
+    "codeShinsals": [
+      "태극귀인",
+      "역마살",
+      "천문성",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "daeun",
+    "label": "21",
+    "context": "辛卯일/卯월/戌년",
+    "target": "庚子",
+    "codeShinsals": [
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "daeun",
+    "label": "11",
+    "context": "辛卯일/卯월/戌년",
+    "target": "辛丑",
+    "codeShinsals": [
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "daeun",
+    "label": "1",
+    "context": "辛卯일/卯월/戌년",
+    "target": "壬寅",
+    "codeShinsals": [
+      "천을귀인",
+      "태극귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "nyunun",
+    "label": "2035",
+    "context": "辛卯일/卯월/戌년",
+    "target": "乙卯",
+    "codeShinsals": [
+      "현침살",
+      "도화살",
+      "천문성",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "nyunun",
+    "label": "2034",
+    "context": "辛卯일/卯월/戌년",
+    "target": "甲寅",
+    "codeShinsals": [
+      "천을귀인",
+      "월덕귀인",
+      "태극귀인",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "nyunun",
+    "label": "2033",
+    "context": "辛卯일/卯월/戌년",
+    "target": "癸丑",
+    "codeShinsals": [
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "nyunun",
+    "label": "2032",
+    "context": "辛卯일/卯월/戌년",
+    "target": "壬子",
+    "codeShinsals": [
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "nyunun",
+    "label": "2031",
+    "context": "辛卯일/卯월/戌년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "태극귀인",
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "nyunun",
+    "label": "2030",
+    "context": "辛卯일/卯월/戌년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "nyunun",
+    "label": "2029",
+    "context": "辛卯일/卯월/戌년",
+    "target": "己酉",
+    "codeShinsals": [
+      "건록",
+      "홍염살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "nyunun",
+    "label": "2028",
+    "context": "辛卯일/卯월/戌년",
+    "target": "戊申",
+    "codeShinsals": [
+      "협록",
+      "원진(日)",
+      "천덕귀인",
+      "낙정관살",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "nyunun",
+    "label": "2027",
+    "context": "辛卯일/卯월/戌년",
+    "target": "丁未",
+    "codeShinsals": [
+      "공망",
+      "날삼재",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "nyunun",
+    "label": "2026",
+    "context": "辛卯일/卯월/戌년",
+    "target": "丙午",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "문곡귀인",
+      "눌삼재",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "nyunun",
+    "label": "2025",
+    "context": "辛卯일/卯월/戌년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "원진(年)",
+      "천복귀인",
+      "복성귀인",
+      "들삼재",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun",
+    "label": "1월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "己丑",
+    "codeShinsals": [
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun",
+    "label": "2월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "庚寅",
+    "codeShinsals": [
+      "천을귀인",
+      "태극귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun",
+    "label": "3월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "辛卯",
+    "codeShinsals": [
+      "현침살",
+      "도화살",
+      "천문성",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun",
+    "label": "4월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "壬辰",
+    "codeShinsals": [
+      "암록",
+      "비인살",
+      "괴강살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun",
+    "label": "5월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "癸巳",
+    "codeShinsals": [
+      "원진(年)",
+      "천복귀인",
+      "복성귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun",
+    "label": "6월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "甲午",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "월덕귀인",
+      "문곡귀인",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun",
+    "label": "7월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "乙未",
+    "codeShinsals": [
+      "공망",
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun",
+    "label": "8월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "丙申",
+    "codeShinsals": [
+      "협록",
+      "원진(日)",
+      "천덕귀인",
+      "낙정관살",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun",
+    "label": "9월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "丁酉",
+    "codeShinsals": [
+      "건록",
+      "홍염살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun",
+    "label": "10월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "戊戌",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun",
+    "label": "11월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "己亥",
+    "codeShinsals": [
+      "태극귀인",
+      "역마살",
+      "천문성",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun",
+    "label": "12월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "庚子",
+    "codeShinsals": [
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun2",
+    "label": "1월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "辛丑",
+    "codeShinsals": [
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun2",
+    "label": "2월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "壬寅",
+    "codeShinsals": [
+      "천을귀인",
+      "태극귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun2",
+    "label": "3월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "癸卯",
+    "codeShinsals": [
+      "현침살",
+      "도화살",
+      "천문성",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun2",
+    "label": "4월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "甲辰",
+    "codeShinsals": [
+      "암록",
+      "월덕귀인",
+      "비인살",
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun2",
+    "label": "5월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "원진(年)",
+      "천복귀인",
+      "복성귀인",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun2",
+    "label": "6월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "丙午",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "문곡귀인",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun2",
+    "label": "7월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "丁未",
+    "codeShinsals": [
+      "공망",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun2",
+    "label": "8월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "戊申",
+    "codeShinsals": [
+      "협록",
+      "원진(日)",
+      "천덕귀인",
+      "낙정관살",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun2",
+    "label": "9월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "己酉",
+    "codeShinsals": [
+      "건록",
+      "홍염살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun2",
+    "label": "10월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun2",
+    "label": "11월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "태극귀인",
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "client",
+    "tab": "wolun2",
+    "label": "12월",
+    "context": "辛卯일/卯월/戌년",
+    "target": "壬子",
+    "codeShinsals": [
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "daeun",
+    "label": "94",
+    "context": "乙卯일/辰월/午년",
+    "target": "甲午",
+    "codeShinsals": [
+      "태극귀인",
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "홍염살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "daeun",
+    "label": "84",
+    "context": "乙卯일/辰월/午년",
+    "target": "乙未",
+    "codeShinsals": [
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "daeun",
+    "label": "74",
+    "context": "乙卯일/辰월/午년",
+    "target": "丙申",
+    "codeShinsals": [
+      "원진(日)",
+      "천을귀인",
+      "천복귀인",
+      "홍염살",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "daeun",
+    "label": "64",
+    "context": "乙卯일/辰월/午년",
+    "target": "丁酉",
+    "codeShinsals": [
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "daeun",
+    "label": "54",
+    "context": "乙卯일/辰월/午년",
+    "target": "戊戌",
+    "codeShinsals": [
+      "암록",
+      "비인살",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "daeun",
+    "label": "44",
+    "context": "乙卯일/辰월/午년",
+    "target": "己亥",
+    "codeShinsals": [
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "daeun",
+    "label": "34",
+    "context": "乙卯일/辰월/午년",
+    "target": "庚子",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "태극귀인",
+      "문곡귀인",
+      "낙정관살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "daeun",
+    "label": "24",
+    "context": "乙卯일/辰월/午년",
+    "target": "辛丑",
+    "codeShinsals": [
+      "공망",
+      "원진(年)",
+      "복성귀인",
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "daeun",
+    "label": "14",
+    "context": "乙卯일/辰월/午년",
+    "target": "壬寅",
+    "codeShinsals": [
+      "협록",
+      "천덕귀인",
+      "월덕귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "daeun",
+    "label": "4",
+    "context": "乙卯일/辰월/午년",
+    "target": "癸卯",
+    "codeShinsals": [
+      "건록",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "nyunun",
+    "label": "2035",
+    "context": "乙卯일/辰월/午년",
+    "target": "乙卯",
+    "codeShinsals": [
+      "건록",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "nyunun",
+    "label": "2034",
+    "context": "乙卯일/辰월/午년",
+    "target": "甲寅",
+    "codeShinsals": [
+      "협록",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "nyunun",
+    "label": "2033",
+    "context": "乙卯일/辰월/午년",
+    "target": "癸丑",
+    "codeShinsals": [
+      "공망",
+      "원진(年)",
+      "복성귀인",
+      "백호살",
+      "명예살",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "nyunun",
+    "label": "2032",
+    "context": "乙卯일/辰월/午년",
+    "target": "壬子",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "천덕귀인",
+      "월덕귀인",
+      "태극귀인",
+      "문곡귀인"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "nyunun",
+    "label": "2031",
+    "context": "乙卯일/辰월/午년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "nyunun",
+    "label": "2030",
+    "context": "乙卯일/辰월/午년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "암록",
+      "비인살",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "nyunun",
+    "label": "2029",
+    "context": "乙卯일/辰월/午년",
+    "target": "己酉",
+    "codeShinsals": [
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "nyunun",
+    "label": "2028",
+    "context": "乙卯일/辰월/午년",
+    "target": "戊申",
+    "codeShinsals": [
+      "원진(日)",
+      "천을귀인",
+      "천복귀인",
+      "홍염살",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "nyunun",
+    "label": "2027",
+    "context": "乙卯일/辰월/午년",
+    "target": "丁未",
+    "codeShinsals": [
+      "날삼재",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "nyunun",
+    "label": "2026",
+    "context": "乙卯일/辰월/午년",
+    "target": "丙午",
+    "codeShinsals": [
+      "태극귀인",
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "홍염살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "nyunun",
+    "label": "2025",
+    "context": "乙卯일/辰월/午년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "들삼재",
+      "고란살",
+      "역마살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun",
+    "label": "1월",
+    "context": "乙卯일/辰월/午년",
+    "target": "己丑",
+    "codeShinsals": [
+      "공망",
+      "원진(年)",
+      "복성귀인",
+      "명예살",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun",
+    "label": "2월",
+    "context": "乙卯일/辰월/午년",
+    "target": "庚寅",
+    "codeShinsals": [
+      "협록",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun",
+    "label": "3월",
+    "context": "乙卯일/辰월/午년",
+    "target": "辛卯",
+    "codeShinsals": [
+      "건록",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun",
+    "label": "4월",
+    "context": "乙卯일/辰월/午년",
+    "target": "壬辰",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "천덕귀인",
+      "월덕귀인",
+      "괴강살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun",
+    "label": "5월",
+    "context": "乙卯일/辰월/午년",
+    "target": "癸巳",
+    "codeShinsals": [
+      "역마살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun",
+    "label": "6월",
+    "context": "乙卯일/辰월/午년",
+    "target": "甲午",
+    "codeShinsals": [
+      "태극귀인",
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "홍염살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun",
+    "label": "7월",
+    "context": "乙卯일/辰월/午년",
+    "target": "乙未",
+    "codeShinsals": [
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun",
+    "label": "8월",
+    "context": "乙卯일/辰월/午년",
+    "target": "丙申",
+    "codeShinsals": [
+      "원진(日)",
+      "천을귀인",
+      "천복귀인",
+      "홍염살",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun",
+    "label": "9월",
+    "context": "乙卯일/辰월/午년",
+    "target": "丁酉",
+    "codeShinsals": [
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun",
+    "label": "10월",
+    "context": "乙卯일/辰월/午년",
+    "target": "戊戌",
+    "codeShinsals": [
+      "암록",
+      "비인살",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun",
+    "label": "11월",
+    "context": "乙卯일/辰월/午년",
+    "target": "己亥",
+    "codeShinsals": [
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun",
+    "label": "12월",
+    "context": "乙卯일/辰월/午년",
+    "target": "庚子",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "태극귀인",
+      "문곡귀인",
+      "낙정관살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun2",
+    "label": "1월",
+    "context": "乙卯일/辰월/午년",
+    "target": "辛丑",
+    "codeShinsals": [
+      "공망",
+      "원진(年)",
+      "복성귀인",
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun2",
+    "label": "2월",
+    "context": "乙卯일/辰월/午년",
+    "target": "壬寅",
+    "codeShinsals": [
+      "협록",
+      "천덕귀인",
+      "월덕귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun2",
+    "label": "3월",
+    "context": "乙卯일/辰월/午년",
+    "target": "癸卯",
+    "codeShinsals": [
+      "건록",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun2",
+    "label": "4월",
+    "context": "乙卯일/辰월/午년",
+    "target": "甲辰",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun2",
+    "label": "5월",
+    "context": "乙卯일/辰월/午년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "고란살",
+      "역마살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun2",
+    "label": "6월",
+    "context": "乙卯일/辰월/午년",
+    "target": "丙午",
+    "codeShinsals": [
+      "태극귀인",
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "홍염살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun2",
+    "label": "7월",
+    "context": "乙卯일/辰월/午년",
+    "target": "丁未",
+    "codeShinsals": [
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun2",
+    "label": "8월",
+    "context": "乙卯일/辰월/午년",
+    "target": "戊申",
+    "codeShinsals": [
+      "원진(日)",
+      "천을귀인",
+      "천복귀인",
+      "홍염살",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun2",
+    "label": "9월",
+    "context": "乙卯일/辰월/午년",
+    "target": "己酉",
+    "codeShinsals": [
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun2",
+    "label": "10월",
+    "context": "乙卯일/辰월/午년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "암록",
+      "비인살",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun2",
+    "label": "11월",
+    "context": "乙卯일/辰월/午년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "kim",
+    "tab": "wolun2",
+    "label": "12월",
+    "context": "乙卯일/辰월/午년",
+    "target": "壬子",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "천덕귀인",
+      "월덕귀인",
+      "태극귀인",
+      "문곡귀인"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "daeun",
+    "label": "92",
+    "context": "己丑일/丑월/申년",
+    "target": "己卯",
+    "codeShinsals": [
+      "원진(年)",
+      "문곡귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "daeun",
+    "label": "82",
+    "context": "己丑일/丑월/申년",
+    "target": "庚辰",
+    "codeShinsals": [
+      "천덕귀인",
+      "월덕귀인",
+      "홍염살",
+      "괴강살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "daeun",
+    "label": "72",
+    "context": "己丑일/丑월/申년",
+    "target": "辛巳",
+    "codeShinsals": [
+      "협록",
+      "낙정관살",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "daeun",
+    "label": "62",
+    "context": "己丑일/丑월/申년",
+    "target": "壬午",
+    "codeShinsals": [
+      "공망",
+      "건록",
+      "원진(日)",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "daeun",
+    "label": "52",
+    "context": "己丑일/丑월/申년",
+    "target": "癸未",
+    "codeShinsals": [
+      "공망",
+      "양인살",
+      "협록",
+      "암록",
+      "태극귀인",
+      "복성귀인"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "daeun",
+    "label": "42",
+    "context": "己丑일/丑월/申년",
+    "target": "甲申",
+    "codeShinsals": [
+      "천을귀인",
+      "현침살",
+      "역마살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "daeun",
+    "label": "32",
+    "context": "己丑일/丑월/申년",
+    "target": "乙酉",
+    "codeShinsals": [
+      "문창귀인",
+      "학당귀인",
+      "천주귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "daeun",
+    "label": "22",
+    "context": "己丑일/丑월/申년",
+    "target": "丙戌",
+    "codeShinsals": [
+      "태극귀인",
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "daeun",
+    "label": "12",
+    "context": "己丑일/丑월/申년",
+    "target": "丁亥",
+    "codeShinsals": [
+      "관귀학관",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "daeun",
+    "label": "2",
+    "context": "己丑일/丑월/申년",
+    "target": "戊子",
+    "codeShinsals": [
+      "천을귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "nyunun",
+    "label": "2035",
+    "context": "己丑일/丑월/申년",
+    "target": "乙卯",
+    "codeShinsals": [
+      "원진(年)",
+      "문곡귀인",
+      "눌삼재",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "nyunun",
+    "label": "2034",
+    "context": "己丑일/丑월/申년",
+    "target": "甲寅",
+    "codeShinsals": [
+      "천복귀인",
+      "들삼재",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "nyunun",
+    "label": "2033",
+    "context": "己丑일/丑월/申년",
+    "target": "癸丑",
+    "codeShinsals": [
+      "태극귀인",
+      "비인살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "nyunun",
+    "label": "2032",
+    "context": "己丑일/丑월/申년",
+    "target": "壬子",
+    "codeShinsals": [
+      "천을귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "nyunun",
+    "label": "2031",
+    "context": "己丑일/丑월/申년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "관귀학관",
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "nyunun",
+    "label": "2030",
+    "context": "己丑일/丑월/申년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "천덕귀인",
+      "월덕귀인",
+      "태극귀인",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "nyunun",
+    "label": "2029",
+    "context": "己丑일/丑월/申년",
+    "target": "己酉",
+    "codeShinsals": [
+      "문창귀인",
+      "학당귀인",
+      "천주귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "nyunun",
+    "label": "2028",
+    "context": "己丑일/丑월/申년",
+    "target": "戊申",
+    "codeShinsals": [
+      "천을귀인",
+      "현침살",
+      "고란살",
+      "역마살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "nyunun",
+    "label": "2027",
+    "context": "己丑일/丑월/申년",
+    "target": "丁未",
+    "codeShinsals": [
+      "공망",
+      "양인살",
+      "협록",
+      "암록",
+      "태극귀인",
+      "복성귀인"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "nyunun",
+    "label": "2026",
+    "context": "己丑일/丑월/申년",
+    "target": "丙午",
+    "codeShinsals": [
+      "공망",
+      "건록",
+      "원진(日)",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "nyunun",
+    "label": "2025",
+    "context": "己丑일/丑월/申년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "협록",
+      "낙정관살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun",
+    "label": "1월",
+    "context": "己丑일/丑월/申년",
+    "target": "己丑",
+    "codeShinsals": [
+      "태극귀인",
+      "비인살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun",
+    "label": "2월",
+    "context": "己丑일/丑월/申년",
+    "target": "庚寅",
+    "codeShinsals": [
+      "천덕귀인",
+      "월덕귀인",
+      "천복귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun",
+    "label": "3월",
+    "context": "己丑일/丑월/申년",
+    "target": "辛卯",
+    "codeShinsals": [
+      "원진(年)",
+      "문곡귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun",
+    "label": "4월",
+    "context": "己丑일/丑월/申년",
+    "target": "壬辰",
+    "codeShinsals": [
+      "홍염살",
+      "괴강살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun",
+    "label": "5월",
+    "context": "己丑일/丑월/申년",
+    "target": "癸巳",
+    "codeShinsals": [
+      "협록",
+      "낙정관살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun",
+    "label": "6월",
+    "context": "己丑일/丑월/申년",
+    "target": "甲午",
+    "codeShinsals": [
+      "공망",
+      "건록",
+      "원진(日)",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun",
+    "label": "7월",
+    "context": "己丑일/丑월/申년",
+    "target": "乙未",
+    "codeShinsals": [
+      "공망",
+      "양인살",
+      "협록",
+      "암록",
+      "태극귀인",
+      "복성귀인"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun",
+    "label": "8월",
+    "context": "己丑일/丑월/申년",
+    "target": "丙申",
+    "codeShinsals": [
+      "천을귀인",
+      "현침살",
+      "역마살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun",
+    "label": "9월",
+    "context": "己丑일/丑월/申년",
+    "target": "丁酉",
+    "codeShinsals": [
+      "문창귀인",
+      "학당귀인",
+      "천주귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun",
+    "label": "10월",
+    "context": "己丑일/丑월/申년",
+    "target": "戊戌",
+    "codeShinsals": [
+      "태극귀인",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun",
+    "label": "11월",
+    "context": "己丑일/丑월/申년",
+    "target": "己亥",
+    "codeShinsals": [
+      "관귀학관",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun",
+    "label": "12월",
+    "context": "己丑일/丑월/申년",
+    "target": "庚子",
+    "codeShinsals": [
+      "천을귀인",
+      "천덕귀인",
+      "월덕귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun2",
+    "label": "1월",
+    "context": "己丑일/丑월/申년",
+    "target": "辛丑",
+    "codeShinsals": [
+      "태극귀인",
+      "비인살",
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun2",
+    "label": "2월",
+    "context": "己丑일/丑월/申년",
+    "target": "壬寅",
+    "codeShinsals": [
+      "천복귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun2",
+    "label": "3월",
+    "context": "己丑일/丑월/申년",
+    "target": "癸卯",
+    "codeShinsals": [
+      "원진(年)",
+      "문곡귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun2",
+    "label": "4월",
+    "context": "己丑일/丑월/申년",
+    "target": "甲辰",
+    "codeShinsals": [
+      "홍염살",
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun2",
+    "label": "5월",
+    "context": "己丑일/丑월/申년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "협록",
+      "낙정관살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun2",
+    "label": "6월",
+    "context": "己丑일/丑월/申년",
+    "target": "丙午",
+    "codeShinsals": [
+      "공망",
+      "건록",
+      "원진(日)",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun2",
+    "label": "7월",
+    "context": "己丑일/丑월/申년",
+    "target": "丁未",
+    "codeShinsals": [
+      "공망",
+      "양인살",
+      "협록",
+      "암록",
+      "태극귀인",
+      "복성귀인"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun2",
+    "label": "8월",
+    "context": "己丑일/丑월/申년",
+    "target": "戊申",
+    "codeShinsals": [
+      "천을귀인",
+      "현침살",
+      "고란살",
+      "역마살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun2",
+    "label": "9월",
+    "context": "己丑일/丑월/申년",
+    "target": "己酉",
+    "codeShinsals": [
+      "문창귀인",
+      "학당귀인",
+      "천주귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun2",
+    "label": "10월",
+    "context": "己丑일/丑월/申년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "천덕귀인",
+      "월덕귀인",
+      "태극귀인",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun2",
+    "label": "11월",
+    "context": "己丑일/丑월/申년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "관귀학관",
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "lee",
+    "tab": "wolun2",
+    "label": "12월",
+    "context": "己丑일/丑월/申년",
+    "target": "壬子",
+    "codeShinsals": [
+      "천을귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "daeun",
+    "label": "94",
+    "context": "辛亥일/亥월/亥년",
+    "target": "癸丑",
+    "codeShinsals": [
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "daeun",
+    "label": "84",
+    "context": "辛亥일/亥월/亥년",
+    "target": "甲寅",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "월덕귀인",
+      "태극귀인",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "daeun",
+    "label": "74",
+    "context": "辛亥일/亥월/亥년",
+    "target": "乙卯",
+    "codeShinsals": [
+      "공망",
+      "천덕귀인",
+      "현침살",
+      "도화살",
+      "천문성",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "daeun",
+    "label": "64",
+    "context": "辛亥일/亥월/亥년",
+    "target": "丙辰",
+    "codeShinsals": [
+      "암록",
+      "원진(日)",
+      "비인살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "daeun",
+    "label": "54",
+    "context": "辛亥일/亥월/亥년",
+    "target": "丁巳",
+    "codeShinsals": [
+      "천복귀인",
+      "복성귀인",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "daeun",
+    "label": "44",
+    "context": "辛亥일/亥월/亥년",
+    "target": "戊午",
+    "codeShinsals": [
+      "천을귀인",
+      "문곡귀인",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "daeun",
+    "label": "34",
+    "context": "辛亥일/亥월/亥년",
+    "target": "己未",
+    "codeShinsals": [
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "daeun",
+    "label": "24",
+    "context": "辛亥일/亥월/亥년",
+    "target": "庚申",
+    "codeShinsals": [
+      "협록",
+      "낙정관살",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "daeun",
+    "label": "14",
+    "context": "辛亥일/亥월/亥년",
+    "target": "辛酉",
+    "codeShinsals": [
+      "건록",
+      "홍염살",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "daeun",
+    "label": "4",
+    "context": "辛亥일/亥월/亥년",
+    "target": "壬戌",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "nyunun",
+    "label": "2035",
+    "context": "辛亥일/亥월/亥년",
+    "target": "乙卯",
+    "codeShinsals": [
+      "공망",
+      "천덕귀인",
+      "현침살",
+      "도화살",
+      "천문성",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "nyunun",
+    "label": "2034",
+    "context": "辛亥일/亥월/亥년",
+    "target": "甲寅",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "월덕귀인",
+      "태극귀인",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "nyunun",
+    "label": "2033",
+    "context": "辛亥일/亥월/亥년",
+    "target": "癸丑",
+    "codeShinsals": [
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "nyunun",
+    "label": "2032",
+    "context": "辛亥일/亥월/亥년",
+    "target": "壬子",
+    "codeShinsals": [
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "nyunun",
+    "label": "2031",
+    "context": "辛亥일/亥월/亥년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "태극귀인",
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "nyunun",
+    "label": "2030",
+    "context": "辛亥일/亥월/亥년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "nyunun",
+    "label": "2029",
+    "context": "辛亥일/亥월/亥년",
+    "target": "己酉",
+    "codeShinsals": [
+      "건록",
+      "홍염살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "nyunun",
+    "label": "2028",
+    "context": "辛亥일/亥월/亥년",
+    "target": "戊申",
+    "codeShinsals": [
+      "협록",
+      "낙정관살",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "nyunun",
+    "label": "2027",
+    "context": "辛亥일/亥월/亥년",
+    "target": "丁未",
+    "codeShinsals": [
+      "날삼재",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "nyunun",
+    "label": "2026",
+    "context": "辛亥일/亥월/亥년",
+    "target": "丙午",
+    "codeShinsals": [
+      "천을귀인",
+      "문곡귀인",
+      "눌삼재",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "nyunun",
+    "label": "2025",
+    "context": "辛亥일/亥월/亥년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "천덕귀인",
+      "천복귀인",
+      "복성귀인",
+      "들삼재",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun",
+    "label": "1월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "己丑",
+    "codeShinsals": [
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun",
+    "label": "2월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "庚寅",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "태극귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun",
+    "label": "3월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "辛卯",
+    "codeShinsals": [
+      "공망",
+      "현침살",
+      "도화살",
+      "천문성",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun",
+    "label": "4월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "壬辰",
+    "codeShinsals": [
+      "암록",
+      "원진(日)",
+      "비인살",
+      "괴강살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun",
+    "label": "5월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "癸巳",
+    "codeShinsals": [
+      "천복귀인",
+      "복성귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun",
+    "label": "6월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "甲午",
+    "codeShinsals": [
+      "천을귀인",
+      "월덕귀인",
+      "문곡귀인",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun",
+    "label": "7월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "乙未",
+    "codeShinsals": [
+      "천덕귀인",
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun",
+    "label": "8월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "丙申",
+    "codeShinsals": [
+      "협록",
+      "낙정관살",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun",
+    "label": "9월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "丁酉",
+    "codeShinsals": [
+      "건록",
+      "홍염살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun",
+    "label": "10월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "戊戌",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun",
+    "label": "11월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "己亥",
+    "codeShinsals": [
+      "태극귀인",
+      "역마살",
+      "천문성",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun",
+    "label": "12월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "庚子",
+    "codeShinsals": [
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun2",
+    "label": "1월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "辛丑",
+    "codeShinsals": [
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun2",
+    "label": "2월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "壬寅",
+    "codeShinsals": [
+      "공망",
+      "천을귀인",
+      "태극귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun2",
+    "label": "3월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "癸卯",
+    "codeShinsals": [
+      "공망",
+      "현침살",
+      "도화살",
+      "천문성",
+      "음착살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun2",
+    "label": "4월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "甲辰",
+    "codeShinsals": [
+      "암록",
+      "원진(日)",
+      "월덕귀인",
+      "비인살",
+      "현침살",
+      "백호살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun2",
+    "label": "5월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "천덕귀인",
+      "천복귀인",
+      "복성귀인",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun2",
+    "label": "6월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "丙午",
+    "codeShinsals": [
+      "천을귀인",
+      "문곡귀인",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun2",
+    "label": "7월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "丁未",
+    "codeShinsals": [
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun2",
+    "label": "8월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "戊申",
+    "codeShinsals": [
+      "협록",
+      "낙정관살",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun2",
+    "label": "9월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "己酉",
+    "codeShinsals": [
+      "건록",
+      "홍염살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun2",
+    "label": "10월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun2",
+    "label": "11월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "태극귀인",
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "male",
+    "tab": "wolun2",
+    "label": "12월",
+    "context": "辛亥일/亥월/亥년",
+    "target": "壬子",
+    "codeShinsals": [
+      "문창귀인",
+      "관귀학관",
+      "학당귀인",
+      "천주귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "daeun",
+    "label": "96",
+    "context": "甲寅일/巳월/丑년",
+    "target": "丁卯",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "daeun",
+    "label": "86",
+    "context": "甲寅일/巳월/丑년",
+    "target": "丙寅",
+    "codeShinsals": [
+      "건록",
+      "복성귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "daeun",
+    "label": "76",
+    "context": "甲寅일/巳월/丑년",
+    "target": "乙丑",
+    "codeShinsals": [
+      "공망",
+      "협록",
+      "천을귀인",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "daeun",
+    "label": "66",
+    "context": "甲寅일/巳월/丑년",
+    "target": "甲子",
+    "codeShinsals": [
+      "공망",
+      "태극귀인",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "daeun",
+    "label": "56",
+    "context": "甲寅일/巳월/丑년",
+    "target": "癸亥",
+    "codeShinsals": [
+      "암록",
+      "학당귀인",
+      "문곡귀인",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "daeun",
+    "label": "46",
+    "context": "甲寅일/巳월/丑년",
+    "target": "壬戌",
+    "codeShinsals": [
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "daeun",
+    "label": "36",
+    "context": "甲寅일/巳월/丑년",
+    "target": "辛酉",
+    "codeShinsals": [
+      "원진(日)",
+      "천덕귀인",
+      "천복귀인",
+      "비인살",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "daeun",
+    "label": "26",
+    "context": "甲寅일/巳월/丑년",
+    "target": "庚申",
+    "codeShinsals": [
+      "월덕귀인",
+      "홍염살",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "daeun",
+    "label": "16",
+    "context": "甲寅일/巳월/丑년",
+    "target": "己未",
+    "codeShinsals": [
+      "천을귀인",
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "daeun",
+    "label": "6",
+    "context": "甲寅일/巳월/丑년",
+    "target": "戊午",
+    "codeShinsals": [
+      "원진(年)",
+      "태극귀인",
+      "홍염살",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "nyunun",
+    "label": "2035",
+    "context": "甲寅일/巳월/丑년",
+    "target": "乙卯",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "nyunun",
+    "label": "2034",
+    "context": "甲寅일/巳월/丑년",
+    "target": "甲寅",
+    "codeShinsals": [
+      "건록",
+      "복성귀인",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "nyunun",
+    "label": "2033",
+    "context": "甲寅일/巳월/丑년",
+    "target": "癸丑",
+    "codeShinsals": [
+      "공망",
+      "협록",
+      "천을귀인",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "nyunun",
+    "label": "2032",
+    "context": "甲寅일/巳월/丑년",
+    "target": "壬子",
+    "codeShinsals": [
+      "공망",
+      "태극귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "nyunun",
+    "label": "2031",
+    "context": "甲寅일/巳월/丑년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "암록",
+      "천덕귀인",
+      "학당귀인",
+      "문곡귀인",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "nyunun",
+    "label": "2030",
+    "context": "甲寅일/巳월/丑년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "월덕귀인",
+      "날삼재",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "nyunun",
+    "label": "2029",
+    "context": "甲寅일/巳월/丑년",
+    "target": "己酉",
+    "codeShinsals": [
+      "원진(日)",
+      "천복귀인",
+      "비인살",
+      "눌삼재",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "nyunun",
+    "label": "2028",
+    "context": "甲寅일/巳월/丑년",
+    "target": "戊申",
+    "codeShinsals": [
+      "홍염살",
+      "들삼재",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "nyunun",
+    "label": "2027",
+    "context": "甲寅일/巳월/丑년",
+    "target": "丁未",
+    "codeShinsals": [
+      "천을귀인",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "nyunun",
+    "label": "2026",
+    "context": "甲寅일/巳월/丑년",
+    "target": "丙午",
+    "codeShinsals": [
+      "원진(年)",
+      "태극귀인",
+      "홍염살",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "nyunun",
+    "label": "2025",
+    "context": "甲寅일/巳월/丑년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "문창귀인",
+      "관귀학관",
+      "천주귀인",
+      "낙정관살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun",
+    "label": "1월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "己丑",
+    "codeShinsals": [
+      "공망",
+      "협록",
+      "천을귀인",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun",
+    "label": "2월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "庚寅",
+    "codeShinsals": [
+      "건록",
+      "월덕귀인",
+      "복성귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun",
+    "label": "3월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "辛卯",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "천덕귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun",
+    "label": "4월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "壬辰",
+    "codeShinsals": [
+      "괴강살",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun",
+    "label": "5월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "癸巳",
+    "codeShinsals": [
+      "문창귀인",
+      "관귀학관",
+      "천주귀인",
+      "낙정관살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun",
+    "label": "6월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "甲午",
+    "codeShinsals": [
+      "원진(年)",
+      "태극귀인",
+      "홍염살",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun",
+    "label": "7월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "乙未",
+    "codeShinsals": [
+      "천을귀인",
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun",
+    "label": "8월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "丙申",
+    "codeShinsals": [
+      "홍염살",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun",
+    "label": "9월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "丁酉",
+    "codeShinsals": [
+      "원진(日)",
+      "천복귀인",
+      "비인살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun",
+    "label": "10월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "戊戌",
+    "codeShinsals": [
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun",
+    "label": "11월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "己亥",
+    "codeShinsals": [
+      "암록",
+      "학당귀인",
+      "문곡귀인",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun",
+    "label": "12월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "庚子",
+    "codeShinsals": [
+      "공망",
+      "월덕귀인",
+      "태극귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun2",
+    "label": "1월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "辛丑",
+    "codeShinsals": [
+      "공망",
+      "협록",
+      "천을귀인",
+      "천덕귀인",
+      "현침살",
+      "백호살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun2",
+    "label": "2월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "壬寅",
+    "codeShinsals": [
+      "건록",
+      "복성귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun2",
+    "label": "3월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "癸卯",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun2",
+    "label": "4월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "甲辰",
+    "codeShinsals": [
+      "현침살",
+      "백호살",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun2",
+    "label": "5월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "문창귀인",
+      "관귀학관",
+      "천주귀인",
+      "낙정관살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun2",
+    "label": "6월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "丙午",
+    "codeShinsals": [
+      "원진(年)",
+      "태극귀인",
+      "홍염살",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun2",
+    "label": "7월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "丁未",
+    "codeShinsals": [
+      "천을귀인",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun2",
+    "label": "8월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "戊申",
+    "codeShinsals": [
+      "홍염살",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun2",
+    "label": "9월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "己酉",
+    "codeShinsals": [
+      "원진(日)",
+      "천복귀인",
+      "비인살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun2",
+    "label": "10월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "월덕귀인",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun2",
+    "label": "11월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "암록",
+      "천덕귀인",
+      "학당귀인",
+      "문곡귀인",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "molly",
+    "tab": "wolun2",
+    "label": "12월",
+    "context": "甲寅일/巳월/丑년",
+    "target": "壬子",
+    "codeShinsals": [
+      "공망",
+      "태극귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "daeun",
+    "label": "91",
+    "context": "庚子일/寅월/丑년",
+    "target": "戊子",
+    "codeShinsals": [
+      "낙정관살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "daeun",
+    "label": "81",
+    "context": "庚子일/寅월/丑년",
+    "target": "丁亥",
+    "codeShinsals": [
+      "천덕귀인",
+      "태극귀인",
+      "문창귀인",
+      "관귀학관",
+      "천주귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "daeun",
+    "label": "71",
+    "context": "庚子일/寅월/丑년",
+    "target": "丙戌",
+    "codeShinsals": [
+      "월덕귀인",
+      "홍염살",
+      "백호살",
+      "천문성",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "daeun",
+    "label": "61",
+    "context": "庚子일/寅월/丑년",
+    "target": "乙酉",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "daeun",
+    "label": "51",
+    "context": "庚子일/寅월/丑년",
+    "target": "甲申",
+    "codeShinsals": [
+      "건록",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "daeun",
+    "label": "41",
+    "context": "庚子일/寅월/丑년",
+    "target": "癸未",
+    "codeShinsals": [
+      "협록",
+      "원진(日)",
+      "천을귀인",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "daeun",
+    "label": "31",
+    "context": "庚子일/寅월/丑년",
+    "target": "壬午",
+    "codeShinsals": [
+      "원진(年)",
+      "천복귀인",
+      "복성귀인",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "daeun",
+    "label": "21",
+    "context": "庚子일/寅월/丑년",
+    "target": "辛巳",
+    "codeShinsals": [
+      "공망",
+      "암록",
+      "학당귀인",
+      "문곡귀인",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "daeun",
+    "label": "11",
+    "context": "庚子일/寅월/丑년",
+    "target": "庚辰",
+    "codeShinsals": [
+      "공망",
+      "괴강살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "daeun",
+    "label": "1",
+    "context": "庚子일/寅월/丑년",
+    "target": "己卯",
+    "codeShinsals": [
+      "비인살",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "nyunun",
+    "label": "2035",
+    "context": "庚子일/寅월/丑년",
+    "target": "乙卯",
+    "codeShinsals": [
+      "비인살",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "nyunun",
+    "label": "2034",
+    "context": "庚子일/寅월/丑년",
+    "target": "甲寅",
+    "codeShinsals": [
+      "태극귀인",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "nyunun",
+    "label": "2033",
+    "context": "庚子일/寅월/丑년",
+    "target": "癸丑",
+    "codeShinsals": [
+      "천을귀인",
+      "날삼재",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "nyunun",
+    "label": "2032",
+    "context": "庚子일/寅월/丑년",
+    "target": "壬子",
+    "codeShinsals": [
+      "낙정관살",
+      "눌삼재",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "nyunun",
+    "label": "2031",
+    "context": "庚子일/寅월/丑년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "태극귀인",
+      "문창귀인",
+      "관귀학관",
+      "천주귀인",
+      "들삼재",
+      "현침살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "nyunun",
+    "label": "2030",
+    "context": "庚子일/寅월/丑년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "홍염살",
+      "괴강살",
+      "천문성",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "nyunun",
+    "label": "2029",
+    "context": "庚子일/寅월/丑년",
+    "target": "己酉",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "nyunun",
+    "label": "2028",
+    "context": "庚子일/寅월/丑년",
+    "target": "戊申",
+    "codeShinsals": [
+      "건록",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "nyunun",
+    "label": "2027",
+    "context": "庚子일/寅월/丑년",
+    "target": "丁未",
+    "codeShinsals": [
+      "협록",
+      "원진(日)",
+      "천을귀인",
+      "천덕귀인",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "nyunun",
+    "label": "2026",
+    "context": "庚子일/寅월/丑년",
+    "target": "丙午",
+    "codeShinsals": [
+      "원진(年)",
+      "월덕귀인",
+      "천복귀인",
+      "복성귀인",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "nyunun",
+    "label": "2025",
+    "context": "庚子일/寅월/丑년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "공망",
+      "암록",
+      "학당귀인",
+      "문곡귀인",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun",
+    "label": "1월",
+    "context": "庚子일/寅월/丑년",
+    "target": "己丑",
+    "codeShinsals": [
+      "천을귀인",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun",
+    "label": "2월",
+    "context": "庚子일/寅월/丑년",
+    "target": "庚寅",
+    "codeShinsals": [
+      "태극귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun",
+    "label": "3월",
+    "context": "庚子일/寅월/丑년",
+    "target": "辛卯",
+    "codeShinsals": [
+      "비인살",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun",
+    "label": "4월",
+    "context": "庚子일/寅월/丑년",
+    "target": "壬辰",
+    "codeShinsals": [
+      "공망",
+      "괴강살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun",
+    "label": "5월",
+    "context": "庚子일/寅월/丑년",
+    "target": "癸巳",
+    "codeShinsals": [
+      "공망",
+      "암록",
+      "학당귀인",
+      "문곡귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun",
+    "label": "6월",
+    "context": "庚子일/寅월/丑년",
+    "target": "甲午",
+    "codeShinsals": [
+      "원진(年)",
+      "천복귀인",
+      "복성귀인",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun",
+    "label": "7월",
+    "context": "庚子일/寅월/丑년",
+    "target": "乙未",
+    "codeShinsals": [
+      "협록",
+      "원진(日)",
+      "천을귀인",
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun",
+    "label": "8월",
+    "context": "庚子일/寅월/丑년",
+    "target": "丙申",
+    "codeShinsals": [
+      "건록",
+      "월덕귀인",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun",
+    "label": "9월",
+    "context": "庚子일/寅월/丑년",
+    "target": "丁酉",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "천덕귀인",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun",
+    "label": "10월",
+    "context": "庚子일/寅월/丑년",
+    "target": "戊戌",
+    "codeShinsals": [
+      "홍염살",
+      "괴강살",
+      "천문성",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun",
+    "label": "11월",
+    "context": "庚子일/寅월/丑년",
+    "target": "己亥",
+    "codeShinsals": [
+      "태극귀인",
+      "문창귀인",
+      "관귀학관",
+      "천주귀인",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun",
+    "label": "12월",
+    "context": "庚子일/寅월/丑년",
+    "target": "庚子",
+    "codeShinsals": [
+      "낙정관살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun2",
+    "label": "1월",
+    "context": "庚子일/寅월/丑년",
+    "target": "辛丑",
+    "codeShinsals": [
+      "천을귀인",
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun2",
+    "label": "2월",
+    "context": "庚子일/寅월/丑년",
+    "target": "壬寅",
+    "codeShinsals": [
+      "태극귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun2",
+    "label": "3월",
+    "context": "庚子일/寅월/丑년",
+    "target": "癸卯",
+    "codeShinsals": [
+      "비인살",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun2",
+    "label": "4월",
+    "context": "庚子일/寅월/丑년",
+    "target": "甲辰",
+    "codeShinsals": [
+      "공망",
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun2",
+    "label": "5월",
+    "context": "庚子일/寅월/丑년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "공망",
+      "암록",
+      "학당귀인",
+      "문곡귀인",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun2",
+    "label": "6월",
+    "context": "庚子일/寅월/丑년",
+    "target": "丙午",
+    "codeShinsals": [
+      "원진(年)",
+      "월덕귀인",
+      "천복귀인",
+      "복성귀인",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun2",
+    "label": "7월",
+    "context": "庚子일/寅월/丑년",
+    "target": "丁未",
+    "codeShinsals": [
+      "협록",
+      "원진(日)",
+      "천을귀인",
+      "천덕귀인",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun2",
+    "label": "8월",
+    "context": "庚子일/寅월/丑년",
+    "target": "戊申",
+    "codeShinsals": [
+      "건록",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun2",
+    "label": "9월",
+    "context": "庚子일/寅월/丑년",
+    "target": "己酉",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun2",
+    "label": "10월",
+    "context": "庚子일/寅월/丑년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "홍염살",
+      "괴강살",
+      "천문성",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun2",
+    "label": "11월",
+    "context": "庚子일/寅월/丑년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "태극귀인",
+      "문창귀인",
+      "관귀학관",
+      "천주귀인",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "oh",
+    "tab": "wolun2",
+    "label": "12월",
+    "context": "庚子일/寅월/丑년",
+    "target": "壬子",
+    "codeShinsals": [
+      "낙정관살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "daeun",
+    "label": "91",
+    "context": "壬辰일/亥월/辰년",
+    "target": "癸酉",
+    "codeShinsals": [
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "daeun",
+    "label": "81",
+    "context": "壬辰일/亥월/辰년",
+    "target": "壬申",
+    "codeShinsals": [
+      "태극귀인",
+      "관귀학관",
+      "학당귀인",
+      "문곡귀인",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "daeun",
+    "label": "71",
+    "context": "壬辰일/亥월/辰년",
+    "target": "辛未",
+    "codeShinsals": [
+      "공망",
+      "현침살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "daeun",
+    "label": "61",
+    "context": "壬辰일/亥월/辰년",
+    "target": "庚午",
+    "codeShinsals": [
+      "공망",
+      "천복귀인",
+      "비인살",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "daeun",
+    "label": "51",
+    "context": "壬辰일/亥월/辰년",
+    "target": "己巳",
+    "codeShinsals": [
+      "천을귀인",
+      "태극귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "daeun",
+    "label": "41",
+    "context": "壬辰일/亥월/辰년",
+    "target": "戊辰",
+    "codeShinsals": [
+      "복성귀인",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "daeun",
+    "label": "31",
+    "context": "壬辰일/亥월/辰년",
+    "target": "丁卯",
+    "codeShinsals": [
+      "천을귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "daeun",
+    "label": "21",
+    "context": "壬辰일/亥월/辰년",
+    "target": "丙寅",
+    "codeShinsals": [
+      "암록",
+      "문창귀인",
+      "천주귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "daeun",
+    "label": "11",
+    "context": "壬辰일/亥월/辰년",
+    "target": "乙丑",
+    "codeShinsals": [
+      "천덕귀인",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "daeun",
+    "label": "1",
+    "context": "壬辰일/亥월/辰년",
+    "target": "甲子",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "월덕귀인",
+      "홍염살",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "nyunun",
+    "label": "2035",
+    "context": "壬辰일/亥월/辰년",
+    "target": "乙卯",
+    "codeShinsals": [
+      "천을귀인",
+      "천덕귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "nyunun",
+    "label": "2034",
+    "context": "壬辰일/亥월/辰년",
+    "target": "甲寅",
+    "codeShinsals": [
+      "암록",
+      "월덕귀인",
+      "문창귀인",
+      "천주귀인",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "nyunun",
+    "label": "2033",
+    "context": "壬辰일/亥월/辰년",
+    "target": "癸丑",
+    "codeShinsals": [
+      "날삼재",
+      "백호살",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "nyunun",
+    "label": "2032",
+    "context": "壬辰일/亥월/辰년",
+    "target": "壬子",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "홍염살",
+      "눌삼재",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "nyunun",
+    "label": "2031",
+    "context": "壬辰일/亥월/辰년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "건록",
+      "원진(日)",
+      "들삼재",
+      "현침살",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "nyunun",
+    "label": "2030",
+    "context": "壬辰일/亥월/辰년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "협록",
+      "낙정관살",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "nyunun",
+    "label": "2029",
+    "context": "壬辰일/亥월/辰년",
+    "target": "己酉",
+    "codeShinsals": [
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "nyunun",
+    "label": "2028",
+    "context": "壬辰일/亥월/辰년",
+    "target": "戊申",
+    "codeShinsals": [
+      "태극귀인",
+      "관귀학관",
+      "학당귀인",
+      "문곡귀인",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "nyunun",
+    "label": "2027",
+    "context": "壬辰일/亥월/辰년",
+    "target": "丁未",
+    "codeShinsals": [
+      "공망",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "nyunun",
+    "label": "2026",
+    "context": "壬辰일/亥월/辰년",
+    "target": "丙午",
+    "codeShinsals": [
+      "공망",
+      "천복귀인",
+      "비인살",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "nyunun",
+    "label": "2025",
+    "context": "壬辰일/亥월/辰년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "천을귀인",
+      "천덕귀인",
+      "태극귀인",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun",
+    "label": "1월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "己丑",
+    "codeShinsals": [
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun",
+    "label": "2월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "庚寅",
+    "codeShinsals": [
+      "암록",
+      "문창귀인",
+      "천주귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun",
+    "label": "3월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "辛卯",
+    "codeShinsals": [
+      "천을귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun",
+    "label": "4월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "壬辰",
+    "codeShinsals": [
+      "복성귀인",
+      "괴강살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun",
+    "label": "5월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "癸巳",
+    "codeShinsals": [
+      "천을귀인",
+      "태극귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun",
+    "label": "6월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "甲午",
+    "codeShinsals": [
+      "공망",
+      "월덕귀인",
+      "천복귀인",
+      "비인살",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun",
+    "label": "7월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "乙未",
+    "codeShinsals": [
+      "공망",
+      "천덕귀인",
+      "백호살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun",
+    "label": "8월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "丙申",
+    "codeShinsals": [
+      "태극귀인",
+      "관귀학관",
+      "학당귀인",
+      "문곡귀인",
+      "현침살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun",
+    "label": "9월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "丁酉",
+    "codeShinsals": [
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun",
+    "label": "10월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "戊戌",
+    "codeShinsals": [
+      "협록",
+      "낙정관살",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun",
+    "label": "11월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "己亥",
+    "codeShinsals": [
+      "건록",
+      "원진(日)",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun",
+    "label": "12월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "庚子",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "홍염살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun2",
+    "label": "1월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "辛丑",
+    "codeShinsals": [
+      "현침살",
+      "백호살",
+      "명예살",
+      "금여"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun2",
+    "label": "2월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "壬寅",
+    "codeShinsals": [
+      "암록",
+      "문창귀인",
+      "천주귀인",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun2",
+    "label": "3월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "癸卯",
+    "codeShinsals": [
+      "천을귀인",
+      "현침살",
+      "도화살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun2",
+    "label": "4월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "甲辰",
+    "codeShinsals": [
+      "월덕귀인",
+      "복성귀인",
+      "현침살",
+      "백호살",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun2",
+    "label": "5월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "乙巳",
+    "codeShinsals": [
+      "천을귀인",
+      "천덕귀인",
+      "태극귀인",
+      "고란살",
+      "역마살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun2",
+    "label": "6월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "丙午",
+    "codeShinsals": [
+      "공망",
+      "천복귀인",
+      "비인살",
+      "현침살",
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun2",
+    "label": "7월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "丁未",
+    "codeShinsals": [
+      "공망",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun2",
+    "label": "8월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "戊申",
+    "codeShinsals": [
+      "태극귀인",
+      "관귀학관",
+      "학당귀인",
+      "문곡귀인",
+      "현침살",
+      "고란살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun2",
+    "label": "9월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "己酉",
+    "codeShinsals": [
+      "도화살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun2",
+    "label": "10월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "庚戌",
+    "codeShinsals": [
+      "협록",
+      "낙정관살",
+      "괴강살",
+      "천문성",
+      "명예살"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun2",
+    "label": "11월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "辛亥",
+    "codeShinsals": [
+      "건록",
+      "원진(日)",
+      "현침살",
+      "고란살",
+      "역마살",
+      "천문성"
+    ]
+  },
+  {
+    "caseId": "park",
+    "tab": "wolun2",
+    "label": "12월",
+    "context": "壬辰일/亥월/辰년",
+    "target": "壬子",
+    "codeShinsals": [
+      "양인살",
+      "협록",
+      "홍염살",
+      "도화살"
+    ]
+  }
+]

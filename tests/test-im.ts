@@ -1,0 +1,13 @@
+import { calculateSaju } from '../src/lib/saju/calculator';
+const r = calculateSaju({ name:'임인섭', gender:'남', birthYear:1986, birthMonth:1, birthDay:21, birthHour:14, birthMinute:0, isLunar:false });
+const p = r.pillar.data;
+console.log('=== 사주팔자 ===');
+console.log('천간:', p[0][1], p[1][1], p[2][1], p[3][1]);
+console.log('지지:', p[0][2], p[1][2], p[2][2], p[3][2]);
+console.log('십성:', p[0][0], '일간', p[2][0], p[3][0]);
+console.log('강약:', p[0][10]);
+console.log('\n=== 용신 ===');
+const yn = ['용신','희신','기신','구신','한신'];
+r.yongsin.data.forEach((d,i) => console.log(yn[i]+':', d[0]));
+console.log('\n=== 음양오행 ===');
+r.yinyang.data[0].forEach(v => console.log(' ', v));
