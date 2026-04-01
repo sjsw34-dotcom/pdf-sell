@@ -232,6 +232,9 @@ export function buildWolunTab(
     entries.push([`${m}월`, ...row]);
   }
 
+  // 역순 (12월 → 1월)
+  entries.reverse();
+
   return {
     tab_name: '월운',
     tab_type: 'wolun',

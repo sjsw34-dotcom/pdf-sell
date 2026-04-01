@@ -136,7 +136,7 @@ export function isEumChakSal(dayStem: HeavenlyStem, branch: EarthlyBranch): bool
 // 전통 천덕: 8개월은 천간 기준, 4개월(卯/午/酉/子)은 사정방(坤/乾/艮/巽) = 지지 기준
 const CHEON_DEOK_GWI_IN_STEM: Partial<Record<EarthlyBranch, HeavenlyStem>> = {
   '寅': '丁', '辰': '壬', '巳': '辛',
-  '未': '甲', '申': '壬',
+  '未': '甲', '申': '癸',
   '戌': '乙', '亥': '乙', '丑': '庚',
   // 卯(坤=申), 午(乾=亥), 酉(艮=寅), 子(巽=巳) → 지지 기준이므로 여기선 제외
 };
@@ -411,11 +411,12 @@ export function collectAuxiliaryShinsals(
 ): string[] {
   const shinsals: string[] = [];
 
-  // 1단계: 위치 관련 (건록/양인/협록/암록)
+  // 1단계: 위치 관련 (건록/양인/협록/암록/금여)
   if (isGeonRok(dayStem, targetBranch)) shinsals.push('건록');
   if (isYangIn(dayStem, targetBranch)) shinsals.push('양인살');
   if (isHyeopRok(dayStem, targetBranch)) shinsals.push('협록');
   if (isAmRok(dayStem, targetBranch)) shinsals.push('암록');
+  if (isGeumYeo(dayStem, targetBranch)) shinsals.push('금여');
 
   // 2단계: 원진살 (중요도 높음)
   // 년지≠일지일 때만 원진(年) 표시 (동일하면 원진(日)만)
@@ -448,7 +449,6 @@ export function collectAuxiliaryShinsals(
   if (isYeokMaSal(targetBranch)) shinsals.push('역마살');
   if (isCheonMunSeong(targetBranch)) shinsals.push('천문성');
   if (isMyungYeSal(targetBranch)) shinsals.push('명예살');
-  if (isGeumYeo(dayStem, targetBranch)) shinsals.push('금여');
 
   // 5단계: 기타 — 음착살은 전문가 진위표에서 TP=1/FP=12로 제외
 
