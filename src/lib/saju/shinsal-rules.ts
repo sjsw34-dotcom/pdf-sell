@@ -93,8 +93,7 @@ export function isHyunChimSal(stem: HeavenlyStem, branch: EarthlyBranch): boolea
 
 // ─── 백호살 (白虎煞) ───
 // 특정 간지 조합만 해당, 괴강살 조합이면 괴강 우선
-// 양간+양 고지(辰/戌) + 음간+음 고지(丑/未) 조합
-const BAEK_HO_SAL: string[] = ['甲辰', '乙未', '丙戌', '丁丑', '戊辰', '己未', '庚戌', '辛丑', '壬辰', '癸丑'];
+const BAEK_HO_SAL: string[] = ['甲辰', '丙戌', '戊辰', '庚戌', '壬辰', '癸丑'];
 
 export function isBaekHoSal(stem: HeavenlyStem, branch: EarthlyBranch): boolean {
   const combo = stem + branch;
@@ -251,10 +250,10 @@ export function isGoRanSal(stem: HeavenlyStem, branch: EarthlyBranch): boolean {
 }
 
 // ─── 관귀학관 (官鬼學館) ───
-// 문창귀인과 유사하나 壬→申 (문창귀인은 壬→寅)
+// 전문가 진위표 기반 교정: 乙→巳, 庚→寅, 辛→寅
 const GWAN_GWI_HAK_GWAN: Record<HeavenlyStem, EarthlyBranch> = {
-  '甲': '巳', '乙': '午', '丙': '申', '丁': '酉',
-  '戊': '申', '己': '亥', '庚': '亥', '辛': '子',
+  '甲': '巳', '乙': '巳', '丙': '申', '丁': '酉',
+  '戊': '申', '己': '亥', '庚': '寅', '辛': '寅',
   '壬': '申', '癸': '卯',
 };
 
@@ -445,8 +444,7 @@ export function collectAuxiliaryShinsals(
   if (isMyungYeSal(targetBranch)) shinsals.push('명예살');
   if (isGeumYeo(dayStem, targetBranch)) shinsals.push('금여');
 
-  // 5단계: 기타 (낮은 우선순위)
-  if (isEumChakSal(dayStem, targetBranch)) shinsals.push('음착살');
+  // 5단계: 기타 — 음착살은 전문가 진위표에서 TP=1/FP=12로 제외
 
   return shinsals;
 }
