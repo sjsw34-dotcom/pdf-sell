@@ -6,6 +6,7 @@ import type { SajuData } from '@/lib/types/saju';
 import { TIER_CODES } from '@/lib/types/tier';
 import { THEME_CODES } from '@/lib/types/theme';
 import { extractInfo } from '@/lib/utils/extractInfo';
+import { validateApiKey } from '@/lib/api-auth';
 
 export const maxDuration = 120;
 
@@ -56,6 +57,9 @@ function validateBody(body: unknown): { valid: true; data: RequestBody } | { val
 }
 
 export async function POST(request: NextRequest) {
+  const authError = validateApiKey(request);
+  if (authError) return authError;
+
   let rawBody: unknown;
   try {
     rawBody = await request.json();

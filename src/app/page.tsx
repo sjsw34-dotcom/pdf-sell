@@ -84,7 +84,10 @@ export default function HomePage() {
     async function fetchPart(partKey: string): Promise<{ partKey: string; text: string }> {
       const res = await fetch('/api/translate', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(process.env.NEXT_PUBLIC_API_SECRET ? { 'x-api-key': process.env.NEXT_PUBLIC_API_SECRET } : {}),
+        },
         body: JSON.stringify({
           tier: selectedTier,
           partKey,

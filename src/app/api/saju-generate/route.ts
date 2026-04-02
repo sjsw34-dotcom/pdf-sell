@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { calculateSaju } from '@/lib/saju/calculator';
 import type { SajuInput } from '@/lib/saju/calculator';
 import { parseSajuJson } from '@/lib/utils/parseJson';
+import { validateApiKey } from '@/lib/api-auth';
 
 /**
  * POST /api/saju-generate
@@ -25,11 +26,15 @@ import { parseSajuJson } from '@/lib/utils/parseJson';
  * Response: SajuData JSON (info, pillar, yongsin, yinyang, shinsal, daeun, nyunun, wolun, ...)
  */
 export async function POST(request: NextRequest) {
+  // ─── API key 검증 ───
+  const authError = validateApiKey(request);
+  if (authError) return authError;
+
   // ─── CORS 헤더 (외부 사이트 호출 허용) ───
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Headers': 'Content-Type, x-api-key',
   };
 
   // ─── Body 파싱 ───
@@ -146,7 +151,7 @@ export async function OPTIONS() {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Headers': 'Content-Type, x-api-key',
     },
   });
 }
