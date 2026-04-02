@@ -9,6 +9,7 @@ const TIER_INFO: Record<TierCode, { label: string; desc: string; pages: string; 
   love: { label: 'Love', desc: '연애 DNA, 이상형, 연애 타이밍 & 전략', pages: '~60쪽', parts: 6, price: '$39~59' },
   full: { label: 'Full', desc: '성격/연애/재물/직업/건강/신살/대운 종합 분석', pages: '~80쪽', parts: 8, price: '$49~79' },
   premium: { label: 'Premium', desc: '전체 분석 + 올해 운세 + 10년 운세 년도별 상세', pages: '60쪽+', parts: 10, price: '$99~149' },
+  monthly: { label: 'Monthly', desc: '이번 달 운세 + 주의사항 + 행운의 날짜/아이템', pages: '~10쪽', parts: 8, price: '$9~15' },
 };
 
 export function TierSelector() {

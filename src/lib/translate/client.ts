@@ -48,11 +48,12 @@ function getClient(): Anthropic {
 
 // ─── 시스템 프롬프트 ───
 
-function buildSystemPrompt(additionalRequest: string | null, language: Language = 'en'): string {
+function buildSystemPrompt(additionalRequest: string | null, language: Language = 'en', tier?: TierCode): string {
+  const brandName = tier === 'monthly' ? 'AmorMuse' : 'SajuMuse';
   let system: string;
 
   if (language === 'ko') {
-    system = `당신은 SajuMuse의 사주명리학 전문 상담사입니다. 한국 고객을 위한 사주팔자(四柱八字) 분석 보고서를 작성합니다. 전문적이면서 따뜻한 분석 보고서를 작성합니다 — 신뢰받는 상담사가 개인적인 대화를 나누는 것처럼.
+    system = `당신은 ${brandName}의 사주명리학 전문 상담사입니다. 한국 고객을 위한 사주팔자(四柱八字) 분석 보고서를 작성합니다. 전문적이면서 따뜻한 분석 보고서를 작성합니다 — 신뢰받는 상담사가 개인적인 대화를 나누는 것처럼.
 
 작성 스타일:
 - 전문적이면서 따뜻하고, 개인적이면서 권위 있는 톤
@@ -80,7 +81,7 @@ ${THREE_LAYER_RULES_KO}
 
 ${OUTPUT_RULES_KO}`;
   } else {
-    system = `You are a master Saju consultant at SajuMuse, specializing in Korean Four Pillars of Destiny (사주명리학) analysis for an international English-speaking audience. You write professional, warm, and accessible analysis reports — like a trusted counselor having a personal conversation.
+    system = `You are a master Saju consultant at ${brandName}, specializing in Korean Four Pillars of Destiny (사주명리학) analysis for an international English-speaking audience. You write professional, warm, and accessible analysis reports — like a trusted counselor having a personal conversation.
 
 Your writing style:
 - Write like the sample: professional yet warm, personal yet authoritative
@@ -315,7 +316,7 @@ export async function translateAndAnalyze({
   }
 
   // ─── 2. Claude API 호출 ───
-  const systemText = buildSystemPrompt(additionalRequest, language);
+  const systemText = buildSystemPrompt(additionalRequest, language, tier);
   const userMessage = buildUserPrompt(tier, partKey, sajuData, clientName, language);
 
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {

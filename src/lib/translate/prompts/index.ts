@@ -5,6 +5,7 @@ import { BASIC_PROMPTS } from './basic';
 import { LOVE_PROMPTS } from './love';
 import { FULL_PROMPTS } from './full';
 import { PREMIUM_PROMPTS } from './premium';
+import { MONTHLY_PROMPTS } from './monthly';
 
 export { THREE_LAYER_RULES, OUTPUT_RULES, THREE_LAYER_RULES_KO, OUTPUT_RULES_KO } from './common';
 export type { PartPrompt } from './common';
@@ -14,6 +15,7 @@ const PROMPTS_BY_TIER: Record<TierCode, PartPrompt[]> = {
   love: LOVE_PROMPTS,
   full: FULL_PROMPTS,
   premium: PREMIUM_PROMPTS,
+  monthly: MONTHLY_PROMPTS,
 };
 
 /**

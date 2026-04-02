@@ -1,4 +1,4 @@
-export const THEME_CODES = ['classic', 'modern', 'minimal', 'elegant', 'love'] as const;
+export const THEME_CODES = ['classic', 'modern', 'minimal', 'elegant', 'love', 'amormuse'] as const;
 export type ThemeCode = (typeof THEME_CODES)[number];
 
 export interface ThemeColors {

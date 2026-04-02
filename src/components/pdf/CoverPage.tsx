@@ -13,6 +13,7 @@ const TIER_KEY: Record<TierCode, string> = {
   love: 'cover.tierLove',
   full: 'cover.tierFull',
   premium: 'cover.tierPremium',
+  monthly: '',
 };
 
 interface CoverPageProps {

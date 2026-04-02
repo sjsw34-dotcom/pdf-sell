@@ -90,24 +90,40 @@ export async function POST(request: NextRequest) {
     const { renderToBuffer } = await import('@react-pdf/renderer');
     // pdfStyles side-effect (폰트 등록)
     await import('@/components/pdf/styles/pdfStyles');
-    const { PdfDocument } = await import('@/components/pdf/PdfDocument');
 
-    const element = React.createElement(PdfDocument, {
-      tier: tier as TierCode,
-      sajuData,
-      texts: texts as Record<string, string>,
-      coverImage,
-      theme: theme as ThemeCode,
-      clientName,
-      birthInfo,
-    });
+    let element: React.ReactElement;
+
+    if (tier === 'monthly') {
+      // Monthly tier → AmorMuse MonthlyPdfDocument
+      const { MonthlyPdfDocument } = await import('@/components/pdf/MonthlyPdfDocument');
+      const monthLabel = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+      element = React.createElement(MonthlyPdfDocument, {
+        sajuData,
+        texts: texts as Record<string, string>,
+        clientName,
+        monthLabel,
+      });
+    } else {
+      // Standard tiers → SajuMuse PdfDocument
+      const { PdfDocument } = await import('@/components/pdf/PdfDocument');
+      element = React.createElement(PdfDocument, {
+        tier: tier as TierCode,
+        sajuData,
+        texts: texts as Record<string, string>,
+        coverImage,
+        theme: theme as ThemeCode,
+        clientName,
+        birthInfo,
+      });
+    }
 
     const buffer = await renderToBuffer(
       element as unknown as React.ReactElement<import('@react-pdf/renderer').DocumentProps>,
     );
 
     const uint8 = new Uint8Array(buffer);
-    const fileName = `${clientName.replace(/\s+/g, '_')}_saju_report.pdf`;
+    const suffix = tier === 'monthly' ? 'monthly_fortune' : 'saju_report';
+    const fileName = `${clientName.replace(/\s+/g, '_')}_${suffix}.pdf`;
 
     return new NextResponse(uint8, {
       status: 200,

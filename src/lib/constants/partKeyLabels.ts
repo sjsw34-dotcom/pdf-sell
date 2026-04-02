@@ -73,11 +73,23 @@ const PREMIUM_EXTRA_KEYS: PartKeyMeta[] = [
   { key: 'year_2035', label: '2035', title: '2035 — Annual Fortune', group: 'part10_years', groupLabel: 'Part 10: Year-by-Year Analysis', type: 'chapter' },
 ];
 
+const MONTHLY_KEYS: PartKeyMeta[] = [
+  { key: 'monthly_message', label: 'Message', title: 'Monthly Message', group: 'monthly', groupLabel: 'Monthly Fortune', type: 'chapter' },
+  { key: 'monthly_overview', label: 'Overview', title: 'Monthly Overview', group: 'monthly', groupLabel: 'Monthly Fortune', type: 'chapter' },
+  { key: 'monthly_overview_2', label: 'Overview 2', title: 'Monthly Overview (Continued)', group: 'monthly', groupLabel: 'Monthly Fortune', type: 'chapter' },
+  { key: 'monthly_cautions', label: 'Cautions', title: 'Monthly Cautions', group: 'monthly', groupLabel: 'Monthly Fortune', type: 'chapter' },
+  { key: 'monthly_lucky_dates', label: 'Lucky Dates', title: 'Lucky Dates', group: 'monthly', groupLabel: 'Monthly Fortune', type: 'chapter' },
+  { key: 'monthly_lucky_items', label: 'Lucky Items', title: 'Lucky Items', group: 'monthly', groupLabel: 'Monthly Fortune', type: 'chapter' },
+  { key: 'monthly_tips', label: 'Tips', title: 'Monthly Tips', group: 'monthly', groupLabel: 'Monthly Fortune', type: 'chapter' },
+  { key: 'monthly_tips_2', label: 'Tips 2', title: 'Monthly Tips (Continued)', group: 'monthly', groupLabel: 'Monthly Fortune', type: 'chapter' },
+];
+
 const TIER_KEY_METAS: Record<TierCode, PartKeyMeta[]> = {
   basic: BASIC_KEYS,
   love: LOVE_KEYS,
   full: FULL_KEYS,
   premium: [...FULL_KEYS, ...PREMIUM_EXTRA_KEYS],
+  monthly: MONTHLY_KEYS,
 };
 
 export function getPartKeyMetas(tier: TierCode): PartKeyMeta[] {

@@ -17,6 +17,7 @@ const TIER_KEY: Record<TierCode, string> = {
   love: 'intro.tierLove',
   full: 'intro.tierFull',
   premium: 'intro.tierPremium',
+  monthly: '',
 };
 
 // ─── 티어별 목차 빌더 ───
@@ -62,6 +63,7 @@ const TOC_KEYS: Record<TierCode, { part: string; key: string }[]> = {
     { part: '09', key: 'toc.premium.09' },
     { part: '10', key: 'toc.premium.10' },
   ],
+  monthly: [],
 };
 
 function getToc(tier: TierCode, lang: Language): { part: string; title: string }[] {
