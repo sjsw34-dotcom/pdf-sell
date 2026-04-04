@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
     );
 
     const uint8 = new Uint8Array(buffer);
-    const slug = edition === 'kdp' ? 'korean-saju-decoded' : 'complete-guide-korean-saju';
+    const slug = edition === 'kdp' ? 'Korean-Saju-Decoded-Kindle-Edition' : 'Korean-Saju-Decoded-Master-Edition';
     const fileName = `${slug}.pdf`;
 
     return new NextResponse(uint8, {

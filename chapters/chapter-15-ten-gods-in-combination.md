@@ -210,7 +210,7 @@ Step 7. Identify dominant combinations (this chapter). What chains and patterns 
 
 Step 8. Apply to life domains. Career, relationships, health, timing.
 
-This eight-step framework is the foundation of every professional Saju reading. In the Full Edition, Part 6 will walk you through this process in complete detail with real case studies. But you now have the conceptual toolkit to begin reading any chart — including your own.
+This eight-step framework is the foundation of every professional Saju reading. In the Master Edition, Part 6 will walk you through this process in complete detail with real case studies. But you now have the conceptual toolkit to begin reading any chart — including your own.
 
 ## What You Have Learned
 
@@ -220,7 +220,7 @@ This is a remarkable foundation. Most Korean Saju enthusiasts take years to reac
 
 The question now is: what do you do with this knowledge?
 
-If you are ready to apply it, to read fortune cycles, analyze real relationships, and perform complete chart readings, the Full Edition awaits. Parts 4 through 7 cover the Twelve Life Stages, Grand Fortune and Annual Fortune timing, complete chart analysis with case studies, and advanced formations.
+If you are ready to apply it, to read fortune cycles, analyze real relationships, and perform complete chart readings, the Master Edition awaits. Parts 4 through 7 cover the Twelve Life Stages, Grand Fortune and Annual Fortune timing, complete chart analysis with case studies, and advanced formations.
 
 If you want an expert to apply these principles to your specific chart, with the nuance and experience that only a certified master can provide, your personalized reading is waiting at sajumuse.com/order.
 

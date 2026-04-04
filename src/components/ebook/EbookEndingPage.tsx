@@ -10,13 +10,45 @@ interface EbookEndingPageProps {
 
 export function EbookEndingPage({ edition }: EbookEndingPageProps) {
   const isKdp = edition === 'kdp';
+  const isWorkbook = edition === 'workbook';
 
   return (
     <Page size={EBOOK_PAGE_SIZE} style={s.page}>
       <View style={s.content}>
         <View style={s.topSpace} />
 
-        {isKdp ? (
+        {isWorkbook ? (
+          // Workbook: 3단계 CTA
+          <>
+            <Text style={s.mainTitle}>You Built Your Chart!</Text>
+            <Text style={s.mainSubtitle}>Now take the next step on your Saju journey</Text>
+            <View style={s.divider} />
+
+            <View style={s.ctaBox}>
+              <Text style={s.ctaMain}>Get Your Chart Read by a Master</Text>
+              <Text style={s.ctaSub}>
+                A certified Saju counselor will analyze your complete birth chart in a personalized 60+ page Premium Report.
+              </Text>
+              <Text style={s.ctaUrl}>sajumuse.com/order</Text>
+            </View>
+
+            <View style={s.ctaBox}>
+              <Text style={s.ctaMain}>Go Deeper with the Theory</Text>
+              <Text style={s.ctaSub}>
+                Korean Saju Decoded (Kindle Edition) — 15 chapters of foundations, elements, and Ten Gods. Korean Saju Decoded (Master Edition) — all 28 chapters including fortune cycles, chart reading, and advanced topics.
+              </Text>
+              <Text style={s.ctaUrl}>sajumuse.com/ebook</Text>
+            </View>
+
+            <View style={s.authorBox}>
+              <Text style={s.authorName}>Ksaju Kim</Text>
+              <Text style={s.authorDesc}>Certified Korean Saju Counselor</Text>
+              <Text style={s.authorDesc}>15+ Years of Practice</Text>
+              <View style={{ height: 8 }} />
+              <Text style={s.authorDesc}>Instagram & Threads: @sajumuse</Text>
+            </View>
+          </>
+        ) : isKdp ? (
           // KDP: "What's Next?" 업그레이드 CTA
           <>
             <Text style={s.mainTitle}>What{`'`}s Next?</Text>
@@ -55,7 +87,7 @@ export function EbookEndingPage({ edition }: EbookEndingPageProps) {
             </View>
 
             <View style={s.ctaBox}>
-              <Text style={s.ctaMain}>Get the Full Edition</Text>
+              <Text style={s.ctaMain}>Get the Master Edition</Text>
               <Text style={s.ctaUrl}>sajumuse.com/ebook</Text>
               <View style={s.ctaDivider} />
               <Text style={s.ctaSub}>Or get YOUR chart read by a certified master</Text>
@@ -66,7 +98,7 @@ export function EbookEndingPage({ edition }: EbookEndingPageProps) {
           // Full Edition: 감사 + 개인 리포트 CTA
           <>
             <Text style={s.mainTitle}>Thank You</Text>
-            <Text style={s.mainSubtitle}>for reading The Complete Guide to Korean Saju</Text>
+            <Text style={s.mainSubtitle}>for reading Korean Saju Decoded</Text>
             <View style={s.divider} />
 
             <Text style={s.bodyText}>
@@ -88,7 +120,7 @@ export function EbookEndingPage({ edition }: EbookEndingPageProps) {
             <View style={s.authorBox}>
               <Text style={s.authorName}>Ksaju Kim</Text>
               <Text style={s.authorDesc}>Certified Korean Saju Counselor</Text>
-              <Text style={s.authorDesc}>138+ verified readings</Text>
+              <Text style={s.authorDesc}>Hundreds of verified readings</Text>
             </View>
           </>
         )}

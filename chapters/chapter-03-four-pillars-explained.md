@@ -66,7 +66,7 @@ Notice how each pair shares the same element but has completely different charac
 
 > Understanding the Heavenly Stems is like learning the ten main characters in a story. Each has a distinct personality, and the way they interact with each other drives the plot.
 
-Looking at Chart B, we can see four Heavenly Stems: 丁 (Yin Fire), 乙 (Yin Wood), 丙 (Yang Fire), 丙 (Yang Fire). the chart owner's chart is dominated by Fire energy. Three of her four stems are Fire, with her Day Master being Yin Wood. This immediately tells us something: she is a gentle, flexible person (Yin Wood) surrounded by intense creative and expressive energy (Fire).
+Looking at Chart B, we can see four Heavenly Stems: 丁 (Yin Fire), 乙 (Yin Wood), 丙 (Yang Fire), 丙 (Yang Fire). The chart owner's chart is dominated by Fire energy. Three of her four stems are Fire, with her Day Master being Yin Wood. This immediately tells us something: she is a gentle, flexible person (Yin Wood) surrounded by intense creative and expressive energy (Fire).
 
 ## Earthly Branches: 12 Animal Energies
 

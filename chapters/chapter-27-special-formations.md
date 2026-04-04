@@ -201,7 +201,7 @@ A Six Harmony, *Yukhap* (육합 六合), occurs when two specific branches meet 
 | 卯 Rabbit + 戌 Dog | → Fire | Passionate connection, warmth through contrast |
 | 辰 Dragon + 酉 Rooster | → Metal | Productive partnership, precision collaboration |
 | 巳 Snake + 申 Monkey | → Water | Strategic alliance, intellectual synergy |
-| 午 Horse + 未 Goat | → Fire/Earth | Warm companionship, emotional support |
+| 午 Horse + 未 Goat | → Fire | Warm companionship, emotional support |
 
 When a harmony pair appears within a chart, say 子 in the Year Branch and 丑 in the Day Branch, it indicates a natural, built-in alliance between those life areas. When a harmony arrives through a fortune cycle, it signals a year (or decade) when a new alliance or partnership becomes available.
 

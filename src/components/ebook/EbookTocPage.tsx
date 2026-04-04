@@ -3,7 +3,7 @@ import { Page, View, Text, StyleSheet } from '@react-pdf/renderer';
 import { FONT_BODY, FONT_TITLE, FONT_CJK, ANTI_LIGATURE, EBOOK_PAGE_SIZE } from './styles/ebookStyles';
 import { EbookPageFooter } from './EbookPageFooter';
 import type { EbookEdition } from '@/lib/types/ebook';
-import { EBOOK_PARTS, EBOOK_CHAPTERS, EDITION_INFO } from '@/lib/types/ebook';
+import { EBOOK_PARTS, EBOOK_CHAPTERS, WORKBOOK_PARTS, WORKBOOK_CHAPTERS, EDITION_INFO } from '@/lib/types/ebook';
 
 interface EbookTocPageProps {
   edition: EbookEdition;
@@ -12,6 +12,9 @@ interface EbookTocPageProps {
 export function EbookTocPage({ edition }: EbookTocPageProps) {
   const includedChapters = EDITION_INFO[edition].chapters;
   const isKdp = edition === 'kdp';
+  const isWorkbook = edition === 'workbook';
+  const parts = isWorkbook ? WORKBOOK_PARTS : EBOOK_PARTS;
+  const allChapters = isWorkbook ? WORKBOOK_CHAPTERS : EBOOK_CHAPTERS;
 
   return (
     <Page size={EBOOK_PAGE_SIZE} style={s.page} wrap>
@@ -22,13 +25,11 @@ export function EbookTocPage({ edition }: EbookTocPageProps) {
       </View>
 
       {/* 파트별 챕터 목록 */}
-      {EBOOK_PARTS.map((part) => {
-        const partChapters = EBOOK_CHAPTERS.filter(
+      {parts.map((part) => {
+        const partChapters = allChapters.filter(
           (ch) => part.chapters.includes(ch.number) && includedChapters.includes(ch.number),
         );
         if (partChapters.length === 0) return null;
-
-        const isLocked = isKdp && !includedChapters.includes(part.chapters[0]);
 
         return (
           <View key={part.number} style={s.partGroup} wrap={false}>
@@ -61,25 +62,27 @@ export function EbookTocPage({ edition }: EbookTocPageProps) {
         </View>
       )}
 
-      {/* Appendix */}
-      <View style={s.partGroup} wrap={false}>
-        <View style={s.partRow}>
-          <Text style={s.partLabel}> </Text>
-          <Text style={s.partTitle}>Appendix</Text>
+      {/* Appendix (워크북 제외) */}
+      {!isWorkbook && (
+        <View style={s.partGroup} wrap={false}>
+          <View style={s.partRow}>
+            <Text style={s.partLabel}> </Text>
+            <Text style={s.partTitle}>Appendix</Text>
+          </View>
+          <View style={s.chapterRow}>
+            <Text style={s.chapterNumber}>A.</Text>
+            <Text style={s.chapterTitle}>Quick Reference Tables</Text>
+          </View>
+          <View style={s.chapterRow}>
+            <Text style={s.chapterNumber}>B.</Text>
+            <Text style={s.chapterTitle}>Glossary</Text>
+          </View>
+          <View style={s.chapterRow}>
+            <Text style={s.chapterNumber}>C.</Text>
+            <Text style={s.chapterTitle}>Recommended Resources</Text>
+          </View>
         </View>
-        <View style={s.chapterRow}>
-          <Text style={s.chapterNumber}>A.</Text>
-          <Text style={s.chapterTitle}>Quick Reference Tables</Text>
-        </View>
-        <View style={s.chapterRow}>
-          <Text style={s.chapterNumber}>B.</Text>
-          <Text style={s.chapterTitle}>Glossary</Text>
-        </View>
-        <View style={s.chapterRow}>
-          <Text style={s.chapterNumber}>C.</Text>
-          <Text style={s.chapterTitle}>Recommended Resources</Text>
-        </View>
-      </View>
+      )}
 
       <EbookPageFooter />
     </Page>

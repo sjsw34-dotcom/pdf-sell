@@ -159,7 +159,7 @@ Some Grand Fortune periods carry elements that neither strongly help nor strongl
 
 ### The Timing Insight
 
-This analysis reveals something profound. The same chart will experience dramatically different life conditions depending on which decade it is in. she is not destined for uniform difficulty or uniform success. She is destined for a specific sequence of favorable and unfavorable periods, and knowing this sequence in advance is the practical power of Saju.
+This analysis reveals something profound. The same chart will experience dramatically different life conditions depending on which decade it is in. She is not destined for uniform difficulty or uniform success. She is destined for a specific sequence of favorable and unfavorable periods, and knowing this sequence in advance is the practical power of Saju.
 
 The traditional interpretation suggests that her strongest years are in her thirties and early forties, when Wood and Water dominate. Her most challenging years come in her seventies and eighties, when Metal and Earth take over. Her youth (ages 1-20) is a mixed period, with Earth and Fire creating conditions that do not strongly support or strongly harm.
 

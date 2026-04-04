@@ -4,9 +4,9 @@
 export const EBOOK_PAGE = { width: 432, height: 648 } as const;
 
 /** eBook 에디션 */
-export type EbookEdition = 'kdp' | 'full';
+export type EbookEdition = 'kdp' | 'full' | 'workbook';
 
-export const EBOOK_EDITIONS = ['kdp', 'full'] as const;
+export const EBOOK_EDITIONS = ['kdp', 'full', 'workbook'] as const;
 
 /** eBook 에디션 정보 */
 export const EDITION_INFO: Record<EbookEdition, {
@@ -24,11 +24,18 @@ export const EDITION_INFO: Record<EbookEdition, {
     price: '$32',
   },
   full: {
-    label: 'Full Edition',
-    title: 'The Complete Guide to Korean Saju (四柱)',
+    label: 'Master Edition',
+    title: 'Korean Saju Decoded',
     subtitle: 'Master the Four Pillars of Destiny',
     chapters: Array.from({ length: 28 }, (_, i) => i + 1), // Ch 1~28
     price: '$99',
+  },
+  workbook: {
+    label: 'Free Workbook',
+    title: 'Korean Saju Workbook',
+    subtitle: 'Build Your Own Four Pillars Chart',
+    chapters: Array.from({ length: 8 }, (_, i) => i + 1), // Ch 1~8
+    price: 'FREE',
   },
 };
 
@@ -106,7 +113,28 @@ export const BOOK_META = {
   publishedBy: 'Published by SajuMuse · sajumuse.com',
 };
 
+// ─── 워크북 에디션 전용 파트/챕터 ───
+
+export const WORKBOOK_PARTS: EbookPart[] = [
+  { number: 1, title: 'Find Your Four Pillars', subtitle: 'Look up and build your birth chart', chapters: [1, 2, 3] },
+  { number: 2, title: 'Know Your Day Master', subtitle: 'Discover who you really are', chapters: [4, 5] },
+  { number: 3, title: 'Your 2026 Forecast', subtitle: 'What the Year of the Fire Horse means for you', chapters: [6] },
+  { number: 4, title: 'Compatibility & Useful God', subtitle: 'Relationships and your secret advantage', chapters: [7, 8] },
+];
+
+export const WORKBOOK_CHAPTERS: EbookChapter[] = [
+  { number: 1, part: 1, title: 'How Saju Works — A One-Page Primer' },
+  { number: 2, part: 1, title: 'Year & Month Pillar Lookup Tables' },
+  { number: 3, part: 1, title: 'Day & Hour Pillar — Complete Your Chart' },
+  { number: 4, part: 2, title: 'The 10 Day Master Profiles' },
+  { number: 5, part: 2, title: 'Day Master Self-Discovery Worksheet' },
+  { number: 6, part: 3, title: '2026 Forecast by Day Master' },
+  { number: 7, part: 4, title: 'Compatibility Quick-Check' },
+  { number: 8, part: 4, title: 'Find Your Useful God (用神)' },
+];
+
 /** 챕터가 어느 파트에 속하는지 반환 */
-export function getPartForChapter(chapterNum: number): EbookPart | undefined {
-  return EBOOK_PARTS.find(p => p.chapters.includes(chapterNum));
+export function getPartForChapter(chapterNum: number, edition?: EbookEdition): EbookPart | undefined {
+  const parts = edition === 'workbook' ? WORKBOOK_PARTS : EBOOK_PARTS;
+  return parts.find(p => p.chapters.includes(chapterNum));
 }

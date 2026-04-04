@@ -48,7 +48,7 @@ As we learned in Chapter 2, the principle of Yin and Yang splits every phenomeno
 
 ### Wood: Growth Energy
 
-**Yang Wood 甲 (Gap) — The Tall Tree**
+**Yang Wood 甲 (Gap) — The Towering Tree**
 
 Yang Wood grows straight up. It is the force that breaks through obstacles — the seedling that cracks concrete, the bamboo that rises ten meters in a season. In a person, Yang Wood manifests as directness, ambition, and an unwillingness to bend.
 
@@ -64,13 +64,13 @@ As we saw in Chapter 4, both Chart A and Chart B have Yin Wood Day Masters — b
 
 ### Fire: Transformation Energy
 
-**Yang Fire 丙 (Byeong) — The Sun**
+**Yang Fire 丙 (Byeong) — The Blazing Sun**
 
 Yang Fire radiates in all directions equally. It is the force that transforms darkness into light, cold into warmth, raw into cooked. In a person, Yang Fire manifests as charisma, generosity, and irrepressible optimism.
 
 The sun does not choose who to warm — it gives to everyone. This makes Yang Fire people magnetic but sometimes naive. They can burn themselves out by giving too much without discrimination.
 
-**Yin Fire 丁 (Jeong) — The Candle**
+**Yin Fire 丁 (Jeong) — The Candle Flame**
 
 Yin Fire is focused and intimate. It lights only what is close — the page of a book, the face of a loved one, the detail that everyone else missed. In a person, Yin Fire manifests as perception, intensity, and emotional depth.
 
@@ -78,7 +78,7 @@ In Chart B, the Day Master's owner has 丁 (Yin Fire) in her Hour Pillar — the
 
 ### Earth: Stabilizing Energy
 
-**Yang Earth 戊 (Mu) — The Mountain**
+**Yang Earth 戊 (Mu) — The Great Mountain**
 
 Yang Earth does not move. It is the force that holds everything in place — the foundation that supports buildings, the ground that anchors trees, the plateau that overlooks the valley. In a person, Yang Earth manifests as reliability, patience, and immense capacity for endurance.
 

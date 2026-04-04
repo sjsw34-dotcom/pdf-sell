@@ -6,7 +6,7 @@ description: 한국 사주명리학(四柱命理學) 영문 전자책 집필 스
 # Saju Ebook Writer Skill
 
 ## 프로젝트 개요
-- **책 제목 (풀버전):** The Complete Guide to Korean Saju: Master the Four Pillars of Destiny
+- **책 제목 (풀버전):** Korean Saju Decoded: Master the Four Pillars of Destiny
 - **책 제목 (KDP 입문버전):** Korean Saju Decoded: Your First Step into the Four Pillars of Destiny
 - **저자 필명:** Ksaju Kim — Certified Korean Saju Counselor, 15+ Years
 - **언어:** English (3-Layer 용어 시스템 적용)

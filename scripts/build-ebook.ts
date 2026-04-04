@@ -27,6 +27,8 @@ import * as path from 'path';
 import {
   EBOOK_CHAPTERS,
   EBOOK_PARTS,
+  WORKBOOK_CHAPTERS,
+  WORKBOOK_PARTS,
   EDITION_INFO,
 } from '../src/lib/types/ebook';
 
@@ -46,12 +48,12 @@ function hasFlag(name: string): boolean {
 
 const statusMode = hasFlag('status');
 const chapterArg = getArg('chapter', '');
-const edition = getArg('edition', 'kdp') as 'kdp' | 'full';
+const edition = getArg('edition', 'kdp') as 'kdp' | 'full' | 'workbook';
 const format = getArg('format', 'docx') as 'pdf' | 'docx' | 'both';
 
 if (!statusMode && !chapterArg) {
-  if (!['kdp', 'full'].includes(edition)) {
-    console.error('❌ --edition must be "kdp" or "full"');
+  if (!['kdp', 'full', 'workbook'].includes(edition)) {
+    console.error('❌ --edition must be "kdp", "full", or "workbook"');
     process.exit(1);
   }
   if (!['pdf', 'docx', 'both'].includes(format)) {
@@ -63,7 +65,7 @@ if (!statusMode && !chapterArg) {
 // ─── 경로 ───
 
 const ROOT = path.resolve(__dirname, '..');
-const CHAPTERS_DIR = path.join(ROOT, 'chapters');
+const CHAPTERS_DIR = path.join(ROOT, edition === 'workbook' ? 'chapters-workbook' : 'chapters');
 const OUTPUT_DIR = path.join(ROOT, 'output');
 
 // output 폴더 생성
@@ -180,15 +182,19 @@ function findChapterFile(chapterNum: number): string | null {
 }
 
 function showChapterStatus(): void {
-  console.log('\n📊 Chapter Status (28 total)');
+  const parts = edition === 'workbook' ? WORKBOOK_PARTS : EBOOK_PARTS;
+  const chapters = edition === 'workbook' ? WORKBOOK_CHAPTERS : EBOOK_CHAPTERS;
+  const total = chapters.length;
+
+  console.log(`\n📊 Chapter Status — ${edition} (${total} total)`);
   console.log('═══════════════════════════════════');
 
   let written = 0;
 
-  for (const part of EBOOK_PARTS) {
+  for (const part of parts) {
     console.log(`\n  Part ${part.number}: ${part.title}`);
     for (const chNum of part.chapters) {
-      const ch = EBOOK_CHAPTERS.find(c => c.number === chNum)!;
+      const ch = chapters.find(c => c.number === chNum)!;
       const file = findChapterFile(chNum);
       const padded = String(chNum).padStart(2, '0');
       const icon = file ? '✅' : '⬜';
@@ -198,13 +204,8 @@ function showChapterStatus(): void {
     }
   }
 
-  const kdpChapters = EDITION_INFO.kdp.chapters;
-  const kdpWritten = kdpChapters.filter(n => findChapterFile(n) !== null).length;
-  const fullWritten = written;
-
   console.log('\n═══════════════════════════════════');
-  console.log(`  KDP Edition:  ${kdpWritten}/${kdpChapters.length} written (${(kdpWritten / kdpChapters.length * 100).toFixed(1)}%)`);
-  console.log(`  Full Edition: ${fullWritten}/28 written (${(fullWritten / 28 * 100).toFixed(1)}%)`);
+  console.log(`  ${edition} Edition: ${written}/${total} written (${(written / total * 100).toFixed(1)}%)`);
   console.log('');
 }
 
@@ -289,14 +290,16 @@ async function main() {
   // --chapter N 미리보기 모드
   if (chapterArg) {
     const chNum = parseInt(chapterArg, 10);
-    if (isNaN(chNum) || chNum < 1 || chNum > 28) {
-      console.error(`❌ Invalid chapter number: ${chapterArg} (must be 1–28)`);
+    const maxCh = edition === 'workbook' ? 8 : 28;
+    if (isNaN(chNum) || chNum < 1 || chNum > maxCh) {
+      console.error(`❌ Invalid chapter number: ${chapterArg} (must be 1–${maxCh})`);
       process.exit(1);
     }
 
-    const chMeta = EBOOK_CHAPTERS.find(c => c.number === chNum);
+    const chaptersList = edition === 'workbook' ? WORKBOOK_CHAPTERS : EBOOK_CHAPTERS;
+    const chMeta = chaptersList.find(c => c.number === chNum);
     if (!chMeta) {
-      console.error(`❌ Chapter ${chNum} is not defined in EBOOK_CHAPTERS`);
+      console.error(`❌ Chapter ${chNum} is not defined`);
       process.exit(1);
     }
 
@@ -346,7 +349,7 @@ async function main() {
   const count = Object.keys(chapters).length;
   console.log(`\n  총 ${count}개 챕터 로드 완료`);
 
-  const slug = edition === 'kdp' ? 'korean-saju-decoded' : 'complete-guide-korean-saju';
+  const slug = edition === 'workbook' ? 'Korean-Saju-Workbook' : edition === 'kdp' ? 'Korean-Saju-Decoded-Kindle-Edition' : 'Korean-Saju-Decoded-Master-Edition';
 
   if (format === 'docx' || format === 'both') {
     await generateDocx(chapters, slug);

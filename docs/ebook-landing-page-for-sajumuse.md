@@ -188,6 +188,6 @@ Not sure yet? Try a free mini reading first
 - 메인 페이지 가격 섹션에도 전자책 언급 추가
 
 ### SEO
-- Title: "The Complete Guide to Korean Saju - Learn Four Pillars of Destiny"
+- Title: "Korean Saju Decoded - Master the Four Pillars of Destiny"
 - Meta: "Learn Korean astrology from a certified Saju master. 300+ page guide with real chart analyses. Available as ebook."
 - Keywords: Korean astrology book, Saju guide, Four Pillars book, learn Saju, Korean fortune telling guide

@@ -128,7 +128,7 @@ export function EbookAppendixB() {
 
 const RESOURCES = {
   books: [
-    { title: 'The Complete Guide to Four Pillars of Destiny', author: 'Jerry King', note: 'Comprehensive English-language BaZi reference' },
+    { title: 'The Four Pillars of Destiny', author: 'Lily Chung', note: 'Comprehensive English-language Four Pillars reference' },
     { title: 'BaZi — The Destiny Code', author: 'Joey Yap', note: 'Accessible introduction to Chinese Four Pillars' },
     { title: 'The Five Elements', author: 'Dondi Dahlin', note: 'Practical guide to element archetypes in daily life' },
     { title: 'Korean Fortune Telling (한국의 점복)', author: 'Various scholars', note: 'Academic perspectives on Korean divination traditions' },

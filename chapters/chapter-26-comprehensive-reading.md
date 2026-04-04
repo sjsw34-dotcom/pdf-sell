@@ -171,7 +171,7 @@ In Chapter 23, we introduced the core principles of compatibility analysis. Now 
 
 ### Layer 1: Stem Harmony — The 乙庚合 (Eul-Gyeong Hap)
 
-The most immediately striking feature of this pairing is the 乙庚 Heavenly Stem Combination, one of the six classical stem harmonies in Saju.
+The most immediately striking feature of this pairing is the 乙庚 Heavenly Stem Combination, one of the five classical stem harmonies in Saju.
 
 Chart B's Day Master is 乙 (Yin Wood). Chart F's Day Master is 庚 (Yang Metal). When 乙 and 庚 meet, they form a recognized combination — *Eul-Gyeong-Hap* (乙庚合). In the traditional framework, this combination transforms into Metal (金).
 

@@ -1027,7 +1027,7 @@ function buildAboutAuthorPage(): Paragraph[] {
     new Paragraph({
       spacing: { after: 160 },
       children: [new TextRun({
-        text: 'With over 138 verified readings and a passion for making Saju accessible to a global audience, he founded SajuMuse — a platform dedicated to bringing personalized Four Pillars readings to people around the world.',
+        text: 'With hundreds of verified readings and a passion for making Saju accessible to a global audience, he founded SajuMuse — a platform dedicated to bringing personalized Four Pillars readings to people around the world.',
         font: 'Noto Sans KR', size: 21, color: '444444',
       })],
     }),
@@ -1296,7 +1296,7 @@ function buildEndingPage(edition: EbookEdition): Paragraph[] {
       alignment: AlignmentType.CENTER,
       shading: { type: ShadingType.SOLID, color: BG_PURPLE },
       spacing: { after: 80 },
-      children: [new TextRun({ text: 'Get the Full Edition', font: 'Noto Sans KR', size: 28, bold: true, color: PURPLE })],
+      children: [new TextRun({ text: 'Get the Master Edition', font: 'Noto Sans KR', size: 28, bold: true, color: PURPLE })],
     }));
     paras.push(new Paragraph({
       alignment: AlignmentType.CENTER,
@@ -1331,7 +1331,7 @@ function buildEndingPage(edition: EbookEdition): Paragraph[] {
     }));
     paras.push(new Paragraph({
       spacing: { after: 200 },
-      children: [new TextRun({ text: 'for reading The Complete Guide to Korean Saju', font: 'Noto Sans KR', size: 22, color: GRAY })],
+      children: [new TextRun({ text: 'for reading Korean Saju Decoded', font: 'Noto Sans KR', size: 22, color: GRAY })],
     }));
     paras.push(new Paragraph({ spacing: { after: 200 }, border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: PURPLE } }, children: [] }));
 
@@ -1377,7 +1377,7 @@ function buildEndingPage(edition: EbookEdition): Paragraph[] {
     }));
     paras.push(new Paragraph({
       alignment: AlignmentType.CENTER,
-      children: [new TextRun({ text: 'Certified Korean Saju Counselor · 138+ verified readings', font: 'Noto Sans KR', size: 16, color: LIGHT_GRAY })],
+      children: [new TextRun({ text: 'Certified Korean Saju Counselor · Hundreds of verified readings', font: 'Noto Sans KR', size: 16, color: LIGHT_GRAY })],
     }));
   }
 

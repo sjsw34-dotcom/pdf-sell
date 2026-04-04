@@ -22,6 +22,11 @@ export function EbookCoverPage({ edition }: EbookCoverPageProps) {
 
         {/* 중앙: 타이틀 */}
         <View style={s.centerSection}>
+          {edition === 'workbook' && (
+            <View style={s.freeBadge}>
+              <Text style={s.freeBadgeText}>FREE WORKBOOK</Text>
+            </View>
+          )}
           <Text style={s.mainTitle}>{info.title}</Text>
           <View style={s.titleLine} />
           <Text style={s.subtitle}>{info.subtitle}</Text>
@@ -142,5 +147,20 @@ const s = StyleSheet.create({
     fontSize: 9,
     color: 'rgba(124, 58, 237, 0.6)',
     letterSpacing: 3,
+  },
+  freeBadge: {
+    backgroundColor: '#F59E0B',
+    borderRadius: 3,
+    paddingVertical: 4,
+    paddingHorizontal: 14,
+    marginBottom: 14,
+    alignSelf: 'center',
+  },
+  freeBadgeText: {
+    fontFamily: FONT_BODY,
+    fontSize: 9,
+    fontWeight: 'bold',
+    color: '#1A1A2E',
+    letterSpacing: 2,
   },
 });

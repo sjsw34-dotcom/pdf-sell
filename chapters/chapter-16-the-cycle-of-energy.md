@@ -12,7 +12,7 @@ cta: Want a professional life stage analysis for YOUR chart? → Get your person
 
 # Part 4: Timing and Cycles
 
-Welcome to the Full Edition.
+Welcome to the Master Edition.
 
 If you are reading this chapter, you have decided to go deeper — past the foundations of Part 1, past the element dynamics of Part 2, past the Ten Gods personality system of Part 3. You now have a solid conceptual toolkit: you can read a chart's structure, identify its Day Master, map the Ten Gods, and understand element balance.
 

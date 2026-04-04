@@ -1,7 +1,7 @@
 import React from 'react';
 import { Document } from '@react-pdf/renderer';
 import type { EbookEdition } from '@/lib/types/ebook';
-import { EBOOK_PARTS, EBOOK_CHAPTERS, EDITION_INFO, getPartForChapter } from '@/lib/types/ebook';
+import { EBOOK_PARTS, EBOOK_CHAPTERS, WORKBOOK_PARTS, WORKBOOK_CHAPTERS, EDITION_INFO, getPartForChapter } from '@/lib/types/ebook';
 import { EbookCoverPage } from './EbookCoverPage';
 import { EbookTocPage } from './EbookTocPage';
 import { EbookPartHeader } from './EbookPartHeader';
@@ -29,9 +29,11 @@ interface EbookDocumentProps {
 export function EbookDocument({ edition, chapters }: EbookDocumentProps) {
   const editionInfo = EDITION_INFO[edition];
   const includedChapters = editionInfo.chapters;
+  const isWorkbook = edition === 'workbook';
+  const allChapters = isWorkbook ? WORKBOOK_CHAPTERS : EBOOK_CHAPTERS;
 
   // 실제 콘텐츠가 있는 챕터만 렌더링
-  const chaptersToRender = EBOOK_CHAPTERS.filter(
+  const chaptersToRender = allChapters.filter(
     (ch) => includedChapters.includes(ch.number) && chapters[`chapter_${String(ch.number).padStart(2, '0')}`],
   );
 
@@ -55,7 +57,7 @@ export function EbookDocument({ edition, chapters }: EbookDocumentProps) {
       {chaptersToRender.map((ch) => {
         const key = `chapter_${String(ch.number).padStart(2, '0')}`;
         const chapterData = chapters[key];
-        const part = getPartForChapter(ch.number);
+        const part = getPartForChapter(ch.number, edition);
         const pages: React.ReactElement[] = [];
 
         // 새 파트 시작 시 파트 헤더 삽입
@@ -88,10 +90,14 @@ export function EbookDocument({ edition, chapters }: EbookDocumentProps) {
         return pages;
       })}
 
-      {/* 4. 부록 */}
-      <EbookAppendixA />
-      <EbookAppendixB />
-      <EbookAppendixC />
+      {/* 4. 부록 (워크북 제외) */}
+      {!isWorkbook && (
+        <>
+          <EbookAppendixA />
+          <EbookAppendixB />
+          <EbookAppendixC />
+        </>
+      )}
 
       {/* 5. 엔딩 */}
       <EbookEndingPage edition={edition} />

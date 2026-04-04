@@ -3,7 +3,7 @@ chapter: 23
 takeaways:
   - Gunghap (궁합) is the Korean tradition of compatibility reading — it compares two Saju charts to reveal the natural dynamic between two people, examining both attraction and friction
   - Day Master compatibility is the foundation of any relationship reading — the elemental relationship between two Day Masters (productive, controlling, companion, or draining) sets the baseline dynamic
-  - Heavenly Stem Harmony (천간합) identifies the six special bonding pairs where two stems naturally attract and combine — the 乙庚 (Yin Wood + Yang Metal) pair is one of the strongest compatibility signals in Saju
+  - Heavenly Stem Harmony (천간합) identifies the five special bonding pairs where two stems naturally attract and combine — the 乙庚 (Yin Wood + Yang Metal) pair is one of the strongest compatibility signals in Saju
   - Earthly Branch interactions reveal the practical, day-to-day texture of a relationship — harmonies create ease, while clashes produce friction that must be managed consciously
   - True compatibility is not about having identical charts or zero conflicts — it is about understanding the specific dynamic so both people can navigate strengths and challenges with awareness
 exercise: "If you have a partner, look up both Day Masters. Do they share the same element (companion)? Does one produce the other? Does one control the other? This single relationship tells you the foundational dynamic. Then check: does either person's dominant element happen to be the other's Useful God?"
@@ -101,7 +101,7 @@ A controlling Day Master relationship with excellent branch harmonies and Useful
 
 If Day Master compatibility tells you the *type* of relationship, Heavenly Stem Harmony tells you whether there is a special *magnetic pull* between two people. This is one of the most valued signals in traditional Gunghap.
 
-### The Six Stem Harmonies
+### The Five Stem Harmonies
 
 In Chapter 6, you learned that certain pairs of Heavenly Stems form natural combinations — they attract and bond when they meet. There are exactly five of these pairings.
 
@@ -117,7 +117,7 @@ Each pair is a Yin-Yang complementary match — one Yang stem pairs with one Yin
 
 ### Why Stem Harmony Matters in Relationships
 
-The significance of Stem Harmony in Gunghap cannot be overstated. When two people's Day Masters form one of these six pairings, traditional practitioners consider it the single strongest indicator of natural compatibility. It does not guarantee a smooth relationship — nothing does — but it suggests that the two people are drawn to each other in a way that goes beyond surface-level attraction.
+The significance of Stem Harmony in Gunghap cannot be overstated. When two people's Day Masters form one of these five pairings, traditional practitioners consider it the single strongest indicator of natural compatibility. It does not guarantee a smooth relationship — nothing does — but it suggests that the two people are drawn to each other in a way that goes beyond surface-level attraction.
 
 The mechanism, in Saju theory, works like this: each stem has inherent qualities that complement its harmonic partner. Yang Wood is expansive and growth-oriented; Yin Earth is nurturing and receptive. They complete each other. Yin Wood is gentle and adaptive; Yang Metal is decisive and strong. Again, complementarity.
 
@@ -125,7 +125,7 @@ Notice that several of these pairings involve elements that *control* each other
 
 ### When Stem Harmony Is Absent
 
-If two Day Masters do not form one of the six harmonic pairs, it does not mean the relationship is doomed. It simply means this particular layer of magnetic attraction is not present. Many happy, lasting relationships exist without Stem Harmony. The couple may bond through other layers — branch harmonies, Useful God alignment, or complementary Ten God structures.
+If two Day Masters do not form one of the five harmonic pairs, it does not mean the relationship is doomed. It simply means this particular layer of magnetic attraction is not present. Many happy, lasting relationships exist without Stem Harmony. The couple may bond through other layers — branch harmonies, Useful God alignment, or complementary Ten God structures.
 
 Think of Stem Harmony as a bonus — a powerful one, but not a requirement.
 
@@ -222,7 +222,7 @@ The assessment is a complementary dynamic with natural polarity. Chart F leads a
 
 Here is where this pairing becomes exceptional.
 
-乙 (Yin Wood) and 庚 (Yang Metal) form one of the six Heavenly Stem Harmonies. This is the 乙庚合 — they combine to produce Metal (金).
+乙 (Yin Wood) and 庚 (Yang Metal) form one of the five Heavenly Stem Harmonies. This is the 乙庚合 — they combine to produce Metal (金).
 
 This is the most important compatibility signal in this entire reading. When two Day Masters form a Stem Harmony, traditional Saju interpretation considers it a sign of profound natural attraction. These two people are, in the language of classical Saju, *meant to meet*. Their energies recognize and seek each other out.
 
@@ -291,7 +291,7 @@ Let us step back and see the complete Gunghap reading in one view.
 | Layer | Finding | Rating |
 |---|---|---|
 | Day Master relationship | Metal controls Wood — complementary polarity | Moderate-positive |
-| Heavenly Stem Harmony | 乙庚合 — one of the six special harmonies | Exceptional |
+| Heavenly Stem Harmony | 乙庚合 — one of the five special harmonies | Exceptional |
 | Earthly Branch interactions | Two clashes (丑未, 寅申), one harmony (巳申) | Challenging |
 | Ten Gods / Useful God | Each person's core element is the other's Unfavorable God; secondary elements provide support | Mixed |
 

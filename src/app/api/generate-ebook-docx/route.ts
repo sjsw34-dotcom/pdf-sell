@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
     const { buildEbookDocx } = await import('@/lib/docx/buildEbookDocx');
     const buffer = await buildEbookDocx(edition, chapters);
 
-    const slug = edition === 'kdp' ? 'korean-saju-decoded' : 'complete-guide-korean-saju';
+    const slug = edition === 'kdp' ? 'Korean-Saju-Decoded-Kindle-Edition' : 'Korean-Saju-Decoded-Master-Edition';
     const fileName = `${slug}.docx`;
 
     return new NextResponse(new Uint8Array(buffer), {

@@ -1,7 +1,7 @@
 # Book Table of Contents (목차)
 
-## The Complete Guide to Korean Saju (四柱)
-### Master the Four Pillars of Destiny: From Foundations to Advanced Reading
+## Korean Saju Decoded
+### Master the Four Pillars of Destiny
 
 ---
 
@@ -22,7 +22,7 @@
   > → Get your personalized 60+ page report at sajumuse.com/order"
 
 ### sajumuse.com 풀버전 — $99 (직접 판매)
-- **제목:** "The Complete Guide to Korean Saju (四柱): Master the Four Pillars of Destiny"
+- **제목:** "Korean Saju Decoded: Master the Four Pillars of Destiny"
 - **포함:** 전체 28챕터 (Part 1~7 + Appendix)
 - **분량:** ~300 pages
 - **보너스:**
@@ -38,7 +38,7 @@
 #### sajumuse.com/ebook 판매 페이지 구성
 ```
 ┌─────────────────────────────────────────────┐
-│  The Complete Guide to Korean Saju          │
+│  Korean Saju Decoded                        │
 │  Full Edition — 28 Chapters, 300+ Pages     │
 │                                             │
 │  [버튼 1] Get Full Edition — $99            │

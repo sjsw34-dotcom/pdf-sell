@@ -28,7 +28,7 @@ The Day Master represents three things. It is your fundamental nature, the insti
 
 Each Day Master is defined by its element (Wood, Fire, Earth, Metal, Water) and its polarity (Yang or Yin). These two qualities together create ten distinct archetypes.
 
-### Yang Wood 甲 (Gap) — The Tall Tree
+### Yang Wood 甲 (Gap) — The Towering Tree
 
 Yang Wood carries the image of an ancient oak, standing tall and straight. Yang Wood people are natural leaders. Like a great tree, they grow upward, always reaching for something higher. They are principled, upright, and direct. When they believe in something, they stand firm, even when the wind pushes hard.
 
@@ -48,7 +48,7 @@ In relationships, they are warm, attentive, and accommodating, though they can b
 
 Yin Wood thrives when it has something to cling to, whether a strong partner, a supportive team, or a stable environment. In isolation, it struggles. But given any support at all, it grows in remarkable directions.
 
-### Yang Fire 丙 (Byeong) — The Sun
+### Yang Fire 丙 (Byeong) — The Blazing Sun
 
 Yang Fire carries the image of the blazing sun at midday. Yang Fire people light up every room they enter. They are warm, generous, optimistic, and impossible to ignore. Like the sun, they radiate energy outward, giving freely and attracting others naturally.
 
@@ -58,7 +58,7 @@ In relationships, they are passionate, devoted, and demonstrative, though they c
 
 Yang Fire does not discriminate. The sun shines on everyone equally, which makes them beloved but sometimes naive about who deserves their warmth.
 
-### Yin Fire 丁 (Jeong) — The Candle
+### Yin Fire 丁 (Jeong) — The Candle Flame
 
 Yin Fire evokes a candle flame or a campfire. Yin Fire people have an intimate, focused warmth. Unlike the sun that illuminates everything, the candle lights only what is close. They are perceptive, intuitive, and deeply thoughtful, seeing details that others miss.
 
@@ -68,7 +68,7 @@ In relationships, they are deeply devoted but possessive. Their love is like a f
 
 Yin Fire needs fuel (Wood) to sustain itself. Without purpose or passion to feed on, the flame flickers and fades.
 
-### Yang Earth 戊 (Mu) — The Mountain
+### Yang Earth 戊 (Mu) — The Great Mountain
 
 Yang Earth carries the image of a great mountain, solid and unshakable. Yang Earth people are the most stable and reliable of all Day Masters. They are grounded, patient, and trustworthy. Like a mountain, they do not move for anyone, which makes them both a fortress and an obstacle.
 
@@ -161,7 +161,7 @@ The **Useful God** — which we will study in Chapter 7 — is the specific elem
 
 To see how the same Day Master produces different lives, let us compare two charts that share the same Day Master: 乙 (Yin Wood).
 
-### Chart A — Born 1960, Age 67
+### Chart A — Born 1960, Age 67 (Korean counting age)
 
 :::saju-chart Chart A (born 1960, female)
 [{"position":"Hour","stem":"甲","stemElement":"Yang Wood","stemGod":"Rob Wealth","branch":"申","branchAnimal":"Monkey","branchGod":"Dir. Officer"},{"position":"Day","stem":"乙","stemElement":"Yin Wood","stemGod":"Day Master","branch":"卯","branchAnimal":"Rabbit","branchGod":"Friend"},{"position":"Month","stem":"辛","stemElement":"Yin Metal","stemGod":"Ind. Officer","branch":"巳","branchAnimal":"Snake","branchGod":"Hurting Officer"},{"position":"Year","stem":"庚","stemElement":"Yang Metal","stemGod":"Dir. Officer","branch":"子","branchAnimal":"Rat","branchGod":"Ind. Seal"}]
@@ -171,9 +171,9 @@ The Day Master is 乙 (Yin Wood). The chart landscape shows Wood support from �
 
 This is a moderately strong Day Master. The vine has deep roots (卯) and a fellow tree (甲) for support, plus Water nourishment from below. But it faces constant Metal pressure, with authority, rules, and external demands pressing from two directions. The Useful God is Wood, providing more support to withstand the Metal.
 
-The man behind Chart A started life with considerable strength. The Wood support gave her confidence and independence. But the Metal pressure meant she always operated under significant authority, whether from family expectations, institutional roles, or social obligations. Her Grand Fortune cycles shifted from supportive Wood periods in her youth to challenging Metal/Earth periods in her later years, hence the description "started strong, became weak."
+The woman behind Chart A started life with considerable strength. The Wood support gave her confidence and independence. But the Metal pressure meant she always operated under significant authority, whether from family expectations, institutional roles, or social obligations. Her Grand Fortune cycles shifted from supportive Wood periods in her youth to challenging Metal/Earth periods in her later years, hence the description "started strong, became weak."
 
-### Chart B — Born 1996, Age 31
+### Chart B — Born 1996, Age 31 (Korean counting age)
 
 :::saju-chart Chart B (born 1996, female)
 [{"position":"Hour","stem":"丁","stemElement":"Yin Fire","stemGod":"Eating God","branch":"丑","branchAnimal":"Ox","branchGod":"Ind. Wealth"},{"position":"Day","stem":"乙","stemElement":"Yin Wood","stemGod":"Day Master","branch":"未","branchAnimal":"Goat","branchGod":"Ind. Wealth"},{"position":"Month","stem":"丙","stemElement":"Yang Fire","stemGod":"Hurting Officer","branch":"申","branchAnimal":"Monkey","branchGod":"Dir. Officer"},{"position":"Year","stem":"丙","stemElement":"Yang Fire","stemGod":"Hurting Officer","branch":"子","branchAnimal":"Rat","branchGod":"Ind. Seal"}]
