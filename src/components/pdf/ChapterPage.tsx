@@ -5,6 +5,8 @@ import { getThemeStyles } from './styles/themes';
 import { PageFooter } from './PageFooter';
 import { FONT_BODY } from './styles/pdfStyles';
 import { THEMES } from '@/lib/constants/themes';
+import { useLang } from './LanguageContext';
+import { t } from '@/lib/i18n/pdf-strings';
 
 interface ChapterPageProps {
   theme: ThemeCode;
@@ -29,32 +31,33 @@ function stripMarkdown(text: string): string {
 }
 
 export function ChapterPage({ theme, title, content, chapterNumber, chapterLabel, sectionTitle }: ChapterPageProps) {
-  const t = getThemeStyles(theme);
+  const ts = getThemeStyles(theme);
   const colors = THEMES[theme].colors;
+  const lang = useLang();
   const safeContent = stripMarkdown(content || '');
   const paragraphs = safeContent.split(/\n\n+/).filter((p) => p.trim() !== '');
 
-  const label = chapterLabel || (chapterNumber !== undefined ? `CHAPTER ${chapterNumber}` : undefined);
+  const label = chapterLabel || (chapterNumber !== undefined ? `${t('chapter.label', lang)} ${chapterNumber}` : undefined);
 
   return (
-    <Page size="A4" style={t.page} wrap>
+    <Page size="A4" style={ts.page} wrap>
       <View style={s.header}>
         {label && (
-          <Text style={t.label}>{label}</Text>
+          <Text style={ts.label}>{label}</Text>
         )}
-        <Text style={t.title}>{title || ''}</Text>
+        <Text style={ts.title}>{title || ''}</Text>
         {sectionTitle && (
           <Text style={[s.sectionTitle, { color: colors.textSecondary }]}>{sectionTitle}</Text>
         )}
-        <View style={t.divider} />
+        <View style={ts.divider} />
       </View>
 
       <View style={s.body} wrap>
         {paragraphs.length > 0
           ? paragraphs.map((paragraph, idx) => (
-              <Text key={idx} style={t.body}>{paragraph.trim()}</Text>
+              <Text key={idx} style={ts.body}>{paragraph.trim()}</Text>
             ))
-          : <Text style={t.body}> </Text>
+          : <Text style={ts.body}> </Text>
         }
       </View>
 

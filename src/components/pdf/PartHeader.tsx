@@ -4,6 +4,8 @@ import type { ThemeCode } from '@/lib/types/theme';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
 import { PageFooter } from './PageFooter';
+import { useLang } from './LanguageContext';
+import { t } from '@/lib/i18n/pdf-strings';
 
 interface PartHeaderProps {
   theme: ThemeCode;
@@ -14,6 +16,7 @@ interface PartHeaderProps {
 
 export function PartHeader({ theme, partNumber, title, subtitle }: PartHeaderProps) {
   const colors = THEMES[theme].colors;
+  const lang = useLang();
   const num = String(partNumber).padStart(2, '0');
 
   return (
@@ -24,7 +27,7 @@ export function PartHeader({ theme, partNumber, title, subtitle }: PartHeaderPro
 
         {/* PART 번호 */}
         <View style={s.partRow}>
-          <Text style={[s.partLabel, { color: colors.textSecondary }]}>PART</Text>
+          <Text style={[s.partLabel, { color: colors.textSecondary }]}>{t('part.label', lang)}</Text>
           <Text style={[s.partNumber, { color: colors.primary }]}>{num}</Text>
         </View>
 

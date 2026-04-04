@@ -4,6 +4,8 @@ import type { ThemeCode } from '@/lib/types/theme';
 import type { YongsinData } from '@/lib/types/saju';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
+import { useLang } from './LanguageContext';
+import { t } from '@/lib/i18n/pdf-strings';
 
 // ─── 오행 매핑 ───
 
@@ -23,6 +25,14 @@ const YONGSIN_LABELS = [
   { key: 'hansin' as const, en: 'Neutral Element', ko: '한신', hanja: '閑神' },
 ] as const;
 
+const YONGSIN_I18N_KEY: Record<string, string> = {
+  yongsin: 'yongsin.favorable', huisin: 'yongsin.joyful', gisin: 'yongsin.unfavorable', gusin: 'yongsin.antagonistic', hansin: 'yongsin.neutral',
+};
+
+const ELEMENT_DESC_KEY: Record<string, string> = {
+  '木': 'el.wood', '火': 'el.fire', '土': 'el.earth', '金': 'el.metal', '水': 'el.water',
+};
+
 interface YongsinChartProps {
   theme: ThemeCode;
   yongsin: YongsinData;
@@ -30,13 +40,14 @@ interface YongsinChartProps {
 
 export function YongsinChart({ theme, yongsin }: YongsinChartProps) {
   const colors = THEMES[theme].colors;
+  const lang = useLang();
 
   return (
     <View style={s.container}>
-      {/* 타이틀 — 영어 우선 */}
-      <Text style={[s.mainTitle, { color: colors.text }]}>Favorable Element Analysis</Text>
-      <Text style={[s.mainTitleSub, { color: colors.textSecondary }]}>용신분석 · 用神分析</Text>
-      <Text style={[s.subText, { color: colors.textSecondary }]}>Balance and Harmony of the Five Elements</Text>
+      {/* 타이틀 */}
+      <Text style={[s.mainTitle, { color: colors.text }]}>{t('yongsin.title', lang)}</Text>
+      <Text style={[s.mainTitleSub, { color: colors.textSecondary }]}>{t('yongsin.subtitle', lang)}</Text>
+      <Text style={[s.subText, { color: colors.textSecondary }]}>{t('yongsin.subText', lang)}</Text>
 
       <View style={s.spacer16} />
 
@@ -47,11 +58,12 @@ export function YongsinChart({ theme, yongsin }: YongsinChartProps) {
           const info = ELEMENT_INFO[element];
           const elColor = info ? info.color : '#999';
           const hanjaChar = info ? info.hanja : '—';
+          const badgeSub = lang === 'ko' ? `(${label.hanja})` : `(${label.ko} · ${label.hanja})`;
 
           return (
             <View key={label.key} style={s.badgeItem}>
-              <Text style={[s.badgeLabel, { color: colors.textSecondary }]}>{label.en}</Text>
-              <Text style={[s.badgeLabelSub, { color: colors.textSecondary }]}>({label.ko} · {label.hanja})</Text>
+              <Text style={[s.badgeLabel, { color: colors.textSecondary }]}>{t(YONGSIN_I18N_KEY[label.key], lang)}</Text>
+              <Text style={[s.badgeLabelSub, { color: colors.textSecondary }]}>{badgeSub}</Text>
               <Text style={[s.badgeHanja, { color: elColor }]}>{hanjaChar}</Text>
             </View>
           );
@@ -66,14 +78,15 @@ export function YongsinChart({ theme, yongsin }: YongsinChartProps) {
         const info = ELEMENT_INFO[element];
         const elText = info ? `${info.classical} (${info.hanja})` : element || '—';
         const elColor = info ? info.color : '#999';
-        const desc = info ? info.en : '';
+        const desc = info ? t(ELEMENT_DESC_KEY[element] || '', lang) : '';
+        const rowLabelSub = lang === 'ko' ? `(${label.hanja})` : `(${label.ko} · ${label.hanja})`;
 
         return (
           <View key={label.key} style={[s.row, { borderBottomColor: colors.border }]}>
             <View style={[s.bullet, { backgroundColor: elColor }]} />
             <View style={s.rowContent}>
               <Text style={[s.rowLabel, { color: colors.text }]}>
-                {label.en} ({label.ko} · {label.hanja}):
+                {t(YONGSIN_I18N_KEY[label.key], lang)} {rowLabelSub}:
               </Text>
               <Text style={[s.rowValue, { color: elColor }]}>{elText}</Text>
               {desc ? <Text style={[s.rowDesc, { color: colors.textSecondary }]}>{desc}</Text> : null}
@@ -87,17 +100,17 @@ export function YongsinChart({ theme, yongsin }: YongsinChartProps) {
       {/* 용신 체계 이상 경고 — 모든 모순 조합 감지 */}
       {yongsin.yongsin && yongsin.gisin && yongsin.yongsin === yongsin.gisin && (
         <View style={[s.anomalyBox, { borderLeftColor: '#E67E22', backgroundColor: colors.surface }]}>
-          <Text style={[s.anomalyTitle, { color: '#E67E22' }]}>Special Note</Text>
+          <Text style={[s.anomalyTitle, { color: '#E67E22' }]}>{t('yongsin.specialNote', lang)}</Text>
           <Text style={[s.anomalyText, { color: colors.text }]}>
-            Your Favorable Element (용신 · 用神) and Unfavorable Element (기신 · 忌神) share the same element: {ELEMENT_INFO[yongsin.yongsin]?.classical || yongsin.yongsin} ({yongsin.yongsin}). This rare configuration means this element plays a dual role in your chart — it is both needed for balance and potentially disruptive when in excess. The detailed analysis sections explain how to navigate this unique energetic dynamic.
+            {t('yongsin.anomalyYongGi', lang, { element: ELEMENT_INFO[yongsin.yongsin]?.classical || yongsin.yongsin, hanja: yongsin.yongsin })}
           </Text>
         </View>
       )}
       {yongsin.huisin && yongsin.gusin && yongsin.huisin === yongsin.gusin && (
         <View style={[s.anomalyBox, { borderLeftColor: '#E67E22', backgroundColor: colors.surface }]}>
-          <Text style={[s.anomalyTitle, { color: '#E67E22' }]}>Special Note</Text>
+          <Text style={[s.anomalyTitle, { color: '#E67E22' }]}>{t('yongsin.specialNote', lang)}</Text>
           <Text style={[s.anomalyText, { color: colors.text }]}>
-            Your Joyful Element (희신 · 喜神) and Antagonistic Element (구신 · 仇神) share the same element: {ELEMENT_INFO[yongsin.huisin]?.classical || yongsin.huisin} ({yongsin.huisin}). This unusual pairing indicates that this element can be both a subtle ally and a source of friction depending on its strength and timing. The analysis sections provide specific guidance on how to work with this duality.
+            {t('yongsin.anomalyHuiGu', lang, { element: ELEMENT_INFO[yongsin.huisin]?.classical || yongsin.huisin, hanja: yongsin.huisin })}
           </Text>
         </View>
       )}
@@ -105,7 +118,7 @@ export function YongsinChart({ theme, yongsin }: YongsinChartProps) {
       {/* 해설 */}
       <View style={[s.noteBox, { backgroundColor: colors.surface }]}>
         <Text style={[s.note, { color: colors.text }]}>
-          The Favorable Element (용신 · 用神) is the energy that brings balance to your chart. The Joyful Element (희신 · 喜神) supports it. When these elements are strong in your environment, career, or relationships, positive outcomes are more likely.
+          {t('yongsin.noteText', lang)}
         </Text>
       </View>
     </View>

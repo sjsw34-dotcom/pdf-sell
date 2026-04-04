@@ -3,10 +3,15 @@ import type { TierCode } from '@/lib/types/tier';
 import type { SajuData } from '@/lib/types/saju';
 import { TIER_CODES } from '@/lib/types/tier';
 import { filterByTier } from '@/lib/utils/filterByTier';
+import { validateApiKey } from '@/lib/api-auth';
 
 export const maxDuration = 120;
 
 export async function POST(request: NextRequest) {
+  // 0. API key 검증
+  const authError = validateApiKey(request);
+  if (authError) return authError;
+
   // 1. body 파싱
   let body: unknown;
   try {
@@ -72,6 +77,7 @@ export async function POST(request: NextRequest) {
   const partKey = b.partKey as string;
   const additionalRequest = (b.additionalRequest as string | null) ?? null;
   const skipCache = b.skipCache === true;
+  const language = (b.language === 'ko' ? 'ko' : 'en') as 'en' | 'ko';
 
   // 3. 티어별 데이터 필터링
   const filtered = filterByTier(tier, sajuData);
@@ -87,6 +93,7 @@ export async function POST(request: NextRequest) {
       additionalRequest,
       clientName,
       skipCache,
+      language,
     });
 
     if (text === null) {

@@ -31,6 +31,11 @@ const PART_KEYS: Record<TierCode, string[]> = {
     'year_2025', 'year_2026', 'year_2027', 'year_2028', 'year_2029',
     'year_2030', 'year_2031', 'year_2032', 'year_2033', 'year_2034', 'year_2035',
   ],
+  monthly: [
+    'monthly_message', 'monthly_overview', 'monthly_overview_2',
+    'monthly_cautions', 'monthly_lucky_dates', 'monthly_lucky_items',
+    'monthly_tips', 'monthly_tips_2',
+  ],
 };
 
 export function getPartKeysForTier(tier: TierCode): string[] {

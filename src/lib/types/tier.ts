@@ -1,6 +1,6 @@
 import type { RawTabKey } from './saju';
 
-export const TIER_CODES = ['basic', 'love', 'full', 'premium'] as const;
+export const TIER_CODES = ['basic', 'love', 'full', 'premium', 'monthly'] as const;
 export type TierCode = (typeof TIER_CODES)[number];
 
 export interface TierPricing {
@@ -55,5 +55,14 @@ export const TIER_CONFIGS: Record<TierCode, TierConfig> = {
     estimatedPages: '~150p',
     estimatedTime: '2 ~ 4min',
     description: 'Everything included — yearly & monthly fortune details',
+  },
+  monthly: {
+    code: 'monthly',
+    label: 'Monthly',
+    pricing: { min: 0, max: 0, currency: 'USD' },
+    sections: ['info', 'pillar', 'yongsin', 'yinyang', 'wolun'],
+    estimatedPages: '~12p',
+    estimatedTime: '30s ~ 1min',
+    description: 'Monthly fortune report for AmorMuse subscribers',
   },
 } as const;

@@ -4,6 +4,9 @@ import type { ThemeCode } from '@/lib/types/theme';
 import type { TierCode } from '@/lib/types/tier';
 import { THEMES } from '@/lib/constants/themes';
 import { FONT_BODY, FONT_TITLE, FONT_CJK, ANTI_LIGATURE } from './styles/pdfStyles';
+import { useShowBrand } from './BrandContext';
+import { useLang } from './LanguageContext';
+import { t } from '@/lib/i18n/pdf-strings';
 
 interface EndingPageProps {
   theme: ThemeCode;
@@ -13,7 +16,9 @@ interface EndingPageProps {
 
 export function EndingPage({ theme, name, tier }: EndingPageProps) {
   const colors = THEMES[theme].colors;
-  const showUpsell = tier === 'basic' || tier === 'love';
+  const showBrand = useShowBrand();
+  const lang = useLang();
+  const showUpsell = (tier === 'basic' || tier === 'love') && showBrand;
 
   return (
     <>
@@ -21,66 +26,57 @@ export function EndingPage({ theme, name, tier }: EndingPageProps) {
       <Page size="A4" style={[s.page, { backgroundColor: colors.background }]}>
         <View style={s.closingContent}>
           <View style={s.closingCenter}>
-            <Text style={[s.closingLabel, { color: colors.secondary }]}>Closing Thoughts</Text>
+            <Text style={[s.closingLabel, { color: colors.secondary }]}>{t('ending.closingLabel', lang)}</Text>
 
             <View style={[s.line, { backgroundColor: colors.border }]} />
 
             <Text style={[s.closingMain, { color: colors.primary }]}>
-              {name || 'Dear reader'}, your Saju analysis is now complete.
+              {t('ending.closingMain', lang, { name: name || 'Dear reader' })}
             </Text>
 
             <View style={s.spacer16} />
 
             <Text style={[s.closingBody, { color: colors.text }]}>
-              May this report serve as a guiding light on your journey.
+              {t('ending.closingBody1', lang)}
             </Text>
             <Text style={[s.closingBody, { color: colors.text }]}>
-              Understanding your destiny is the first step to shaping it.
+              {t('ending.closingBody2', lang)}
             </Text>
 
             <View style={[s.line, { backgroundColor: colors.border }]} />
 
-            <Text style={[s.closingBrand, { color: colors.primary }]}>SajuMuse</Text>
+            {showBrand && <Text style={[s.closingBrand, { color: colors.primary }]}>SajuMuse</Text>}
           </View>
         </View>
 
         <View style={[s.footer, { borderTopColor: colors.border }]}>
-          <Text style={[s.footerText, { color: colors.textSecondary }]}>SajuMuse</Text>
+          <Text style={[s.footerText, { color: colors.textSecondary }]}>{showBrand ? 'SajuMuse' : ' '}</Text>
         </View>
       </Page>
 
-      {/* ══════ 업셀 CTA 페이지 (Basic/Love 전용) ══════ */}
+      {/* ══════ 업셀 CTA 페이지 (Basic/Love 전용, 브랜드 ON일 때만) ══════ */}
       {showUpsell && (
         <Page size="A4" style={[s.page, { backgroundColor: colors.background }]}>
           <View style={s.upsellContent}>
             <View style={s.upsellCenter}>
-              <Text style={[s.upsellLabel, { color: colors.secondary }]}>UNLOCK YOUR FULL DESTINY</Text>
+              <Text style={[s.upsellLabel, { color: colors.secondary }]}>{t('ending.upsellLabel', lang)}</Text>
 
               <View style={s.spacer16} />
 
               <Text style={[s.upsellTitle, { color: colors.primary }]}>
-                Want to discover more about your destiny?
+                {t('ending.upsellTitle', lang)}
               </Text>
 
               <View style={s.spacer24} />
 
               <Text style={[s.upsellBody, { color: colors.text }]}>
-                Upgrade to the Premium Report for a comprehensive 60+ page analysis including:
+                {t('ending.upsellBody', lang)}
               </Text>
 
               <View style={s.spacer16} />
 
               <View style={s.featureList}>
-                {[
-                  '10-Year Fortune Cycle — Year-by-year destiny forecast',
-                  'Monthly Fortune Analysis — Detailed monthly guidance',
-                  'Career Compatibility — Best career paths for your chart',
-                  'Romance & Marriage Timing — When love stars align',
-                  'Financial Fortune — Wealth accumulation strategies',
-                  'Health Constitution — Wellness insights from your chart',
-                  'Spirit Stars Analysis — Hidden cosmic influences',
-                  'Destiny Modification Guide — How to shape your future',
-                ].map((feature, i) => (
+                {([1, 2, 3, 4, 5, 6, 7, 8] as const).map((n) => t(`ending.feature${n}`, lang)).map((feature, i) => (
                   <View key={i} style={s.featureItem}>
                     <Text style={[s.featureBullet, { color: colors.primary }]}>-</Text>
                     <Text style={[s.featureText, { color: colors.text }]}>{feature}</Text>
@@ -91,7 +87,7 @@ export function EndingPage({ theme, name, tier }: EndingPageProps) {
               <View style={s.spacer24} />
 
               <View style={[s.ctaBox, { backgroundColor: colors.primary }]}>
-                <Text style={s.ctaText}>Visit SajuMuse.com to upgrade your report</Text>
+                <Text style={s.ctaText}>{t('ending.ctaText', lang)}</Text>
               </View>
             </View>
           </View>
@@ -106,32 +102,32 @@ export function EndingPage({ theme, name, tier }: EndingPageProps) {
       <Page size="A4" style={s.backCoverPage}>
         <View style={[s.backCover, { backgroundColor: colors.primary }]}>
           <View style={s.backCoverCenter}>
-            <Text style={s.backBrand}>SajuMuse</Text>
+            {showBrand && <Text style={s.backBrand}>SajuMuse</Text>}
 
             <View style={s.backLine} />
 
-            <Text style={s.backSubtitle}>사주팔자 · Four Pillars of Destiny</Text>
+            <Text style={s.backSubtitle}>{t('cover.subtitle', lang)}</Text>
 
             <View style={s.spacer24} />
 
-            <Text style={s.backTitle}>DESTINY ANALYSIS</Text>
-            <Text style={s.backTitle}>REPORT</Text>
+            <Text style={s.backTitle}>{t('cover.mainTitle1', lang)}</Text>
+            <Text style={s.backTitle}>{t('cover.mainTitle2', lang)}</Text>
 
             <View style={s.spacer12} />
 
-            <Text style={s.backSubtitleKo}>운명 분석서</Text>
+            <Text style={s.backSubtitleKo}>{t('cover.subtitleKo', lang)}</Text>
 
             <View style={s.backLine} />
 
             <View style={s.spacer24} />
 
-            <Text style={s.backPrepared}>Prepared for</Text>
-            <Text style={s.backName}>{name || 'Guest'}</Text>
+            <Text style={s.backPrepared}>{t('cover.preparedFor', lang)}</Text>
+            <Text style={s.backName}>{name || t('cover.valuedGuest', lang)}</Text>
 
             <View style={s.spacer24} />
 
             <View style={s.backFooterLine} />
-            <Text style={s.backFooter}>SajuMuse</Text>
+            {showBrand && <Text style={s.backFooter}>SajuMuse</Text>}
           </View>
         </View>
       </Page>

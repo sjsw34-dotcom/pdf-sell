@@ -6,20 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "typecheck": "tsc --noEmit",
-    "ebook": "tsx scripts/build-ebook.ts",
-    "ebook:docx": "tsx scripts/build-ebook.ts --format docx",
-    "ebook:pdf": "tsx scripts/build-ebook.ts --format pdf",
-    "ebook:both": "tsx scripts/build-ebook.ts --format both",
-    "ebook:preview": "tsx scripts/build-ebook.ts --chapter",
-    "ebook:status": "tsx scripts/build-ebook.ts --status"
+    "lint": "eslint"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
     "@neondatabase/serverless": "^1.0.2",
     "@react-pdf/renderer": "^4.3.2",
-    "docx": "^9.6.1",
+    "lunar-typescript": "^1.8.6",
     "next": "16.1.6",
     "nodemailer": "^8.0.2",
     "react": "19.2.3",
@@ -36,7 +29,6 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
-    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }

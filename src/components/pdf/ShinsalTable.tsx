@@ -5,6 +5,8 @@ import type { ShinsalData, PillarPosition } from '@/lib/types/saju';
 import { THEMES } from '@/lib/constants/themes';
 import { getShinsalSentiment, SHINSAL_EN } from '@/lib/constants/terms';
 import { FONT_BODY, FONT_TITLE, FONT_CJK } from './styles/pdfStyles';
+import { useLang } from './LanguageContext';
+import { t } from '@/lib/i18n/pdf-strings';
 
 const PILLAR_LABELS: Record<PillarPosition, { en: string; ko: string }> = {
   hour: { en: 'Hour', ko: '시주' },
@@ -22,6 +24,7 @@ interface ShinsalTableProps {
 
 export function ShinsalTable({ theme, shinsal }: ShinsalTableProps) {
   const colors = THEMES[theme].colors;
+  const lang = useLang();
 
   const sentimentColor: Record<string, string> = {
     positive: colors.positive,
@@ -31,24 +34,24 @@ export function ShinsalTable({ theme, shinsal }: ShinsalTableProps) {
 
   return (
     <View style={s.container}>
-      <Text style={[s.chartTitle, { color: colors.text }]}>SPIRIT STARS</Text>
-      <Text style={[s.chartSubtitle, { color: colors.textSecondary }]}>神殺 · Shinsal Analysis</Text>
+      <Text style={[s.chartTitle, { color: colors.text }]}>{t('shinsal.title', lang)}</Text>
+      <Text style={[s.chartSubtitle, { color: colors.textSecondary }]}>{t('shinsal.subtitle', lang)}</Text>
 
       {/* 공망 / 천을귀인 / 월령 */}
       <View style={s.infoRow}>
         <View style={[s.infoItem, { backgroundColor: colors.surface }]}>
-          <Text style={[s.infoLabel, { color: colors.primary }]}>Void (空亡)</Text>
+          <Text style={[s.infoLabel, { color: colors.primary }]}>{t('shinsal.void', lang)}</Text>
           <Text style={[s.infoValue, { color: colors.text }]}>
             Year: {shinsal.gongmang.year.join('')}{'  '}
             Day: {shinsal.gongmang.day.join('')}
           </Text>
         </View>
         <View style={[s.infoItem, { backgroundColor: colors.surface }]}>
-          <Text style={[s.infoLabel, { color: colors.primary }]}>Guardian Noble (天乙貴人)</Text>
+          <Text style={[s.infoLabel, { color: colors.primary }]}>{t('shinsal.guardianNoble', lang)}</Text>
           <Text style={[s.infoValue, { color: colors.text }]}>{shinsal.cheonEulGwiIn}</Text>
         </View>
         <View style={[s.infoItem, { backgroundColor: colors.surface }]}>
-          <Text style={[s.infoLabel, { color: colors.primary }]}>Monthly Ruler (월령)</Text>
+          <Text style={[s.infoLabel, { color: colors.primary }]}>{t('shinsal.monthlyRuler', lang)}</Text>
           <Text style={[s.infoValue, { color: colors.text }]}>{shinsal.wolryeong}</Text>
         </View>
       </View>
@@ -61,40 +64,40 @@ export function ShinsalTable({ theme, shinsal }: ShinsalTableProps) {
         </View>
         {POSITIONS.map((pos) => (
           <View key={pos} style={s.tableHeaderCell}>
-            <Text style={s.headerText}>{PILLAR_LABELS[pos].en}</Text>
-            <Text style={s.headerSub}>{PILLAR_LABELS[pos].ko}</Text>
+            <Text style={s.headerText}>{lang === 'ko' ? PILLAR_LABELS[pos].ko : PILLAR_LABELS[pos].en}</Text>
+            <Text style={s.headerSub}>{lang === 'ko' ? '' : PILLAR_LABELS[pos].ko}</Text>
           </View>
         ))}
       </View>
 
       {/* 공망위치 */}
-      {renderTableRow('Void Position', POSITIONS.map((pos) => {
+      {renderTableRow(t('shinsal.voidPosition', lang), POSITIONS.map((pos) => {
         const val = shinsal.pillars[pos].gongmangPosition;
         return { text: val || '—', sentiment: 'neutral' };
       }), colors)}
 
       {/* 12신살 년지기준 */}
-      {renderTableRow('12 Stars (Year)', POSITIONS.map((pos) => {
+      {renderTableRow(t('shinsal.12starsYear', lang), POSITIONS.map((pos) => {
         const val = shinsal.pillars[pos].twelveShinsalByYear;
         return { text: val ? (SHINSAL_EN[val] ?? val) : '—', sub: val || '', sentiment: val ? getShinsalSentiment(val) : 'neutral' };
       }), colors)}
 
       {/* 12신살 일지기준 */}
-      {renderTableRow('12 Stars (Day)', POSITIONS.map((pos) => {
+      {renderTableRow(t('shinsal.12starsDay', lang), POSITIONS.map((pos) => {
         const val = shinsal.pillars[pos].twelveShinsalByDay;
         return { text: val ? (SHINSAL_EN[val] ?? val) : '—', sub: val || '', sentiment: val ? getShinsalSentiment(val) : 'neutral' };
       }), colors)}
 
       {/* 세부신살 */}
       <View style={s.detailSection}>
-        <Text style={[s.detailTitle, { color: colors.primary }]}>DETAILED STARS BY PILLAR</Text>
+        <Text style={[s.detailTitle, { color: colors.primary }]}>{t('shinsal.detailedTitle', lang)}</Text>
         <View style={s.detailGrid}>
           {POSITIONS.filter((pos) => shinsal.pillars[pos].detailedShinsals.length > 0).map((pos) => {
             const shinsals = shinsal.pillars[pos].detailedShinsals;
             return (
               <View key={pos} style={s.detailCol}>
                 <Text style={[s.detailColHeader, { color: colors.primary, borderBottomColor: colors.border }]}>
-                  {PILLAR_LABELS[pos].en}
+                  {lang === 'ko' ? PILLAR_LABELS[pos].ko : PILLAR_LABELS[pos].en}
                 </Text>
                 {shinsals.map((name, i) => {
                   const sentiment = getShinsalSentiment(name);
@@ -120,15 +123,15 @@ export function ShinsalTable({ theme, shinsal }: ShinsalTableProps) {
       <View style={s.legend}>
         <View style={s.legendItem}>
           <View style={[s.legendDot, { backgroundColor: colors.positive }]} />
-          <Text style={[s.legendText, { color: colors.textSecondary }]}>Positive</Text>
+          <Text style={[s.legendText, { color: colors.textSecondary }]}>{t('shinsal.positive', lang)}</Text>
         </View>
         <View style={s.legendItem}>
           <View style={[s.legendDot, { backgroundColor: colors.neutral }]} />
-          <Text style={[s.legendText, { color: colors.textSecondary }]}>Neutral</Text>
+          <Text style={[s.legendText, { color: colors.textSecondary }]}>{t('shinsal.neutral', lang)}</Text>
         </View>
         <View style={s.legendItem}>
           <View style={[s.legendDot, { backgroundColor: colors.caution }]} />
-          <Text style={[s.legendText, { color: colors.textSecondary }]}>Caution</Text>
+          <Text style={[s.legendText, { color: colors.textSecondary }]}>{t('shinsal.caution', lang)}</Text>
         </View>
       </View>
     </View>

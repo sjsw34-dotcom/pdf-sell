@@ -1,10 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -n \"| --- |\" /c/아빠/사주/강의/코딩/saju_book/chapters/chapter-*.md)",
-      "Bash(grep -n \"| --- |\" /c/아빠/사주/강의/코딩/saju_book/chapters-workbook/chapter-*.md)",
-      "Bash(wc:*)",
-      "Bash(cd:*)"
+      "Bash(npm install:*)",
+      "Bash(node:*)",
+      "Bash(vercel --prod)"
     ]
   }
 }

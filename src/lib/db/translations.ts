@@ -1,4 +1,4 @@
-import { sql } from './neon';
+import { getSQL } from './neon';
 import type { PillarData } from '@/lib/types/saju';
 
 // ─── Chart Hash ───
@@ -36,7 +36,7 @@ export async function findCachedTranslation(
   tier: string,
 ): Promise<CachedTranslation | null> {
   try {
-    const rows = await sql`
+    const rows = await getSQL()`
       SELECT t.id, t.text
       FROM translations t
       JOIN saju_charts c ON c.id = t.chart_id
@@ -76,7 +76,7 @@ export async function saveTranslation(
     const pillarJsonStr = JSON.stringify(chart.pillarJson);
 
     // upsert chart
-    const chartRows = await sql`
+    const chartRows = await getSQL()`
       INSERT INTO saju_charts (chart_hash, day_master, strength, yongsin_el, gender, pillar_json)
       VALUES (${chart.chartHash}, ${chart.dayMaster}, ${chart.strength}, ${chart.yongsinEl}, ${chart.gender}, ${pillarJsonStr}::jsonb)
       ON CONFLICT (chart_hash) DO UPDATE SET chart_hash = EXCLUDED.chart_hash
@@ -85,7 +85,7 @@ export async function saveTranslation(
     const chartId = chartRows[0].id;
 
     // upsert translation
-    await sql`
+    await getSQL()`
       INSERT INTO translations (chart_id, part_key, tier, text, model_version)
       VALUES (${chartId}, ${partKey}, ${tier}, ${text}, ${modelVersion})
       ON CONFLICT (chart_id, part_key, tier)
@@ -105,7 +105,7 @@ export async function updateQuality(
 ): Promise<void> {
   const hasErrors = quality === 'bad';
   const errorNotes = notes ?? null;
-  await sql`
+  await getSQL()`
     UPDATE translations SET quality = ${quality}, has_errors = ${hasErrors}, error_notes = ${errorNotes} WHERE id = ${translationId}
   `;
 }

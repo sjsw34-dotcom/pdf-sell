@@ -48,10 +48,19 @@ export const TIERS = {
     priceRange: { min: 99, max: 149 },
     description: 'Everything included — yearly & monthly fortune details',
   },
+  monthly: {
+    code: 'monthly',
+    label: 'Monthly',
+    sections: ['info', 'pillar', 'yongsin', 'yinyang', 'wolun'],
+    pdfParts: 8,
+    estimatedPages: '~12p',
+    priceRange: { min: 0, max: 0 },
+    description: 'Monthly fortune report for AmorMuse subscribers',
+  },
 } as const satisfies Record<TierCode, TierDefinition>;
 
 /** 티어 코드 배열 (순서: basic → premium) */
-export const TIER_ORDER: readonly TierCode[] = ['basic', 'love', 'full', 'premium'];
+export const TIER_ORDER: readonly TierCode[] = ['basic', 'love', 'full', 'premium', 'monthly'];
 
 /** 티어 코드로 해당 티어에 필요한 섹션 목록 반환 */
 export function getTierSections(tier: TierCode): readonly RawTabKey[] {

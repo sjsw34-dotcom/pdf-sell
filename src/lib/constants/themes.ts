@@ -98,12 +98,32 @@ export const THEMES = {
     },
     coverStyle: 'gradient',
   },
+  amormuse: {
+    code: 'amormuse',
+    label: 'AmorMuse',
+    colors: {
+      primary: '#B89FFA',         // 라벤더 퍼플
+      secondary: '#7C5CBF',       // 딥 퍼플
+      accent: '#F59E0B',          // 골드 액센트
+      background: '#0F0D1A',      // 다크 배경
+      surface: '#1A1630',         // 다크 서피스
+      text: '#E8E0F0',            // 라이트 퍼플 화이트
+      textSecondary: '#9A8BC2',   // 뮤트 퍼플
+      border: '#2A2545',          // 다크 퍼플 보더
+      positive: '#A78BFA',        // 소프트 퍼플
+      neutral: '#60A5FA',         // 블루
+      caution: '#F59E0B',         // 골드
+    },
+    coverStyle: 'dark',
+  },
 } as const satisfies Record<ThemeCode, ThemeDefinition>;
 
-/** Love 티어는 love 테마 강제 */
+/** Love 티어는 love 테마, Monthly 티어는 amormuse 테마 강제 */
 export function getThemeForTier(
   selectedTheme: ThemeCode,
   tier: string,
 ): ThemeCode {
-  return tier === 'love' ? 'love' : selectedTheme;
+  if (tier === 'love') return 'love';
+  if (tier === 'monthly') return 'amormuse';
+  return selectedTheme;
 }

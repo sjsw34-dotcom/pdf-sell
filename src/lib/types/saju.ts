@@ -62,7 +62,7 @@ export const TWELVE_STAGES = [
 export type TwelveStage = (typeof TWELVE_STAGES)[number];
 
 export const STRENGTH_LEVELS = [
-  '극신약', '신약', '중화', '신강', '극신강',
+  '극신약', '신약', '중신약', '강변약', '중화', '약변강', '신강', '중신강', '극신강',
 ] as const;
 export type StrengthLevel = (typeof STRENGTH_LEVELS)[number];
 
