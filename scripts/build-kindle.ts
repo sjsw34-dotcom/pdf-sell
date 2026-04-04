@@ -53,7 +53,7 @@ const KINDLE_BOOKS: KindleBook[] = [
   {
     id: 'a1-wood', series: 'a', element: 'wood',
     title: 'Wood People',
-    subtitle: "The Grower's Guide to Life, Love & Career",
+    subtitle: "A Korean Astrology Guide to Life, Love & Career for the Growth Element",
     price: '$4.99',
     chaptersDir: 'chapters-kindle-a/book-a1-wood',
     outputFile: 'wood-people',
@@ -61,7 +61,7 @@ const KINDLE_BOOKS: KindleBook[] = [
   {
     id: 'a2-fire', series: 'a', element: 'fire',
     title: 'Fire People',
-    subtitle: 'The Spark That Lights Everything Up',
+    subtitle: 'A Korean Astrology Guide to Life, Love & Career for the Passion Element',
     price: '$4.99',
     chaptersDir: 'chapters-kindle-a/book-a2-fire',
     outputFile: 'fire-people',
@@ -69,7 +69,7 @@ const KINDLE_BOOKS: KindleBook[] = [
   {
     id: 'a3-earth', series: 'a', element: 'earth',
     title: 'Earth People',
-    subtitle: 'The Steady Force Behind Every Foundation',
+    subtitle: 'A Korean Astrology Guide to Life, Love & Career for the Stability Element',
     price: '$4.99',
     chaptersDir: 'chapters-kindle-a/book-a3-earth',
     outputFile: 'earth-people',
@@ -77,7 +77,7 @@ const KINDLE_BOOKS: KindleBook[] = [
   {
     id: 'a4-metal', series: 'a', element: 'metal',
     title: 'Metal People',
-    subtitle: 'The Sharp Edge of Clarity & Strength',
+    subtitle: 'A Korean Astrology Guide to Life, Love & Career for the Precision Element',
     price: '$4.99',
     chaptersDir: 'chapters-kindle-a/book-a4-metal',
     outputFile: 'metal-people',
@@ -85,12 +85,92 @@ const KINDLE_BOOKS: KindleBook[] = [
   {
     id: 'a5-water', series: 'a', element: 'water',
     title: 'Water People',
-    subtitle: 'The Deep Current That Shapes the World',
+    subtitle: 'A Korean Astrology Guide to Life, Love & Career for the Depth Element',
     price: '$4.99',
     chaptersDir: 'chapters-kindle-a/book-a5-water',
     outputFile: 'water-people',
   },
+  // Series B: Life Code (topic-based, all 5 elements per book)
+  {
+    id: 'b1-love', series: 'b',
+    title: 'Saju Love Codes',
+    subtitle: "Attachment Styles, Conflict Patterns & Compatibility Secrets from Korean Astrology's Four Pillars Birth Chart",
+    price: '$6.99',
+    chaptersDir: 'chapters-kindle-b/book-b1-love',
+    outputFile: 'saju-love-codes',
+  },
+  {
+    id: 'b2-money', series: 'b',
+    title: 'Saju Money Codes',
+    subtitle: "Career Strengths, Wealth Patterns & Financial Strategy from Korean Astrology's Four Pillars Birth Chart",
+    price: '$6.99',
+    chaptersDir: 'chapters-kindle-b/book-b2-money',
+    outputFile: 'saju-money-codes',
+  },
+  {
+    id: 'b3-energy', series: 'b',
+    title: 'Saju Energy Codes',
+    subtitle: "Body Signals, Burnout Patterns & Wellness Strategy from Korean Astrology's Four Pillars Birth Chart",
+    price: '$6.99',
+    chaptersDir: 'chapters-kindle-b/book-b3-energy',
+    outputFile: 'saju-energy-codes',
+  },
+  {
+    id: 'b4-year', series: 'b',
+    title: 'Saju Year Codes',
+    subtitle: "How to Read the Energy of Any Year Using Korean Astrology's Four Pillars Birth Chart",
+    price: '$6.99',
+    chaptersDir: 'chapters-kindle-b/book-b4-year',
+    outputFile: 'saju-year-codes',
+  },
+  // Series C: Match Code (compatibility by element)
+  {
+    id: 'c1-wood-match', series: 'c', element: 'wood',
+    title: 'Saju Match Codes — Wood',
+    subtitle: "Your Complete Korean Astrology Compatibility Guide for the Wood Element",
+    price: '$3.99',
+    chaptersDir: 'chapters-kindle-c/book-c1-wood-match',
+    outputFile: 'saju-match-codes-wood',
+  },
+  {
+    id: 'c2-fire-match', series: 'c', element: 'fire',
+    title: 'Saju Match Codes — Fire',
+    subtitle: "Your Complete Korean Astrology Compatibility Guide for the Fire Element",
+    price: '$3.99',
+    chaptersDir: 'chapters-kindle-c/book-c2-fire-match',
+    outputFile: 'saju-match-codes-fire',
+  },
+  {
+    id: 'c3-earth-match', series: 'c', element: 'earth',
+    title: 'Saju Match Codes — Earth',
+    subtitle: "Your Complete Korean Astrology Compatibility Guide for the Earth Element",
+    price: '$3.99',
+    chaptersDir: 'chapters-kindle-c/book-c3-earth-match',
+    outputFile: 'saju-match-codes-earth',
+  },
+  {
+    id: 'c4-metal-match', series: 'c', element: 'metal',
+    title: 'Saju Match Codes — Metal',
+    subtitle: "Your Complete Korean Astrology Compatibility Guide for the Metal Element",
+    price: '$3.99',
+    chaptersDir: 'chapters-kindle-c/book-c4-metal-match',
+    outputFile: 'saju-match-codes-metal',
+  },
+  {
+    id: 'c5-water-match', series: 'c', element: 'water',
+    title: 'Saju Match Codes — Water',
+    subtitle: "Your Complete Korean Astrology Compatibility Guide for the Water Element",
+    price: '$3.99',
+    chaptersDir: 'chapters-kindle-c/book-c5-water-match',
+    outputFile: 'saju-match-codes-water',
+  },
 ];
+
+const SERIES_META: Record<string, { seriesName: string }> = {
+  a: { seriesName: 'SajuMuse Element Identity Series' },
+  b: { seriesName: 'SajuMuse Life Code Series' },
+  c: { seriesName: 'SajuMuse Match Code Series' },
+};
 
 const BOOK_META = {
   author: 'Ksaju Kim',
@@ -377,7 +457,7 @@ function buildCoverPage(book: KindleBook): Paragraph[] {
     new Paragraph({
       alignment: AlignmentType.CENTER,
       spacing: { after: 200 },
-      children: [new TextRun({ text: BOOK_META.seriesName, font: 'Noto Sans KR', size: 20, color: GOLD })],
+      children: [new TextRun({ text: (SERIES_META[book.series] || SERIES_META['a']).seriesName, font: 'Noto Sans KR', size: 20, color: GOLD })],
     }),
     // Title
     new Paragraph({
@@ -427,7 +507,7 @@ function buildCopyrightPage(book: KindleBook): Paragraph[] {
     '',
     'All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means without prior written permission.',
     '',
-    `Part of the ${BOOK_META.seriesName}`,
+    `Part of the ${(SERIES_META[book.series] || SERIES_META['a']).seriesName}`,
     '',
     'This book is for educational and entertainment purposes only.',
     'The information provided should not be used as a substitute for professional advice.',
@@ -667,7 +747,7 @@ async function buildBook(book: KindleBook): Promise<void> {
   // Document 생성
   const doc = new Document({
     title: `${book.title}: ${book.subtitle}`,
-    description: `Part of the ${BOOK_META.seriesName}`,
+    description: `Part of the ${(SERIES_META[book.series] || SERIES_META['a']).seriesName}`,
     creator: BOOK_META.author,
     styles: {
       default: {
@@ -716,7 +796,7 @@ async function buildBook(book: KindleBook): Promise<void> {
             new Paragraph({
               alignment: AlignmentType.CENTER,
               children: [new TextRun({
-                text: `${book.title} — ${BOOK_META.seriesName}`,
+                text: `${book.title} — ${(SERIES_META[book.series] || SERIES_META['a']).seriesName}`,
                 font: 'Noto Sans KR', size: 14, color: 'CCCCCC',
               })],
             }),
@@ -800,7 +880,7 @@ async function generatePdf(
   }));
 
   // Check for cover image — read as data URI for @react-pdf/renderer compatibility
-  const coverImageFile = path.join(OUTPUT_DIR, `${book.element}-people-cover.jpg`);
+  const coverImageFile = path.join(OUTPUT_DIR, `${book.element || book.id.split('-').pop()}-people-cover.jpg`);
   let coverImageSrc: string | undefined;
   if (fs.existsSync(coverImageFile)) {
     const imgBuffer = fs.readFileSync(coverImageFile);
@@ -811,8 +891,8 @@ async function generatePdf(
   const element = React.createElement(KindleDocument, {
     title: book.title,
     subtitle: book.subtitle,
-    element: book.element || 'wood',
-    seriesName: BOOK_META.seriesName,
+    element: book.element || book.id.split('-').pop() || 'wood',
+    seriesName: (SERIES_META[book.series] || SERIES_META['a']).seriesName,
     chapters: kindleChapters,
     coverImagePath: coverImageSrc,
   });
@@ -875,11 +955,11 @@ async function main() {
 
   const booksTooBuild = bookId === 'all'
     ? KINDLE_BOOKS.filter(b => b.series === series)
-    : KINDLE_BOOKS.filter(b => b.series === series && b.element === bookId);
+    : KINDLE_BOOKS.filter(b => b.series === series && (b.element === bookId || b.id.endsWith(bookId)));
 
   if (booksTooBuild.length === 0) {
     console.error(`❌ 해당하는 책을 찾을 수 없습니다: series=${series}, book=${bookId}`);
-    console.error('   사용 가능: ' + KINDLE_BOOKS.map(b => `${b.series}/${b.element}`).join(', '));
+    console.error('   사용 가능: ' + KINDLE_BOOKS.map(b => `${b.series}/${b.element || b.id.split('-').pop()}`).join(', '));
     process.exit(1);
   }
 
