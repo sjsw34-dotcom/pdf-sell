@@ -77,6 +77,9 @@ export function EmailSender({ pdfBlobUrl, clientName, tier }: EmailSenderProps) 
 
       const res = await fetch('/api/send-email', {
         method: 'POST',
+        headers: {
+          ...(process.env.NEXT_PUBLIC_API_SECRET ? { 'x-api-key': process.env.NEXT_PUBLIC_API_SECRET } : {}),
+        },
         body: formData,
       });
 

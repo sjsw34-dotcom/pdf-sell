@@ -1,11 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { generateEmailHTML } from '@/lib/email-template';
+import { validateApiKey } from '@/lib/api-auth';
 
 const MAX_TOTAL_SIZE = 25 * 1024 * 1024; // 25MB
 const ADMIN_EMAIL = 'sajumuse@gmail.com';
 
 export async function POST(req: NextRequest) {
+  const authError = validateApiKey(req);
+  if (authError) return authError;
+
   try {
     const formData = await req.formData();
 

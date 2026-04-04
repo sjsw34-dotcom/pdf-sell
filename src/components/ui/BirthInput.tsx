@@ -66,8 +66,8 @@ export function BirthInput() {
   const [rawJsonString, setRawJsonString] = useState('');
   const [info, setInfo] = useState<ExtractedInfo | null>(null);
   const [showJson, setShowJson] = useState(false);
-  const [copied, setCopied] = useState(false);
-  const [jsonView, setJsonView] = useState<'all' | 'part1' | 'part2'>('all');
+  const [copied, setCopied] = useState<string | null>(null);
+  const [jsonView, setJsonView] = useState<'basic' | 'fortune' | 'monthly' | 'all'>('all');
 
   // 고객 저장 상태
   const [clients, setClients] = useState<ClientItem[]>([]);
@@ -77,7 +77,11 @@ export function BirthInput() {
   // 고객 목록 로드
   const fetchClients = useCallback(async () => {
     try {
-      const res = await fetch('/api/clients');
+      const res = await fetch('/api/clients', {
+        headers: {
+          ...(process.env.NEXT_PUBLIC_API_SECRET ? { 'x-api-key': process.env.NEXT_PUBLIC_API_SECRET } : {}),
+        },
+      });
       if (res.ok) {
         const { clients: list } = await res.json();
         setClients(list ?? []);
@@ -92,7 +96,11 @@ export function BirthInput() {
     setSelectedClientId(id);
     if (!id) return;
     try {
-      const res = await fetch(`/api/clients/${id}`);
+      const res = await fetch(`/api/clients/${id}`, {
+        headers: {
+          ...(process.env.NEXT_PUBLIC_API_SECRET ? { 'x-api-key': process.env.NEXT_PUBLIC_API_SECRET } : {}),
+        },
+      });
       if (!res.ok) return;
       const { client: c } = await res.json();
       setName(c.name);
@@ -137,13 +145,19 @@ export function BirthInput() {
       if (existing) {
         await fetch(`/api/clients/${existing.id}`, {
           method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            ...(process.env.NEXT_PUBLIC_API_SECRET ? { 'x-api-key': process.env.NEXT_PUBLIC_API_SECRET } : {}),
+          },
           body: JSON.stringify({ rawJson }),
         });
       } else {
         await fetch('/api/clients', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            ...(process.env.NEXT_PUBLIC_API_SECRET ? { 'x-api-key': process.env.NEXT_PUBLIC_API_SECRET } : {}),
+          },
           body: JSON.stringify({
             name: name.trim() || 'Valued Guest',
             gender, birthYear: year, birthMonth: month, birthDay: day,
@@ -162,7 +176,12 @@ export function BirthInput() {
   const handleDeleteClient = useCallback(async () => {
     if (!selectedClientId || !confirm('이 고객을 삭제하시겠습니까?')) return;
     try {
-      await fetch(`/api/clients/${selectedClientId}`, { method: 'DELETE' });
+      await fetch(`/api/clients/${selectedClientId}`, {
+        method: 'DELETE',
+        headers: {
+          ...(process.env.NEXT_PUBLIC_API_SECRET ? { 'x-api-key': process.env.NEXT_PUBLIC_API_SECRET } : {}),
+        },
+      });
       setSelectedClientId('');
       await fetchClients();
       handleReset();
@@ -225,11 +244,11 @@ export function BirthInput() {
     }
   }, [name, gender, calendarType, year, month, day, timeIdx, timeMode, exactHour, exactMinute, ampm, setSajuData]);
 
-  const handleCopy = useCallback(async () => {
-    const text = getJsonViewText();
+  const handleCopy = useCallback(async (section?: string) => {
+    const text = section ? getJsonSectionText(section) : getJsonViewText();
     await navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopied(section ?? jsonView);
+    setTimeout(() => setCopied(null), 2000);
   }, [rawJsonString, jsonView]);
 
   const handleDownload = useCallback(() => {
@@ -250,19 +269,47 @@ export function BirthInput() {
     setError('');
   }, [setSajuData]);
 
+  // 섹션 경계 찾기: JSON 키 기준으로 의미 있는 구간 분할
+  function findSectionBoundaries() {
+    if (!rawJsonString) return { basicEnd: 0, fortuneEnd: 0, total: 0 };
+    const lines = rawJsonString.split('\n');
+    const total = lines.length;
+
+    // hyungchung 시작 = 기본 사주 끝 (info+pillar+yongsin+yinyang+shinsal)
+    let basicEnd = 0;
+    // wolun 시작 = 운세 흐름 끝 (hyungchung+daeun+nyunun)
+    let fortuneEnd = 0;
+
+    for (let i = 0; i < lines.length; i++) {
+      const trimmed = lines[i].trim();
+      if (trimmed.startsWith('"hyungchung"')) basicEnd = i;
+      if (trimmed.startsWith('"wolun"') && !trimmed.startsWith('"wolun2"')) fortuneEnd = i;
+    }
+
+    return { basicEnd, fortuneEnd, total };
+  }
+
+  // 섹션별 텍스트 추출
+  function getJsonSectionText(section: string): string {
+    if (!rawJsonString) return '';
+    const lines = rawJsonString.split('\n');
+    const { basicEnd, fortuneEnd } = findSectionBoundaries();
+
+    if (section === 'basic') return lines.slice(0, basicEnd).join('\n') + '\n}';
+    if (section === 'fortune') return '{\n' + lines.slice(basicEnd, fortuneEnd).join('\n') + '\n}';
+    if (section === 'monthly') return '{\n' + lines.slice(fortuneEnd).join('\n');
+    return rawJsonString;
+  }
+
   // JSON 부분 보기
   function getJsonViewText(): string {
     if (!rawJsonString) return '';
-    const lines = rawJsonString.split('\n');
-    const total = lines.length;
     if (jsonView === 'all') return rawJsonString;
-    const mid = Math.floor(total / 2);
-    if (jsonView === 'part1') return lines.slice(0, mid).join('\n');
-    return lines.slice(mid).join('\n');
+    return getJsonSectionText(jsonView);
   }
 
   const lineCount = rawJsonString ? rawJsonString.split('\n').length : 0;
-  const midLine = Math.floor(lineCount / 2);
+  const boundaries = rawJsonString ? findSectionBoundaries() : { basicEnd: 0, fortuneEnd: 0, total: 0 };
 
   // 결과가 있을 때 = 결과 화면
   if (info && rawJsonString) {
@@ -331,10 +378,10 @@ export function BirthInput() {
             </button>
             <div className="flex gap-2">
               <button
-                onClick={handleCopy}
+                onClick={() => handleCopy()}
                 className="px-3 py-1 text-xs rounded-md bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 transition"
               >
-                {copied ? '복사됨!' : '복사'}
+                {copied === jsonView ? '복사됨!' : '전체 복사'}
               </button>
               <button
                 onClick={handleDownload}
@@ -347,23 +394,42 @@ export function BirthInput() {
 
           {showJson && (
             <>
-              {/* 부분 선택 탭 */}
-              <div className="flex gap-1 px-4 py-2 border-b border-gray-800">
-                {([
-                  { key: 'part1', label: `1~${midLine}줄` },
-                  { key: 'part2', label: `${midLine + 1}~${lineCount}줄` },
-                  { key: 'all', label: '전체' },
-                ] as const).map(({ key, label }) => (
-                  <button
-                    key={key}
-                    onClick={() => setJsonView(key)}
-                    className={`px-3 py-1 text-xs rounded-md transition ${
-                      jsonView === key ? 'bg-purple-600 text-white' : 'bg-gray-800 text-gray-500 hover:text-gray-300'
-                    }`}
-                  >
-                    {label}
-                  </button>
-                ))}
+              {/* 섹션 선택 탭 + 개별 복사 버튼 */}
+              <div className="px-4 py-2 border-b border-gray-800 space-y-2">
+                <div className="flex gap-1 flex-wrap">
+                  {([
+                    { key: 'basic', label: `기본 사주 (1~${boundaries.basicEnd}줄)`, desc: 'info+pillar+yongsin+yinyang+shinsal' },
+                    { key: 'fortune', label: `운세 흐름 (${boundaries.basicEnd + 1}~${boundaries.fortuneEnd}줄)`, desc: 'hyungchung+daeun+nyunun' },
+                    { key: 'monthly', label: `월운 (${boundaries.fortuneEnd + 1}~${lineCount}줄)`, desc: 'wolun+wolun2' },
+                    { key: 'all', label: `전체 (${lineCount}줄)`, desc: '' },
+                  ] as const).map(({ key, label }) => (
+                    <button
+                      key={key}
+                      onClick={() => setJsonView(key)}
+                      className={`px-3 py-1 text-xs rounded-md transition ${
+                        jsonView === key ? 'bg-purple-600 text-white' : 'bg-gray-800 text-gray-500 hover:text-gray-300'
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+                {/* 섹션별 빠른 복사 버튼 */}
+                <div className="flex gap-1 flex-wrap">
+                  {([
+                    { key: 'basic', label: '기본 사주 복사' },
+                    { key: 'fortune', label: '운세 흐름 복사' },
+                    { key: 'monthly', label: '월운 복사' },
+                  ] as const).map(({ key, label }) => (
+                    <button
+                      key={key}
+                      onClick={() => handleCopy(key)}
+                      className="px-3 py-1 text-xs rounded-md bg-indigo-900/50 text-indigo-300 hover:bg-indigo-800 transition"
+                    >
+                      {copied === key ? '복사됨!' : label}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* JSON 내용 */}

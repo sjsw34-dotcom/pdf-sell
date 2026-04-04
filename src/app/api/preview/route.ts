@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateEmailHTML } from '@/lib/email-template';
+import { validateApiKey } from '@/lib/api-auth';
 
 export async function POST(req: NextRequest) {
+  const authError = validateApiKey(req);
+  if (authError) return authError;
+
   try {
     const body = await req.json();
 
